@@ -1,7 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
 import navbar from "./navbar.js";
-import sidebar from "./sidebar.js";
+import sidebar from "./sidebar/index.js";
 
 export default hopeTheme({
   hostname: "https://blog.pysio.tech",
@@ -11,7 +11,7 @@ export default hopeTheme({
     url: "https://github.com/pysio2007/",
   },
 
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: "fontawesome",
 
   logo: "https://imges.pysio.online//%E9%AB%98%E6%B8%85%E9%87%8D%E5%88%B6%E5%A4%B4%E5%83%8F.svg",
 
@@ -42,11 +42,11 @@ export default hopeTheme({
   },
 
   // 加密配置
-  encrypt: {
-    config: {
-      "/demo/encrypt.html": ["1234"],
-    },
-  },
+  // encrypt: {
+  //   config: {
+  //     "/demo/encrypt.html": ["1234"],
+  //   },
+  // },
 
   // 多语言配置
   metaLocales: {
@@ -54,7 +54,7 @@ export default hopeTheme({
   },
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
-  hotReload: true,
+  // hotReload: true,
 
   // 在这里配置主题提供的插件
   plugins: {
