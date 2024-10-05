@@ -1,10 +1,5 @@
 import { defineUserConfig } from "vuepress";
-import gitDescribe from 'git-describe';
 import theme from "./theme.js";
-
-//Git Hash 
-const gitInfo = gitDescribe.gitDescribeSync();
-process.env.VUE_APP_GIT_HASH = gitInfo.hash;
 
 export default defineUserConfig({
   base: "/",

@@ -1,7 +1,11 @@
 import { hopeTheme } from "vuepress-theme-hope";
-
+import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
+
+//Git Hash
+const gitInfo = gitDescribe.gitDescribeSync();
+process.env.VUE_APP_GIT_HASH = gitInfo.hash;
 
 export default hopeTheme({
   hostname: "https://www.opendev.cloud",
