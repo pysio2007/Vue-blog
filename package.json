@@ -17,9 +17,11 @@
     "@vuepress/plugin-prismjs": "^2.0.0-rc.52",
     "@vuepress/plugin-pwa": "^2.0.0-rc.52",
     "git-describe": "^4.1.1",
+    "nodejs-jieba": "^0.1.2",
     "sass-embedded": "^1.79.4",
     "vue": "^3.5.10",
     "vuepress": "2.0.0-rc.17",
+    "vuepress-plugin-search-pro": "^2.0.0-rc.57",
     "vuepress-theme-hope": "2.0.0-rc.58"
   },
   "dependencies": {
