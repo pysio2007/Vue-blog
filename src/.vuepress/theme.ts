@@ -78,12 +78,12 @@ export default hopeTheme({
       size: true,
     },
 
-    // markdownMath: {
+    markdownMath: {
     //   // 启用前安装 katex
-    //   type: "katex",
+       type: "katex",
     //   // 或者安装 mathjax-full
     //   type: "mathjax",
-    // },
+    },
 
     // 此功能被开启用于演示，你应仅当使用时保留。
     markdownTab: true,
@@ -117,28 +117,28 @@ export default hopeTheme({
       vPre: true,
 
       // 在启用之前安装 chart.js
-      // chart: true,
+      chart: true,
 
       // insert component easily
 
       // 在启用之前安装 echarts
-      // echarts: true,
+      echarts: true,
 
       // 在启用之前安装 flowchart.ts
-      // flowchart: true,
+      flowchart: true,
 
       // gfm requires mathjax-full to provide tex support
       // gfm: true,
 
       // 在启用之前安装 mermaid
-      // mermaid: true,
+      mermaid: true,
 
-      // playground: {
-      //   presets: ["ts", "vue"],
-      // },
+      playground: {
+         presets: ["ts", "vue"],
+      },
 
       // 在启用之前安装 @vue/repl
-      // vuePlayground: true,
+      vuePlayground: true,
 
       // install sandpack-vue3 before enabling it
       // sandpack: true,
