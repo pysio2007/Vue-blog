@@ -24,6 +24,7 @@
     "chart.js": "^4.4.4",
     "echarts": "^5.5.1",
     "flowchart.ts": "^3.0.1",
+    "git-describe": "^4.1.1",
     "katex": "^0.16.11",
     "mathjax-full": "^3.2.2",
     "mermaid": "^11.3.0"

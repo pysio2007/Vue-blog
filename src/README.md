@@ -39,5 +39,5 @@ projects:
     desc: 自定义详细介绍
     link: https://你的自定义链接
 
-footer: Pysio's Home / 蜀ICP备2023021309号-1
+
 ---
