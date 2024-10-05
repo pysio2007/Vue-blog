@@ -35,7 +35,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
-      # 配置 QEMU 和 buildx 用于多架构镜像的构建
+      # 配置 QEMU 和 buildx
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -79,9 +79,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
-
+          cache-from: type=local,src=./
+          cache-to: type=local,dest=./
       - name: Inspect image
         run: |
           docker buildx imagetools inspect \
