@@ -69,6 +69,7 @@ export default hopeTheme({
        repoId: 'R_kgDOM6WQXQ',
        category: 'Polls',
        categoryId: 'DIC_kwDOM6WQXc4CjFVc',
+       mapping: "title"
     },
 
     components: {
