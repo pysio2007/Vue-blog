@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://www.opendev.cloud/rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <atom:link href="https://www.opendev.cloud/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>Pysio&amp;apos;s Home</title>
+    <link>https://www.opendev.cloud/</link>
+    <description>一个温暖的家</description>
+    <language>zh-CN</language>
+    <pubDate>Sat, 05 Oct 2024 17:29:26 GMT</pubDate>
+    <lastBuildDate>Sat, 05 Oct 2024 17:29:26 GMT</lastBuildDate>
+    <generator>@vuepress/plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>daily</category>
+    <category>develop</category>
+    <item>
+      <title>命运2 年7</title>
+      <link>https://www.opendev.cloud/posts/daily/Destiny%20Year7.html</link>
+      <guid>https://www.opendev.cloud/posts/daily/Destiny%20Year7.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">命运2 年7</source>
+      <description>这几天打年7打的脑子疼，凯德活了 但是没有完全活，最后还是死了。 8号凌晨1点开的Dayone 打了，6小时才过老一 直接向见证者投降，太难了。 截至发文时，目前只有1队通关 不多说了 放点截图</description>
+      <category>daily</category>
+      <pubDate>Sun, 09 Jun 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>这几天打年7打的脑子疼，凯德活了 但是没有完全活，最后还是死了。</p>
+<p>8号凌晨1点开的Dayone 打了，6小时才过老一 直接向见证者投降，太难了。</p>
+<p>截至发文时，目前只有1队通关</p>
+<p>不多说了 放点截图
+<img src="https://imges.pysio.online//20241006003452.png" alt="" loading="lazy">
+<img src="https://imges.pysio.online//20241006003529.png" alt="" loading="lazy">
+<img src="https://imges.pysio.online//20241006003549.png" alt="" loading="lazy">
+<img src="https://imges.pysio.online//20241006003612.png" alt="" loading="lazy">
+<img src="https://imges.pysio.online//20241006003632.png" alt="" loading="lazy"></p>
+]]></content:encoded>
+      <enclosure url="https://imges.pysio.online//20241006003452.png" type="image/png"/>
+    </item>
+    <item>
+      <title>有关于自托管Gitlab被拦截这件事</title>
+      <link>https://www.opendev.cloud/posts/daily/Gitlab%20Pollution.html</link>
+      <guid>https://www.opendev.cloud/posts/daily/Gitlab%20Pollution.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">有关于自托管Gitlab被拦截这件事</source>
+      <description>我今天闲的一Ping 我就在纳闷了，为啥会解析到这个IP上，直到我一访问。 Uh 这多少是有点离谱了。我也不知我犯了啥天条能被扔进去。。。。 先看看吧，如果被大范围屏蔽的话，还得考虑咋申诉。。。</description>
+      <category>daily</category>
+      <pubDate>Mon, 18 Dec 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>我今天闲的一Ping
+<img src="https://imges.pysio.online//20241006004058.png" alt="" loading="lazy"></p>
+<p>我就在纳闷了，为啥会解析到这个<a href="106.74.25.198">IP</a>上，直到我一访问。
+<img src="https://imges.pysio.online//20241006004137.png" alt="" loading="lazy"></p>
+<p>Uh 这多少是有点离谱了。我也不知我犯了啥天条能被扔进去。。。。</p>
+<p>先看看吧，如果被大范围屏蔽的话，还得考虑咋申诉。。。</p>
+]]></content:encoded>
+      <enclosure url="https://imges.pysio.online//20241006004058.png" type="image/png"/>
+    </item>
+    <item>
+      <title>公共DNS/DOH服务</title>
+      <link>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">公共DNS/DOH服务</source>
+      <description>DNS Server ：106.54.200.76 DoH（中国大陆）: https://doh.pysio.online/dns-query DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</description>
+      <category>develop</category>
+      <pubDate>Sun, 19 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>DNS Server ：106.54.200.76</p>
+<p>DoH（中国大陆）: https://doh.pysio.online/dns-query</p>
+<p>DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>1panel面板配置Redis Object Cache插件</title>
+      <link>https://www.opendev.cloud/posts/develop/1Panel%20Redis%20Object%20Cache.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/1Panel%20Redis%20Object%20Cache.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">1panel面板配置Redis Object Cache插件</source>
+      <description>第一步 获取Redis的密码 [应用商店] -&amp;gt; [已安装] -&amp;gt; [Redis 参数] 就可以看见密码了 把密码记下来 第二步 修改object-cache.php文件 在网站根目录 wp-content/plugins/redis-cache/includes 下 可以找到 object-cache.php 文件 打开并编辑 添加或修改以下部分 其...</description>
+      <category>develop</category>
+      <pubDate>Sat, 05 Oct 2024 14:22:45 GMT</pubDate>
+      <content:encoded><![CDATA[<h2>第一步 获取Redis的密码</h2>
+<p><img src="https://imges.pysio.online//20241005215409.png" alt="" loading="lazy">
+[应用商店] -&gt; [已安装] -&gt; [Redis 参数] 就可以看见密码了 把密码记下来</p>
+<h2>第二步 修改object-cache.php文件</h2>
+<p>在网站根目录 <code>wp-content/plugins/redis-cache/includes</code> 下 可以找到 <code>object-cache.php</code> 文件
+打开并编辑<br>
+<img src="https://imges.pysio.online//20241005215426.png" alt="" loading="lazy"><br>
+添加或修改以下部分 其中PassWord是你刚刚获取的Redis密码</p>
+<div class="language-php" data-highlighter="prismjs" data-ext="php" data-title="php"><pre><code><span class="line"><span class="token variable">$parameters</span> <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">   <span class="token string single-quoted-string">'scheme'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'tcp'</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'host'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'redis'</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'port'</span> <span class="token operator">=&gt;</span> <span class="token number">6379</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'database'</span> <span class="token operator">=&gt;</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'password'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'你的Redis密码'</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'timeout'</span> <span class="token operator">=&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'read_timeout'</span> <span class="token operator">=&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'retry_interval'</span> <span class="token operator">=&gt;</span> <span class="token constant">null</span><span class="token punctuation">,</span></span>
+<span class="line">   <span class="token string single-quoted-string">'persistent'</span> <span class="token operator">=&gt;</span> <span class="token constant boolean">false</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+</div><h2>第三步 修改wp-config.php文件</h2>
+<p>在网站根目录找到wp-config.php文件 在末尾添加</p>
+<div class="language-php" data-highlighter="prismjs" data-ext="php" data-title="php"><pre><code><span class="line"><span class="token doc-comment comment">/** Redis Cache */</span></span>
+<span class="line"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_CACHE_KEY_SALT'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'001'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_REDIS_SCHEME'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'tcp'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_REDIS_HOST'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'redis'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_REDIS_PORT'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'6379'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_REDIS_DATABASE'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_REDIS_PASSWORD'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'你的Redis密码'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+</div><h3>最后 启用插件</h3>
+<p>现在启用你的Redis Object Cache插件 他现在应该正常工作了</p>
+]]></content:encoded>
+      <enclosure url="https://imges.pysio.online//20241005215409.png" type="image/png"/>
+    </item>
+    <item>
+      <title>在PVE为OpenSuse启用xterm.js控制台</title>
+      <link>https://www.opendev.cloud/posts/develop/Enabling%20the%20xterm.js%20console%20for%20OpenSuse%20in%20PVE%20.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/Enabling%20the%20xterm.js%20console%20for%20OpenSuse%20in%20PVE%20.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">在PVE为OpenSuse启用xterm.js控制台</source>
+      <description>关闭 VM，并给 VM 添加一个 serial port 在 PVE Host 中用 qm 命令建立 serial port，假设我的 VM ID 是 100 接着重开 VM，用 dmesg 确认是否有 ttyS 出現 OpenSuse修改 grub 配置 /etc/default/grub 的 GRUB_CMDLINE_LINUX 参数，添加 更新G...</description>
+      <category>develop</category>
+      <pubDate>Fri, 13 Sep 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2>关闭 VM，并给 VM 添加一个 serial port</h2>
+<p>在 PVE Host 中用 qm 命令建立 serial port，假设我的 VM ID 是 100</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line">qm <span class="token builtin class-name">set</span> <span class="token number">100</span> <span class="token parameter variable">-serial0</span> socket</span>
+<span class="line"></span></code></pre>
+</div><p>接着重开 VM，用 dmesg 确认是否有 ttyS 出現</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">dmesg</span> <span class="token operator">|</span> <span class="token function">grep</span> ttyS</span>
+<span class="line"></span></code></pre>
+</div><h2>OpenSuse修改 grub 配置</h2>
+<p><code>/etc/default/grub</code> 的 <code>GRUB_CMDLINE_LINUX</code> 参数，添加</p>
+<div class="language-text" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">console=tty0 console=ttyS0,115200</span>
+<span class="line"></span></code></pre>
+</div><p>更新Grub配置</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line">grub2-mkconfig <span class="token parameter variable">--output</span><span class="token operator">=</span>/boot/grub2/grub.cfg</span>
+<span class="line"></span></code></pre>
+</div><p>重启OpenSuse虚拟机 检查 xterm.js 是否可用</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>去除 PVE “无有效的订阅” 弹窗</title>
+      <link>https://www.opendev.cloud/posts/develop/Remove%20Pve%20No%20valid%20subscription.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/Remove%20Pve%20No%20valid%20subscription.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">去除 PVE “无有效的订阅” 弹窗</source>
+      <description>修改 /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js 将 修改为 执行以下命令 重启PveProxy即可去除弹窗</description>
+      <category>develop</category>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>修改 <code>/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js</code> 将</p>
+<div class="language-javascript" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line">Ext<span class="token punctuation">.</span>Msg<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line"></span></code></pre>
+</div><p>修改为</p>
+<div class="language-javascript" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line">Ext<span class="token punctuation">.</span>Msg<span class="token punctuation">.</span><span class="token function">noshow</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line"></span></code></pre>
+</div><p>执行以下命令 重启PveProxy即可去除弹窗</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line">systemctl restart pveproxy</span>
+<span class="line"></span></code></pre>
+</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenBmclapi</title>
+      <link>https://www.opendev.cloud/posts/daily/OpenBmclapi.html</link>
+      <guid>https://www.opendev.cloud/posts/daily/OpenBmclapi.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">OpenBmclapi</source>
+      <description>搭建这玩意也是一时兴起，想想也该给免费的镜像服务贡献点自己的力量。 网盘节点地址：https://65d480a1f25ffe347bdf6820.openbmclapi.933.moe/</description>
+      <category>daily</category>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>搭建这玩意也是一时兴起，想想也该给免费的镜像服务贡献点自己的力量。</p>
+<p>网盘节点地址：https://65d480a1f25ffe347bdf6820.openbmclapi.933.moe/</p>
+<figure><img src="https://imges.pysio.online//20241005133723.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+]]></content:encoded>
+      <enclosure url="https://imges.pysio.online//20241005133723.png" type="image/png"/>
+    </item>
+    <item>
+      <title>本地手动合并Github上的Pull requests</title>
+      <link>https://www.opendev.cloud/posts/develop/Manual%20merge%20Pull%20requests.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/Manual%20merge%20Pull%20requests.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">本地手动合并Github上的Pull requests</source>
+      <description>首先 通过命令添加远程的仓库信息 仓库添加成功后 通过 git fetch [远程仓库名称] 把仓库拉到本地 最后通过 merge 或者 cherry-pick 合并整个分支或者某个具体的提交 当我们合并完成之后，清理远程仓库的信息</description>
+      <category>develop</category>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>首先 通过命令添加远程的仓库信息</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">git</span> remote <span class="token function">add</span> <span class="token punctuation">[</span>远程仓库名称<span class="token punctuation">]</span> <span class="token punctuation">[</span>远程仓库地址<span class="token punctuation">]</span> </span>
+<span class="line"></span></code></pre>
+</div><p>仓库添加成功后 通过 <code>git fetch [远程仓库名称]</code> 把仓库拉到本地</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line">❯ <span class="token function">git</span> fetch pr2</span>
+<span class="line">remote: Enumerating objects: <span class="token number">26</span>, done.</span>
+<span class="line">remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">26</span>/26<span class="token punctuation">)</span>, done.</span>
+<span class="line">remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">9</span>/9<span class="token punctuation">)</span>, done.</span>
+<span class="line">remote: Total <span class="token number">18</span> <span class="token punctuation">(</span>delta <span class="token number">8</span><span class="token punctuation">)</span>, reused <span class="token number">17</span> <span class="token punctuation">(</span>delta <span class="token number">7</span><span class="token punctuation">)</span>, pack-reused <span class="token number">0</span> <span class="token punctuation">(</span>from <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">展开对象中: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">18</span>/18<span class="token punctuation">)</span>, <span class="token number">3.26</span> KiB <span class="token operator">|</span> <span class="token number">371.00</span> KiB/s, 完成.</span>
+<span class="line">来自 github.com:pysio2007/SkyBlock-CN-WIKI</span>
+<span class="line"> * <span class="token punctuation">[</span>新分支<span class="token punctuation">]</span>          main       -<span class="token operator">&gt;</span> pr2/main</span>
+<span class="line"></span></code></pre>
+</div><p>最后通过 <code>merge</code> 或者 <code>cherry-pick</code> 合并整个分支或者某个具体的提交</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token comment"># 合并具体的 commitid</span></span>
+<span class="line">❯ <span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>Commitid<span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 合并具体的分支</span></span>
+<span class="line">❯ <span class="token function">git</span> merge <span class="token punctuation">[</span>远程仓库名称<span class="token punctuation">]</span>/<span class="token punctuation">[</span>分支名称<span class="token punctuation">]</span></span>
+<span class="line"></span></code></pre>
+</div><p>当我们合并完成之后，清理远程仓库的信息</p>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">git</span> remote <span class="token function">rm</span> <span class="token punctuation">[</span>远程仓库名称<span class="token punctuation">]</span></span>
+<span class="line"></span></code></pre>
+</div>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
