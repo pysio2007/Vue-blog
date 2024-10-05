@@ -4,7 +4,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://blog.pysio.tech",
+  hostname: "https://www.opendev.cloud",
 
   author: {
     name: "Pysio",
