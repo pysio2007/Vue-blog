@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.17",
+    "@vuepress/plugin-feed": "^2.0.0-rc.52",
     "@vuepress/plugin-prismjs": "^2.0.0-rc.52",
     "sass-embedded": "^1.79.4",
     "vue": "^3.5.10",
@@ -20,7 +21,6 @@
   },
   "dependencies": {
     "@vue/repl": "^4.4.2",
-    "@vuepress/plugin-feed": "^2.0.0-rc.3",
     "chart.js": "^4.4.4",
     "echarts": "^5.5.1",
     "flowchart.ts": "^3.0.1",
