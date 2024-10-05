@@ -63,7 +63,7 @@ jobs:
       # 根据输入自动生成 tag 和 label 等数据，说明见下
       - name: Extract metadata for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE }}
 
