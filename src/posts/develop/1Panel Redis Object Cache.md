@@ -1,6 +1,6 @@
 ---
 title: 1panel面板配置Redis Object Cache插件
-date: 2024-09-14
+date: 2024-09-1
 icon: https://imges.pysio.online/wordpress-brands-solid.svg
 category: develop
 tag:
@@ -13,8 +13,9 @@ tag:
 [应用商店] -> [已安装] -> [Redis 参数] 就可以看见密码了 把密码记下来
 
 ## 第二步 修改object-cache.php文件
-在网站根目录 ```wp-content/plugins/redis-cache/includes``` 下 可以找到 ```object-cache.php```文件 打开并编辑
-![](https://imges.pysio.online//20241005215426.png)
+在网站根目录 ```wp-content/plugins/redis-cache/includes``` 下 可以找到 ```object-cache.php``` 文件 
+打开并编辑  
+![](https://imges.pysio.online//20241005215426.png)  
 添加或修改以下部分 其中PassWord是你刚刚获取的Redis密码
 ```php
 $parameters = [
