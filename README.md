@@ -12,5 +12,5 @@ docker pull pysio/pysioblog
 ```
 运行Docker镜像
 ```bash
-docker run --name PysioHome -p 8080:80 -d pysioblog
+docker run --name PysioHome -p 8080:80 -d pysio/pysioblog:main
 ```
