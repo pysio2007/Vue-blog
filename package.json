@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@vue/repl": "^4.4.2",
+    "@vuepress/plugin-feed": "^2.0.0-rc.3",
     "chart.js": "^4.4.4",
     "echarts": "^5.5.1",
     "flowchart.ts": "^3.0.1",
