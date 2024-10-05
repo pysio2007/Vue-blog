@@ -17,7 +17,7 @@
     "@vuepress/plugin-prismjs": "^2.0.0-rc.52",
     "@vuepress/plugin-pwa": "^2.0.0-rc.52",
     "git-describe": "^4.1.1",
-    "nodejs-jieba": "^0.1.2",
+    "nodejieba": "^3.4.3",
     "sass-embedded": "^1.79.4",
     "vue": "^3.5.10",
     "vuepress": "2.0.0-rc.17",
