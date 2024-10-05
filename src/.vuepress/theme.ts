@@ -80,7 +80,7 @@ export default hopeTheme({
 
     //代码高亮
     prismjs: {
-      theme: "one-light",
+      themes: { light: 'one-light', dark: 'nord' },
       lineNumbers: false,
     },
     
