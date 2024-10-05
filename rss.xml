@@ -6,8 +6,8 @@
     <link>https://www.opendev.cloud/</link>
     <description>一个温暖的家</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 05 Oct 2024 17:29:26 GMT</pubDate>
-    <lastBuildDate>Sat, 05 Oct 2024 17:29:26 GMT</lastBuildDate>
+    <pubDate>Sat, 05 Oct 2024 17:35:22 GMT</pubDate>
+    <lastBuildDate>Sat, 05 Oct 2024 17:35:22 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>daily</category>
@@ -69,7 +69,7 @@
       <source url="https://www.opendev.cloud/rss.xml">1panel面板配置Redis Object Cache插件</source>
       <description>第一步 获取Redis的密码 [应用商店] -&amp;gt; [已安装] -&amp;gt; [Redis 参数] 就可以看见密码了 把密码记下来 第二步 修改object-cache.php文件 在网站根目录 wp-content/plugins/redis-cache/includes 下 可以找到 object-cache.php 文件 打开并编辑 添加或修改以下部分 其...</description>
       <category>develop</category>
-      <pubDate>Sat, 05 Oct 2024 14:22:45 GMT</pubDate>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h2>第一步 获取Redis的密码</h2>
 <p><img src="https://imges.pysio.online//20241005215409.png" alt="" loading="lazy">
 [应用商店] -&gt; [已安装] -&gt; [Redis 参数] 就可以看见密码了 把密码记下来</p>
