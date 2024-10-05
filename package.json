@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.17",
+    "@vuepress/plugin-cache": "^2.0.0-rc.52",
     "@vuepress/plugin-feed": "^2.0.0-rc.52",
     "@vuepress/plugin-prismjs": "^2.0.0-rc.52",
     "@vuepress/plugin-pwa": "^2.0.0-rc.52",

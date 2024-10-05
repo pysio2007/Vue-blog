@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
+import { cachePlugin } from '@vuepress/plugin-cache'
 
 export default defineUserConfig({
   base: "/",
@@ -7,6 +8,11 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "Pysio's Home",
   description: "一个温暖的家",
+  plugins: [
+    cachePlugin({       // 开启缓存
+      type: 'filesystem',
+    }),
+  ],
   head: [
       //JetBrains Mono
     ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],

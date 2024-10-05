@@ -1,4 +1,5 @@
 import { hopeTheme } from "vuepress-theme-hope";
+import { cachePlugin } from '@vuepress/plugin-cache'
 import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
