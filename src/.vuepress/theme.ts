@@ -2,7 +2,8 @@ import { hopeTheme } from "vuepress-theme-hope";
 import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
-import { cut } from "nodejieba";
+import pkg from 'nodejieba';
+const { cut } = pkg;
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
