@@ -110,6 +110,7 @@ export default hopeTheme({
       figure: true,
       lazyload: true,
       size: true,
+      mark: true,
     },
 
     markdownMath: {
