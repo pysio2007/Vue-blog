@@ -80,7 +80,7 @@ export default hopeTheme({
 
     //代码高亮
     prismjs: {
-      theme: "one-light",
+      themes: { light: 'one-light', dark: 'nord' },
       lineNumbers: false,
     },
     
@@ -110,6 +110,7 @@ export default hopeTheme({
       figure: true,
       lazyload: true,
       size: true,
+      mark: true,
     },
 
     markdownMath: {
@@ -185,6 +186,7 @@ export default hopeTheme({
       cacheHTML: true,
       cacheImage: true,
       appendBase: true,
+      maxSize: 5120,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
