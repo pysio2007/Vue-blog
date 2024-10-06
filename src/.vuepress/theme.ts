@@ -17,7 +17,10 @@ export default hopeTheme({
     url: "https://github.com/pysio2007/",
   },
 
-  iconAssets: "fontawesome",
+  iconAssets: [
+    "fontawesome",
+    "https://kit.fontawesome.com/b19836ac94.js",
+  ],
 
   logo: "https://imges.pysio.online//%E9%AB%98%E6%B8%85%E9%87%8D%E5%88%B6%E5%A4%B4%E5%83%8F.svg",
 

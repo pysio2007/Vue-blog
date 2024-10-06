@@ -1,7 +1,7 @@
 ---
 title: OpenBmclapi
 date: 2024-03-27
-icon: cloud
+icon: fa-solid fa-cloud
 category: daily
 tag:
   - 日常

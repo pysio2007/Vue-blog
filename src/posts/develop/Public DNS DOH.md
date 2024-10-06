@@ -1,7 +1,7 @@
 ---
 title: 公共DNS/DOH服务
 date: 2024-05-19
-icon: server
+icon: fa-regular fa-server
 category: develop
 tag:
   - DNS

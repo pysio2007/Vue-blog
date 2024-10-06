@@ -1,7 +1,7 @@
 ---
 title: 命运2 年7
 date: 2024-06-09
-icon: https://imges.pysio.online//destiny-svgrepo-com.svg
+icon: fa-kit fa-destiny2
 category: daily
 tag:
   - 命运2
