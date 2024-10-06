@@ -51,6 +51,7 @@ export default hopeTheme({
       Email: "mailto:team@pysio.online",
       GitHub: "https://github.com/pysio2007/",
       Steam: "https://steamcommunity.com/profiles/76561198412338808/",
+      AFDian: "https://mbd.pub/o/author-bGubmmpoZg==",
     },
   },
 
