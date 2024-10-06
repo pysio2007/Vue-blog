@@ -15,7 +15,12 @@ export default navbar([
           { text: "日常", icon: "fa-regular fa-book", link: "daily/" },
           { text: "开发", icon: "fa-regular fa-code", link: "develop/" },
         ],
-      },
+      },      
     ],
+  },
+  {
+    text: "关于",
+    icon: "fa-regular fa-circle-info",
+    link: "/intro.html",
   },
 ]);
