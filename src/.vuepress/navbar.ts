@@ -4,7 +4,7 @@ export default navbar([
   "/",
   {
     text: "博文",
-    icon: "pen-to-square",
+    icon: "fa-solid fa-pen-to-square",
     prefix: "/posts/",
     children: [
       {
@@ -12,8 +12,8 @@ export default navbar([
         icon: "note",
         prefix: "/category/",
         children: [
-          { text: "日常", icon: "book", link: "daily/" },
-          { text: "开发", icon: "code", link: "develop/" },
+          { text: "日常", icon: "fa-regular fa-book", link: "daily/" },
+          { text: "开发", icon: "fa-regular fa-code", link: "develop/" },
         ],
       },
     ],

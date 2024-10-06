@@ -19,7 +19,10 @@ export default hopeTheme({
 
   iconAssets: [
     "fontawesome",
-    "https://kit.fontawesome.com/b19836ac94.js",
+    "https://js.pysio.online/js/custom-icons.js",
+    "https://js.pysio.online/js/brands.js",
+    "https://js.pysio.online/js/light.min.js",
+    "https://js.pysio.online/js/regular.min.js",
   ],
 
   logo: "https://imges.pysio.online//%E9%AB%98%E6%B8%85%E9%87%8D%E5%88%B6%E5%A4%B4%E5%83%8F.svg",
