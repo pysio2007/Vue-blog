@@ -1,7 +1,7 @@
 ---
 title: 在PVE为OpenSuse启用xterm.js控制台
 date: 2024-09-13
-icon: https://imges.pysio.online//opensuse-brands-solid.svg
+icon: fa-brands fa-opensuse
 category: develop
 tag:
   - PVE

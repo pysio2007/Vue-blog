@@ -1,7 +1,7 @@
 ---
 title: 1panel面板配置Redis Object Cache插件
 date: 2024-09-14
-icon: https://imges.pysio.online/wordpress-brands-solid.svg
+icon: fa-brands fa-wordpress
 category: develop
 tag:
   - 1Panel

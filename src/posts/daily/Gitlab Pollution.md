@@ -1,8 +1,7 @@
 ---
 title: 有关于自托管Gitlab被拦截这件事
 date: 2023-12-18
-icon: https://imges.pysio.online//gitlab-brands-solid.svg
-category: daily
+icon: fa-brands fa-gitlab
 tag:
   - 日常
 ---

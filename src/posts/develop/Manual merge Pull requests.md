@@ -1,7 +1,7 @@
 ---
 title: 本地手动合并Github上的Pull requests
 date: 2024-09-26
-icon: code-pull-request
+icon: fa-light fa-code-pull-request
 category: develop
 tag:
   - Git

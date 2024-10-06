@@ -1,7 +1,7 @@
 ---
 title: 去除 PVE “无有效的订阅” 弹窗
 date: 2024-09-26
-icon: https://imges.pysio.online/pvelogo.svg
+icon: fa-kit fa-pve
 category: develop
 tag:
   - PVE
