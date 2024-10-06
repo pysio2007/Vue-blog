@@ -1,6 +1,5 @@
 <template>
     <div class="pr-list">
-      <h2>Open Pull Requests</h2>
       <ul class="pr-items">
         <li v-for="pr in openPRs" :key="pr.number" class="pr-item">
           <div class="pr-header" @click="togglePRDetails(pr)">
@@ -58,7 +57,6 @@
     data() {
       return {
         openPRs: [],
-        githubToken: "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"
       };
     },
     mounted() {
@@ -69,7 +67,6 @@
         try {
           const response = await fetch('https://api.github.com/repos/pysio2007/Vue-Blog/pulls?state=open', {
             headers: {
-              'Authorization': `token ${this.githubToken}`,
               'Accept': 'application/vnd.github.v3+json'
             }
           });
@@ -103,7 +100,6 @@
         try {
           const response = await fetch(`https://api.github.com/repos/pysio2007/Vue-Blog/issues/${pr.number}/comments`, {
             headers: {
-              'Authorization': `token ${this.githubToken}`,
               'Accept': 'application/vnd.github.v3+json'
             }
           });
@@ -119,7 +115,6 @@
         try {
           const response = await fetch(`https://api.github.com/repos/pysio2007/Vue-Blog/pulls/${pr.number}/commits`, {
             headers: {
-              'Authorization': `token ${this.githubToken}`,
               'Accept': 'application/vnd.github.v3+json'
             }
           });

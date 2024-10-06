@@ -73,7 +73,6 @@ export default {
         try {
           const response = await fetch(`https://api.github.com/repos/pysio2007/Vue-Blog/issues/${issue.number}/comments`, {
             headers: {
-              'Authorization': `token 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`,
               'Accept': 'application/vnd.github.v3+json'
             }
           });
@@ -88,7 +87,6 @@ export default {
       try {
         const response = await fetch('https://api.github.com/repos/pysio2007/Vue-Blog/issues?state=open', {
           headers: {
-            'Authorization': `token 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`,
             'Accept': 'application/vnd.github.v3+json'
           }
         });
