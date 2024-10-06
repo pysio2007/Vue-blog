@@ -6,8 +6,8 @@
     <link>https://www.opendev.cloud/</link>
     <description>一个温暖的家</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 06 Oct 2024 10:03:09 GMT</pubDate>
-    <lastBuildDate>Sun, 06 Oct 2024 10:03:09 GMT</lastBuildDate>
+    <pubDate>Sun, 06 Oct 2024 18:49:08 GMT</pubDate>
+    <lastBuildDate>Sun, 06 Oct 2024 18:49:08 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>daily</category>
@@ -39,7 +39,6 @@
       <guid>https://www.opendev.cloud/posts/daily/Gitlab%20Pollution.html</guid>
       <source url="https://www.opendev.cloud/rss.xml">有关于自托管Gitlab被拦截这件事</source>
       <description>我今天闲的一Ping 我就在纳闷了，为啥会解析到这个IP上，直到我一访问。 Uh 这多少是有点离谱了。我也不知我犯了啥天条能被扔进去。。。。 先看看吧，如果被大范围屏蔽的话，还得考虑咋申诉。。。</description>
-      <category>daily</category>
       <pubDate>Mon, 18 Dec 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>我今天闲的一Ping
 <img src="https://imges.pysio.online//20241006004058.png" alt="" loading="lazy"></p>
@@ -160,6 +159,7 @@
       <pubDate>Wed, 27 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>搭建这玩意也是一时兴起，想想也该给免费的镜像服务贡献点自己的力量。</p>
 <p>网盘节点地址：https://65d480a1f25ffe347bdf6820.openbmclapi.933.moe/</p>
+<!-- more -->
 <figure><img src="https://imges.pysio.online//20241005133723.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 ]]></content:encoded>
       <enclosure url="https://imges.pysio.online//20241005133723.png" type="image/png"/>
