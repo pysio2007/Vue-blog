@@ -16,6 +16,8 @@ tag:
 
 <!-- markdownlint-enable MD028 -->
 
+<!-- more -->
+
 ::: tabs
 
 @tab OpenBmclapi
