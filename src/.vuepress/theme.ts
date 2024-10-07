@@ -84,6 +84,10 @@ export default hopeTheme({
     },
   },
 
+    markdownHint : { // 启用 GFM 警告
+      alert: true,
+    },
+    
     blog: true,
 
     //代码高亮
