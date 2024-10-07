@@ -16,11 +16,14 @@ tag:
 
 <!-- markdownlint-enable MD028 -->
 
+::: tabs
+
+@tab OpenBmclapi
+
 ## 使用OpenBmclapi
 
-::: tip 
-我更建议你使用已经修改过的 Node-OpenMcim 执行上线 
-:::
+> [!tip]
+>我更建议你使用已经修改过的OpenMcim执行上线 
 
 ### 从源码运行
 
@@ -75,11 +78,74 @@ CLUSTER_ID 和 CLUSTER_SECRET 请联系管理员获取
 
 如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了
 
-## 使用Go-OpenMcim
+@tab OpenMcim 
 
 ## 使用Node-OpenMcim
 
-## 使用反向代理节点
+### 使用Docker
+
+```bash
+docker run -d \
+-e CLUSTER_ID=${CLUSTER_ID} \
+-e CLUSTER_SECRET=${CLUSTER_SECRET} \
+-e CLUSTER_PUBLIC_PORT=${CLUSTER_PORT} \
+-e TZ=Asia/Shanghai \
+-v /data/openmcim:/opt/openmcim/cache \
+-p ${CLUSTER_PORT}:4000 \
+--restart always \
+--name openmcim \
+pysio/openmcim
+```
+
+### 从源码安装
+
+#### 环境
+
+- Node.js 18 以上
+- Windows/MacOS/Linux
+- x86/arm 均可 (需支持Nodejs)
+
+#### 设置环境
+
+1. 去 <https://nodejs.org/zh-cn/> 下载LTS版本的nodejs并安装
+2. Clone 并安装依赖
+
+```bash
+git clone https://github.com/ZeroWolf233/node-openmcim
+cd node-openmcim 
+## 安装依赖
+npm ci
+## 编译
+npm run build
+## 运行
+node dist/index.js
+```
+
+3. 如果你看到了 `CLUSTER_ID is not set` 的报错, 说明一切正常, 该设置参数了
+
+### 设置参数
+
+在项目根目录创建一个文件, 名为 `.env`
+
+写入如下内容
+
+```env
+CLUSTER_ID=你的节点ID
+CLUSTER_SECRET=你的节点密钥
+CLUSTER_PUBLIC_PORT=你的对外开放端口（用户请求时访问）
+CLUSTER_PORT=你的本地开放端口
+CLUSTER_STORAGE=存储类型
+CLUSTER_STORAGE_OPTIONS=存储配置项（请参考上方Alist配置）
+```
+
+如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了！
+
+@tab Go-OpenMcim
+
+
+@tab  反向代理节点
+
+:::
 
 ## 特别鸣谢
 
