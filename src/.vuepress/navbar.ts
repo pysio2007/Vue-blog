@@ -25,6 +25,7 @@ export default navbar([
     link: "/other/",
     children: [
       { text: "友链", icon: "fa-solid fa-link", link: "/other/friends" },
+      { text: "问题追踪", icon: "fa-kit fa-issues", link: "/other/issues" },
     ],
   },
   {
