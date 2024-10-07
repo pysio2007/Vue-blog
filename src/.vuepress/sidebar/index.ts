@@ -9,6 +9,7 @@ export default sidebar({
     {
       text: "分类",
       link: "/category/",
+      icon: "fa-regular fa-table-cells fa-lg",
     },
     {
       text: "标签",
