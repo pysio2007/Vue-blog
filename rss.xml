@@ -6,12 +6,45 @@
     <link>https://www.opendev.cloud/</link>
     <description>一个温暖的家</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 06 Oct 2024 18:49:08 GMT</pubDate>
-    <lastBuildDate>Sun, 06 Oct 2024 18:49:08 GMT</lastBuildDate>
+    <pubDate>Mon, 07 Oct 2024 17:21:49 GMT</pubDate>
+    <lastBuildDate>Mon, 07 Oct 2024 17:21:49 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>daily</category>
     <category>develop</category>
+    <category>daily</category>
+    <item>
+      <title>部署OpenMcim节点</title>
+      <link>https://www.opendev.cloud/posts/develop/OpenMCIM.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/OpenMCIM.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">部署OpenMcim节点</source>
+      <description>相关信息 MCIM 需要提供文件镜像，但由于成本问题，以及受到 OpenBMCLAPI 的启发，本项目分发 Mod 文件基于网盘 感谢各位的支持~！感谢您为改善国内 Mod 下载环境的贡献！</description>
+      <category>develop</category>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- markdownlint-disable MD028 -->
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>MCIM 需要提供文件镜像，但由于成本问题，以及受到 OpenBMCLAPI 的启发，本项目分发 Mod 文件基于网盘
+感谢各位的支持~！感谢您为改善国内 Mod 下载环境的贡献！</p>
+</div>
+<!-- markdownlint-enable MD028 -->
+<!-- more -->
+
+<h2>特别鸣谢</h2>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>公共DNS/DOH服务</title>
+      <link>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</link>
+      <guid>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</guid>
+      <source url="https://www.opendev.cloud/rss.xml">公共DNS/DOH服务</source>
+      <description>DNS Server ：106.54.200.76 DoH（中国大陆）: https://doh.pysio.online/dns-query DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</description>
+      <category>develop</category>
+      <pubDate>Sun, 19 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>DNS Server ：106.54.200.76</p>
+<p>DoH（中国大陆）: https://doh.pysio.online/dns-query</p>
+<p>DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>命运2 年7</title>
       <link>https://www.opendev.cloud/posts/daily/Destiny%20Year7.html</link>
@@ -48,19 +81,6 @@
 <p>先看看吧，如果被大范围屏蔽的话，还得考虑咋申诉。。。</p>
 ]]></content:encoded>
       <enclosure url="https://imges.pysio.online//20241006004058.png" type="image/png"/>
-    </item>
-    <item>
-      <title>公共DNS/DOH服务</title>
-      <link>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">公共DNS/DOH服务</source>
-      <description>DNS Server ：106.54.200.76 DoH（中国大陆）: https://doh.pysio.online/dns-query DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</description>
-      <category>develop</category>
-      <pubDate>Sun, 19 May 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>DNS Server ：106.54.200.76</p>
-<p>DoH（中国大陆）: https://doh.pysio.online/dns-query</p>
-<p>DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</p>
-]]></content:encoded>
     </item>
     <item>
       <title>1panel面板配置Redis Object Cache插件</title>
