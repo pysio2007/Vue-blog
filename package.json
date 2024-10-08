@@ -16,6 +16,7 @@
     "@vuepress/plugin-feed": "^2.0.0-rc.52",
     "@vuepress/plugin-prismjs": "^2.0.0-rc.52",
     "@vuepress/plugin-pwa": "^2.0.0-rc.52",
+    "asciinema-player": "^3.8.1",
     "git-describe": "^4.1.1",
     "marked": "^14.1.2",
     "moment": "^2.30.1",
