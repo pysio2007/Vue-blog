@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://www.opendev.cloud/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://new.pysio.online/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://www.opendev.cloud/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://new.pysio.online/rss.xml" rel="self" type="application/rss+xml"/>
     <title>Pysio&amp;apos;s Home</title>
-    <link>https://www.opendev.cloud/</link>
+    <link>https://new.pysio.online/</link>
     <description>一个温暖的家</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 08 Oct 2024 14:43:33 GMT</pubDate>
-    <lastBuildDate>Tue, 08 Oct 2024 14:43:33 GMT</lastBuildDate>
+    <pubDate>Tue, 08 Oct 2024 17:08:48 GMT</pubDate>
+    <lastBuildDate>Tue, 08 Oct 2024 17:08:48 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>develop</category>
     <category>daily</category>
     <item>
       <title>部署OpenMcim节点</title>
-      <link>https://www.opendev.cloud/posts/develop/OpenMCIM.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/OpenMCIM.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">部署OpenMcim节点</source>
+      <link>https://new.pysio.online/posts/develop/OpenMCIM.html</link>
+      <guid>https://new.pysio.online/posts/develop/OpenMCIM.html</guid>
+      <source url="https://new.pysio.online/rss.xml">部署OpenMcim节点</source>
       <description>相关信息 MCIM 需要提供文件镜像，但由于成本问题，以及受到 OpenBMCLAPI 的启发，本项目分发 Mod 文件基于网盘 感谢各位的支持~！感谢您为改善国内 Mod 下载环境的贡献！</description>
       <category>develop</category>
       <pubDate>Mon, 07 Oct 2024 00:00:00 GMT</pubDate>
@@ -28,15 +28,183 @@
 </div>
 <!-- markdownlint-enable MD028 -->
 <!-- more -->
-
+<h2>OpenBmclapi</h2>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>我更建议你使用已经修改过的OpenMcim执行上线</p>
+</div>
+<h3>从源码运行</h3>
+<h4>环境</h4>
+<ul>
+<li>Node.js 18以上</li>
+<li>Windows/MacOS/Linux, x86/arm均可 (凡是nodejs支持的环境都可以)</li>
+</ul>
+<h4>设置环境</h4>
+<ol>
+<li>去 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener noreferrer">https://nodejs.org/zh-cn/</a> 下载LTS版本的nodejs并安装</li>
+<li>Clone 并安装依赖</li>
+</ol>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">git</span> clone https://github.com/bangbang93/openbmclapi</span>
+<span class="line"><span class="token builtin class-name">cd</span> openbmclapi</span>
+<span class="line"><span class="token comment">## 安装依赖</span></span>
+<span class="line"><span class="token function">npm</span> ci</span>
+<span class="line"><span class="token comment">## 编译</span></span>
+<span class="line"><span class="token function">npm</span> run build</span>
+<span class="line"><span class="token comment">## 运行</span></span>
+<span class="line"><span class="token function">node</span> dist/index.js</span>
+<span class="line"></span></code></pre>
+</div><ol start="3">
+<li>
+<p>如果你看到了 <code>CLUSTER_ID is not set</code> 的报错, 说明一切正常, 接下来 修改代码 使其运行在OpenMCIM</p>
+</li>
+<li>
+<p>修改 <code>dist/cluster.js</code> 文件, 找到</p>
+</li>
+</ol>
+<div class="language-javascript" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line"><span class="token keyword">const</span> whiteListDomain <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token string">'bangbang93.com'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+</div><p>修改为</p>
+<div class="language-javascript" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line"><span class="token keyword">const</span> whiteListDomain <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token string">'bangbang93.com'</span><span class="token punctuation">,</span><span class="token string">'files.mcimirror.top'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+</div><h4>设置参数</h4>
+<p>在项目根目录创建一个文件, 名为 <code>.env</code></p>
+<p>写入如下内容</p>
+<div class="language-env" data-highlighter="prismjs" data-ext="env" data-title="env"><pre><code><span class="line">CLUSTER_ID=你的CLUSTER_ID</span>
+<span class="line">CLUSTER_SECRET=你的CLUSTER_SECRET</span>
+<span class="line">CLUSTER_PORT=对外访问端口</span>
+<span class="line">CLUSTER_BMCLAPI=https://files.mcimirror.top</span>
+<span class="line"></span></code></pre>
+</div><p>CLUSTER_ID 和 CLUSTER_SECRET 请联系管理员获取</p>
+<p>如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了</p>
+<details class="hint-container details"><summary>这是一个简短的修改部署视频</summary>
+</details>
+<h2>Node-OpenMcim</h2>
+<h3>使用Docker</h3>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">-e</span> <span class="token assign-left variable">CLUSTER_ID</span><span class="token operator">=</span><span class="token variable">${CLUSTER_ID}</span> <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">-e</span> <span class="token assign-left variable">CLUSTER_SECRET</span><span class="token operator">=</span><span class="token variable">${CLUSTER_SECRET}</span> <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">-e</span> <span class="token assign-left variable">CLUSTER_PUBLIC_PORT</span><span class="token operator">=</span><span class="token variable">${CLUSTER_PORT}</span> <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">-e</span> <span class="token assign-left variable">TZ</span><span class="token operator">=</span>Asia/Shanghai <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">-v</span> /data/openmcim:/opt/openmcim/cache <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">-p</span> <span class="token variable">${CLUSTER_PORT}</span>:4000 <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span></span>
+<span class="line"><span class="token parameter variable">--name</span> openmcim <span class="token punctuation">\</span></span>
+<span class="line">pysio/openmcim</span>
+<span class="line"></span></code></pre>
+</div><h3>从源码安装</h3>
+<h4>环境</h4>
+<ul>
+<li>Node.js 18 以上</li>
+<li>Windows/MacOS/Linux</li>
+<li>x86/arm 均可 (需支持Nodejs)</li>
+</ul>
+<h4>设置环境</h4>
+<ol>
+<li>去 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener noreferrer">https://nodejs.org/zh-cn/</a> 下载LTS版本的nodejs并安装</li>
+<li>Clone 并安装依赖</li>
+</ol>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">git</span> clone https://github.com/ZeroWolf233/node-openmcim</span>
+<span class="line"><span class="token builtin class-name">cd</span> node-openmcim </span>
+<span class="line"><span class="token comment">## 安装依赖</span></span>
+<span class="line"><span class="token function">npm</span> ci</span>
+<span class="line"><span class="token comment">## 编译</span></span>
+<span class="line"><span class="token function">npm</span> run build</span>
+<span class="line"><span class="token comment">## 运行</span></span>
+<span class="line"><span class="token function">node</span> dist/index.js</span>
+<span class="line"></span></code></pre>
+</div><ol start="3">
+<li>如果你看到了 <code>CLUSTER_ID is not set</code> 的报错, 说明一切正常, 该设置参数了</li>
+</ol>
+<h3>设置参数</h3>
+<p>在项目根目录创建一个文件, 名为 <code>.env</code></p>
+<p>写入如下内容</p>
+<div class="language-env" data-highlighter="prismjs" data-ext="env" data-title="env"><pre><code><span class="line">CLUSTER_ID=你的节点ID</span>
+<span class="line">CLUSTER_SECRET=你的节点密钥</span>
+<span class="line">CLUSTER_PUBLIC_PORT=你的对外开放端口（用户请求时访问）</span>
+<span class="line">CLUSTER_PORT=你的本地开放端口</span>
+<span class="line">CLUSTER_STORAGE=存储类型</span>
+<span class="line">CLUSTER_STORAGE_OPTIONS=存储配置项（请参考上方Alist配置）</span>
+<span class="line"></span></code></pre>
+</div><p>如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了！</p>
+<h2>Go-OpenMcim</h2>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>我并不建议你使用GO端上线，目前停止维护且BUG居多</p>
+</div>
+<h2>反向代理节点</h2>
+<h3>Windows 部署</h3>
+<ol>
+<li>
+<p>前往 <a href="https://www.pysio.tech/zh-CN/MCIM/" target="_blank" rel="noopener noreferrer">https://www.pysio.tech/zh-CN/MCIM/</a> 下载最新的MCIM反向代理节点</p>
+</li>
+<li>
+<p>解压文件</p>
+</li>
+<li>
+<p>修改.env文件 填写如下内容</p>
+</li>
+</ol>
+<div class="language-env" data-highlighter="prismjs" data-ext="env" data-title="env"><pre><code><span class="line">CLUSTER_ID=你的节点ID</span>
+<span class="line">CLUSTER_SECRET=你的节点密钥</span>
+<span class="line">CLUSTER_PUBLIC_PORT=你的对外开放端口（用户请求时访问）</span>
+<span class="line">CLUSTER_PORT=你的本地开放端口</span>
+<span class="line"></span></code></pre>
+</div><ol start="4">
+<li>运行<code>run.ps1</code> 上线</li>
+</ol>
+<h3>Linux 部署</h3>
+<h5>环境</h5>
+<ul>
+<li>Node.js 18 以上</li>
+<li>Windows/MacOS/Linux</li>
+<li>x86/arm 均可 (需支持Nodejs)</li>
+</ul>
+<h5>部署</h5>
+<ol>
+<li>
+<p>前往 <a href="https://www.pysio.tech/zh-CN/MCIM/" target="_blank" rel="noopener noreferrer">https://www.pysio.tech/zh-CN/MCIM/</a> 下载最新的MCIM反向代理节点</p>
+</li>
+<li>
+<p>解压文件</p>
+</li>
+<li>
+<p>执行如下命令获取依赖包</p>
+</li>
+</ol>
+<div class="language-bash" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">npm</span> <span class="token function">install</span></span>
+<span class="line"></span></code></pre>
+</div><ol start="4">
+<li>修改.env文件 填写如下内容</li>
+</ol>
+<div class="language-env" data-highlighter="prismjs" data-ext="env" data-title="env"><pre><code><span class="line">CLUSTER_ID=你的节点ID</span>
+<span class="line">CLUSTER_SECRET=你的节点密钥</span>
+<span class="line">CLUSTER_PUBLIC_PORT=你的对外开放端口（用户请求时访问）</span>
+<span class="line">CLUSTER_PORT=你的本地开放端口</span>
+<span class="line"></span></code></pre>
+</div><ol start="5">
+<li>运行<code>node dist/index.js</code>上线</li>
+</ol>
 <h2>特别鸣谢</h2>
 ]]></content:encoded>
     </item>
     <item>
+      <title>公共DNS/DOH服务</title>
+      <link>https://new.pysio.online/posts/develop/Public%20DNS%20DOH.html</link>
+      <guid>https://new.pysio.online/posts/develop/Public%20DNS%20DOH.html</guid>
+      <source url="https://new.pysio.online/rss.xml">公共DNS/DOH服务</source>
+      <description>DNS Server ：106.54.200.76 DoH（中国大陆）: https://doh.pysio.online/dns-query DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</description>
+      <category>develop</category>
+      <pubDate>Sun, 19 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>DNS Server ：106.54.200.76</p>
+<p>DoH（中国大陆）: https://doh.pysio.online/dns-query</p>
+<p>DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>命运2 年7</title>
-      <link>https://www.opendev.cloud/posts/daily/Destiny%20Year7.html</link>
-      <guid>https://www.opendev.cloud/posts/daily/Destiny%20Year7.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">命运2 年7</source>
+      <link>https://new.pysio.online/posts/daily/Destiny%20Year7.html</link>
+      <guid>https://new.pysio.online/posts/daily/Destiny%20Year7.html</guid>
+      <source url="https://new.pysio.online/rss.xml">命运2 年7</source>
       <description>这几天打年7打的脑子疼，凯德活了 但是没有完全活，最后还是死了。 8号凌晨1点开的Dayone 打了，6小时才过老一 直接向见证者投降，太难了。 截至发文时，目前只有1队通关 不多说了 放点截图</description>
       <category>daily</category>
       <pubDate>Sun, 09 Jun 2024 00:00:00 GMT</pubDate>
@@ -55,9 +223,9 @@
     </item>
     <item>
       <title>有关于自托管Gitlab被拦截这件事</title>
-      <link>https://www.opendev.cloud/posts/daily/Gitlab%20Pollution.html</link>
-      <guid>https://www.opendev.cloud/posts/daily/Gitlab%20Pollution.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">有关于自托管Gitlab被拦截这件事</source>
+      <link>https://new.pysio.online/posts/daily/Gitlab%20Pollution.html</link>
+      <guid>https://new.pysio.online/posts/daily/Gitlab%20Pollution.html</guid>
+      <source url="https://new.pysio.online/rss.xml">有关于自托管Gitlab被拦截这件事</source>
       <description>我今天闲的一Ping 我就在纳闷了，为啥会解析到这个IP上，直到我一访问。 Uh 这多少是有点离谱了。我也不知我犯了啥天条能被扔进去。。。。 先看看吧，如果被大范围屏蔽的话，还得考虑咋申诉。。。</description>
       <pubDate>Mon, 18 Dec 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>我今天闲的一Ping
@@ -70,23 +238,10 @@
       <enclosure url="https://imges.pysio.online//20241006004058.png" type="image/png"/>
     </item>
     <item>
-      <title>公共DNS/DOH服务</title>
-      <link>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/Public%20DNS%20DOH.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">公共DNS/DOH服务</source>
-      <description>DNS Server ：106.54.200.76 DoH（中国大陆）: https://doh.pysio.online/dns-query DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</description>
-      <category>develop</category>
-      <pubDate>Sun, 19 May 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>DNS Server ：106.54.200.76</p>
-<p>DoH（中国大陆）: https://doh.pysio.online/dns-query</p>
-<p>DoH (非中国大陆 Cloudflare): https://dohk.pysio.online/dns-query</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>1panel面板配置Redis Object Cache插件</title>
-      <link>https://www.opendev.cloud/posts/develop/1Panel%20Redis%20Object%20Cache.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/1Panel%20Redis%20Object%20Cache.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">1panel面板配置Redis Object Cache插件</source>
+      <link>https://new.pysio.online/posts/develop/1Panel%20Redis%20Object%20Cache.html</link>
+      <guid>https://new.pysio.online/posts/develop/1Panel%20Redis%20Object%20Cache.html</guid>
+      <source url="https://new.pysio.online/rss.xml">1panel面板配置Redis Object Cache插件</source>
       <description>第一步 获取Redis的密码 [应用商店] -&amp;gt; [已安装] -&amp;gt; [Redis 参数] 就可以看见密码了 把密码记下来 第二步 修改object-cache.php文件 在网站根目录 wp-content/plugins/redis-cache/includes 下 可以找到 object-cache.php 文件 打开并编辑 添加或修改以下部分 其...</description>
       <category>develop</category>
       <pubDate>Sat, 14 Sep 2024 00:00:00 GMT</pubDate>
@@ -127,9 +282,9 @@
     </item>
     <item>
       <title>在PVE为OpenSuse启用xterm.js控制台</title>
-      <link>https://www.opendev.cloud/posts/develop/Enabling%20the%20xterm.js%20console%20for%20OpenSuse%20in%20PVE%20.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/Enabling%20the%20xterm.js%20console%20for%20OpenSuse%20in%20PVE%20.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">在PVE为OpenSuse启用xterm.js控制台</source>
+      <link>https://new.pysio.online/posts/develop/Enabling%20the%20xterm.js%20console%20for%20OpenSuse%20in%20PVE%20.html</link>
+      <guid>https://new.pysio.online/posts/develop/Enabling%20the%20xterm.js%20console%20for%20OpenSuse%20in%20PVE%20.html</guid>
+      <source url="https://new.pysio.online/rss.xml">在PVE为OpenSuse启用xterm.js控制台</source>
       <description>关闭 VM，并给 VM 添加一个 serial port 在 PVE Host 中用 qm 命令建立 serial port，假设我的 VM ID 是 100 接着重开 VM，用 dmesg 确认是否有 ttyS 出現 OpenSuse修改 grub 配置 /etc/default/grub 的 GRUB_CMDLINE_LINUX 参数，添加 更新G...</description>
       <category>develop</category>
       <pubDate>Fri, 13 Sep 2024 00:00:00 GMT</pubDate>
@@ -152,9 +307,9 @@
     </item>
     <item>
       <title>去除 PVE “无有效的订阅” 弹窗</title>
-      <link>https://www.opendev.cloud/posts/develop/Remove%20Pve%20No%20valid%20subscription.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/Remove%20Pve%20No%20valid%20subscription.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">去除 PVE “无有效的订阅” 弹窗</source>
+      <link>https://new.pysio.online/posts/develop/Remove%20Pve%20No%20valid%20subscription.html</link>
+      <guid>https://new.pysio.online/posts/develop/Remove%20Pve%20No%20valid%20subscription.html</guid>
+      <source url="https://new.pysio.online/rss.xml">去除 PVE “无有效的订阅” 弹窗</source>
       <description>修改 /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js 将 修改为 执行以下命令 重启PveProxy即可去除弹窗</description>
       <category>develop</category>
       <pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate>
@@ -171,9 +326,9 @@
     </item>
     <item>
       <title>OpenBmclapi</title>
-      <link>https://www.opendev.cloud/posts/daily/OpenBmclapi.html</link>
-      <guid>https://www.opendev.cloud/posts/daily/OpenBmclapi.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">OpenBmclapi</source>
+      <link>https://new.pysio.online/posts/daily/OpenBmclapi.html</link>
+      <guid>https://new.pysio.online/posts/daily/OpenBmclapi.html</guid>
+      <source url="https://new.pysio.online/rss.xml">OpenBmclapi</source>
       <description>搭建这玩意也是一时兴起，想想也该给免费的镜像服务贡献点自己的力量。 网盘节点地址：https://65d480a1f25ffe347bdf6820.openbmclapi.933.moe/</description>
       <category>daily</category>
       <pubDate>Wed, 27 Mar 2024 00:00:00 GMT</pubDate>
@@ -186,9 +341,9 @@
     </item>
     <item>
       <title>本地手动合并Github上的Pull requests</title>
-      <link>https://www.opendev.cloud/posts/develop/Manual%20merge%20Pull%20requests.html</link>
-      <guid>https://www.opendev.cloud/posts/develop/Manual%20merge%20Pull%20requests.html</guid>
-      <source url="https://www.opendev.cloud/rss.xml">本地手动合并Github上的Pull requests</source>
+      <link>https://new.pysio.online/posts/develop/Manual%20merge%20Pull%20requests.html</link>
+      <guid>https://new.pysio.online/posts/develop/Manual%20merge%20Pull%20requests.html</guid>
+      <source url="https://new.pysio.online/rss.xml">本地手动合并Github上的Pull requests</source>
       <description>首先 通过命令添加远程的仓库信息 仓库添加成功后 通过 git fetch [远程仓库名称] 把仓库拉到本地 最后通过 merge 或者 cherry-pick 合并整个分支或者某个具体的提交 当我们合并完成之后，清理远程仓库的信息</description>
       <category>develop</category>
       <pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate>
