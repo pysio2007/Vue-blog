@@ -10,7 +10,7 @@ const gitInfo = gitDescribe.gitDescribeSync();
 process.env.VUE_APP_GIT_HASH = gitInfo.hash;
 
 export default hopeTheme({
-  hostname: "https://www.opendev.cloud",
+  hostname: "https://new.pysio.online",
 
   author: {
     name: "Pysio",
