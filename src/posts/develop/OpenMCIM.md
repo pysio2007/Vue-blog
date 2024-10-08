@@ -144,8 +144,58 @@ CLUSTER_STORAGE_OPTIONS=存储配置项（请参考上方Alist配置）
 
 ## Go-OpenMcim
 
+> [!warning]
+> 我并不建议你使用GO端上线，目前停止维护且BUG居多
 
 ##  反向代理节点
+
+### Windows 部署
+
+1. 前往 <https://www.pysio.tech/zh-CN/MCIM/> 下载最新的MCIM反向代理节点
+
+2. 解压文件
+
+3. 修改.env文件 填写如下内容
+
+```env
+CLUSTER_ID=你的节点ID
+CLUSTER_SECRET=你的节点密钥
+CLUSTER_PUBLIC_PORT=你的对外开放端口（用户请求时访问）
+CLUSTER_PORT=你的本地开放端口
+```
+
+4. 运行`run.ps1` 上线
+
+### Linux 部署
+
+##### 环境
+
+- Node.js 18 以上
+- Windows/MacOS/Linux
+- x86/arm 均可 (需支持Nodejs)
+
+##### 部署
+
+1. 前往 <https://www.pysio.tech/zh-CN/MCIM/> 下载最新的MCIM反向代理节点
+
+2. 解压文件
+
+3. 执行如下命令获取依赖包
+
+```bash
+npm install
+```
+
+4. 修改.env文件 填写如下内容
+
+```env
+CLUSTER_ID=你的节点ID
+CLUSTER_SECRET=你的节点密钥
+CLUSTER_PUBLIC_PORT=你的对外开放端口（用户请求时访问）
+CLUSTER_PORT=你的本地开放端口
+```
+
+5. 运行`node dist/index.js`上线
 
 ## 特别鸣谢
 
@@ -175,5 +225,12 @@ CLUSTER_STORAGE_OPTIONS=存储配置项（请参考上方Alist配置）
   desc="Node-OpenMcim 作者"
   logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/142653035"
   link="https://github.com/ZeroWolf233"
+  background="rgba(236, 244, 250)"
+/>
+<VPCard
+  title="SaltWood_233"
+  desc="Open93AtHome 作者"
+  logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/105980161"
+  link="https://github.com/SALTWOOD"
   background="rgba(236, 244, 250)"
 />
