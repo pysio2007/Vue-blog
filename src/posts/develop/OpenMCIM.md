@@ -18,11 +18,7 @@ tag:
 
 <!-- more -->
 
-::: tabs
-
-@tab OpenBmclapi
-
-## 使用OpenBmclapi
+## OpenBmclapi
 
 > [!tip]
 >我更建议你使用已经修改过的OpenMcim执行上线 
@@ -79,10 +75,9 @@ CLUSTER_BMCLAPI=https://files.mcimirror.top
 CLUSTER_ID 和 CLUSTER_SECRET 请联系管理员获取
 
 如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了
+ 
 
-@tab OpenMcim 
-
-## 使用Node-OpenMcim
+## Node-OpenMcim
 
 ### 使用Docker
 
@@ -142,12 +137,10 @@ CLUSTER_STORAGE_OPTIONS=存储配置项（请参考上方Alist配置）
 
 如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了！
 
-@tab Go-OpenMcim
+### Go-OpenMcim
 
 
-@tab  反向代理节点
-
-:::
+###  反向代理节点
 
 ## 特别鸣谢
 
