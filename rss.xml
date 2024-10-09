@@ -6,12 +6,19 @@
     <link>https://new.pysio.online/</link>
     <description>一个温暖的家</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 08 Oct 2024 19:10:52 GMT</pubDate>
-    <lastBuildDate>Tue, 08 Oct 2024 19:10:52 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Oct 2024 10:35:14 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Oct 2024 10:35:14 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>develop</category>
     <category>daily</category>
+    <item>
+      <title>有关于本博客的PWA</title>
+      <link>https://new.pysio.online/posts/daily/PWA.html</link>
+      <guid>https://new.pysio.online/posts/daily/PWA.html</guid>
+      <source url="https://new.pysio.online/rss.xml">有关于本博客的PWA</source>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>部署OpenMcim节点</title>
       <link>https://new.pysio.online/posts/develop/OpenMCIM.html</link>
@@ -32,6 +39,10 @@
 <div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>我更建议你使用已经修改过的OpenMcim执行上线</p>
+</div>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>因为 Modrinth 原因 会有很多Hash错误的文件 未修改的OpenBmclapi无法上线</p>
 </div>
 <h3>从源码运行</h3>
 <h4>环境</h4>
