@@ -21,7 +21,10 @@ tag:
 ## OpenBmclapi
 
 > [!tip]
->我更建议你使用已经修改过的OpenMcim执行上线 
+> 我更建议你使用已经修改过的OpenMcim执行上线 
+
+> [!warning]
+> 因为 Modrinth 原因 会有很多Hash错误的文件 未修改的OpenBmclapi无法上线
 
 ### 从源码运行
 
