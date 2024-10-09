@@ -95,11 +95,11 @@ docker run -d \
 -e CLUSTER_SECRET=${CLUSTER_SECRET} \
 -e CLUSTER_PUBLIC_PORT=${CLUSTER_PORT} \
 -e TZ=Asia/Shanghai \
--v /data/openmcim:/opt/openmcim/cache \
--p ${CLUSTER_PORT}:4000 \
---restart always \
---name openmcim \
-pysio/openmcim
+-v /data/mcim:/opt/mcim \
+-p ${CLUSTER_PORT}:${CLUSTER_PORT} \
+--restart unless-stop \
+--name mcim \
+zerowolf233/mcim
 ```
 
 ### 从源码安装
@@ -128,7 +128,7 @@ node dist/index.js
 
 3. 如果你看到了 `CLUSTER_ID is not set` 的报错, 说明一切正常, 该设置参数了
 
-### 设置参数
+#### 设置参数
 
 在项目根目录创建一个文件, 名为 `.env`
 
