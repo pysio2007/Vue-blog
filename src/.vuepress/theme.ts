@@ -2,8 +2,6 @@ import { hopeTheme } from "vuepress-theme-hope";
 import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
-import pkg from 'nodejieba';
-const { cut } = pkg;
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
@@ -73,16 +71,12 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   //搜索插件
   plugins: {
-    searchPro: {
-      indexContent: true,
-      indexLocaleOptions: {
-        "/": {
-          // 使用 nodejs-jieba 进行分词
-          tokenize: (text, fieldName) =>
-            fieldName === "id" ? [text] : cut(text, true),
-        },
+    //搜索插件
+    docsearch: {
+      appId: "FBHY0OKEDN",
+      apiKey: "e66f4f98291e42ab1cbf9d3c75004b61",
+      indexName: "pysio-home",
     },
-  },
 
     markdownHint : { // 启用 GFM 警告
       alert: true,
