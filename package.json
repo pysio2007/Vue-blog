@@ -11,7 +11,7 @@
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.17",
+    "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/plugin-cache": "^2.0.0-rc.52",
     "@vuepress/plugin-docsearch": "^2.0.0-rc.52",
     "@vuepress/plugin-feed": "^2.0.0-rc.52",
