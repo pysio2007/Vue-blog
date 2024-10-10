@@ -18,6 +18,10 @@
       </div>
       <div v-else-if="game" class="hint-container info">
         <p class="hint-container-title">熊猫正在玩: {{ game }} </p>
+        <p class="hint-container-title">总共游玩了: {{playtime}} 完成了{{achievement}}的成就 </p>
+      </div>
+      <div v-if="game" class="hint-container info">
+        <p class="hint-container-title">{{ game }} 简介</p>
         <p>价格: {{ price }}</p>
         <p>{{ description }}</p>
       </div>
@@ -53,6 +57,8 @@
             this.game = data.game
             this.price = data.price
             this.description = data.description
+            this.playtime = data.playtime
+            this.achievement = data.achievement_percentage
           }
         } catch (error) {
           this.error = '获取Steam状态失败'
