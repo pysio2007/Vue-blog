@@ -10,11 +10,11 @@
       </div>
       <div v-else-if="status === '离线'" class="hint-container note">
         <p class="hint-container-title">离线</p>
-        <p>熊猫没有运行Steam</p>
+        <p>熊猫没有运行Steam QAQ </p>
       </div>
       <div v-else-if="status === '在线'" class="hint-container tip">
         <p class="hint-container-title">在线</p>
-        <p>熊猫在线！ 但是没有运行游戏 </p>
+        <p>熊猫在线!但是没有运行游戏 快去找他玩w!</p>
       </div>
       <div v-else-if="game" class="hint-container info">
         <p class="hint-container-title">熊猫正在玩: {{ game }} </p>
