@@ -4,6 +4,7 @@ import GitHubPRList from './components/GitHubPRList.vue';
 import AsciinemaPlayer from './components/AsciinemaPlayer.vue';
 import Fastfetch from "./components/Fastfetch.vue";
 import OnlineOrDead from "./components/OnlineOrDead.vue";
+import SteamStatus from "./components/SteamStatus.vue";
 
 
 export default defineClientConfig({
@@ -13,5 +14,6 @@ export default defineClientConfig({
     app.component('AsciinemaPlayer', AsciinemaPlayer);
     app.component('Fastfetch',Fastfetch);
     app.component('OnlineOrDead',OnlineOrDead);
+    app.component("SteamStatus", SteamStatus);
   },
 });

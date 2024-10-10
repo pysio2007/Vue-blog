@@ -3,9 +3,13 @@ title: 关于本站
 icon: fa-regular fa-circle-info
 article: false
 ---
-## 关于这只熊猫活着没
+## 这只熊猫活着没
 
 <OnlineOrDead />
+
+## 这只熊猫在玩啥
+
+<SteamStatus />
 
 ## Server Info
 
