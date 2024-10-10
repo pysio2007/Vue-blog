@@ -11,12 +11,12 @@
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.17",
-    "@vuepress/plugin-cache": "^2.0.0-rc.52",
-    "@vuepress/plugin-docsearch": "^2.0.0-rc.52",
-    "@vuepress/plugin-feed": "^2.0.0-rc.52",
-    "@vuepress/plugin-prismjs": "^2.0.0-rc.52",
-    "@vuepress/plugin-pwa": "^2.0.0-rc.52",
+    "@vuepress/bundler-vite": "2.0.0-rc.18",
+    "@vuepress/plugin-cache": "2.0.0-rc.54",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.54",
+    "@vuepress/plugin-feed": "2.0.0-rc.54",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.54",
+    "@vuepress/plugin-pwa": "2.0.0-rc.54",
     "ansi-to-html": "^0.7.2",
     "asciinema-player": "^3.8.1",
     "git-describe": "^4.1.1",
@@ -25,9 +25,9 @@
     "nodejieba": "^3.4.3",
     "sanitize-html": "^2.13.1",
     "sass-embedded": "^1.79.4",
-    "vue": "^3.5.10",
-    "vuepress": "2.0.0-rc.17",
-    "vuepress-plugin-search-pro": "^2.0.0-rc.57",
+    "vue": "^3.5.11",
+    "vuepress": "2.0.0-rc.18",
+    "vuepress-plugin-search-pro": "2.0.0-rc.57",
     "vuepress-theme-hope": "2.0.0-rc.58"
   },
   "dependencies": {
