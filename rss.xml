@@ -6,12 +6,30 @@
     <link>https://new.pysio.online/</link>
     <description>一个温暖的家</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 10 Oct 2024 18:25:12 GMT</pubDate>
-    <lastBuildDate>Thu, 10 Oct 2024 18:25:12 GMT</lastBuildDate>
+    <pubDate>Thu, 10 Oct 2024 22:19:14 GMT</pubDate>
+    <lastBuildDate>Thu, 10 Oct 2024 22:19:14 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>develop</category>
     <category>daily</category>
+    <category>develop</category>
+    <item>
+      <title>火神80群里的梗图</title>
+      <link>https://new.pysio.online/posts/daily/HuoShen80Hub.html</link>
+      <guid>https://new.pysio.online/posts/daily/HuoShen80Hub.html</guid>
+      <source url="https://new.pysio.online/rss.xml">火神80群里的梗图</source>
+      <description>相关信息 这里会随机展示一些火神80群里的梗图</description>
+      <category>daily</category>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- markdownlint-disable MD028 -->
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>这里会随机展示一些火神80群里的梗图</p>
+</div>
+<!-- markdownlint-enable MD028 -->
+<!-- more -->
+<h2>图片展示</h2>
+]]></content:encoded>
+    </item>
     <item>
       <title>有关于本博客的PWA</title>
       <link>https://new.pysio.online/posts/daily/PWA.html</link>
