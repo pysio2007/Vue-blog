@@ -1,0 +1,13 @@
+{
+    "configurations": [
+      {
+        "type": "firefox",
+        "request": "launch",
+        "name": "Pysio Home", 
+        "url": "http://localhost:8080", 
+        "webRoot": "${workspaceFolder}/src",
+        "pathMappings": [{ "url": "webpack:///src/", "path": "${webRoot}/" }],
+        "profile": "dev-edition-default" 
+      }
+    ]
+  }
