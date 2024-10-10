@@ -11,7 +11,7 @@ tag:
 <!-- markdownlint-disable MD028 -->
 
 > [!info] 
-> 这里会随机展示一些火神80群里的梗图
+> 这里会展示火神80群里的梗图
 
 <!-- markdownlint-enable MD028 -->
 
