@@ -1,5 +1,11 @@
 <template>
-  <div class="fastfetch-output" v-html="markdownOutput"></div>
+  <div>
+    <div v-if="loading" class="hint-container note">
+      <p class="hint-container-title">加载中</p>
+      <p>正在获取数据，这可能需要一些时间...</p>
+    </div>
+    <div v-else class="fastfetch-output" v-html="markdownOutput"></div>
+  </div>
 </template>
 
 <script>
@@ -12,6 +18,7 @@ export default {
   setup() {
     const output = ref('');
     const markdownOutput = ref('');
+    const loading = ref(true); // 添加loading状态
     const convert = new Convert();
 
     const fetchData = async () => {
@@ -22,6 +29,8 @@ export default {
         formatOutput();
       } catch (error) {
         console.error('Error fetching ', error);
+      } finally {
+        loading.value = false; // 数据获取完成后设置loading为false
       }
     };
 
@@ -41,7 +50,8 @@ export default {
     });
 
     return {
-      markdownOutput
+      markdownOutput,
+      loading // 返回loading状态
     };
   }
 }
@@ -52,5 +62,18 @@ export default {
   font-family: monospace;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.hint-container.note {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.hint-container-title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 </style>
