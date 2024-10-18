@@ -2,8 +2,8 @@ name: note build
 # 触发workflow的条件
 on:
     push:
-        # 只有master分支发生push事件时，才会触发workflow
-        branches: [master]
+        # 只有main分支发生push事件时，才会触发workflow
+        branches: [main]
         
 env:
     SERVER_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }} # 服务器私钥
