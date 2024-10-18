@@ -20,3 +20,4 @@ article: false
 [![Build Docker Image](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-docker.yml/badge.svg)](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-docker.yml)
 [![pages-build-deployment](https://github.com/pysio2007/Pysio-FontAwesome/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pysio2007/Pysio-FontAwesome/actions/workflows/pages/pages-build-deployment)
 ![GitHub last commit](https://img.shields.io/github/last-commit/pysio2007/Vue-blog?display_timestamp=author)
+[![note build](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-server.yml/badge.svg)](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-server.yml)
