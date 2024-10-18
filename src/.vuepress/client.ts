@@ -6,6 +6,7 @@ import Fastfetch from "./components/Fastfetch.vue";
 import OnlineOrDead from "./components/OnlineOrDead.vue";
 import SteamStatus from "./components/SteamStatus.vue";
 import HuoShen80Hub from "./components/HuoShen80Hub.vue";
+import { SpeedInsights } from '@vercel/speed-insights/vue';
 
 
 export default defineClientConfig({
@@ -17,5 +18,6 @@ export default defineClientConfig({
     app.component('OnlineOrDead',OnlineOrDead);
     app.component("SteamStatus", SteamStatus);
     app.component("HuoShen80Hub", HuoShen80Hub);
+    app.component("SpeedInsights", SpeedInsights);
   },
 });
