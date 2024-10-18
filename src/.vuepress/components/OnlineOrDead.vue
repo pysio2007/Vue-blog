@@ -47,7 +47,7 @@ export default {
       const containerClass = this.data.alive ? 'tip' : 'warning';
       const title = this.data.alive ? '好耶!' : 'Oops';
       const content = this.data.alive 
-        ? '熊猫活着,快去骚扰他w!' 
+        ? '熊猫活着,快去骚扰他w! 或者找他打游戏w!' 
         : `这只熊猫睡死了QWQ,死于${this.formatDate(this.data.last_heartbeat)}`;
 
       this.htmlContent = this.createHintContainer(containerClass, title, content);
