@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: Pysio's Home
-bgImage: https://www.pysio.online/default.png
+bgImage: https://www.pysio.online/assets/imgs/default.png
 bgImageDark: 
 heroText: Pysio's Home
 heroFullScreen: false
