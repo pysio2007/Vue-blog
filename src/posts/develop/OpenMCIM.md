@@ -145,11 +145,6 @@ CLUSTER_STORAGE_OPTIONS=存储配置项（请参考上方Alist配置）
 
 如果配置无误的话, 运行程序, 就会开始拉取文件, 拉取完成后就会开始等待服务器分发请求了！
 
-## Go-OpenMcim
-
-> [!warning]
-> 我并不建议你使用GO端上线，目前停止维护且BUG居多
-
 ##  反向代理节点
 
 ### Windows 部署
