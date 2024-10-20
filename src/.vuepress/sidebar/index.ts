@@ -51,6 +51,13 @@ export default sidebar({
       collapsible: true,
     },
     {
+      text: "小曦",
+      icon: "heart",
+      prefix: "NekoXii",
+      children: "structure",
+      collapsible: true,
+    },
+    {
       text: "开发",
       icon: "code",
       prefix: "develop",
