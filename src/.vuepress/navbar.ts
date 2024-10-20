@@ -27,6 +27,7 @@ export default navbar([
     children: [
       { text: "友链", icon: "fa-solid fa-link", link: "/other/friends" },
       { text: "问题追踪", icon: "fa-kit fa-issues", link: "/other/issues" },
+      { text: "许可证", icon: "fa-brands fa-creative-commons", link: "/other/cc.html" },
     ],
   },
   {
