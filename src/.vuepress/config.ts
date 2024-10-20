@@ -1,4 +1,5 @@
 import { defineUserConfig } from "vuepress";
+import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 import theme from "./theme.js";
 import { cachePlugin } from '@vuepress/plugin-cache'
 
@@ -12,6 +13,13 @@ export default defineUserConfig({
     cachePlugin({       // 开启缓存
       type: 'filesystem',
     }),
+
+    umamiAnalyticsPlugin({   //网站追踪
+      id: 'e86a18d7-a5f6-4f55-85af-e99be291ed9b',
+      link: 'https://umami.pysio.online/script.js',
+      cache: true,
+    }),
+    
   ],
   head: [
       //JetBrains Mono
