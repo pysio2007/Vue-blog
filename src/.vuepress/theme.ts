@@ -7,7 +7,8 @@ const { cut } = pkg;
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
-process.env.VUE_APP_GIT_HASH = gitInfo.hash;
+const gitHash = gitInfo.hash.startsWith('g') ? gitInfo.hash.slice(1) : gitInfo.hash;
+process.env.VUE_APP_GIT_HASH = gitHash;
 
 export default hopeTheme({
   hostname: "https://www.pysio.online",
