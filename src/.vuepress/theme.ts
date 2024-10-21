@@ -7,7 +7,8 @@ const { cut } = pkg;
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
-process.env.VUE_APP_GIT_HASH = gitInfo.hash;
+const gitHash = gitInfo.hash.startsWith('g') ? gitInfo.hash.slice(1) : gitInfo.hash;
+process.env.VUE_APP_GIT_HASH = gitHash;
 
 export default hopeTheme({
   hostname: "https://www.pysio.online",
@@ -39,7 +40,7 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: `Pysio's Home / 蜀ICP备2023021309号-1 /  <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: underline;">${process.env.VUE_APP_GIT_HASH}</a> `,
+  footer: `Pysio's Home / 蜀ICP备2023021309号-1 / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: underline;">${process.env.VUE_APP_GIT_HASH}</a> `,
   displayFooter: true,
 
   // 博客相关
