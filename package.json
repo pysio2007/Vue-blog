@@ -11,6 +11,13 @@
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
+    "@sentry/browser": "^8.34.0",
+    "@sentry/integrations": "^7.114.0",
+    "@sentry/tracing": "^7.114.0",
+    "@sentry/types": "^8.34.0",
+    "@sentry/vue": "^8.34.0",
+    "@types/node": "^22.7.7",
+    "@types/webpack": "^5.28.5",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/plugin-cache": "2.0.0-rc.54",
     "@vuepress/plugin-docsearch": "2.0.0-rc.55",
@@ -26,6 +33,7 @@
     "nodejieba": "^3.4.3",
     "sanitize-html": "^2.13.1",
     "sass-embedded": "^1.79.4",
+    "typescript": "^5.6.3",
     "vue": "^3.5.12",
     "vuepress": "2.0.0-rc.18",
     "vuepress-plugin-search-pro": "2.0.0-rc.57",
