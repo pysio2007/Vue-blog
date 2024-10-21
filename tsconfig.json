@@ -3,6 +3,9 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2022",
+    "sourceMap": true,
+    "inlineSources": true,
+    "sourceRoot": "/" 
   },
   "include": [
     "src/.vuepress/**/*.ts",
@@ -10,5 +13,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }
