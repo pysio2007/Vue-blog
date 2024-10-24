@@ -8,6 +8,7 @@ import Fastfetch from "./components/Fastfetch.vue";
 import OnlineOrDead from "./components/OnlineOrDead.vue";
 import SteamStatus from "./components/SteamStatus.vue";
 import HuoShen80Hub from "./components/HuoShen80Hub.vue";
+import Wordle from "./components/Wordle.vue";
 
 
 export default defineClientConfig({
@@ -19,6 +20,7 @@ export default defineClientConfig({
     app.component('OnlineOrDead',OnlineOrDead);
     app.component("SteamStatus", SteamStatus);
     app.component("HuoShen80Hub", HuoShen80Hub);
+    app.component("Wordle", Wordle);
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [
