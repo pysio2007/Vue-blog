@@ -88,6 +88,19 @@ export default hopeTheme({
       },
   },
 
+  notice: [
+    {
+      path: "/",
+      title: "R.I.P 2024.10.26",
+      content: "抱歉 为了纪念一些人 网站在2024.11.30日前均会保持强制深色模式",
+      fullscreen: true,
+      confirm: true,
+      actions: [
+        { text: "点我关闭" },
+      ],
+    },
+  ],
+
     markdownHint : { // 启用 GFM 警告
       alert: true,
     },

@@ -2,6 +2,10 @@
 $font-family: 'JetBrains Mono';
 $font-family-mono: 'JetBrains Mono';
 
+.vp-notice-title {
+  background-color: #706f6fd5;
+}
+
 // 设置全局字体
 body, h1, h2, h3, h4, h5, h6, p, span, div, a, ul, ol, li, table, th, td, pre, code, kbd, samp {
   font-family: $font-family;
