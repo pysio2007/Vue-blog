@@ -13,6 +13,8 @@ process.env.VUE_APP_GIT_HASH = gitHash;
 export default hopeTheme({
   hostname: "https://www.pysio.online",
 
+  darkmode: "enable",
+
   author: {
     name: "Pysio",
     url: "https://github.com/pysio2007/",
