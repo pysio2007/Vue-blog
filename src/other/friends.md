@@ -6,8 +6,13 @@ article: false
 
 ## 我的朋友们
 
-
-
+<VPCard
+  title="一只英短猫猫"
+  desc=""
+  logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/156568798"
+  link="https://www.nerv.games"
+  background="rgba(255,255,204)"
+/>
 
 ## 交换友链
 
