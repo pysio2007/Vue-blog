@@ -1,4 +1,4 @@
-FROM docker.akaere.online/node:23 as builder
+FROM docker.akaere.online/node:23 AS builder
 WORKDIR ./
 COPY . .
 RUN npm install
