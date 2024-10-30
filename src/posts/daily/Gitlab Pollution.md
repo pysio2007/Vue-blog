@@ -6,10 +6,10 @@ tag:
   - 日常
 ---
 我今天闲的一Ping
-![](https://imges.pysio.online//20241006004058.png)
+![](https://files.pysio.online/files/Pysio-Imges/20241006004058.png)
 
 我就在纳闷了，为啥会解析到这个[IP](106.74.25.198)上，直到我一访问。
-![](https://imges.pysio.online//20241006004137.png)
+![](https://files.pysio.online/files/Pysio-Imges/20241006004137.png)
 
 Uh 这多少是有点离谱了。我也不知我犯了啥天条能被扔进去。。。。
 

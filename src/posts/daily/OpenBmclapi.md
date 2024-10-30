@@ -10,4 +10,4 @@ tag:
 
 网盘节点地址：https://65d480a1f25ffe347bdf6820.openbmclapi.933.moe/
 <!-- more -->
-![](https://imges.pysio.online//20241005133723.png)
+![](https://files.pysio.online/files/Pysio-Imges/20241005133723.png)
