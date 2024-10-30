@@ -87,13 +87,13 @@ heroFullScreen: false
 
 效果： 
 
-![](https://imges.pysio.online//blogdemo.webp)
+![](https://files.pysio.online/files/Pysio-Imges/blogdemo.webp)
 
 ### 首页项目设置
 
 初始化是会默认生成以下内容，如果要修改为自己的项目要怎么修改呢。
 
-![](https://imges.pysio.online//defpoj.webp)
+![](https://files.pysio.online/files/Pysio-Imges/defpoj.webp)
 
 打开```README.md```，找到```projects```，编辑成你要的内容即可。
 
@@ -132,4 +132,4 @@ projects:
 
 如果不想显示，直接把```projects```的内容全部删除即可，效果如图：
 
-![](https://imges.pysio.online//blognopoj.webp)
+![](https://files.pysio.online/files/Pysio-Imges/blognopoj.webp)
