@@ -29,7 +29,7 @@ export default hopeTheme({
     "https://files.pysio.online/files/Pysio-FontAwesome/js/solid.min.js",
   ],
 
-  logo: "https://files.pysio.online/files/Pysio-Imges/%E9%AB%98%E6%B8%85%E9%87%8D%E5%88%B6%E5%A4%B4%E5%83%8F.svg",
+  logo: "https://www.pysio.online/assets/imgs/avast.svg",
 
   repo: "pysio2007/Vue-blog",
 
