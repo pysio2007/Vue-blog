@@ -8,10 +8,11 @@ article: false
 
 <VPCard
   title="一只英短猫猫"
-  desc=""
-  logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/156568798"
+  desc="笨猫猫"
+  logo="https://files.pysio.online/files/Pysio-Imges/英短.jpg"
   link="https://www.nerv.games"
-  background="rgba(255,255,204)"
+  background="rgba(255,229,255)"
+  class="cat-logo"
 />
 
 ## 交换友链

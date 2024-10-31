@@ -24,3 +24,17 @@ code, pre, kbd, samp {
 .vp-card-title {
   color: #000000 !important;
 }
+
+// 转起来的cat-logo
+.cat-logo img {
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
