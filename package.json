@@ -18,6 +18,7 @@
     "@sentry/vue": "^8.34.0",
     "@types/node": "^22.7.7",
     "@types/webpack": "^5.28.5",
+    "@vue/language-server": "^2.1.10",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/plugin-cache": "2.0.0-rc.54",
     "@vuepress/plugin-docsearch": "2.0.0-rc.57",

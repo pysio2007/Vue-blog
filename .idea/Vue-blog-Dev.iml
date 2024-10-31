@@ -5,6 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/.vuepress/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/.vuepress/.temp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/.vuepress/dist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
