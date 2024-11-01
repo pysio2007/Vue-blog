@@ -25,7 +25,7 @@ tag:
 <VPCard
   title="huoshen80"
   desc="梗图来源群的群主（x"
-  logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/61808984"
+  logo="https://files.pysio.online/files/Avatar/huoshen80.jpg"
   link="https://github.com/huoshen80"
   background="rgba(236, 244, 250)"
 />
