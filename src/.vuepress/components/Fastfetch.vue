@@ -1,3 +1,4 @@
+<!-- 此模块已经废弃 -->
 <template>
   <div>
     <div v-if="loading" class="hint-container note">
