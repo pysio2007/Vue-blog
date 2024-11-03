@@ -8,6 +8,10 @@
 本仓库是Pysio的个人博客 同时欢迎PR扩充文件 文章会显示GIT提交者  
 交换[友链](https://www.pysio.online/other/friends.html)请开Issues :P
 
+### 洋葱网络
+
+本站提供Tor网络的链接[点此访问](http://zwlvi475lpbann6njjdatf2zh7gkao3sdsqrejto6ldoxdvc4okwyqyd.onion/)
+
 ### Docker 部署说明
 
 拉取Docker镜像
