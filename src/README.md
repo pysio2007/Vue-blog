@@ -35,3 +35,5 @@ projects:
     link: /other/friends
 
 ---
+
+<console />
