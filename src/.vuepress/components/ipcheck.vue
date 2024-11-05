@@ -107,12 +107,12 @@ export default {
           userIP = ipJson.ip;
         } catch (err) {
           // 第一个 API 获取失败，尝试第二个 API
-          const ipResponse = await fetch('https://api-v3.speedtest.cn/ip');
+          const ipResponse = await fetch('https://ipinfo.io/json?token=8b1cd5f6e7c400');
           if (!ipResponse.ok) {
             throw new Error(`HTTP error! status: ${ipResponse.status}`);
           }
           const ipJson = await ipResponse.json();
-          userIP = ipJson.data.ip;
+          userIP = ipJson.ip;
         }
 
         const dataResponse = await fetch(
