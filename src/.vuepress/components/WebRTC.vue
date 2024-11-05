@@ -47,7 +47,7 @@
           }
         };
         pc.oniceconnectionstatechange = () => {
-          if (pc.iceConnectionState === 'failed') {
+          if (pc.iceConnectionState === 'failed' && server.result.status !== 'success') {
             server.result.status = 'failed';
             server.result.statusClass = 'caution';
           }
@@ -56,4 +56,3 @@
     }
   };
   </script>
-  
