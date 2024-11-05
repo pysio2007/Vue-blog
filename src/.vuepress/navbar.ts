@@ -21,6 +21,14 @@ export default navbar([
     ],
   },
   {
+    text: "工具",
+    icon: "fa-solid fa-tools",
+    link: "/posts/tools/",
+    children:[
+      { text: "IP 检测", icon: "fa-solid fa-tools", link: "/posts/tools/ipcheck" },
+    ],
+  },
+  {
     text: "杂项",
     icon: "fa-solid fa-ellipsis fa-xl",
     link: "/other/",
