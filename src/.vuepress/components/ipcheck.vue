@@ -18,11 +18,11 @@
 
     <!-- 展示 IP 基本信息 -->
     <div v-if="ipData" class="hint-container tip">
-      <p class="hint-container-title">你的 IP 是：{{ ipData.ip }}</p>
-      <p>国家：{{ ipData.country }}</p>
-      <p>省：{{ ipData.region }}</p>
-      <p>城市：{{ ipData.city }}</p>
-      <p>运营商：{{ ipData.org }}</p>
+      <p class="hint-container-title">你的 IP 是：{{ ipData.ip || ipData.data.ip }}</p>
+      <p>国家：{{ ipData.country || ipData.data.country }}</p>
+      <p>省：{{ ipData.region || ipData.data.region }}</p>
+      <p>城市：{{ ipData.city || ipData.data.city }}</p>
+      <p>运营商：{{ ipData.org || ipData.data.org }}</p>
     </div>
 
     <!-- 当未超速时，展示详细信息 -->
@@ -125,10 +125,19 @@ export default {
 
         // 检查是否超速
         if (data['429'] === 'true') {
-          this.isApiLimited = true;
+          // 尝试从 ipinfo.io 获取数据
+          const demoResponse = await fetch(`https://ipinfo.io/widget/demo/${userIP}`);
+          if (demoResponse.status === 429) {
+            // 如果仍然是 429，设置 isApiLimited = true
+            this.isApiLimited = true;
+          } else {
+            const demoData = await demoResponse.json();
+            // 处理 demoData，根据需要更新 ipData 或其他逻辑
+            this.ipData = demoData;
+          }
+        } else {
+          this.ipData = data;
         }
-
-        this.ipData = data;
       } catch (err) {
         this.error = err.toString();
       } finally {
