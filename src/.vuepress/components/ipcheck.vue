@@ -32,6 +32,15 @@
       <p>运营商：{{ ipData.org || ipData.data.org }}</p>
     </div>
 
+    <!-- 展示第二个 IP 的基本信息 -->
+    <div v-if="ipMismatch && ipData2" class="hint-container tip">
+      <p class="hint-container-title">你的第二个 IP 是：{{ ipData2.ip }}</p>
+      <p>国家：{{ ipData2.country || ipData2.data.country }}</p>
+      <p>省：{{ ipData2.region || ipData2.data.region }}</p>
+      <p>城市：{{ ipData2.city || ipData2.data.city }}</p>
+      <p>运营商：{{ ipData2.org || ipData2.data.org }}</p>
+    </div>
+
     <!-- 当未超速时，展示详细信息 -->
     <div v-if="ipData && !isApiLimited">
       <div v-if="isFamilyIP" class="hint-container tip">
@@ -60,15 +69,6 @@
         <p>服务商域名：{{ ipData.data.company.domain }}</p>
         <p>服务商类型：{{ ipData.data.company.type }}</p>
       </div>
-    </div>
-
-    <!-- 展示第二个 IP 的基本信息 -->
-    <div v-if="ipMismatch && ipData2" class="hint-container tip">
-      <p class="hint-container-title">你的第二个 IP 是：{{ ipData2.ip }}</p>
-      <p>国家：{{ ipData2.country || ipData2.data.country }}</p>
-      <p>省：{{ ipData2.region || ipData2.data.region }}</p>
-      <p>城市：{{ ipData2.city || ipData2.data.city }}</p>
-      <p>运营商：{{ ipData2.org || ipData2.data.org }}</p>
     </div>
 
     <!-- 当未超速时，展示第二个 IP 的详细信息 -->
@@ -213,6 +213,7 @@ export default {
           if (demoResponse.status === 429) {
             // 如果仍然是 429，设置 isApiLimited = true
             this.isApiLimited = true;
+            this.ipData = data;
           } else {
             const demoData = await demoResponse.json();
             // 处理 demoData，根据需要更新 ipData 或其他逻辑
@@ -223,30 +224,29 @@ export default {
         }
 
         // 获取第二个 IP 的详细信息
-        if (this.ipMismatch) {
-          const dataResponse2 = await fetch(
-            `https://blogapi.pysio.online/ipcheck?ip=${userIP2}`
-          );
-          if (!dataResponse2.ok) {
-            throw new Error(`HTTP error! status: ${dataResponse2.status}`);
-          }
-          const data2 = await dataResponse2.json();
+        const dataResponse2 = await fetch(
+          `https://blogapi.pysio.online/ipcheck?ip=${userIP2}`
+        );
+        if (!dataResponse2.ok) {
+          throw new Error(`HTTP error! status: ${dataResponse2.status}`);
+        }
+        const data2 = await dataResponse2.json();
 
-          // 检查是否超速
-          if (data2['429'] === 'true') {
-            // 尝试从 ipinfo.io 获取数据
-            const demoResponse2 = await fetch(`https://ipinfo.io/widget/demo/${userIP2}`);
-            if (demoResponse2.status === 429) {
-              // 如果仍然是 429，设置 isApiLimited = true
-              this.isApiLimited = true;
-            } else {
-              const demoData2 = await demoResponse2.json();
-              // 处理 demoData2，根据需要更新 ipData2 或其他逻辑
-              this.ipData2 = demoData2;
-            }
-          } else {
+        // 检查是否超速
+        if (data2['429'] === 'true') {
+          // 尝试从 ipinfo.io 获取数据
+          const demoResponse2 = await fetch(`https://ipinfo.io/widget/demo/${userIP2}`);
+          if (demoResponse2.status === 429) {
+            // 如果仍然是 429，设置 isApiLimited = true
+            this.isApiLimited = true;
             this.ipData2 = data2;
+          } else {
+            const demoData2 = await demoResponse2.json();
+            // 处理 demoData2，根据需要更新 ipData2 或其他逻辑
+            this.ipData2 = demoData2;
           }
+        } else {
+          this.ipData2 = data2;
         }
       } catch (err) {
         this.error = err.toString();
