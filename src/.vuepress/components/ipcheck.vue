@@ -107,12 +107,12 @@ export default {
           userIP = ipJson.ip;
         } catch (err) {
           // 第一个 API 获取失败，尝试第二个 API
-          const ipResponse = await fetch('https://www.ip.cn/api/index?ip=&type=0');
+          const ipResponse = await fetch('https://api-v3.speedtest.cn/ip');
           if (!ipResponse.ok) {
             throw new Error(`HTTP error! status: ${ipResponse.status}`);
           }
           const ipJson = await ipResponse.json();
-          userIP = ipJson.ip;
+          userIP = ipJson.data.ip;
         }
 
         const dataResponse = await fetch(
