@@ -4,10 +4,14 @@ icon: fa-solid fa-globe
 article: false
 ---
 
-<!-- ## IP 检测
+## IP 检测
 
-<ipcheck /> -->
+<ipcheck />
 
 ## 网站连通性测试
 
 <Connectivity />
+
+## WebRTC 测试
+
+<WebRTC />
