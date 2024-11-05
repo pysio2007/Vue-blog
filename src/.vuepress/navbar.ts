@@ -25,7 +25,7 @@ export default navbar([
     icon: "fa-solid fa-tools",
     link: "/posts/tools/",
     children:[
-      { text: "IP 检测", icon: "fa-solid fa-tools", link: "/posts/tools/ipcheck" },
+      { text: "IP 检测", icon: "fa-solid fa-globe", link: "/posts/tools/ipcheck" },
     ],
   },
   {

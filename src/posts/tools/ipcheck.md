@@ -1,6 +1,6 @@
 ---
 title: IP 检测（测试版）
-icon: fa-regular fa-globe
+icon: fa-solid fa-globe
 article: false
 ---
 
