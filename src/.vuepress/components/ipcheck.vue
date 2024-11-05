@@ -5,6 +5,13 @@
       <p>正在获取数据,这可能需要一些时间...</p>
     </div>
 
+    <!-- 当 IP 地址不一致时，展示警告信息 -->
+    <div v-if="ipMismatch" class="hint-container warning">
+      <p class="hint-container-title">注意</p>
+      <p>你可能使用了代理</p>
+      <p>工具检测到了2个不同的IP地址，这可能是启用了分流代理导致的</p>
+    </div>
+
     <div v-if="error" class="hint-container caution">
       <p class="hint-container-title">错误</p>
       <p>{{ error }}</p>
@@ -47,11 +54,50 @@
         <p class="hint-container-title">注意：</p>
         <p>你的 IP 地址是 IDC 地址。</p>
       </div>
-      <div class="hint-container tip">
+      <div v-if="ipData.data && ipData.data.company" class="hint-container tip">
         <p class="hint-container-title">服务提供商</p>
         <p>提供商：{{ ipData.data.company.name }}</p>
         <p>服务商域名：{{ ipData.data.company.domain }}</p>
         <p>服务商类型：{{ ipData.data.company.type }}</p>
+      </div>
+    </div>
+
+    <!-- 展示第二个 IP 的基本信息 -->
+    <div v-if="ipMismatch && ipData2" class="hint-container tip">
+      <p class="hint-container-title">你的第二个 IP 是：{{ ipData2.ip }}</p>
+      <p>国家：{{ ipData2.country || ipData2.data.country }}</p>
+      <p>省：{{ ipData2.region || ipData2.data.region }}</p>
+      <p>城市：{{ ipData2.city || ipData2.data.city }}</p>
+      <p>运营商：{{ ipData2.org || ipData2.data.org }}</p>
+    </div>
+
+    <!-- 当未超速时，展示第二个 IP 的详细信息 -->
+    <div v-if="ipMismatch && ipData2 && !isApiLimited">
+      <div v-if="isFamilyIP2" class="hint-container tip">
+        <p class="hint-container-title">恭喜！</p>
+        <p>你的第二个 IP 地址是家庭地址</p>
+      </div>
+      <div v-if="isVPN2" class="hint-container warning">
+        <p class="hint-container-title">注意：</p>
+        <p>你的第二个 IP 地址是 VPN 地址。</p>
+      </div>
+      <div v-if="isProxy2" class="hint-container warning">
+        <p class="hint-container-title">注意：</p>
+        <p>你的第二个 IP 地址是代理地址。</p>
+      </div>
+      <div v-if="isTor2" class="hint-container warning">
+        <p class="hint-container-title">注意：</p>
+        <p>你的第二个 IP 地址是 Tor 地址。</p>
+      </div>
+      <div v-if="isHosting2" class="hint-container warning">
+        <p class="hint-container-title">注意：</p>
+        <p>你的第二个 IP 地址是 IDC 地址。</p>
+      </div>
+      <div v-if="ipData2.data && ipData2.data.company" class="hint-container tip">
+        <p class="hint-container-title">服务提供商</p>
+        <p>提供商：{{ ipData2.data.company.name }}</p>
+        <p>服务商域名：{{ ipData2.data.company.domain }}</p>
+        <p>服务商类型：{{ ipData2.data.company.type }}</p>
       </div>
     </div>
   </div>
@@ -64,7 +110,9 @@ export default {
       loading: true,
       error: null,
       ipData: null,
+      ipData2: null,
       isApiLimited: false,
+      ipMismatch: false,
     };
   },
   computed: {
@@ -90,6 +138,28 @@ export default {
     isHosting() {
       return this.ipData && this.ipData.data?.privacy?.hosting;
     },
+    isFamilyIP2() {
+      return (
+        this.ipData2 &&
+        this.ipData2.data &&
+        !this.isVPN2 &&
+        !this.isProxy2 &&
+        !this.isTor2 &&
+        !this.isHosting2
+      );
+    },
+    isVPN2() {
+      return this.ipData2 && this.ipData2.data?.privacy?.vpn;
+    },
+    isProxy2() {
+      return this.ipData2 && this.ipData2.data?.privacy?.proxy;
+    },
+    isTor2() {
+      return this.ipData2 && this.ipData2.data?.privacy?.tor;
+    },
+    isHosting2() {
+      return this.ipData2 && this.ipData2.data?.privacy?.hosting;
+    },
   },
   mounted() {
     this.fetchIPData();
@@ -97,7 +167,7 @@ export default {
   methods: {
     async fetchIPData() {
       try {
-        let userIP;
+        let userIP, userIP2;
         try {
           const ipResponse = await fetch('https://api.ipify.org?format=json');
           if (!ipResponse.ok) {
@@ -113,6 +183,19 @@ export default {
           }
           const ipJson = await ipResponse.json();
           userIP = ipJson.ip;
+        }
+
+        // 获取第二个 IP 地址
+        const ipResponse2 = await fetch('https://myip.ipip.net/');
+        if (!ipResponse2.ok) {
+          throw new Error(`HTTP error! status: ${ipResponse2.status}`);
+        }
+        const ipText = await ipResponse2.text();
+        userIP2 = ipText.match(/当前 IP：(\d+\.\d+\.\d+\.\d+)/)[1];
+
+        // 比较两个 IP 地址
+        if (userIP !== userIP2) {
+          this.ipMismatch = true;
         }
 
         const dataResponse = await fetch(
@@ -137,6 +220,33 @@ export default {
           }
         } else {
           this.ipData = data;
+        }
+
+        // 获取第二个 IP 的详细信息
+        if (this.ipMismatch) {
+          const dataResponse2 = await fetch(
+            `https://blogapi.pysio.online/ipcheck?ip=${userIP2}`
+          );
+          if (!dataResponse2.ok) {
+            throw new Error(`HTTP error! status: ${dataResponse2.status}`);
+          }
+          const data2 = await dataResponse2.json();
+
+          // 检查是否超速
+          if (data2['429'] === 'true') {
+            // 尝试从 ipinfo.io 获取数据
+            const demoResponse2 = await fetch(`https://ipinfo.io/widget/demo/${userIP2}`);
+            if (demoResponse2.status === 429) {
+              // 如果仍然是 429，设置 isApiLimited = true
+              this.isApiLimited = true;
+            } else {
+              const demoData2 = await demoResponse2.json();
+              // 处理 demoData2，根据需要更新 ipData2 或其他逻辑
+              this.ipData2 = demoData2;
+            }
+          } else {
+            this.ipData2 = data2;
+          }
         }
       } catch (err) {
         this.error = err.toString();
