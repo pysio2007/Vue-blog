@@ -34,7 +34,7 @@
 
     <!-- 展示第二个 IP 的基本信息 -->
     <div v-if="ipMismatch && ipData2" class="hint-container tip">
-      <p class="hint-container-title">你的第二个 IP 是：{{ ipData2.ip }}</p>
+      <p class="hint-container-title">你的第二个 IP 是：{{ ipData.ip || ipData.data.ip }}</p>
       <p>国家：{{ ipData2.country || ipData2.data.country }}</p>
       <p>省：{{ ipData2.region || ipData2.data.region }}</p>
       <p>城市：{{ ipData2.city || ipData2.data.city }}</p>
