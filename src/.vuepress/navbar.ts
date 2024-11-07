@@ -23,9 +23,9 @@ export default navbar([
   {
     text: "工具",
     icon: "fa-solid fa-tools",
-    link: "/posts/tools/",
+    link: "/tools/",
     children:[
-      { text: "IP 检测", icon: "fa-solid fa-globe", link: "/posts/tools/ipcheck" },
+      { text: "IP 检测", icon: "fa-solid fa-globe", link: "/tools/ipcheck" },
     ],
   },
   {
@@ -35,8 +35,16 @@ export default navbar([
     children: [
       { text: "友链", icon: "fa-solid fa-link", link: "/other/friends" },
       { text: "问题追踪", icon: "fa-kit fa-issues", link: "/other/issues" },
-      { text: "Wordle", icon: "fa-regular fa-gamepad-modern", link: "/other/wordle" },
       { text: "许可证", icon: "fa-brands fa-creative-commons", link: "/other/cc.html" },
+    ],
+  },
+  {
+    text: "小游戏",
+    icon: "fa-regular fa-gamepad-modern",
+    link: "/Game/",
+    children: [
+      { text: "Wordle", icon: "fa-regular fa-gamepad-modern", link: "/Game/wordle" },
+      { text: "康威生命游戏", icon: "fa-regular fa-block", link: "/Game/GameofLife" },
     ],
   },
   {

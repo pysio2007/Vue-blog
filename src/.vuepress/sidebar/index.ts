@@ -75,4 +75,24 @@ export default sidebar({
       children: "structure",
     },
   ],
+  "/tools/": [
+    {
+      text: "工具",
+      link: "/tools/",
+    },
+    {
+      text: "",
+      children: "structure",
+    },
+  ],
+  "/Game/": [
+    {
+      text: "小游戏",
+      link: "/Game/",
+    },
+    {
+      text: "",
+      children: "structure",
+    }
+  ],
 });
