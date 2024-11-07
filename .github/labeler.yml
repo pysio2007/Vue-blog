@@ -6,3 +6,10 @@
 # Add 'feature' label to any PR where the head branch name starts with `feature` or has a `feature` section in the name
 新功能:
  - head-branch: ['^feature', 'feat']
+
+等待处理:
+- changed-files:
+  - any-glob-to-any-file: '**'
+
+依赖更新:
+ - head-branch: ['^chore(deps)', 'chore(deps)']
