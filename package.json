@@ -49,6 +49,7 @@
     "flowchart.ts": "^3.0.1",
     "katex": "^0.16.11",
     "mathjax-full": "^3.2.2",
-    "mermaid": "^11.3.0"
+    "mermaid": "^11.3.0",
+    "vuepress-plugin-remove-html-extension": "^1.15.0"
   }
 }
