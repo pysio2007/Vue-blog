@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
+import { removeHtmlExtensionPlugin } from 'vuepress-plugin-remove-html-extension'
 import theme from "./theme.js";
 import { cachePlugin } from '@vuepress/plugin-cache'
 
@@ -20,6 +21,9 @@ export default defineUserConfig({
       cache: true,
     }),
     
+    // 更干净的URL
+    removeHtmlExtensionPlugin()
+
   ],
   head: [
       //JetBrains Mono
