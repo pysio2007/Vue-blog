@@ -13,6 +13,7 @@ import console from "./components/console.vue";
 import ipcheck from "./components/ipcheck.vue";
 import Connectivity from "./components/Connectivity.vue";
 import WebRTC from "./components/WebRTC.vue";
+import Randompicturecount from "./components/Randompicturecount.vue";
 
 
 export default defineClientConfig({
@@ -29,6 +30,7 @@ export default defineClientConfig({
     app.component("ipcheck", ipcheck);
     app.component("Connectivity", Connectivity);
     app.component("WebRTC", WebRTC);
+    app.component("Randompicturecount", Randompicturecount);
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [
