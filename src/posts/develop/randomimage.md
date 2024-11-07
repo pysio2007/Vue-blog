@@ -8,13 +8,14 @@ tag:
   - 随机图片
 ---
 
-## 随机图片API
-
 本站现在提供了一个随机图片的API 你可以直接使用下面的URL获取一张随机图片
 
 ```url
 https://blogapi.pysio.online/random_image
 ```
+
+<Randompicturecount />
+
 <!-- more -->
 
 ## 示例
