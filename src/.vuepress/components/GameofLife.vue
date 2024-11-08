@@ -4,7 +4,7 @@
       <button @click="startGame" :disabled="isRunning">开始</button>
       <button @click="pauseGame" :disabled="!isRunning">暂停</button>
       <button @click="resetGame">重置</button>
-      <button @click="toggleFullscreen">{{ isFullscreen ? '退出全屏' : '全屏' }}</button>
+      <!-- <button @click="toggleFullscreen">{{ isFullscreen ? '退出全屏' : '全屏' }}</button> -->
     </div>
     <div class="grid" :style="gridStyle" @mousedown="startDrag" @mousemove="onDrag" @mouseup="endDrag">
       <div
