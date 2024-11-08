@@ -197,8 +197,10 @@ export default {
   overflow: hidden;
 }
 .buttons {
+  position: relative;
   display: flex;
-  gap: 10px;
+  gap: 7px;
+  bottom: 2px;
 }
 .fullscreen-buttons {
   position: absolute;
@@ -206,16 +208,18 @@ export default {
   left: 10px;
   z-index: 1001;
 }
+
 button {
+  border: 1px solid #cccccc0c;
   padding: 5px 10px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
+  height: 2rem;
+  background-color: var(--vp-c-bg);
+  box-shadow: 1.5px 1px 2px #00000021;
+  border-radius: 4px;
+  color: var(--vp-c-text);
   cursor: pointer;
 }
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
+
 .grid {
   display: grid;
   gap: 1px;
