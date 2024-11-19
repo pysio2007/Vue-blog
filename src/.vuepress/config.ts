@@ -22,7 +22,7 @@ export default defineUserConfig({
     }),
     
     // 更干净的URL
-    removeHtmlExtensionPlugin()
+    // removeHtmlExtensionPlugin()
 
   ],
   head: [
