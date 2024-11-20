@@ -39,3 +39,4 @@ article: false
 [![pages-build-deployment](https://github.com/pysio2007/Pysio-FontAwesome/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pysio2007/Pysio-FontAwesome/actions/workflows/pages/pages-build-deployment)
 ![GitHub last commit](https://img.shields.io/github/last-commit/pysio2007/Vue-blog?display_timestamp=author)
 [![note build](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-server.yml/badge.svg)](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-server.yml)
+[![wakatime](https://wakatime.com/badge/user/a8344004-6b9a-4a56-8b71-e626b395781c/project/d910a3a5-e3e2-425e-be0f-175d36fa6d19.svg)](https://wakatime.com/badge/user/a8344004-6b9a-4a56-8b71-e626b395781c/project/d910a3a5-e3e2-425e-be0f-175d36fa6d19)
