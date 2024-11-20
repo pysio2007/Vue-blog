@@ -15,6 +15,7 @@
     data() {
       return {
         servers: [
+          { name: 'Pysio Home', url: 'stun:stun.pysio.tech:3478', result: { status: 'connecting', statusClass: 'note' } },
           { name: 'Google', url: 'stun:stun.l.google.com:19302', result: { status: 'connecting', statusClass: 'note' } },
           { name: 'BlackBerry', url: 'stun:stun.voip.blackberry.com:3478', result: { status: 'connecting', statusClass: 'note' } },
           { name: 'Twilio', url: 'stun:global.stun.twilio.com', result: { status: 'connecting', statusClass: 'note' } },
