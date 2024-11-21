@@ -3,6 +3,7 @@ title: 本博客自定义的FontAwesome
 date: 2024-11-01
 icon: fa-solid fa-font-awesome
 category: develop
+star: true
 tag:
   - FontAwesome
 ---
