@@ -29,6 +29,15 @@ article: false
   background="rgba(255, 235, 246)"
 />
 
+<VPCard
+  title="一只英短猫猫"
+  desc="老婆wwww"
+  logo="https://files.pysio.online/files/Pysio-Imges/英短.jpg"
+  link="https://github.com/stuffed-cat"
+  background="rgba(255,229,255)"
+  class="cat-logo"
+/>
+
 <!-- ## Server Info
 
 <Fastfetch /> -->
