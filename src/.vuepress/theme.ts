@@ -22,11 +22,12 @@ export default hopeTheme({
 
   iconAssets: [
     "fontawesome",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/custom-icons.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/brands.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/light.min.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/regular.min.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/solid.min.js",
+    "https://kit.fontawesome.com/b19836ac94.js",
+    // "https://files.pysio.online/files/Pysio-FontAwesome/js/custom-icons.js",
+    // "https://files.pysio.online/files/Pysio-FontAwesome/js/brands.js",
+    // "https://files.pysio.online/files/Pysio-FontAwesome/js/light.min.js",
+    // "https://files.pysio.online/files/Pysio-FontAwesome/js/regular.min.js",
+    // "https://files.pysio.online/files/Pysio-FontAwesome/js/solid.min.js",
   ],
 
   logo: "https://www.pysio.online/assets/imgs/avast.svg",
