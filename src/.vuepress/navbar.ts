@@ -53,4 +53,9 @@ export default navbar([
     icon: "fa-regular fa-circle-info",
     link: "/intro.html",
   },
+  {
+    text: "开往",
+    icon: "fa-solid fa-train-subway",
+    link: "https://www.travellings.cn/go.html",
+  },
 ]);
