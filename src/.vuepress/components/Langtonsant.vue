@@ -171,10 +171,10 @@
     overflow: hidden;
   }
   .buttons {
-    position: relative;
-    display: flex;
-    gap: 7px;
-    bottom: 2px;
+  position: relative;
+  display: flex;
+  gap: 7px;
+  bottom: 2px;
   }
   .fullscreen-buttons {
     position: absolute;
@@ -193,7 +193,10 @@
     color: var(--vp-c-text);
     cursor: pointer;
   }
-  
+  [disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
   .grid {
     display: grid;
     gap: 1px;
