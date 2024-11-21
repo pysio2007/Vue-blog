@@ -212,9 +212,9 @@ export default {
   height: 3rem;
 }
 button {
-  border: 1px solid #cccccc0c;
   padding: 5px 10px;
   height: 2rem;
+  border: 5px solid #cccccc0c;
   background-color: var(--vp-c-bg);
   box-shadow: 1.5px 1px 2px #00000021;
   border-radius: 4px;
@@ -223,6 +223,7 @@ button {
 }
 [disabled] {
   cursor: not-allowed;
+  opacity: 0.7;
 }
 .grid {
   display: grid;

@@ -194,7 +194,8 @@
     cursor: pointer;
   }
   [disabled] {
-  cursor: not-allowed;
+    cursor: not-allowed;
+    opacity: 0.7;
   }
   .grid {
     display: grid;
