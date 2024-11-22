@@ -15,6 +15,14 @@ article: false
   class="cat-logo"
 />
 
+<VPCard
+  title="233355607的乱写站"
+  desc="啥都写的引诱吃（"
+  logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/81961962"
+  link="https://www.233355607.xyz/"
+  background="rgba(236, 244, 250)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
