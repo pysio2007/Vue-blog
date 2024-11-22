@@ -15,3 +15,7 @@ article: false
 ## WebRTC 测试
 
 <WebRTC />
+
+## DNS泄露测试
+
+<DNSLeak />
