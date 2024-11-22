@@ -24,19 +24,29 @@
             </div>
 
             <!-- 文件编辑器部分 -->
-            <div v-if="file.isEditing" class="editor">
-                <MonacoEditor :key="`editor-${file.path}`" :value="file.content" v-model="file.content"
-                    :language="getFileLanguage(file)" />
-                <div class="commit-section">
-                    <input v-model="file.commitMessage" class="commit-input" placeholder="请输入提交说明" />
-                </div>
-                <div class="editor-actions">
-                    <button @click="saveFile(file)" class="save-btn">
-                        <i class="fas fa-save"></i> 保存
-                    </button>
-                    <button @click="cancelEdit(file)" class="cancel-btn">
-                        <i class="fas fa-times"></i> 取消
-                    </button>
+            <div v-if="editingFile" class="modal">
+                <div class="modal-content edit-modal">
+                    <h2>正在编辑: {{ editingFile.name || editingFile.path }}</h2>
+                    <div class="form-group">
+                        <div class="editor-wrapper">
+                            <div class="editor-preview"
+                                v-html="highlightCode(editingFile.content || '', getFileLanguage(editingFile))" />
+                            <textarea v-model="editingFile.content" class="editor-textarea" spellcheck="false"
+                                @input="$forceUpdate()" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>提交说明:</label>
+                        <input v-model="editingFile.commitMessage" class="commit-input" placeholder="请输入提交说明" />
+                    </div>
+                    <div class="modal-actions">
+                        <button @click="saveFile(editingFile)" class="save-btn">
+                            <i class="fas fa-save"></i> 保存
+                        </button>
+                        <button @click="cancelEdit(editingFile)" class="cancel-btn">
+                            <i class="fas fa-times"></i> 取消
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -57,11 +67,12 @@
                 </div>
                 <div class="form-group">
                     <label>文件内容:</label>
-                    <MonacoEditor 
-                        :value="newFile.content" 
-                        v-model="newFile.content"
-                        :language="getFileLanguage(newFile)" 
-                    />
+                    <div class="editor-wrapper">
+                        <div class="editor-preview"
+                            v-html="highlightCode(newFile.content || '', getFileLanguage(newFile))" />
+                        <textarea v-model="newFile.content" class="editor-textarea" spellcheck="false"
+                            @input="$forceUpdate()" />
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>提交说明:</label>
@@ -81,12 +92,18 @@
 </template>
 
 <script>
-import MonacoEditor from './MonacoEditor.vue'
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-css'
+import 'prismjs/components/prism-markup'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers'
 
 export default {
-    components: {
-        MonacoEditor
-    },
 
     name: 'FileTree',
     props: {
@@ -102,17 +119,80 @@ export default {
 
     data() {
         return {
-            expandedDirs: new Set(),
             showNewFileModal: false,
+            editingFile: null,
             newFile: {
                 path: '',
                 content: '',
                 commitMessage: ''
-            }
+            },
+            expandedDirs: new Set() // 添加这行来跟踪展开的目录
         }
     },
 
+
     methods: {
+
+        mounted() {
+            this.$nextTick(() => {
+                // 获取当前编辑器实例的元素
+                const preview = this.$el.querySelector('.editor-preview');
+                const textarea = this.$el.querySelector('.editor-textarea');
+
+                if (!preview || !textarea) return;
+
+                const syncScroll = () => {
+                    preview.scrollTop = textarea.scrollTop;
+                    preview.scrollLeft = textarea.scrollLeft;
+                };
+
+                // 使用 requestAnimationFrame 优化滚动性能
+                textarea.addEventListener('scroll', () => {
+                    requestAnimationFrame(syncScroll);
+                });
+            });
+        },
+
+        highlightCode(code, language) {
+            if (!code) return ''
+            return Prism.highlight(
+                code,
+                Prism.languages[language] || Prism.languages.text,
+                language
+            )
+        },
+
+        watch: {
+            'editingFile.content': {
+                immediate: true,
+                handler(newVal) {
+                    this.$nextTick(() => {
+                        const preview = this.$el.querySelector('.editor-preview');
+                        if (preview) {
+                            preview.innerHTML = this.highlightCode(newVal || '', this.getFileLanguage(this.editingFile));
+                        }
+                    });
+                }
+            },
+            'newFile.content': {
+                immediate: true,
+                handler(newVal) {
+                    this.$nextTick(() => {
+                        const preview = this.$el.querySelector('.editor-preview');
+                        if (preview) {
+                            preview.innerHTML = this.highlightCode(newVal || '', this.getFileLanguage(this.newFile));
+                        }
+                    });
+                }
+            }
+        },
+
+        editorInit(editor) {
+            // 配置编辑器实例
+            editor.setShowPrintMargin(false)
+            editor.session.setUseWrapMode(true)
+        },
+
         showCreateFileModal() {
             this.showNewFileModal = true;
         },
@@ -223,7 +303,7 @@ export default {
 
                 file.content = content;
                 await this.$nextTick();
-                file.isEditing = true;
+                this.editingFile = file;
             } catch (error) {
                 console.error('Failed to load file content:', error);
                 alert('加载文件内容失败');
@@ -256,7 +336,7 @@ export default {
                 if (!response.ok) throw new Error('保存文件失败');
 
                 this.$emit('refresh');
-                file.isEditing = false;
+                this.editingFile = null; // 清除当前编辑的文件
             } catch (error) {
                 console.error('Failed to save file:', error);
                 alert('保存文件失败');
@@ -264,26 +344,26 @@ export default {
         },
 
         cancelEdit(file) {
-            file.isEditing = false;
             file.content = '';
             file.commitMessage = '';
+            this.editingFile = null; // 清除当前编辑的文件
         },
 
         getFileLanguage(file) {
-            const ext = (file.name || file.path || '').split('.').pop().toLowerCase()
+            const ext = (file.path || '').split('.').pop().toLowerCase()
             const languageMap = {
                 'js': 'javascript',
                 'ts': 'typescript',
-                'vue': 'html',
-                'json': 'json',
+                'tsx': 'typescript',
+                'vue': 'markup',
                 'md': 'markdown',
                 'py': 'python',
                 'css': 'css',
-                'html': 'html',
-                'scss': 'scss'
+                'html': 'markup',
+                'json': 'javascript'
             }
-            return languageMap[ext] || 'plaintext'
-        }
+            return languageMap[ext] || 'text'
+        },
     }
 }
 </script>
@@ -343,7 +423,9 @@ export default {
 }
 
 .editor {
-    padding: 12px;
+    height: 300px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
 }
 
 .commit-section {
@@ -440,5 +522,106 @@ button:hover {
     justify-content: flex-end;
     gap: 8px;
     margin-top: 16px;
+}
+
+.modal-content {
+    width: 90%;
+    /* 增大宽度 */
+    max-width: 1200px;
+    /* 增大最大宽度 */
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.editor-wrapper {
+    flex: 1;
+    min-height: 300px;
+    height: calc(80vh - 200px);
+    position: relative;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 修复预览和编辑区域样式 */
+.editor-preview,
+.editor-textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 1rem;
+    overflow: auto;
+    white-space: pre;
+    font-size: 14px;
+    line-height: 1.5;
+    tab-size: 2;
+    box-sizing: border-box;
+}
+
+.editor-preview {
+    pointer-events: none;
+    background: #f6f8fa;
+    z-index: 1;
+    color: #000;
+}
+
+.editor-textarea {
+    color: transparent;
+    background: transparent;
+    caret-color: #000;
+    resize: none;
+    border: none;
+    outline: none;
+    z-index: 2;
+    /* 添加选择文本样式 */
+    &::selection {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* 确保预览区域内容正确显示 */
+.editor-preview pre {
+    margin: 0;
+    background: transparent !important;
+}
+
+.editor-preview code {
+    background: transparent !important;
+    font-family: inherit;
+}
+
+/* 修复滚动条样式 */
+.editor-preview::-webkit-scrollbar,
+.editor-textarea::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.editor-preview::-webkit-scrollbar-thumb,
+.editor-textarea::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 3px solid #f6f8fa;
+}
+
+.editor-preview::-webkit-scrollbar-track,
+.editor-textarea::-webkit-scrollbar-track {
+    background: #f6f8fa;
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    padding: 0;
 }
 </style>

@@ -1,3 +1,4 @@
+<!-- 因优化问题 本文件废弃 -->
 <template>
     <div class="monaco-editor-wrapper">
         <div class="monaco-editor-container" ref="editorContainer"></div>
