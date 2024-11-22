@@ -29,10 +29,10 @@
                     <h2>正在编辑: {{ editingFile.name || editingFile.path }}</h2>
                     <div class="form-group">
                         <div class="editor-wrapper">
-                            <div class="editor-preview"
+                            <div class="editor-preview" ref="preview"
                                 v-html="highlightCode(editingFile.content || '', getFileLanguage(editingFile))" />
                             <textarea v-model="editingFile.content" class="editor-textarea" spellcheck="false"
-                                @input="$forceUpdate()" />
+                                ref="textarea" @input="updatePreview" @scroll="syncScroll" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -68,10 +68,10 @@
                 <div class="form-group">
                     <label>文件内容:</label>
                     <div class="editor-wrapper">
-                        <div class="editor-preview"
+                        <div class="editor-preview" ref="newFilePreview"
                             v-html="highlightCode(newFile.content || '', getFileLanguage(newFile))" />
                         <textarea v-model="newFile.content" class="editor-textarea" spellcheck="false"
-                            @input="$forceUpdate()" />
+                            ref="newFileTextarea" @input="updatePreviewNewFile" @scroll="syncScrollNewFile" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -100,11 +100,8 @@ import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-python'
 import 'prismjs/components/prism-css'
 import 'prismjs/components/prism-markup'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers'
 
 export default {
-
     name: 'FileTree',
     props: {
         files: Array,
@@ -116,7 +113,6 @@ export default {
             default: ''
         }
     },
-
     data() {
         return {
             showNewFileModal: false,
@@ -126,32 +122,11 @@ export default {
                 content: '',
                 commitMessage: ''
             },
-            expandedDirs: new Set() // 添加这行来跟踪展开的目录
+            expandedDirs: new Set()
         }
     },
 
-
     methods: {
-
-        mounted() {
-            this.$nextTick(() => {
-                // 获取当前编辑器实例的元素
-                const preview = this.$el.querySelector('.editor-preview');
-                const textarea = this.$el.querySelector('.editor-textarea');
-
-                if (!preview || !textarea) return;
-
-                const syncScroll = () => {
-                    preview.scrollTop = textarea.scrollTop;
-                    preview.scrollLeft = textarea.scrollLeft;
-                };
-
-                // 使用 requestAnimationFrame 优化滚动性能
-                textarea.addEventListener('scroll', () => {
-                    requestAnimationFrame(syncScroll);
-                });
-            });
-        },
 
         highlightCode(code, language) {
             if (!code) return ''
@@ -161,40 +136,45 @@ export default {
                 language
             )
         },
-
-        watch: {
-            'editingFile.content': {
-                immediate: true,
-                handler(newVal) {
-                    this.$nextTick(() => {
-                        const preview = this.$el.querySelector('.editor-preview');
-                        if (preview) {
-                            preview.innerHTML = this.highlightCode(newVal || '', this.getFileLanguage(this.editingFile));
-                        }
-                    });
-                }
-            },
-            'newFile.content': {
-                immediate: true,
-                handler(newVal) {
-                    this.$nextTick(() => {
-                        const preview = this.$el.querySelector('.editor-preview');
-                        if (preview) {
-                            preview.innerHTML = this.highlightCode(newVal || '', this.getFileLanguage(this.newFile));
-                        }
-                    });
-                }
+        updatePreview() {
+            // 更新编辑文件的预览内容
+            if (this.$refs.preview) {
+                this.$refs.preview.innerHTML = this.highlightCode(this.editingFile.content || '', this.getFileLanguage(this.editingFile));
             }
         },
 
-        editorInit(editor) {
-            // 配置编辑器实例
-            editor.setShowPrintMargin(false)
-            editor.session.setUseWrapMode(true)
+        updatePreviewNewFile() {
+            // 更新新建文件的预览内容
+            if (this.$refs.newFilePreview) {
+                this.$refs.newFilePreview.innerHTML = this.highlightCode(this.newFile.content || '', this.getFileLanguage(this.newFile));
+            }
+        },
+
+        syncScroll() {
+            const preview = this.$refs.preview;
+            const textarea = this.$refs.textarea;
+
+            if (preview && textarea) {
+                preview.scrollTop = textarea.scrollTop;
+                preview.scrollLeft = textarea.scrollLeft;
+            }
+        },
+
+        syncScrollNewFile() {
+            const preview = this.$refs.newFilePreview;
+            const textarea = this.$refs.newFileTextarea;
+
+            if (preview && textarea) {
+                preview.scrollTop = textarea.scrollTop;
+                preview.scrollLeft = textarea.scrollLeft;
+            }
         },
 
         showCreateFileModal() {
             this.showNewFileModal = true;
+            this.$nextTick(() => {
+                this.updatePreviewNewFile();
+            });
         },
 
         closeCreateFileModal() {
@@ -304,6 +284,7 @@ export default {
                 file.content = content;
                 await this.$nextTick();
                 this.editingFile = file;
+                this.updatePreview();
             } catch (error) {
                 console.error('Failed to load file content:', error);
                 alert('加载文件内容失败');
@@ -580,6 +561,7 @@ button:hover {
     border: none;
     outline: none;
     z-index: 2;
+
     /* 添加选择文本样式 */
     &::selection {
         background: rgba(0, 0, 0, 0.1);
