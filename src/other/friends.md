@@ -27,7 +27,7 @@ article: false
   title="狐狸窝"
   desc="笨比狐狐"
   logo="https://files.pysio.online/files/Avatar/yxixun1.jpg"
-  link="https://www.yxixun1.icu//"
+  link="https://www.yxixun1.icu/"
   background="rgba(250,236,244,1)"
 />
 
