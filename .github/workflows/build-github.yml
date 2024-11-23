@@ -6,7 +6,7 @@ on:
         branches: [main]
         
 env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Token
+    PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }} # 个人访问令牌
 
 # jobs表示执行的一项或多项任务
 jobs:
@@ -39,7 +39,7 @@ jobs:
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
+                personal_token: ${{ secrets.PERSONAL_TOKEN }}
                 publish_dir: ./src/.vuepress/dist
-                external_repository: pysio2007/Vue-Blog-WebSite # 替换为目标仓库的用户名和仓库名
-                publish_branch: main #
+                external_repository: pysio2007/Vue-Blog-WebSite
+                publish_branch: main
