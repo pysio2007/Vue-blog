@@ -211,11 +211,11 @@
   .cell {
     width: 20px;
     height: 20px;
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: var(--vp-c-bg);
+    border: 1px solid #63616196;
   }
   .cell.alive {
-    background-color: black;
+    background-color: var(--vp-c-text);
   }
   .cell.ant {
     background-color: red;
