@@ -18,17 +18,9 @@ article: false
 <VPCard
   title="233355607的乱写站"
   desc="啥都写的引诱吃（"
-  logo="https://files.pysio.online/files/Avatar/233355607.jpg"
+  logo="https://cdn.akaere.online/https://avatars.githubusercontent.com/u/81961962"
   link="https://www.233355607.xyz/"
   background="rgba(236, 244, 250)"
-/>
-
-<VPCard
-  title="狐狸窝"
-  desc="笨比狐狐"
-  logo="https://files.pysio.online/files/Avatar/yxixun1.jpg"
-  link="https://www.yxixun1.icu//"
-  background="rgba(250,236,244,1)"
 />
 
 ## 交换友链
