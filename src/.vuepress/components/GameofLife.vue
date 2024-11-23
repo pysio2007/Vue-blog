@@ -214,7 +214,7 @@ export default {
 button {
   padding: 5px 10px;
   height: 2rem;
-  border: 5px solid #cccccc0c;
+  border: 1px solid #cccccc0c;
   background-color: var(--vp-c-bg);
   box-shadow: 1.5px 1px 2px #00000021;
   border-radius: 4px;
@@ -239,8 +239,8 @@ button {
 .cell {
   width: 20px;
   height: 20px;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: var(--vp-c-bg);
+  border: 1px solid #63616196;
 }
 .cell.alive {
   background-color: black;
