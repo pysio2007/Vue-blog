@@ -243,6 +243,6 @@ button {
   border: 1px solid #63616196;
 }
 .cell.alive {
-  background-color: black;
+  background-color: var(--vp-c-text);
 }
 </style>
