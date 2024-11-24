@@ -31,6 +31,14 @@ article: false
   background="rgba(250,236,244,1)"
 />
 
+<VPCard
+  title="米露小窝"
+  desc="放弃个性,就和死了没什么区别"
+  logo="https://files.pysio.online/files/Avatar/milu.jpg"
+  link="https://www.milu.ink/"
+  background="rgba(233,30,99,0.17)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
