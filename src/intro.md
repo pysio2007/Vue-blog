@@ -38,6 +38,10 @@ article: false
   class="cat-logo"
 />
 
+## 更新记录
+
+<GitCommits />
+
 <!-- ## Server Info
 
 <Fastfetch /> -->
