@@ -1,11 +1,11 @@
-FROM docker.akaere.online/node:23 AS builder
+FROM node:23 AS builder
 WORKDIR ./
 COPY . .
 RUN npm install
 RUN npm run docs:build
 RUN ls
 
-FROM docker.akaere.online/nginx
+FROM nginx
 WORKDIR /usr/share/nginx/html/
 COPY --from=builder ./src/.vuepress/dist ./
 RUN ls
