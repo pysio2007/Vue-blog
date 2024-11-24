@@ -19,7 +19,7 @@ projects:
     desc: 博客的FontAwesome仓库
     link: https://github.com/pysio2007/Pysio-FontAwesome
 
-  - icon: fa-solid fa-books
+  - icon: fa-regular fa-book
     name: Pysio Library
     desc: 小说和漫画
     link: https://www.pysio.tech
