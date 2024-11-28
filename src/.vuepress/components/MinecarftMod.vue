@@ -129,6 +129,7 @@ export default {
         })
 
         const MCIM_BASE_URL = 'https://mod.mcimirror.top'
+        const CDN_BASE_URL = 'https://cdn.akaere.online/https://mod.mcimirror.top'
 
         // 合并搜索结果
         const mergedResults = computed(() => {
@@ -148,7 +149,6 @@ export default {
 
             try {
                 const promises = []
-
                 if (platforms.value.curseforge) {
                     promises.push(
                         axios.get(`${MCIM_BASE_URL}/curseforge/v1/mods/search`, {
@@ -156,6 +156,14 @@ export default {
                                 gameId: 432,
                                 searchFilter: searchQuery.value
                             }
+                        }).catch(() => {
+                            // 主链接失败时使用CDN
+                            return axios.get(`${CDN_BASE_URL}/curseforge/v1/mods/search`, {
+                                params: {
+                                    gameId: 432,
+                                    searchFilter: searchQuery.value
+                                }
+                            })
                         })
                     )
                 }
@@ -166,6 +174,12 @@ export default {
                             params: {
                                 query: searchQuery.value
                             }
+                        }).catch(() => {
+                            return axios.get(`${CDN_BASE_URL}/modrinth/v2/search`, {
+                                params: {
+                                    query: searchQuery.value
+                                }
+                            })
                         })
                     )
                 }
@@ -219,33 +233,28 @@ export default {
                     : `/modrinth/v2/project/${mod.id}/version`
 
                 const response = await axios.get(`${MCIM_BASE_URL}${endpoint}`)
+                    .catch(() => {
+                        return axios.get(`${CDN_BASE_URL}${endpoint}`)
+                    })
 
-                // 统一处理文件列表格式
+                // 添加CDN URL到文件下载路径
                 if (mod.platform === 'CurseForge') {
                     mod.files = response.data.data.map(file => ({
-                        id: file.id,
-                        fileName: file.fileName,
-                        gameVersion: file.gameVersions?.join(', ') || '未知版本',
+                        ...file,
                         downloadUrl: `${MCIM_BASE_URL}/files/${mod.id}/${file.id}/${file.fileName}`,
-                        platformPath: `/files/${mod.id}/${file.id}/${file.fileName}`
+                        cdnDownloadUrl: `${CDN_BASE_URL}/files/${mod.id}/${file.id}/${file.fileName}`
                     }))
                 } else {
                     mod.files = response.data.map(file => ({
-                        id: file.id,
-                        fileName: file.files[0]?.filename || file.name,
-                        gameVersion: file.game_versions?.join(', ') || '未知版本',
+                        ...file,
                         downloadUrl: `${MCIM_BASE_URL}/data/${mod.id}/versions/${file.id}/${file.files[0]?.filename}`,
-                        platformPath: `/data/${mod.id}/versions/${file.id}/${file.files[0]?.filename}`
+                        cdnDownloadUrl: `${CDN_BASE_URL}/data/${mod.id}/versions/${file.id}/${file.files[0]?.filename}`
                     }))
                 }
-
                 return mod
             } catch (error) {
                 console.error('获取mod详情失败:', error)
-                return {
-                    ...mod,
-                    files: []
-                }
+                return { ...mod, files: [] }
             }
         }
 
@@ -258,21 +267,26 @@ export default {
 
         const downloadMod = async (file) => {
             try {
+                // 先尝试主链接
                 const response = await axios({
                     url: file.downloadUrl,
                     method: 'GET',
                     responseType: 'blob'
+                }).catch(async () => {
+                    // 主链接失败时使用CDN链接
+                    return axios({
+                        url: file.cdnDownloadUrl,
+                        method: 'GET',
+                        responseType: 'blob'
+                    })
                 })
 
-                // 创建下载链接
                 const url = window.URL.createObjectURL(new Blob([response.data]))
                 const link = document.createElement('a')
                 link.href = url
-                link.setAttribute('download', file.fileName) // 使用原始文件名
+                link.setAttribute('download', file.fileName)
                 document.body.appendChild(link)
                 link.click()
-
-                // 清理
                 link.remove()
                 window.URL.revokeObjectURL(url)
             } catch (error) {
@@ -283,10 +297,22 @@ export default {
         const availableVersions = computed(() => {
             if (!selectedMod.value?.files) return []
             const versions = new Set()
+
             selectedMod.value.files.forEach(file => {
-                file.gameVersion.split(', ').forEach(v => versions.add(v))
+                // 根据不同平台处理版本信息
+                if (selectedMod.value.platform === 'CurseForge') {
+                    // CurseForge的版本信息在 gameVersion 数组中
+                    file.gameVersion?.forEach(version => versions.add(version))
+                } else {
+                    // Modrinth的版本信息在 game_versions 数组中
+                    file.game_versions?.forEach(version => versions.add(version))
+                }
             })
-            return Array.from(versions)
+
+            return Array.from(versions).sort((a, b) => {
+                // 版本号排序逻辑
+                return b.localeCompare(a, undefined, { numeric: true })
+            })
         })
 
         const availableLoaders = computed(() => {
@@ -306,9 +332,14 @@ export default {
             if (!selectedMod.value?.files) return []
 
             return selectedMod.value.files.filter(file => {
-                const versionMatch = !selectedVersion.value || file.gameVersion.includes(selectedVersion.value)
-                // const loaderMatch = !selectedLoader.value || file.fileName.toLowerCase().includes(selectedLoader.value.toLowerCase())
-                return versionMatch // && loaderMatch
+                if (!selectedVersion.value) return true
+
+                // 根据不同平台检查版本匹配
+                if (selectedMod.value.platform === 'CurseForge') {
+                    return file.gameVersion?.includes(selectedVersion.value)
+                } else {
+                    return file.game_versions?.includes(selectedVersion.value)
+                }
             })
         })
 
