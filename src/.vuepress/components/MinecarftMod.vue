@@ -1,8 +1,8 @@
 <!-- 使用MCIM搜索MOD并显示MOD信息 使用OpenMCIM下载对应MOD （测试版本超级大饼） -->
 <template>
     <div class="mod-search-container">
-        <!-- 搜索区域 -->
-        <div class="search-section">
+        <!-- 仅在非详情页显示搜索区域 -->
+        <div class="search-section" v-if="!selectedMod">
             <input v-model="searchQuery" @input="debounceSearch" type="text" placeholder="搜索 Mod..."
                 class="search-input" />
             <div class="platform-toggles">
@@ -34,21 +34,72 @@
 
             <!-- Mod 详情视图 -->
             <div v-else class="mod-details">
-                <button @click="selectedMod = null" class="back-button">
-                    返回搜索结果
-                </button>
+                <div v-if="selectedMod" class="mod-details">
+                    <button @click="selectedMod = null" class="back-button">
+                        ← 返回
+                    </button>
+                    <div class="detail-header">
+                        <img :src="selectedMod.iconUrl" :alt="selectedMod.name">
+                        <h2>{{ selectedMod.name }}</h2>
+                    </div>
+                    <!-- <div class="detail-content">
+              <div class="description" v-html="selectedMod.description"></div>
+              <div class="files-section">
+                <h3>可用版本</h3>
+                <div v-for="file in selectedMod.files" :key="file.id" class="file-item">
+                  <span>{{ file.fileName }}</span>
+                  <span>{{ file.gameVersion }}</span>
+                  <button @click="downloadMod(file)">下载</button>
+                </div>
+              </div>
+            </div> -->
+                </div>
+
+                <!-- 筛选区域 -->
+                <div class="filters-section">
+                    <div class="filter-group">
+                        <select v-model="selectedVersion" @change="filterFiles">
+                            <option value="">所有版本</option>
+                            <option v-for="version in availableVersions" :key="version" :value="version">
+                                {{ version }}
+                            </option>
+                        </select>
+                        <!-- 暂时移除加载器选择
+              <select v-model="selectedLoader" @change="filterFiles">
+                <option value="">所有加载器</option>
+                <option v-for="loader in availableLoaders" :key="loader" :value="loader">
+                  {{ loader }}
+                </option>
+              </select>
+              -->
+                    </div>
+                </div>
+
                 <div class="detail-header">
                     <img :src="selectedMod.iconUrl" :alt="selectedMod.name">
                     <h2>{{ selectedMod.name }}</h2>
                 </div>
+
                 <div class="detail-content">
                     <div class="description" v-html="selectedMod.description"></div>
                     <div class="files-section">
                         <h3>可用版本</h3>
-                        <div v-for="file in selectedMod.files" :key="file.id" class="file-item">
+                        <div v-for="file in paginatedFiles" :key="file.id" class="file-item">
                             <span>{{ file.fileName }}</span>
                             <span>{{ file.gameVersion }}</span>
                             <button @click="downloadMod(file)">下载</button>
+                        </div>
+
+                        <!-- 分页控制 -->
+                        <div class="pagination">
+                            <button :disabled="currentPage === 1" @click="currentPage--" class="pagination-button">
+                                上一页
+                            </button>
+                            <span>{{ currentPage }} / {{ totalPages }}</span>
+                            <button :disabled="currentPage === totalPages" @click="currentPage++"
+                                class="pagination-button">
+                                下一页
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -65,6 +116,10 @@ import debounce from 'lodash/debounce'
 export default {
     name: 'ModSearch',
     setup() {
+        const selectedVersion = ref('')
+        // const selectedLoader = ref('')  // 暂时注释掉加载器相关变量
+        const currentPage = ref(1)
+        const pageSize = ref(10)
         const searchQuery = ref('')
         const searchResults = ref({ curseforge: [], modrinth: [] })
         const selectedMod = ref(null)
@@ -225,6 +280,61 @@ export default {
             }
         }
 
+        const availableVersions = computed(() => {
+            if (!selectedMod.value?.files) return []
+            const versions = new Set()
+            selectedMod.value.files.forEach(file => {
+                file.gameVersion.split(', ').forEach(v => versions.add(v))
+            })
+            return Array.from(versions)
+        })
+
+        const availableLoaders = computed(() => {
+            if (!selectedMod.value?.files) return []
+            const loaders = new Set()
+            selectedMod.value.files.forEach(file => {
+                // 从文件名推断加载器类型
+                if (file.fileName.toLowerCase().includes('forge')) loaders.add('Forge')
+                if (file.fileName.toLowerCase().includes('fabric')) loaders.add('Fabric')
+                if (file.fileName.toLowerCase().includes('quilt')) loaders.add('Quilt')
+            })
+            return Array.from(loaders)
+        })
+
+        // 筛选文件列表
+        const filteredFiles = computed(() => {
+            if (!selectedMod.value?.files) return []
+
+            return selectedMod.value.files.filter(file => {
+                const versionMatch = !selectedVersion.value || file.gameVersion.includes(selectedVersion.value)
+                // const loaderMatch = !selectedLoader.value || file.fileName.toLowerCase().includes(selectedLoader.value.toLowerCase())
+                return versionMatch // && loaderMatch
+            })
+        })
+
+        // 分页处理
+        const totalPages = computed(() =>
+            Math.ceil(filteredFiles.value.length / pageSize.value)
+        )
+
+        const paginatedFiles = computed(() => {
+            const start = (currentPage.value - 1) * pageSize.value
+            const end = start + pageSize.value
+            return filteredFiles.value.slice(start, end)
+        })
+
+        // 重置筛选和分页
+        const resetFilters = () => {
+            selectedVersion.value = ''
+            // selectedLoader.value = ''
+            currentPage.value = 1
+        }
+
+        // 筛选变化时重置页码
+        const filterFiles = () => {
+            currentPage.value = 1
+        }
+
         return {
             searchQuery,
             searchResults,
@@ -233,7 +343,16 @@ export default {
             mergedResults,
             debounceSearch,
             showModDetails,
-            downloadMod
+            downloadMod,
+            filterFiles,
+            selectedVersion,
+            // selectedLoader,
+            currentPage,
+            availableVersions,
+            availableLoaders,
+            paginatedFiles,
+            totalPages,
+            resetFilters
         }
     }
 }
@@ -316,13 +435,11 @@ export default {
 }
 
 .back-button {
-    padding: 0.5rem 1rem;
-    background: #7c3aed;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 1rem;
+    position: fixed;
+    left: 2rem;
+    top: 1rem;
+    /* 调整返回按钮位置 */
+    z-index: 100;
 }
 
 .detail-header {
@@ -331,6 +448,47 @@ export default {
     gap: 1.5rem;
     margin-bottom: 2rem;
     padding: 1rem;
+}
+
+.filters-section {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: 8px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pagination-button {
+    padding: 0.5rem 1rem;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagination-button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-group select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    background: white;
 }
 
 .detail-header img {
@@ -367,8 +525,42 @@ export default {
     background: #6d28d9;
 }
 
+.mod-details {
+    position: relative;
+    /* 用于定位返回按钮 */
+}
+
+.back-button {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 1;
+    padding: 0.5rem 1rem;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-button:hover {
+    background: #6d28d9;
+}
+
 /* 暗色主题支持 */
 @media (prefers-color-scheme: dark) {
+    .filter-group select {
+        background: #1f2937;
+        border-color: #374151;
+        color: white;
+    }
+
+    .filters-section {
+        background: rgba(124, 58, 237, 0.05);
+    }
 
     .mod-card,
     .mod-details {
