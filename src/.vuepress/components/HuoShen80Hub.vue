@@ -1,9 +1,17 @@
 <!-- 展示Github项目 https://github.com/pysio2007/HuoShen80Hub 中的图片 -->
- 
+
 <template>
-  <div class="search-container">
+  <!-- 只在非加载状态显示搜索框 -->
+  <div v-if="!loading" class="search-container">
     <input v-model="searchQuery" type="text" placeholder="搜索图片..." class="search-input">
   </div>
+  
+  <!-- 加载提示 -->
+  <div v-if="loading" class="hint-container note">
+    <p class="hint-container-title">加载中</p>
+    <p>正在获取图片列表...</p>
+  </div>
+
   <div class="image-gallery">
     <div v-for="(url, index) in filteredUrls" :key="index">
       <h3>{{ getFileName(url) }}</h3>
@@ -25,6 +33,7 @@ export default {
     const urls = ref([])
     const info = ref({})
     const searchQuery = ref('')
+    const loading = ref(true) // 添加loading状态
 
     const fetchUrls = async () => {
       try {
@@ -42,6 +51,8 @@ export default {
         info.value = await response.json()
       } catch (error) {
         console.error('Error fetching info:', error)
+      } finally {
+        loading.value = false // 数据加载完成
       }
     }
 
@@ -76,7 +87,8 @@ export default {
       filteredUrls,
       info,
       getFileName,
-      searchQuery
+      searchQuery,
+      loading
     }
   }
 }
