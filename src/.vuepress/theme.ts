@@ -43,7 +43,7 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: `Pysio's Home / <a href="https://beian.miit.gov.cn/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">蜀ICP备2023021309号-1</a> / <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">川公网安备51010802032524号</a> / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: underline;">${process.env.VUE_APP_GIT_HASH}</a> `,
+  footer: `Pysio's Home / <a href="https://beian.miit.gov.cn/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">蜀ICP备2023021309号-1</a> / <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">川公网安备51010802032524号</a> / <a href="https://www.cloudflare.com/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">Build Cloudflare</a> / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">${process.env.VUE_APP_GIT_HASH}</a> `,
   displayFooter: true, 
 
   // 博客相关
