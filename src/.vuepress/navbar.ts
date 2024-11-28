@@ -26,6 +26,7 @@ export default navbar([
     link: "/tools/",
     children:[
       { text: "IP 检测", icon: "fa-solid fa-globe", link: "/tools/ipcheck" },
+      { text: "McMod搜索(测试)", icon: "fa-kit fa-modrinth", link: "/tools/mcmod" },
     ],
   },
   {
