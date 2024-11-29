@@ -18,6 +18,7 @@ import GameofLife from "./components/GameofLife.vue";
 import Langtonsant from "./components/Langtonsant.vue";
 import DNSLeak from "./components/DNSLeak.vue";
 import GitCommits from "./components/GitCommits.vue";
+import MinecarftMod from "./components/MinecarftMod.vue";
 
 
 export default defineClientConfig({
@@ -39,6 +40,7 @@ export default defineClientConfig({
     app.component("Langtonsant", Langtonsant);
     app.component("DNSLeak", DNSLeak);
     app.component("GitCommits", GitCommits);
+    app.component("MinecarftMod", MinecarftMod);
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [

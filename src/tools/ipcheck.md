@@ -1,5 +1,5 @@
 ---
-title: IP 检测（测试版）
+title: IP 检测
 icon: fa-solid fa-globe
 article: false
 ---
