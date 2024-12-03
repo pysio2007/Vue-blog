@@ -39,7 +39,12 @@ export default {
       try {
         const response = await fetch('https://cdn.akaere.online/raw.githubusercontent.com/pysio2007/HuoShen80Hub/refs/heads/master/url.csv')
         const text = await response.text()
-        urls.value = text.split('\n').filter(url => url.trim() !== '')
+        const urlList = text.split('\n').filter(url => url.trim() !== '')
+        
+        for (const url of urlList) {
+          urls.value.push(url)
+          await new Promise(resolve => setTimeout(resolve, 100)) // 每100ms添加一个URL，避免卡顿
+        }
       } catch (error) {
         console.error('Error fetching URLs:', error)
       }
