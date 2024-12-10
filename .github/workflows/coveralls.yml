@@ -1,0 +1,54 @@
+name: Coveralls Tests
+on: [push, pull_request]
+env:
+  CI: true
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [ 18, 20, 21]
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Set Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install npm dependencies
+        run: npm install # switch to `npm ci` when Node.js 6 support is dropped
+
+      - name: Run Build
+        run: npm run docs:build
+
+      - name: test token
+        run: echo "${{ secrets.COVERALLS_REPO_TOKEN }}"
+    
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: ${{matrix.os}}-node-${{ matrix.node }}
+          parallel: true
+
+  finish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
+  
