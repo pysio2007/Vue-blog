@@ -4,7 +4,6 @@ layout: BlogHome
 icon: home
 title: Pysio's Home
 bgImage: https://www.pysio.online/assets/imgs/default.webp
-bgImageDark: 
 heroText: Pysio's Home
 heroFullScreen: false
 tagline: 一个温暖的家
