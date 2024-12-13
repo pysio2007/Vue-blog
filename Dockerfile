@@ -1,6 +1,11 @@
-FROM node:23 AS builder
+FROM node:22-alpine AS builder
 WORKDIR ./
 COPY . .
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    gcc
 RUN npm install
 RUN npm run docs:build
 RUN ls
