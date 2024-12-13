@@ -27,7 +27,7 @@
     "@vuepress/plugin-notice": "2.0.0-rc.61",
     "@vuepress/plugin-prismjs": "2.0.0-rc.61",
     "@vuepress/plugin-pwa": "2.0.0-rc.61",
-    "@vuepress/plugin-umami-analytics": "2.0.0-rc.61",
+    "@vuepress/plugin-umami-analytics": "2.0.0-rc.66",
     "@vueup/vue-quill": "^1.2.0",
     "ansi-to-html": "^0.7.2",
     "asciinema-player": "^3.8.1",
