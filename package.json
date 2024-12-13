@@ -26,7 +26,7 @@
     "@vuepress/plugin-feed": "2.0.0-rc.61",
     "@vuepress/plugin-notice": "2.0.0-rc.61",
     "@vuepress/plugin-prismjs": "2.0.0-rc.61",
-    "@vuepress/plugin-pwa": "2.0.0-rc.61",
+    "@vuepress/plugin-pwa": "2.0.0-rc.66",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.61",
     "@vueup/vue-quill": "^1.2.0",
     "ansi-to-html": "^0.7.2",
@@ -42,7 +42,7 @@
     "sass-embedded": "^1.79.4",
     "typescript": "^5.6.3",
     "vue": "^3.5.13",
-    "vuepress": "2.0.0-rc.18",
+    "vuepress": "2.0.0-rc.19",
     "vuepress-plugin-search-pro": "2.0.0-rc.59",
     "vuepress-theme-hope": "2.0.0-rc.59"
   },
