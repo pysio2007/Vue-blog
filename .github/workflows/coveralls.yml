@@ -28,27 +28,27 @@ jobs:
 
       - name: Run Build
         run: npm run docs:build
-        
+
       - name: Run tests with coverage
         run: npm run coverage
 
-      - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./coverage/lcov.info
-          flag-name: ${{ matrix.os }}-node-${{ matrix.node }}
-          parallel: true
+  #     - name: Upload coverage to Coveralls
+  #       uses: coverallsapp/github-action@v2
+  #       with:
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         path-to-lcov: ./coverage/lcov.info
+  #         flag-name: ${{ matrix.os }}-node-${{ matrix.node }}
+  #         parallel: true
 
-  finish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v3
+  # finish:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Clone repository
+  #       uses: actions/checkout@v3
 
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
+  #     - name: Coveralls Finished
+  #       uses: coverallsapp/github-action@v2
+  #       with:
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         parallel-finished: true
