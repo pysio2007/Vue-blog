@@ -4,6 +4,7 @@ COPY . .
 RUN apk add --no-cache \
     python3 \
     make \
+    git \
     g++ \
     gcc
 RUN npm install
