@@ -50,7 +50,7 @@ export default {
   },
   async created() {
     await this.fetchNewWord();
-    await this.loadValidWords();
+    // await this.loadValidWords();
   },
   methods: {
     async fetchNewWord() {
@@ -63,15 +63,15 @@ export default {
         this.answer = 'nowan'; // 降级方案
       }
     },
-    async loadValidWords() {
-      try {
-        const response = await fetch('/word-list.txt'); // 需要提供有效词列表
-        const text = await response.text();
-        this.validWords = new Set(text.split('\n').map(w => w.trim().toLowerCase()));
-      } catch (error) {
-        console.error('Failed to load valid words:', error);
-      }
-    },
+    // async loadValidWords() {
+    //   try {
+    //     const response = await fetch('/word-list.txt'); // 需要提供有效词列表
+    //     const text = await response.text();
+    //     this.validWords = new Set(text.split('\n').map(w => w.trim().toLowerCase()));
+    //   } catch (error) {
+    //     console.error('Failed to load valid words:', error);
+    //   }
+    // },
     async isValidWord(word) {
       try {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);

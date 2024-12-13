@@ -5,7 +5,10 @@ const config = {
   coverageProvider: "v8",
   testEnvironment: "node",
   transform: {
-    "^.+\\.tsx?$": "babel-jest",
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { 
+      sourceMaps: false,
+      plugins: ['@babel/plugin-transform-modules-commonjs']
+    }]
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
   testMatch: [
@@ -14,8 +17,13 @@ const config = {
   ],
   collectCoverageFrom: [
     "src/**/*.{js,jsx,ts,tsx}",
-    "!src/**/*.d.ts", // 排除类型声明文件
+    "!src/**/*.d.ts",
+    "!src/.vuepress/**/*",
+    "!**/node_modules/**"
   ],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1"
+  }
 };
 
 export default config;
