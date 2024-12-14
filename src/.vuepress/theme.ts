@@ -62,11 +62,11 @@ export default hopeTheme({
   },
 
   // 加密配置
-  // encrypt: {
-  //   config: {
-  //     "/demo/encrypt.html": ["1234"],
-  //   },
-  // },
+  encrypt: {
+    config: {
+      "/tools/mcmod.html": ["mcmod"],
+    },
+  },
 
   // 多语言配置
   metaLocales: {
