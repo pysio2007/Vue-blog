@@ -34,6 +34,7 @@
     "@vuepress/plugin-notice": "2.0.0-rc.66",
     "@vuepress/plugin-prismjs": "2.0.0-rc.66",
     "@vuepress/plugin-pwa": "2.0.0-rc.66",
+    "@vuepress/plugin-revealjs": "^2.0.0-rc.47",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.66",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.66",
     "@vueup/vue-quill": "^1.2.0",

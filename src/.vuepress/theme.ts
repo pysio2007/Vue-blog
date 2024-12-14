@@ -154,6 +154,11 @@ export default hopeTheme({
       themes: { light: 'one-light', dark: 'nord' },
       lineNumbers: false,
     },
+
+    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
+    revealjs: {
+      plugins: ["highlight", "math", "search", "notes", "zoom"],
+    },
   },
 
   // 在这里配置主题提供的插件
@@ -251,10 +256,5 @@ export default hopeTheme({
         ],
       },
     },
-
-    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-    // },
   },
 });
