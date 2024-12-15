@@ -19,9 +19,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           mergeMethod: squash
-          mergeLabel: '依赖更新'
-          mergeFilter: 'label=依赖更新'
-          mergeCommitMessage: 'Auto-merged renovate PR'
+          mergeLabel: '依赖更新,等待合并'
+          mergeFilter: 'label=依赖更新,label=等待合并'
+          mergeCommitMessage: 'Auto-merged PR'
           mergeCommitMessageRegex: '^Bump .*'
-          mergeFilterAuthor: 'renovate[bot]'
           mergeFilterStatus: 'success'
