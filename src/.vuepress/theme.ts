@@ -45,7 +45,7 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: `Pysio's Home / <a href="https://beian.miit.gov.cn/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">蜀ICP备2023021309号-1</a> / <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">川公网安备51010802032524号</a> / <a href="https://www.cloudflare.com/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">Build Cloudflare</a> / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">${process.env.VUE_APP_GIT_HASH}</a> `,
+  footer: `Pysio's Home / <a href="https://beian.miit.gov.cn/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">蜀ICP备2023021309号-1</a> / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">${process.env.VUE_APP_GIT_HASH}</a> `,
   displayFooter: true,
 
   // 博客相关
@@ -62,11 +62,11 @@ export default hopeTheme({
   },
 
   // 加密配置
-  // encrypt: {
-  //   config: {
-  //     "/demo/encrypt.html": ["1234"],
-  //   },
-  // },
+  encrypt: {
+    config: {
+      "/tools/mcmod.html": ["mcmod"],
+    },
+  },
 
   // 多语言配置
   metaLocales: {
@@ -154,6 +154,11 @@ export default hopeTheme({
       themes: { light: 'one-light', dark: 'nord' },
       lineNumbers: false,
     },
+
+    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
+    revealjs: {
+      plugins: ["highlight", "math", "search", "notes", "zoom"],
+    },
   },
 
   // 在这里配置主题提供的插件
@@ -205,10 +210,10 @@ export default hopeTheme({
         icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
-      msTile: {
-        image: "/assets/icon/ms-icon-144.png",
-        color: "#ffffff",
-      },
+      // msTile: {
+      //   image: "/assets/icon/ms-icon-144.png",
+      //   color: "#ffffff",
+      // },
       manifest: {
         icons: [
           {
@@ -251,10 +256,5 @@ export default hopeTheme({
         ],
       },
     },
-
-    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-    // },
   },
 });

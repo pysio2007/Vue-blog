@@ -71,3 +71,9 @@ tag:
 ```javascript
 <i class="fa-kit fa-vscode"></i>
 ```
+
+### Minecraft Creeper <i class="fa-kit fa-creeper"></i>
+
+```javascript
+<i class="fa-kit fa-creeper"></i>
+```
