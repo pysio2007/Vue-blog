@@ -1,0 +1,27 @@
+name: Auto Merge Renovate PRs
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天检查一次
+  workflow_dispatch: # 手动触发
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Auto merge renovate PRs
+        uses: pascalgn/automerge-action@v0.14.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          mergeMethod: squash
+          mergeLabel: '依赖更新'
+          mergeFilter: 'label=依赖更新'
+          mergeCommitMessage: 'Auto-merged renovate PR'
+          mergeCommitMessageRegex: '^Bump .*'
+          mergeFilterAuthor: 'renovate[bot]'
+          mergeFilterStatus: 'success'
