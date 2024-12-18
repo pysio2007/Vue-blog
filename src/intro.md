@@ -38,6 +38,14 @@ article: false
   class="cat-logo"
 />
 
+<VPCard
+  title="叶琴韵"
+  desc="笨狐一个"
+  logo="https://files.pysio.online/files/Avatar/yxixun1.jpg"
+  link="https://github.com/yxixun1"
+  background="rgba(250,236,244,1)"
+/>
+
 ## 更新记录
 
 <GitCommits />
