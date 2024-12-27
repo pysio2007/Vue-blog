@@ -36,7 +36,7 @@
     "@vuepress/plugin-pwa": "2.0.0-rc.66",
     "@vuepress/plugin-revealjs": "^2.0.0-rc.47",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.68",
-    "@vuepress/plugin-umami-analytics": "2.0.0-rc.66",
+    "@vuepress/plugin-umami-analytics": "2.0.0-rc.68",
     "@vueup/vue-quill": "^1.2.0",
     "ansi-to-html": "^0.7.2",
     "asciinema-player": "^3.8.1",
