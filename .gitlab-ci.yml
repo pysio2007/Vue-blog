@@ -1,0 +1,22 @@
+stages:
+  - test
+
+variables:
+  CI: "true"
+
+test:
+  stage: test
+  image: docker.akaere.online/node:${NODE_VERSION}-buster-slim
+  parallel:
+    matrix:
+      - NODE_VERSION: "18"
+      - NODE_VERSION: "20"
+      - NODE_VERSION: "21"
+      - NODE_VERSION: "22"
+
+  script:
+    - echo "Running on Node.js $NODE_VERSION"
+    - node --version
+    - npm install
+    - npm run docs:build
+    - npm run coverage
