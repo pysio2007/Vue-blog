@@ -17,6 +17,8 @@ test:
   script:
     - echo "Running on Node.js $NODE_VERSION"
     - node --version
+    - apt-get update && apt-get install -y python3
+    - npm config set python python3
     - npm config set registry https://registry.npmmirror.com
     - npm install
     - npm run docs:build
