@@ -17,6 +17,7 @@ test:
   script:
     - echo "Running on Node.js $NODE_VERSION"
     - node --version
+    - npm config set registry https://registry.npmmirror.com
     - npm install
     - npm run docs:build
     - npm run coverage
