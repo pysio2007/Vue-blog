@@ -13,7 +13,10 @@
         {{ error }}
       </div>
       <div v-if="loading" class="loading-indicator">
-        加载中...
+        <div class="hint-container tip">
+          <p class="hint-container-title" v-if="isSubmitting">上传中 请稍等片刻...</p>
+          <p class="hint-container-title" v-else>查询中 请稍等片刻...</p>
+        </div>
       </div>
     </div>
 
@@ -81,7 +84,8 @@ export default {
       loading: false,
       error: null,
       copySuccess: false,
-      baseUrl: 'https://www.pysio.online/tools/Pastebin.html?uuid='
+      baseUrl: 'https://www.pysio.online/tools/Pastebin.html?uuid=',
+      isSubmitting: false // 新增字段
     }
   },
   computed: {
@@ -113,6 +117,7 @@ export default {
   methods: {
     async submitText() {
       this.loading = true;
+      this.isSubmitting = true; // 设置为提交状态
       this.error = null;
       try {
         const res = await fetch('https://pastbin.akaere.online', {
@@ -134,10 +139,12 @@ export default {
         console.error('Error:', error);
       } finally {
         this.loading = false;
+        this.isSubmitting = false; // 重置提交状态
       }
     },
     async fetchByUUID() {
       this.loading = true;
+      this.isSubmitting = false; // 设置为查询状态
       this.error = null;
       try {
         const res = await fetch(`https://pastbin.akaere.online/paste/${this.uuid}`, {
