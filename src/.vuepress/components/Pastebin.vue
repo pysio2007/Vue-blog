@@ -9,6 +9,12 @@
         <input v-model="uuid" placeholder="输入UUID查询" class="uuid-input" />
         <button @click="fetchByUUID" class="query-button">查询</button>
       </div>
+      <div v-if="error" class="error-message">
+        {{ error }}
+      </div>
+      <div v-if="loading" class="loading-indicator">
+        加载中...
+      </div>
     </div>
 
     <div v-if="response || queryResponse" class="result-container">
@@ -23,7 +29,7 @@
         <MonacoEditor
           v-model="displayedText"
           language="plaintext"
-          theme="vs-dark"
+          theme="vs"
           :options="{
             readOnly: true,
             minimap: { enabled: true },
@@ -42,11 +48,13 @@
 </template>
 
 <script>
-import MonacoEditor from './MonacoEditor.vue'
+import { defineAsyncComponent } from 'vue'
 
 export default {
   components: {
-    MonacoEditor
+    MonacoEditor: defineAsyncComponent(() => 
+      import('./MonacoEditor.vue')
+    )
   },
   data() {
     return {
@@ -54,6 +62,8 @@ export default {
       response: null,
       uuid: '',
       queryResponse: null,
+      loading: false,
+      error: null,
     }
   },
   computed: {
@@ -63,6 +73,8 @@ export default {
   },
   methods: {
     async submitText() {
+      this.loading = true;
+      this.error = null;
       try {
         const res = await fetch('https://pastbin.akaere.online', {
           method: 'POST',
@@ -70,18 +82,31 @@ export default {
             'Content-Type': 'text/plain; charset=utf-8',
           },
           body: this.inputText,
+          timeout: 30000, // 30秒超时
         });
+        if (!res.ok) throw new Error('提交失败');
         this.response = await res.json();
       } catch (error) {
+        this.error = `提交错误: ${error.message}`;
         console.error('Error:', error);
+      } finally {
+        this.loading = false;
       }
     },
     async fetchByUUID() {
+      this.loading = true;
+      this.error = null;
       try {
-        const res = await fetch(`https://pastbin.akaere.online/paste/${this.uuid}`);
+        const res = await fetch(`https://pastbin.akaere.online/paste/${this.uuid}`, {
+          timeout: 30000,
+        });
+        if (!res.ok) throw new Error('查询失败');
         this.queryResponse = await res.json();
       } catch (error) {
+        this.error = `查询错误: ${error.message}`;
         console.error('Error:', error);
+      } finally {
+        this.loading = false;
       }
     },
     formatTimestamp(timestamp) {
@@ -104,20 +129,21 @@ export default {
 }
 
 .result-container {
-  border: 1px solid #333;
+  border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #1e1e1e;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .metadata-bar {
   padding: 8px 12px;
-  background-color: #252526;
-  border-bottom: 1px solid #333;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
 }
 
 .timestamp {
-  color: #ccc;
+  color: #666;
   font-size: 0.9em;
 }
 
@@ -128,17 +154,17 @@ export default {
 
 .ai-analysis {
   padding: 12px;
-  background-color: #252526;
-  border-top: 1px solid #333;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
 }
 
 .ai-label {
-  color: #569cd6;
+  color: #0066cc;
   font-weight: bold;
 }
 
 .ai-content {
-  color: #d4d4d4;
+  color: #333;
   margin: 8px 0 0 0;
 }
 
@@ -182,5 +208,20 @@ export default {
 
 .response-section p, .query-response-section p {
   margin: 5px 0;
+}
+
+.error-message {
+  color: #ff4444;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 10px;
+  color: #666;
 }
 </style>

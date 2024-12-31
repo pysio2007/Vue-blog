@@ -16,6 +16,7 @@
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
+    "@monaco-editor/loader": "^1.4.0",
     "@sentry/browser": "^8.34.0",
     "@sentry/integrations": "^7.114.0",
     "@sentry/tracing": "^7.114.0",

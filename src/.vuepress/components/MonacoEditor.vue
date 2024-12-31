@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import * as monaco from 'monaco-editor'
+import loader from '@monaco-editor/loader';
 
 export default {
   name: 'MonacoEditor',
@@ -27,47 +27,42 @@ export default {
   },
   data() {
     return {
-      editor: null
-    }
-  },
-  mounted() {
-    this.initMonaco()
-  },
-  beforeUnmount() {
-    if (this.editor) {
-      this.editor.dispose()
-    }
-  },
-  methods: {
-    initMonaco() {
-      const options = {
-        value: this.modelValue,
-        language: this.language,
-        theme: this.theme,
-        automaticLayout: true,
-        ...this.options
-      }
-
-      this.editor = monaco.editor.create(this.$refs.editorContainer, options)
-
-      this.editor.onDidChangeModelContent(() => {
-        const value = this.editor.getValue()
-        this.$emit('update:modelValue', value)
-      })
+      editor: null,
+      monaco: null
     }
   },
   watch: {
     modelValue(newValue) {
       if (this.editor && newValue !== this.editor.getValue()) {
-        this.editor.setValue(newValue)
+        this.editor.setValue(newValue);
       }
-    },
-    options: {
-      deep: true,
-      handler(newVal) {
-        if (this.editor) {
-          this.editor.updateOptions(newVal)
-        }
+    }
+  },
+  mounted() {
+    this.initMonaco();
+  },
+  beforeDestroy() {
+    if (this.editor) {
+      this.editor.dispose();
+    }
+  },
+  methods: {
+    async initMonaco() {
+      try {
+        this.monaco = await loader.init();
+        this.editor = this.monaco.editor.create(this.$refs.editorContainer, {
+          value: this.modelValue,
+          language: this.language,
+          theme: this.theme,
+          ...this.options
+        });
+
+        this.editor.onDidChangeModelContent(() => {
+          const value = this.editor.getValue();
+          this.$emit('update:modelValue', value);
+        });
+      } catch (error) {
+        console.error('Monaco initialization error:', error);
       }
     }
   }
