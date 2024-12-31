@@ -21,7 +21,10 @@ import GitCommits from "./components/GitCommits.vue";
 import MinecarftMod from "./components/MinecarftMod.vue";
 import PwaCheck from "./components/PwaCheck.vue";
 import CraftingTable from "./components/CraftingTable.vue";
-
+import StatusCheak from "./components/StatusCheak.vue";
+import Statusissues from "./components/Statusissues.vue";
+import Pastebin from "./components/Pastebin.vue";
+import MonacoEditor from "./components/MonacoEditor.vue";
 
 export default defineClientConfig({
   enhance: ({ app, router, siteData }) => {
@@ -45,6 +48,10 @@ export default defineClientConfig({
     app.component("MinecarftMod", MinecarftMod);
     app.component("PwaCheck", PwaCheck);
     app.component("CraftingTable", CraftingTable);
+    app.component("StatusCheak", StatusCheak);
+    app.component("Statusissues", Statusissues);
+    app.component("Pastebin", Pastebin);
+    app.component('MonacoEditor',MonacoEditor);
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [

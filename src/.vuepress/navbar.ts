@@ -26,6 +26,7 @@ export default navbar([
     link: "/tools/",
     children:[
       { text: "IP 检测", icon: "fa-solid fa-globe", link: "/tools/ipcheck" },
+      { text: "Pastebin (前期版本)", icon: "fa-solid fa-paste", link: "/tools/Pastebin" },
       { text: "McMod搜索(测试)", icon: "fa-kit fa-modrinth", link: "/tools/mcmod" },
     ],
   },
@@ -35,6 +36,7 @@ export default navbar([
     link: "/other/",
     children: [
       { text: "友链", icon: "fa-solid fa-link", link: "/other/friends" },
+      { text: "服务状态", icon: "fa-regular fa-signal-bars", link: "/other/status" },
       { text: "问题追踪", icon: "fa-kit fa-issues", link: "/other/issues" },
       { text: "许可证", icon: "fa-brands fa-creative-commons", link: "/other/cc.html" },
     ],
