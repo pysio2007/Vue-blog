@@ -109,6 +109,11 @@
                 </div>
             </div>
         </div>
+
+        <!-- 添加提示消息组件 -->
+        <div v-if="toast" class="toast" :class="toast.type">
+            {{ toast.message }}
+        </div>
     </div>
     </template>
 
@@ -198,6 +203,7 @@
         imageToDelete: null,
         isAdmin: false,
         isClient: false, // 添加客户端标识
+        toast: null,
         }
     },
     
@@ -371,6 +377,16 @@
             this.imageToDelete = null
         },
 
+        showToast(message, type = 'success') {
+            this.toast = {
+                message,
+                type
+            }
+            setTimeout(() => {
+                this.toast = null
+            }, 3000) // 3秒后自动消失
+        },
+
         async executeDelete() {
             if (!this.imageToDelete) return
 
@@ -395,11 +411,14 @@
                     throw new Error('删除失败')
                 }
 
+                const data = await response.json()
                 // 从列表中移除已删除的图片
                 this.images = this.images.filter(img => img.hash !== this.imageToDelete.hash)
                 this.totalCount--
+                this.showToast(`${data.message} (${data.hash})`) // 显示成功提示
+                this.closePreview() // 如果在预览状态下删除，关闭预览
             } catch (err) {
-                alert(err.message)
+                this.showToast(err.message, 'error') // 显示错误提示
             } finally {
                 this.showDeleteConfirm = false
                 this.imageToDelete = null
@@ -730,5 +749,37 @@
     /* 确保我们的模态框层级高于主题默认预览 */
     .modal {
         z-index: 1000 !important;
+    }
+
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 24px;
+        border-radius: 4px;
+        color: white;
+        font-size: 0.9rem;
+        z-index: 2000;
+        animation: fadeInUp 0.3s ease;
+    }
+
+    .toast.success {
+        background-color: #4caf50;
+    }
+
+    .toast.error {
+        background-color: #f44336;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 20px);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
     }
     </style>
