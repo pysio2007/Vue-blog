@@ -14,6 +14,14 @@
                     :disabled="loading">
             显示全部
             </button>
+            <button 
+                class="login-btn"
+                @click="showTokenInput = true"
+                v-if="!isAdmin"
+            >
+                管理员登录
+            </button>
+            <span v-else class="admin-badge">已登录</span>
         </div>
         </div>
 
@@ -27,18 +35,27 @@
         </div>
 
         <template v-else>
-            <div v-for="image in images" :key="image.hash" class="picture-item">
-            <div class="picture-wrapper">
-                <img 
-                :src="`https://blogapi.pysio.online/i/${image.hash}`"
-                :alt="image.hash"
-                loading="lazy"
-                @click="showPreview(image)"
-                >
-            </div>
-            <div class="picture-hash">
-                {{ image.hash }}
-            </div>
+            <div v-for="image in images" 
+                 :key="image.hash" 
+                 class="picture-item"
+                 @click="showPreview(image)">
+                <div class="picture-wrapper">
+                    <img 
+                        :src="`https://blogapi.pysio.online/i/${image.hash}`"
+                        :alt="image.hash"
+                        loading="lazy"
+                    >
+                    <button 
+                        class="delete-btn"
+                        @click.stop="confirmDelete(image)"
+                        v-if="isAdmin"
+                    >
+                        删除
+                    </button>
+                </div>
+                <div class="picture-hash">
+                    {{ image.hash }}
+                </div>
             </div>
         </template>
 
@@ -49,13 +66,48 @@
 
         <!-- 图片预览模态框 -->
         <div v-if="previewImage" class="modal" @click="closePreview">
-        <div class="modal-content">
-            <img :src="`https://blogapi.pysio.online/i/${previewImage.hash}`" :alt="previewImage.hash">
-            <div class="modal-info">
-            <p>Hash: {{ previewImage.hash }}</p>
-            <p>上传时间: {{ formatDate(previewImage.createdAt) }}</p>
+            <div class="modal-content" @click.stop>
+                <img :src="`https://blogapi.pysio.online/i/${previewImage.hash}`" :alt="previewImage.hash">
+                <div class="modal-info">
+                    <p>Hash: {{ previewImage.hash }}</p>
+                    <p>上传时间: {{ formatDate(previewImage.createdAt) }}</p>
+                    <button 
+                        v-if="isAdmin"
+                        class="preview-delete-btn"
+                        @click="confirmDelete(previewImage)"
+                    >
+                        删除图片
+                    </button>
+                </div>
             </div>
         </div>
+
+        <!-- 添加 Admin Token 输入弹窗 -->
+        <div v-if="showTokenInput" class="modal">
+            <div class="modal-content token-input">
+                <h3>请输入管理员Token</h3>
+                <input 
+                    type="password" 
+                    v-model="adminToken"
+                    placeholder="请输入Token"
+                >
+                <div class="token-buttons">
+                    <button @click="saveToken">确定</button>
+                    <button @click="cancelToken">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 添加删除确认弹窗 -->
+        <div v-if="showDeleteConfirm" class="modal">
+            <div class="modal-content delete-confirm">
+                <h3>确认删除</h3>
+                <p>确定要删除此图片吗？</p>
+                <div class="confirm-buttons">
+                    <button @click="executeDelete">确定</button>
+                    <button @click="showDeleteConfirm = false">取消</button>
+                </div>
+            </div>
         </div>
     </div>
     </template>
@@ -140,6 +192,11 @@
         rateLimiter: new RateLimiter(100, 10000), // 10秒100次请求限制
         retryCount: 3, // 最大重试次数
         retryDelay: 1000, // 重试延迟（毫秒）
+        adminToken: '',
+        showTokenInput: false,
+        showDeleteConfirm: false,
+        imageToDelete: null,
+        isAdmin: false,
         }
     },
     
@@ -153,6 +210,13 @@
         this.error = '获取图片总数失败: ' + err.message
         } finally {
         this.initialLoading = false
+        }
+
+        // 检查cookie中是否存在token
+        const token = this.getCookie('admin_token')
+        if (token) {
+            this.adminToken = token
+            this.isAdmin = true
         }
     },
 
@@ -249,14 +313,89 @@
         await this.fetchImages()
         },
         showPreview(image) {
-        this.previewImage = image
+            if (!this.loading) {
+                this.previewImage = image
+            }
         },
         closePreview() {
         this.previewImage = null
         },
         formatDate(date) {
         return new Date(date).toLocaleString()
-        }
+        },
+        getCookie(name) {
+            const value = `; ${document.cookie}`
+            const parts = value.split(`; ${name}=`)
+            if (parts.length === 2) return parts.pop().split(';').shift()
+        },
+
+        setCookie(name, value, days = 7) {
+            const date = new Date()
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
+            const expires = `expires=${date.toUTCString()}`
+            document.cookie = `${name}=${value};${expires};path=/`
+        },
+
+        confirmDelete(image) {
+            if (!this.isAdmin) {
+                this.showTokenInput = true
+                this.imageToDelete = image
+                return
+            }
+            this.imageToDelete = image
+            this.showDeleteConfirm = true
+        },
+
+        saveToken() {
+            if (this.adminToken.trim()) {
+                this.setCookie('admin_token', this.adminToken)
+                this.isAdmin = true
+                this.showTokenInput = false
+                if (this.imageToDelete) {
+                    this.showDeleteConfirm = true
+                }
+            }
+        },
+
+        cancelToken() {
+            this.showTokenInput = false
+            this.imageToDelete = null
+        },
+
+        async executeDelete() {
+            if (!this.imageToDelete) return
+
+            try {
+                const response = await this.fetchWithRetry(
+                    `https://blogapi.pysio.online/images/${this.imageToDelete.hash}`,
+                    {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${this.adminToken}`
+                        }
+                    }
+                )
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        this.isAdmin = false
+                        this.adminToken = ''
+                        document.cookie = 'admin_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+                        throw new Error('Token无效')
+                    }
+                    throw new Error('删除失败')
+                }
+
+                // 从列表中移除已删除的图片
+                this.images = this.images.filter(img => img.hash !== this.imageToDelete.hash)
+                this.totalCount--
+            } catch (err) {
+                alert(err.message)
+            } finally {
+                this.showDeleteConfirm = false
+                this.imageToDelete = null
+            }
+        },
     }
     }
     </script>
@@ -303,6 +442,7 @@
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.2s;
+    cursor: pointer;
     }
 
     .picture-item:hover {
@@ -313,13 +453,14 @@
     .picture-wrapper {
     aspect-ratio: 1;
     overflow: hidden;
+    position: relative;
     }
 
     .picture-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    cursor: pointer;
+    display: block;
     }
 
     .picture-hash {
@@ -391,6 +532,25 @@
     .modal-info {
     margin-top: 1rem;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    }
+
+    .preview-delete-btn {
+        padding: 8px 16px;
+        background: #ff4444;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        margin-top: 0.5rem;
+        align-self: flex-end;
+    }
+
+    .preview-delete-btn:hover {
+        background: #ff0000;
     }
 
     @media (max-width: 719px) {
@@ -451,5 +611,115 @@
     content: "请求已限速，请耐心等待...";
     font-size: 0.9em;
     color: #666;
+    }
+
+    .delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    }
+
+    .picture-item:hover .delete-btn {
+    opacity: 1;
+    }
+
+    .delete-btn:hover {
+    background: #ff0000;
+    }
+
+    .token-input, .delete-confirm {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    }
+
+    .token-input input {
+    width: 100%;
+    padding: 8px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    }
+
+    .token-buttons, .confirm-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    }
+
+    .token-buttons button, .confirm-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    .token-buttons button:first-child, .confirm-buttons button:first-child {
+    background: #3eaf7c;
+    color: white;
+    }
+
+    .token-buttons button:last-child, .confirm-buttons button:last-child {
+    background: #666;
+    color: white;
+    }
+
+    .login-btn {
+        padding: 0.3rem 1rem;
+        background: #ff9800;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.2s;
+    }
+
+    .login-btn:hover {
+        background: #f57c00;
+    }
+
+    .admin-badge {
+        padding: 0.3rem 1rem;
+        background: #4caf50;
+        color: white;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    /* 添加以下样式来禁用VuePress默认的图片预览 */
+    :deep(.picture-wrapper) {
+        position: relative;
+    }
+
+    :deep(.picture-wrapper) img {
+        pointer-events: none !important;
+    }
+
+    /* 确保图片容器可以点击 */
+    .picture-item {
+        cursor: pointer !important;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 防止与主题默认样式冲突 */
+    :deep(.picture-wrapper) .preview-image-parent {
+        display: none !important;
+    }
+
+    /* 确保我们的模态框层级高于主题默认预览 */
+    .modal {
+        z-index: 1000 !important;
     }
     </style>
