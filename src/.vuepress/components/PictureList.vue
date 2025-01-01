@@ -197,10 +197,14 @@
         showDeleteConfirm: false,
         imageToDelete: null,
         isAdmin: false,
+        isClient: false, // 添加客户端标识
         }
     },
     
     async created() {
+        // 检查是否在客户端环境
+        this.isClient = typeof window !== 'undefined'
+        
         // 组件创建时就获取总数
         try {
         const response = await fetch('https://blogapi.pysio.online/images/count')
@@ -212,11 +216,13 @@
         this.initialLoading = false
         }
 
-        // 检查cookie中是否存在token
-        const token = this.getCookie('admin_token')
-        if (token) {
-            this.adminToken = token
-            this.isAdmin = true
+        // 只在客户端检查cookie
+        if (this.isClient) {
+            const token = this.getCookie('admin_token')
+            if (token) {
+                this.adminToken = token
+                this.isAdmin = true
+            }
         }
     },
 
@@ -324,12 +330,15 @@
         return new Date(date).toLocaleString()
         },
         getCookie(name) {
+            if (!this.isClient) return null
             const value = `; ${document.cookie}`
             const parts = value.split(`; ${name}=`)
             if (parts.length === 2) return parts.pop().split(';').shift()
+            return null
         },
 
         setCookie(name, value, days = 7) {
+            if (!this.isClient) return
             const date = new Date()
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
             const expires = `expires=${date.toUTCString()}`
