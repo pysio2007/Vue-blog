@@ -22,3 +22,7 @@ https://blogapi.pysio.online/random_image
 ## 示例
 
 ![这是一张随机图片](https://blogapi.pysio.online/random_image)
+
+## 查看所有图片
+
+<PictureList />
