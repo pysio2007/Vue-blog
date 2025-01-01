@@ -18,6 +18,13 @@ tag:
 https://blogapi.pysio.online
 ```
 
+### API集合
+点击下方按钮在Postman中导入完整API集合：
+
+[![使用Postman导入](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/import?url=https://www.pysio.online/blog-api-collection.json)
+
+您也可以直接下载JSON文件：[下载API集合](https://www.pysio.online/blog-api-collection.json)
+
 > [!IMPORTANT]
 > 在进行API调用时，请注意以下事项：
 > - 所有请求都需要使用HTTPS协议
