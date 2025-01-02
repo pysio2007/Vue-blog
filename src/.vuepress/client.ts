@@ -24,7 +24,6 @@ import CraftingTable from "./components/CraftingTable.vue";
 import StatusCheak from "./components/StatusCheak.vue";
 import Statusissues from "./components/Statusissues.vue";
 import Pastebin from "./components/Pastebin.vue";
-import MonacoEditor from "./components/MonacoEditor.vue";
 import PictureList from "./components/PictureList.vue";
 import game2048 from "./components/game2048.vue";
 
@@ -53,7 +52,6 @@ export default defineClientConfig({
     app.component("StatusCheak", StatusCheak);
     app.component("Statusissues", Statusissues);
     app.component("Pastebin", Pastebin);
-    app.component('MonacoEditor',MonacoEditor);
     app.component('PictureList',PictureList);
     app.component('game2048',game2048);
     Sentry.init({
