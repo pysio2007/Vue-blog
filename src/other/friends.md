@@ -56,7 +56,7 @@ article: false
 > [!tip]
 > 你需要确保你的网站在中国大陆可以正常访问，不违法中华人民共和国法律法规，不包含色情、赌博、毒品（药物过量）、暴力等内容。
 
-你需要在Github上提交一个[Issue](https://github.com/pysio2007/Vue-blog)，内容如下：
+你需要在Github上提交一个[Issue](https://github.com/pysio2007/Vue-blog)，内容如下(当然你也可以直接发PR修改本页)：
 
 ```text
 标题： 友链交换
