@@ -57,7 +57,7 @@
       <div class="editor-container">
         <MonacoEditor
           v-model="displayedText"
-          language="plaintext"
+          :language="detectedLanguage"
           theme="vs"
           :options="{
             readOnly: true,
@@ -108,6 +108,7 @@ export default {
       baseUrl: 'https://www.pysio.online/tools/Pastebin.html?uuid=', // 分享链接基础URL
       isSubmitting: false, // 是否正在提交（区分提交和查询状态）
       isFullscreen: false, // 添加全屏状态标记
+      detectedLanguage: 'plaintext', // 添加检测到的语言
     }
   },
   // 计算属性
@@ -157,6 +158,8 @@ export default {
         });
         if (!res.ok) throw new Error('提交失败');
         this.response = await res.json();
+        // 检测语言
+        this.detectedLanguage = this.detectLanguage(this.response.text);
         // 更新URL参数
         if (this.response) {
           const uuid = this.response.id || this.response.uuid;
@@ -181,6 +184,8 @@ export default {
         });
         if (!res.ok) throw new Error('查询失败');
         this.queryResponse = await res.json();
+        // 检测语言
+        this.detectedLanguage = this.detectLanguage(this.queryResponse.text);
         if (this.queryResponse) {
           const uuid = this.queryResponse.id || this.queryResponse.uuid;
           history.pushState({}, '', `?uuid=${uuid}`);
@@ -230,7 +235,66 @@ export default {
         container.classList.remove('fullscreen');
         document.body.style.overflow = '';
       }
-    }
+    },
+    // 添加语言检测方法
+    detectLanguage(text) {
+      // 文件扩展名映射到Monaco支持的语言
+      const extensionMap = {
+        js: 'javascript',
+        ts: 'typescript',
+        py: 'python',
+        java: 'java',
+        cpp: 'cpp',
+        c: 'c',
+        cs: 'csharp',
+        css: 'css',
+        html: 'html',
+        json: 'json',
+        md: 'markdown',
+        php: 'php',
+        sql: 'sql',
+        xml: 'xml',
+        yaml: 'yaml',
+        yml: 'yaml',
+        sh: 'shell',
+        bash: 'shell',
+        vue: 'vue',
+        log: 'log'
+      };
+
+      // 检查文件头部特征
+      const firstLine = text.split('\n')[0].trim();
+      
+      // 检查常见文件头部特征
+      if (firstLine.startsWith('<?xml')) return 'xml';
+      if (firstLine.startsWith('<?php')) return 'php';
+      if (firstLine.startsWith('#!/bin/bash')) return 'shell';
+      if (firstLine.startsWith('#!/usr/bin/env node')) return 'javascript';
+      if (firstLine.startsWith('#!/usr/bin/env python')) return 'python';
+      if (firstLine.startsWith('<!--')) return 'html';
+      if (firstLine.startsWith('package ')) return 'java';
+      if (firstLine.includes('DOCTYPE html')) return 'html';
+      
+      // 尝试解析为JSON
+      try {
+        JSON.parse(text);
+        return 'json';
+      } catch {}
+
+      // 检查是否包含常见的语言特征
+      if (text.includes('function') && text.includes('{')) return 'javascript';
+      if (text.includes('import React')) return 'typescript';
+      if (text.includes('class') && text.includes('extends')) return 'java';
+      if (text.includes('def ') && text.includes(':')) return 'python';
+      if (text.includes('<template>') && text.includes('<script>')) return 'vue';
+      
+      // 检查是否为日志格式
+      const logPattern = /^\d{4}[-/]\d{2}[-/]\d{2}|\[\d{2}:\d{2}:\d{2}\]|ERROR|WARNING|INFO|DEBUG/m;
+      if (logPattern.test(text)) return 'log';
+
+      // 默认返回plaintext
+      return 'plaintext';
+    },
   },
 };
 </script>
