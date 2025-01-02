@@ -24,8 +24,9 @@ import CraftingTable from "./components/CraftingTable.vue";
 import StatusCheak from "./components/StatusCheak.vue";
 import Statusissues from "./components/Statusissues.vue";
 import Pastebin from "./components/Pastebin.vue";
-import MonacoEditor from "./components/MonacoEditor.vue";
 import PictureList from "./components/PictureList.vue";
+import game2048 from "./components/game2048.vue";
+import GithubUserStats from "./components/GithubUserStats.vue";
 
 export default defineClientConfig({
   enhance: ({ app, router, siteData }) => {
@@ -52,8 +53,9 @@ export default defineClientConfig({
     app.component("StatusCheak", StatusCheak);
     app.component("Statusissues", Statusissues);
     app.component("Pastebin", Pastebin);
-    app.component('MonacoEditor',MonacoEditor);
     app.component('PictureList',PictureList);
+    app.component('game2048',game2048);
+    app.component('GithubUserStats',GithubUserStats);
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [

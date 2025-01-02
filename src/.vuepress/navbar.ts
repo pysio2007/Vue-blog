@@ -49,6 +49,7 @@ export default navbar([
       { text: "Wordle", icon: "fa-regular fa-gamepad-modern", link: "/Game/wordle" },
       { text: "康威生命游戏", icon: "fa-regular fa-block", link: "/Game/GameofLife" },
       { text: "兰顿蚂蚁", icon: "fa-solid fa-ant", link: "/Game/Langtonsant" },  
+      { text: "2048", icon: "fa-regular fa-block", link: "/Game/2048" },
     ],
   },
   {
