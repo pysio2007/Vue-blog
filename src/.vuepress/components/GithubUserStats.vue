@@ -69,8 +69,8 @@
               <div v-for="event in repo.events" 
                    :key="event.id" 
                    class="timeline-entry"
-                   :class="{ 'is-clickable': event.type === 'Commit' }"
-                   @click="event.type === 'Commit' && showCommitDetails(event, user, repo.name)">
+                   :class="{ 'is-clickable': true }"
+                   @click="showEventDetails(event, user, repo.name)">
                 <span class="event-date">{{ formatDate(event.created_at) }}</span>
                 <span class="event-type">{{ event.type }}</span>
                 <span class="event-title">{{ event.title }}</span>
@@ -82,24 +82,24 @@
     </div>
   </div>
 
-  <!-- 修改 commit 详情弹窗部分 -->
+  <!-- 修改 PR 和 commit 详情弹窗部分 -->
   <div v-if="showModal" class="commit-modal" @click="closeModal">
     <div class="commit-modal-content" @click.stop>
       <div class="commit-modal-header">
-        <h3>提交详情</h3>
+        <h3>{{ selectedEvent?.type === 'PR' ? 'Pull Request 详情' : '提交详情' }}</h3>
         <button class="close-button" @click="closeModal">&times;</button>
       </div>
       <div class="commit-modal-body">
-        <p class="commit-message">{{ selectedCommit?.title }}</p>
-        <p class="commit-date">提交时间：{{ formatDate(selectedCommit?.created_at) }}</p>
-        <a :href="selectedCommit?.html_url" 
+        <p class="commit-message">{{ selectedEvent?.title }}</p>
+        <p class="commit-date">{{ selectedEvent?.type === 'PR' ? '创建' : '提交' }}时间：{{ formatDate(selectedEvent?.created_at) }}</p>
+        <a :href="selectedEvent?.html_url" 
            target="_blank" 
            class="github-link">
           <i class="fab fa-github"></i> 在 GitHub 上查看
         </a>
-        <div v-if="selectedCommit?.files && selectedCommit.files.length > 0" class="commit-files">
+        <div v-if="selectedEvent?.files && selectedEvent.files.length > 0" class="commit-files">
           <h4>文件变更</h4>
-          <div v-for="file in selectedCommit.files" :key="file.filename" class="commit-file">
+          <div v-for="file in selectedEvent.files" :key="file.filename" class="commit-file">
             <div class="file-header" @click="toggleFile(file)">
               <span>{{ file.filename }}</span>
               <span class="file-stats">
@@ -177,7 +177,7 @@ const showTokenInput = ref(false)
 const userToken = ref('')
 const expandedRepos = ref({})
 const showModal = ref(false)
-const selectedCommit = ref(null)
+const selectedEvent = ref(null)
 
 // 使用Token的API请求函数
 async function fetchWithToken(url) {
@@ -262,22 +262,54 @@ async function fetchCommits(username, repo) {
   return await fetchAllCommits(username, repo, since, until)
 }
 
-// 修复 fetchPRs 函数
-async function fetchPRs(username, repo, since, until) {
+// 修改 fetchPRs 函数 - 更改获取PR的逻辑
+async function fetchAllPRs(username, repo, since, until, page = 1, allPRs = []) {
   try {
+    // 不指定creator参数,获取仓库的所有PR
     const response = await fetchWithToken(
-      `https://api.github.com/repos/${username}/${repo}/pulls?state=all&sort=updated&direction=desc&per_page=100`
+      `https://api.github.com/repos/${username}/${repo}/pulls?state=all&sort=updated&direction=desc&per_page=100&page=${page}`
     )
-    if (!response || !Array.isArray(response)) {
-      console.warn(`No PRs found for ${username}/${repo}`)
-      return []
+
+    if (!Array.isArray(response) || response.length === 0) {
+      return allPRs
     }
-    return response.filter(pr => {
+
+    allPRs.push(...response)
+
+    // 如果返回了100条数据，说明可能还有更多，继续获取下一页
+    if (response.length === 100) {
+      return await fetchAllPRs(username, repo, since, until, page + 1, allPRs)
+    }
+
+    // 在获取完所有PR后进行过滤
+    const year = parseInt(props.year)
+    return allPRs.filter(pr => {
       const prDate = new Date(pr.created_at)
-      return prDate >= new Date(since) && prDate <= new Date(until)
+      return pr.user.login === username && 
+             prDate.getFullYear() === year
     })
   } catch (error) {
     console.warn(`Error fetching PRs for ${username}/${repo}:`, error)
+    return []
+  }
+}
+
+// 修改原有的fetchPRs函数调用
+async function fetchPRs(username, repo) {
+  const year = parseInt(props.year)
+  const since = `${year}-01-01T00:00:00Z`
+  const until = `${year}-12-31T23:59:59Z`
+  
+  return await fetchAllPRs(username, repo, since, until)
+}
+
+// 添加获取 PR 详情的函数
+async function fetchPRFiles(username, repoName, prNumber) {
+  try {
+    const response = await fetchWithToken(`https://api.github.com/repos/${username}/${repoName}/pulls/${prNumber}/files`)
+    return response || []
+  } catch (error) {
+    console.error(`获取 ${username}/${repoName} 的 PR 文件变更信息失败:`, error)
     return []
   }
 }
@@ -330,19 +362,21 @@ async function fetchUserStats(username) {
               prs: Array.isArray(prs) ? prs.length : 0,
               loading: false,
               events: [
+                ...(Array.isArray(prs) ? prs.map(pr => ({
+                  id: pr.id,
+                  type: 'PR',
+                  created_at: pr.created_at,
+                  title: pr.title,
+                  number: pr.number,
+                  html_url: pr.html_url
+                })) : []),
                 ...commits.map(c => ({
                   id: c.sha,
                   type: 'Commit',
                   created_at: c.commit.author.date,
                   title: c.commit.message,
                   html_url: c.html_url
-                })),
-                ...(Array.isArray(prs) ? prs.map(pr => ({
-                  id: pr.id,
-                  type: 'PR',
-                  created_at: pr.created_at,
-                  title: pr.title
-                })) : [])
+                }))
               ].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
             }
 
@@ -512,12 +546,20 @@ function toggleRepo(repo) {
   expandedRepos.value[repo.name] = !expandedRepos.value[repo.name]
 }
 
-// 显示commit详情
-async function showCommitDetails(commit, username, repoName) {
-  selectedCommit.value = {
-    ...commit,
-    html_url: `https://github.com/${username}/${repoName}/commit/${commit.id}`,
-    files: await fetchCommitFiles(username, repoName, commit.id) // 获取文件变更信息
+// 显示事件详情（PR或commit）
+async function showEventDetails(event, username, repoName) {
+  if (event.type === 'PR') {
+    selectedEvent.value = {
+      ...event,
+      html_url: `https://github.com/${username}/${repoName}/pull/${event.number}`,
+      files: await fetchPRFiles(username, repoName, event.number)
+    }
+  } else {
+    selectedEvent.value = {
+      ...event,
+      html_url: `https://github.com/${username}/${repoName}/commit/${event.id}`,
+      files: await fetchCommitFiles(username, repoName, event.id)
+    }
   }
   showModal.value = true
 }
@@ -525,7 +567,7 @@ async function showCommitDetails(commit, username, repoName) {
 // 关闭弹窗
 function closeModal() {
   showModal.value = false
-  selectedCommit.value = null
+  selectedEvent.value = null
 }
 
 // 获取 commit 文件变更信息
@@ -771,6 +813,7 @@ function toggleFile(file) {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* 确保内容不会溢出 */
 }
 
 .commit-modal-header {
@@ -791,7 +834,7 @@ function toggleFile(file) {
 .commit-modal-body {
   flex: 1;
   overflow-y: auto;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .commit-message {
