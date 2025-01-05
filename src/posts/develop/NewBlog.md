@@ -1,7 +1,7 @@
 ---
 title: 新博客开坑！
 date: 2025-01-05
-icon: fa-solid fa-webhook
+icon: fa-brands fa-react
 category: develop
 tag:
   - 博客
