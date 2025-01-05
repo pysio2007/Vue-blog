@@ -40,7 +40,7 @@ export default defineUserConfig({
         rel: "stylesheet",
       },
     ],
-    // ["script", { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6547593871065949", crossorigin: "anonymous" }],  //Google Ads
+    ["script", { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6547593871065949", crossorigin: "anonymous" }],  //Google Ads
   ],
 
   // bundler: viteBundler({
