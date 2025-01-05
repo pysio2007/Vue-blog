@@ -45,25 +45,28 @@ export default sidebar({
     },
     {
       text: "日常",
-      icon: "book",
       prefix: "daily",
       children: "structure",
       collapsible: true,
     },
     {
       text: "小曦",
-      icon: "heart",
       prefix: "NekoXii",
       children: "structure",
       collapsible: true,
     },
     {
       text: "开发",
-      icon: "code",
       prefix: "develop",
       children: "structure",
       collapsible: true,
     },
+    {
+      text: "资源分享",
+      prefix: "resource",
+      children: "structure",
+      collapsible: true,
+    }
   ],
   "/other/": [
     {
