@@ -57,12 +57,6 @@ else
     printf "${GREEN}GPG签名检查通过 ✓${NC}\n"
 fi
 
-# 运行构建前检查
-echo "准备构建文档..."
-if [ ! -f "package.json" ]; then
-    echo -e "${RED}错误: 未找到package.json文件${NC}"
-    exit 1
-fi
 
 # 检查是否安装依赖
 if [ ! -d "node_modules" ]; then
@@ -84,5 +78,4 @@ if ! npm run docs:build; then
     exit 1
 fi
 
-echo -e "${GREEN}pre-commit检查完成 ✓${NC}"
 exit 0
