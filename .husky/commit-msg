@@ -10,13 +10,13 @@ SIGNATURE=$(git verify-commit $LATEST_COMMIT 2>&1)
 
 if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
     # Windows 系统
-    if echo "$SIGNATURE" | findstr /I /C:"无法验证签名" /C:"no valid signature" /C:"can't verify" >NUL 2>NUL; then
+    VERIFY_STATUS=$(echo "$SIGNATURE" | findstr /I /C:"无法验证签名" /C:"no valid signature" /C:"can't verify" > /dev/null 2>&1 && echo "invalid" || echo "valid")
+    if [ "$VERIFY_STATUS" = "invalid" ]; then
         echo -e "${RED}警告: 最新提交未正确签名${NC}"
         echo "提交哈希: $LATEST_COMMIT"
         echo -e "${YELLOW}正在撤销未验证的提交...${NC}"
         git reset --soft HEAD~1
         echo -e "${RED}提交已撤销，请重新提交并确保正确签名${NC}"
-        rm -f NUL
         exit 1
     fi
 else
