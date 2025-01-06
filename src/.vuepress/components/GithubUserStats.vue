@@ -131,9 +131,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed, onUnmounted } from 'vue'
+import { ref, onMounted, watch, computed, onUnmounted, defineAsyncComponent } from 'vue'
 import Chart from 'chart.js/auto'
-import MonacoEditor from './MonacoEditor.vue'
+
+// 改为动态导入
+const MonacoEditor = defineAsyncComponent(() => 
+  import('./MonacoEditor.vue')
+)
 
 // 修改 props 定义，确保正确解析数组
 const props = defineProps({
