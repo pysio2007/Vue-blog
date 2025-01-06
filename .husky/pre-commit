@@ -1,0 +1,81 @@
+# 颜色函数
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+# 检查Node环境
+if ! command -v node >/dev/null 2>&1; then
+    echo -e "${RED}错误: Node.js未安装${NC}"
+    exit 1
+fi
+
+# GPG签名检查
+if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
+    # Windows 系统
+    GPGSIGN=$(git config --get commit.gpgsign || echo "false")
+    SSHSIGN=$(git config --get commit.sshsign || echo "false")
+    
+    echo "检查GPG配置状态: $GPGSIGN"
+    echo "检查SSH配置状态: $SSHSIGN"
+    
+    if [ "$GPGSIGN" != "true" ]; then
+        if [ "$SSHSIGN" = "true" ]; then
+            echo -e "${YELLOW}警告: 当前使用 SSH 密钥签名${NC}"
+            echo -e "${YELLOW}请改用 GPG 签名:${NC}"
+            echo -e "${YELLOW}1. git config --global commit.sshsign false${NC}"
+            echo -e "${YELLOW}2. git config --global commit.gpgsign true${NC}"
+            exit 1
+        else
+            echo -e "${RED}错误: 未启用 GPG 签名${NC}"
+            echo -e "${RED}请运行: git config --global commit.gpgsign true${NC}"
+            exit 1
+        fi
+    fi
+    echo -e "${GREEN}GPG签名检查通过 ✓${NC}"
+else
+    # Linux系统
+    GPGSIGN=$(git config --get commit.gpgsign || echo "false")
+    SSHSIGN=$(git config --get commit.sshsign || echo "false")
+    
+    printf "检查GPG配置状态: %s\n" "$GPGSIGN"
+    printf "检查SSH配置状态: %s\n" "$SSHSIGN"
+    
+    if [ "$GPGSIGN" != "true" ]; then
+        if [ "$SSHSIGN" = "true" ]; then
+            printf "${YELLOW}警告: 当前使用 SSH 密钥签名${NC}\n"
+            printf "${YELLOW}请改用 GPG 签名:${NC}\n"
+            printf "${YELLOW}1. git config --global commit.sshsign false${NC}\n"
+            printf "${YELLOW}2. git config --global commit.gpgsign true${NC}\n"
+            exit 1
+        else
+            printf "${RED}错误: 未启用 GPG 签名${NC}\n"
+            printf "${RED}请运行: git config --global commit.gpgsign true${NC}\n"
+            exit 1
+        fi
+    fi
+    printf "${GREEN}GPG签名检查通过 ✓${NC}\n"
+fi
+
+
+# 检查是否安装依赖
+if [ ! -d "node_modules" ]; then
+    echo -e "${YELLOW}警告: 未找到node_modules，正在安装依赖...${NC}"
+    if ! npm install; then
+        echo -e "${RED}依赖安装失败!${NC}"
+        exit 1
+    fi
+fi
+
+# 运行构建
+echo -e "${GREEN}开始构建文档...${NC}"
+if ! npm run docs:build; then
+    echo -e "${RED}文档构建失败!${NC}"
+    echo -e "${YELLOW}请检查以下可能的问题:${NC}"
+    echo -e "${YELLOW}1. 文档语法错误${NC}"
+    echo -e "${YELLOW}2. 依赖包缺失${NC}"
+    echo -e "${YELLOW}3. 构建脚本配置问题${NC}"
+    exit 1
+fi
+
+exit 0

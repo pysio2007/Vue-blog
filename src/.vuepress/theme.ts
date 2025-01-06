@@ -2,10 +2,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
+import natural from 'natural';
 
 //分词
 import pkg from 'nodejieba';
 const { cut } = pkg;
+const tokenizer = new natural.WordTokenizer();
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
@@ -169,9 +171,19 @@ export default hopeTheme({
       indexContent: true,
       indexLocaleOptions: {
         "/": {
-          // 使用 nodejs-jieba 进行分词
-          tokenize: (text, fieldName) =>
-            fieldName === "id" ? [text] : cut(text, true),
+          tokenize: (text, fieldName) => {
+            if (fieldName === "id") return [text];
+            
+            // 英文分词
+            const englishTokens = tokenizer.tokenize(text) || [];
+            
+            // 中文分词
+            const chineseTokens = cut(text, true);
+            
+            // 合并结果、去重、过滤空值
+            return [...new Set([...englishTokens, ...chineseTokens])]
+              .filter(token => token && token.length > 1);
+          }
         },
       },
     },

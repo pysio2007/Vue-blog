@@ -1,0 +1,47 @@
+# 颜色函数
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+# 首先读取提交信息
+commit_msg=$(cat "$1")
+echo "$commit_msg"
+
+# 添加短暂延迟等待commit完成
+# sleep 3
+
+# 获取最新提交的签名状态
+LATEST_COMMIT=$(git rev-parse HEAD)
+SIGNATURE=$(git verify-commit $LATEST_COMMIT 2>&1)
+
+if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
+    # Windows 系统
+    VERIFY_STATUS=$(echo "$SIGNATURE" | findstr /I /C:"无法验证签名" /C:"no valid signature" /C:"can't verify" /C:"no signature" > /dev/null 2>&1 && echo "invalid" || echo "valid")
+    if [ "$VERIFY_STATUS" = "invalid" ]; then
+        echo -e "${RED}警告: 最新提交未正确签名${NC}"
+        echo "提交哈希: $LATEST_COMMIT"
+        echo -e "${YELLOW}正在撤销未验证的提交...${NC}"
+        git reset --soft HEAD~1
+        echo -e "${RED}提交已撤销，请重新提交并确保正确签名${NC}"
+        exit 1
+    fi
+else
+    # Unix-like 系统
+    if echo "$SIGNATURE" | grep -iE "无法验证签名|no valid signature|can't verify|no signature" >/dev/null 2>&1; then
+        printf "${RED}警告: 最新提交未正确签名${NC}\n"
+        echo "提交哈希: $LATEST_COMMIT"
+        printf "${YELLOW}正在撤销未验证的提交...${NC}\n"
+        git reset --soft HEAD~1
+        printf "${RED}提交已撤销，请重新提交并确保正确签名${NC}\n"
+        exit 1
+    fi
+fi
+
+if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
+    echo -e "${GREEN}最新提交已正确签名 ✓${NC}"
+else
+    printf "${GREEN}最新提交已正确签名 ✓${NC}\n"
+fi
+
+exit 0
