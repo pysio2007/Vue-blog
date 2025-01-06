@@ -55,6 +55,7 @@
     "moment": "^2.30.1",
     "monaco-editor": "^0.52.2",
     "monaco-editor-webpack-plugin": "^7.1.0",
+    "natural": "^8.0.1",
     "nodejieba": "^3.4.3",
     "pysio-vuepress-components": "^1.0.3",
     "rimraf": "^6.0.1",
