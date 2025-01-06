@@ -1,11 +1,24 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# 检测操作系统
+# 检查 GPG 签名
 if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
-    # Windows系统
-    npm run docs:build || exit 1
+    # Windows 系统
+    GPGSIGN=$(git config --get commit.gpgsign)
+    if [ "$GPGSIGN" != "true" ]; then
+        echo "错误: 未启用 GPG 签名"
+        echo "请运行: git config --global commit.gpgsign true"
+        exit 1
+    fi
 else
-    # Unix-like系统
-    npm run docs:build || exit 1
+    # Unix-like 系统
+    if ! git config --get commit.gpgsign | grep -q "true"; then
+        echo "错误: 未启用 GPG 签名"
+        echo "请运行: git config --global commit.gpgsign true"
+        exit 1
+    fi
 fi
+
+# 运行构建
+echo "GPG检查通过 构建文档..."
+npm run docs:build || exit 1
