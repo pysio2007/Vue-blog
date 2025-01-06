@@ -1,17 +1,24 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # 获取最新提交的签名状态
 LATEST_COMMIT=$(git rev-parse HEAD)
 SIGNATURE=$(git verify-commit $LATEST_COMMIT 2>&1)
 
-if echo "$SIGNATURE" | findstr /C:"无法验证签名" > NUL; then
-    echo "警告: 最新提交未正确签名"
-    echo "提交哈希: $LATEST_COMMIT"
-    echo "请检查你的 GPG 配置是否正确"
-    echo "1. 确认密钥已导入: gpg --list-secret-keys"
-    echo "2. 确认签名密钥配置: git config --global user.signingkey YOUR_KEY_ID"
-    exit 1
+if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
+    # Windows 系统
+    echo "$SIGNATURE" | find "无法验证签名" > nul 2>&1
+    if [ $? -eq 0 ]; then
+        echo "警告: 最新提交未正确签名"
+        echo "提交哈希: $LATEST_COMMIT"
+        echo "请检查你的 GPG 配置是否正确"
+        exit 1
+    fi
 else
-    echo "最新提交已正确签名 ✓"
+    # Unix-like 系统
+    if echo "$SIGNATURE" | grep -q "无法验证签名"; then
+        echo "警告: 最新提交未正确签名"
+        echo "提交哈希: $LATEST_COMMIT"
+        echo "请检查你的 GPG 配置是否正确"
+        exit 1
+    fi
 fi
+
+echo "最新提交已正确签名 ✓"
