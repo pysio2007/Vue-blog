@@ -17,5 +17,5 @@ else
 fi
 
 # 运行构建
-echo "GPG检查通过 构建文档..."
+echo "GPG检查通过✓ 构建文档..."
 npm run docs:build || exit 1
