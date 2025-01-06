@@ -8,6 +8,9 @@ NC='\033[0m' # No Color
 commit_msg=$(cat "$1")
 echo "$commit_msg"
 
+# 添加短暂延迟等待commit完成
+sleep 3
+
 # 获取最新提交的签名状态
 LATEST_COMMIT=$(git rev-parse HEAD)
 SIGNATURE=$(git verify-commit $LATEST_COMMIT 2>&1)
