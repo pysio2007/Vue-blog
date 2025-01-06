@@ -21,7 +21,7 @@ projects:
   - icon: fa-regular fa-book
     name: Pysio Library
     desc: 小说和漫画
-    link: https://www.pysio.tech
+    link: https://pysio-blog-files-list.akaere.online/
 
   # - icon: article
   #   name: 文章名称
