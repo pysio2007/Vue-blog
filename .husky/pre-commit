@@ -4,7 +4,7 @@
 # 检测操作系统
 if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
     # Windows系统
-    cmd.exe /c "npm run docs:build" || exit 1
+    npm run docs:build || exit 1
 else
     # Unix-like系统
     npm run docs:build || exit 1
