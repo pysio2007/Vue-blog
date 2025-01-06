@@ -17,7 +17,7 @@ SIGNATURE=$(git verify-commit $LATEST_COMMIT 2>&1)
 
 if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
     # Windows 系统
-    VERIFY_STATUS=$(echo "$SIGNATURE" | findstr /I /C:"无法验证签名" /C:"no valid signature" /C:"can't verify" > /dev/null 2>&1 && echo "invalid" || echo "valid")
+    VERIFY_STATUS=$(echo "$SIGNATURE" | findstr /I /C:"无法验证签名" /C:"no valid signature" /C:"can't verify" /C:"no signature" > /dev/null 2>&1 && echo "invalid" || echo "valid")
     if [ "$VERIFY_STATUS" = "invalid" ]; then
         echo -e "${RED}警告: 最新提交未正确签名${NC}"
         echo "提交哈希: $LATEST_COMMIT"
@@ -28,7 +28,7 @@ if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]
     fi
 else
     # Unix-like 系统
-    if echo "$SIGNATURE" | grep -iE "无法验证签名|no valid signature|can't verify" >/dev/null 2>&1; then
+    if echo "$SIGNATURE" | grep -iE "无法验证签名|no valid signature|can't verify|no signature" >/dev/null 2>&1; then
         printf "${RED}警告: 最新提交未正确签名${NC}\n"
         echo "提交哈希: $LATEST_COMMIT"
         printf "${YELLOW}正在撤销未验证的提交...${NC}\n"
