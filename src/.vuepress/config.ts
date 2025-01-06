@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 import { removeHtmlExtensionPlugin } from 'vuepress-plugin-remove-html-extension'
 import theme from "./theme.js";
 import { cachePlugin } from '@vuepress/plugin-cache'
@@ -21,6 +22,10 @@ export default defineUserConfig({
       link: 'https://umami.pysio.online/script.js',
       cache: true,
     }),
+
+    googleAnalyticsPlugin({   //Google Analytics
+      id: 'G-G9Q1H2C9MN',
+    }), 
     
     // 更干净的URL
     // removeHtmlExtensionPlugin()
