@@ -20,7 +20,7 @@ https://blogapi.pysio.online
 
 ### API集合
 
-您也可以直接下载JSON文件：[下载API集合](https://www.pysio.online/blog-api-collection.json) 并导入 Postman 使用
+您也可以直接下载JSON文件：[下载API集合](https://www.pysio.online/json/blog-api-collection.json) 并导入 Postman 使用
 
 > [!IMPORTANT]
 > 在进行API调用时，请注意以下事项：
