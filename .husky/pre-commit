@@ -14,46 +14,46 @@ fi
 if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ "$OSTYPE" = "cygwin" ]; then
     # Windows 系统
     GPGSIGN=$(git config --get commit.gpgsign || echo "false")
-    SSHSIGN=$(git config --get commit.sshsign || echo "false")
+    GPG_FORMAT=$(git config --get gpg.format || echo "openpgp")
     
     echo "检查GPG配置状态: $GPGSIGN"
-    echo "检查SSH配置状态: $SSHSIGN"
+    echo "检查GPG格式: $GPG_FORMAT"
     
     if [ "$GPGSIGN" != "true" ]; then
-        if [ "$SSHSIGN" = "true" ]; then
-            echo -e "${YELLOW}警告: 当前使用 SSH 密钥签名${NC}"
-            echo -e "${YELLOW}请改用 GPG 签名:${NC}"
-            echo -e "${YELLOW}1. git config --global commit.sshsign false${NC}"
-            echo -e "${YELLOW}2. git config --global commit.gpgsign true${NC}"
-            exit 1
-        else
-            echo -e "${RED}错误: 未启用 GPG 签名${NC}"
-            echo -e "${RED}请运行: git config --global commit.gpgsign true${NC}"
-            exit 1
-        fi
+        echo -e "${RED}错误: 未启用提交签名${NC}"
+        echo -e "${RED}请运行: git config --global commit.gpgsign true${NC}"
+        exit 1
     fi
+
+    if [ "$GPG_FORMAT" = "ssh" ]; then
+        echo -e "${YELLOW}警告: 当前使用 SSH 密钥签名${NC}"
+        echo -e "${YELLOW}请改用 GPG 签名:${NC}"
+        echo -e "${YELLOW}1. git config --global gpg.format openpgp${NC}"
+        exit 1
+    fi
+    
     echo -e "${GREEN}GPG签名检查通过 ✓${NC}"
 else
     # Linux系统
     GPGSIGN=$(git config --get commit.gpgsign || echo "false")
-    SSHSIGN=$(git config --get commit.sshsign || echo "false")
+    GPG_FORMAT=$(git config --get gpg.format || echo "openpgp")
     
     printf "检查GPG配置状态: %s\n" "$GPGSIGN"
-    printf "检查SSH配置状态: %s\n" "$SSHSIGN"
+    printf "检查GPG格式: %s\n" "$GPG_FORMAT"
     
     if [ "$GPGSIGN" != "true" ]; then
-        if [ "$SSHSIGN" = "true" ]; then
-            printf "${YELLOW}警告: 当前使用 SSH 密钥签名${NC}\n"
-            printf "${YELLOW}请改用 GPG 签名:${NC}\n"
-            printf "${YELLOW}1. git config --global commit.sshsign false${NC}\n"
-            printf "${YELLOW}2. git config --global commit.gpgsign true${NC}\n"
-            exit 1
-        else
-            printf "${RED}错误: 未启用 GPG 签名${NC}\n"
-            printf "${RED}请运行: git config --global commit.gpgsign true${NC}\n"
-            exit 1
-        fi
+        printf "${RED}错误: 未启用提交签名${NC}\n"
+        printf "${RED}请运行: git config --global commit.gpgsign true${NC}\n"
+        exit 1
     fi
+
+    if [ "$GPG_FORMAT" = "ssh" ]; then
+        printf "${YELLOW}警告: 当前使用 SSH 密钥签名${NC}\n"
+        printf "${YELLOW}请改用 GPG 签名:${NC}\n"
+        printf "${YELLOW}1. git config --global gpg.format openpgp${NC}\n"
+        exit 1
+    fi
+    
     printf "${GREEN}GPG签名检查通过 ✓${NC}\n"
 fi
 
