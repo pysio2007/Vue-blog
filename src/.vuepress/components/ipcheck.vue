@@ -69,6 +69,14 @@
         <p>服务商域名：{{ ipData.data.company.domain }}</p>
         <p>服务商类型：{{ ipData.data.company.type }}</p>
       </div>
+      <div v-if="ipData.data && ipData.data.asn" class="hint-container tip">
+        <p class="hint-container-title">ASN 信息</p>
+        <p>ASN 编号：{{ ipData.data.asn.asn }}</p>
+        <p>运营商名称：{{ ipData.data.asn.name }}</p>
+        <p>运营商域名：{{ ipData.data.asn.domain }}</p>
+        <p>IP 路由：{{ ipData.data.asn.route }}</p>
+        <p>网络类型：{{ ipData.data.asn.type }}</p>
+      </div>
     </div>
 
     <!-- 当未超速时，展示第二个 IP 的详细信息 -->
@@ -98,6 +106,14 @@
         <p>提供商：{{ ipData2.data.company.name }}</p>
         <p>服务商域名：{{ ipData2.data.company.domain }}</p>
         <p>服务商类型：{{ ipData2.data.company.type }}</p>
+      </div>
+      <div v-if="ipData2.data && ipData2.data.asn" class="hint-container tip">
+        <p class="hint-container-title">ASN 信息</p>
+        <p>ASN 编号：{{ ipData2.data.asn.asn }}</p>
+        <p>运营商名称：{{ ipData2.data.asn.name }}</p>
+        <p>运营商域名：{{ ipData2.data.asn.domain }}</p>
+        <p>IP 路由：{{ ipData2.data.asn.route }}</p>
+        <p>网络类型：{{ ipData2.data.asn.type }}</p>
       </div>
     </div>
   </div>
