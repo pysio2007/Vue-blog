@@ -54,6 +54,11 @@ export default navbar([
     ],
   },
   {
+    text: "DN42",
+    icon: "fa-solid fa-signal-stream",
+    link: "/dn42",
+  },
+  {
     text: "关于",
     icon: "fa-regular fa-circle-info",
     link: "/intro.html",
