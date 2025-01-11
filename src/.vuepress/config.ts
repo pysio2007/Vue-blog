@@ -17,11 +17,11 @@ export default defineUserConfig({
       type: 'filesystem',
     }),
 
-    umamiAnalyticsPlugin({   //网站追踪
-      id: 'e86a18d7-a5f6-4f55-85af-e99be291ed9b',
-      link: 'https://umami.pysio.online/script.js',
-      cache: true,
-    }),
+    // umamiAnalyticsPlugin({   //网站追踪
+    //   id: 'e86a18d7-a5f6-4f55-85af-e99be291ed9b',
+    //   link: 'https://umami.pysio.online/script.js',
+    //   cache: true,
+    // }),
 
     googleAnalyticsPlugin({   //Google Analytics
       id: 'G-G9Q1H2C9MN',
