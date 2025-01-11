@@ -39,6 +39,14 @@ article: false
   background="rgba(233,30,99,0.17)"
 />
 
+<VPCard
+  title="liuzhen932 的小窝"
+  desc="只要愿意去做，人无所不通"
+  logo="https://blog.liuzhen932.top/favicon.png"
+  link="https://blog.liuzhen932.top/"
+  background="rgba(33, 55, 145, 0.29)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
