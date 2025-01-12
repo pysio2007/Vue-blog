@@ -1,7 +1,7 @@
 {
   "name": "pysio-vue-blog",
   "description": "一个VuePress博客",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "license": "AGPL",
   "type": "module",
   "scripts": {
