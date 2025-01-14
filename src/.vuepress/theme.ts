@@ -37,16 +37,6 @@ export default hopeTheme({
     url: "https://github.com/pysio2007/",
   },
 
-  iconAssets: [
-    "fontawesome",
-    "https://kit.fontawesome.com/b19836ac94.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/custom-icons.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/brands.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/light.min.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/regular.min.js",
-    "https://files.pysio.online/files/Pysio-FontAwesome/js/solid.min.js",
-  ],
-
   logo: "https://www.pysio.online/assets/imgs/avast.svg",
 
   repo: "pysio2007/Vue-blog",
@@ -178,6 +168,18 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
+
+    icon:{
+      assets: [
+        "fontawesome",          // Icon 配置文件
+        "https://kit.fontawesome.com/b19836ac94.js",
+        "https://files.pysio.online/files/Pysio-FontAwesome/js/custom-icons.js",
+        "https://files.pysio.online/files/Pysio-FontAwesome/js/brands.js",
+        "https://files.pysio.online/files/Pysio-FontAwesome/js/light.min.js",
+        "https://files.pysio.online/files/Pysio-FontAwesome/js/regular.min.js",
+        "https://files.pysio.online/files/Pysio-FontAwesome/js/solid.min.js",
+      ],
+    },
 
     //搜索
     slimsearch: {
