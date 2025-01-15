@@ -202,12 +202,33 @@ export default {
         }
 
         // 获取第二个 IP 地址
-        const ipResponse2 = await fetch('https://myip.ipip.net/');
+        const ipResponse2 = await fetch('https://2024.ipchaxun.com/');
         if (!ipResponse2.ok) {
           throw new Error(`HTTP error! status: ${ipResponse2.status}`);
         }
-        const ipText = await ipResponse2.text();
-        userIP2 = ipText.match(/当前 IP：(\d+\.\d+\.\d+\.\d+)/)[1];
+        const ipJson2 = await ipResponse2.json();
+        
+        if (ipJson2.ret === 'ok') {
+          userIP2 = ipJson2.ip;
+          // 创建一个兼容的数据结构
+          const compatibleData = {
+            ip: ipJson2.ip,
+            country: ipJson2.data[0],
+            region: ipJson2.data[1],
+            city: ipJson2.data[2],
+            org: ipJson2.data[4],
+            data: {
+              ip: ipJson2.ip,
+              country: ipJson2.data[0],
+              region: ipJson2.data[1],
+              city: ipJson2.data[2],
+              org: ipJson2.data[4]
+            }
+          };
+          this.ipData2 = compatibleData;
+        } else {
+          throw new Error('Failed to get IP data from ipchaxun');
+        }
 
         // 比较两个 IP 地址
         if (userIP !== userIP2) {
