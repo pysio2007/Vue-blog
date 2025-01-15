@@ -54,24 +54,35 @@ export default {
   },
   methods: {
     async fetchNewWord() {
-      try {
-        const response = await fetch(API_URL);
-        const [word] = await response.json();
-        this.answer = word.toLowerCase();
-      } catch (error) {
-        console.error('Failed to fetch word:', error);
-        this.answer = 'nowan'; // 降级方案
+      let isValid = false;
+      let word = '';
+      let attempts = 0;
+      const maxAttempts = 5; // 最大重试次数
+
+      while (!isValid && attempts < maxAttempts) {
+        try {
+          const response = await fetch(API_URL);
+          [word] = await response.json();
+          word = word.toLowerCase();
+          
+          // 验证单词是否有效
+          const validationResponse = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+          if (validationResponse.ok) {
+            isValid = true;
+            this.answer = word;
+            break;
+          }
+        } catch (error) {
+          console.error('Failed to fetch or validate word:', error);
+        }
+        attempts++;
+      }
+
+      if (!isValid) {
+        this.answer = 'nowan'; // 如果多次尝试后仍未获取到有效单词，使用降级方案
+        console.warn('Failed to get a valid word after multiple attempts');
       }
     },
-    // async loadValidWords() {
-    //   try {
-    //     const response = await fetch('/word-list.txt'); // 需要提供有效词列表
-    //     const text = await response.text();
-    //     this.validWords = new Set(text.split('\n').map(w => w.trim().toLowerCase()));
-    //   } catch (error) {
-    //     console.error('Failed to load valid words:', error);
-    //   }
-    // },
     async isValidWord(word) {
       try {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);

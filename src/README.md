@@ -28,7 +28,7 @@ projects:
   #   desc: 文章详细描述
   #   link: https://你的文章链接
 
-  - icon: friend
+  - icon: fa-solid fa-link
     name: 友链
     desc: 朋友们的网站些
     link: /other/friends
