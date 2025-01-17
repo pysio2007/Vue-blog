@@ -52,7 +52,7 @@ article: false
   desc="温暖的小窝"
   logo="https://files.pysio.online/files/Avatar/ZeroWolf.jpg"
   link="https://zerowolf.cm/"
-  background="rgba(255,229,255)"
+  background="rgba(236, 244, 250)"
 />
 
 <VPCard
@@ -60,7 +60,7 @@ article: false
   desc="Luctor et emergo."
   logo="https://files.pysio.online/files/Avatar/SaltWood_233.jpg"
   link="https://saltwood.top:2333/"
-  background="rgba(255,229,255)"
+  background="rgba(236, 244, 250)"
 />
 
 ## 交换友链
