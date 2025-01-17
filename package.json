@@ -77,7 +77,7 @@
     "chart.js": "^4.4.4",
     "echarts": "^5.5.1",
     "flowchart.ts": "^3.0.1",
-    "katex": "^0.16.11",
+    "katex": "^0.16.21",
     "mathjax-full": "^3.2.2",
     "mermaid": "^11.3.0",
     "vuepress-plugin-remove-html-extension": "1.16.0"
