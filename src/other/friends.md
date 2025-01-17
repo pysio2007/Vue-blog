@@ -47,6 +47,22 @@ article: false
   background="rgba(33, 55, 145, 0.29)"
 />
 
+<VPCard
+  title="零狼 の 小窝"
+  desc="温暖的小窝"
+  logo="https://files.pysio.online/files/Avatar/ZeroWolf.jpg"
+  link="https://zerowolf.cm/"
+  background="rgba(236, 244, 250)"
+/>
+
+<VPCard
+  title="盐木の备忘录"
+  desc="Luctor et emergo."
+  logo="https://files.pysio.online/files/Avatar/SaltWood_233.jpg"
+  link="https://saltwood.top:2333/"
+  background="rgba(236, 244, 250)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
