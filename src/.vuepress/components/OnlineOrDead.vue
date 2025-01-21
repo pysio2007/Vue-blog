@@ -8,7 +8,10 @@
          class="custom-container"
          :class="{ 'has-custom-bg': hasCustomBg }"
          :style="customStyle">
-      <div v-html="sanitizeHtml(htmlContent)"></div>
+      <div class="hint-container" :class="containerClass">
+        <p class="hint-container-title">{{ title }}</p>
+        <p>{{ content }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +20,8 @@
 import sanitizeHtml from 'sanitize-html';
 
 export default {
+  name: 'OnlineOrDead',
+  
   data() {
     return {
       data: null,
@@ -27,9 +32,13 @@ export default {
         transition: 'background-color 0.5s ease'
       },
       hasCustomBg: false,
-      customStyle: {}
+      customStyle: {},
+      containerClass: '',
+      title: '',
+      content: ''
     }
   },
+  
   mounted() {
     this.fetchData(true); // 初始加载显示加载状态
     // 设置30秒自动更新
@@ -37,12 +46,14 @@ export default {
       this.fetchData(false); // 定时刷新不显示加载状态
     }, 30000);
   },
-  beforeDestroy() {
+  
+  beforeUnmount() {
     // 组件销毁时清除定时器
     if (this.updateTimer) {
       clearInterval(this.updateTimer);
     }
   },
+  
   methods: {
     fetchData(showLoading = true) {
       if (showLoading) {
@@ -70,59 +81,42 @@ export default {
         });
     },
     renderContent() {
-      let containerClass = 'warning';
-      let title = 'Oops';
-      let content = '这只熊猫睡死了QWQ';
-
       if (this.data.alive) {
         if (this.data.applicationOnline) {
-          containerClass = 'tip';
-          title = this.data.application;
-          content = this.data.introduce;
+          this.containerClass = 'tip';
+          this.title = this.data.application;
+          this.content = this.data.introduce;
           
-          // 处理自定义背景色
           this.hasCustomBg = true;
           const colors = this.processRGBA(this.data.rgba);
           this.customStyle = {
             '--custom-bg': colors.background,
             '--custom-title-color': colors.titleColor
           };
-          
-          this.htmlContent = this.createHintContainer(containerClass, title, content);
           return;
         } else {
-          containerClass = 'tip';
-          title = '这只熊猫正在摸鱼中';
-          content = ' 这只熊猫活着,快去骚扰他w! 或者找他打游戏w!';
+          this.containerClass = 'tip';
+          this.title = '这只熊猫正在摸鱼中';
+          this.content = '这只熊猫活着,快去骚扰他w! 或者找他打游戏w!';
         }
       } else {
-        containerClass = 'warning';
-        title = '失联了';
-        content = this.data.last_heartbeat ? 
+        this.containerClass = 'warning';
+        this.title = '失联了';
+        this.content = this.data.last_heartbeat ? 
           `这只熊猫睡死了QWQ,死于${this.formatDate(this.data.last_heartbeat)}` :
           '这只熊猫睡死了QWQ,没有留下最后的时间';
       }
 
-      // 重置自定义样式
       this.hasCustomBg = false;
       this.customStyle = {};
-      this.htmlContent = this.createHintContainer(containerClass, title, content);
     },
+    
     renderErrorContent(errorMessage) {
-      const containerClass = 'caution';
-      const title = 'Error';
-      const content = `获取数据时出错: ${errorMessage}`;
-
-      this.htmlContent = this.createHintContainer(containerClass, title, content);
+      this.containerClass = 'caution';
+      this.title = 'Error';
+      this.content = `获取数据时出错: ${errorMessage}`;
     },
-    createHintContainer(className, title, content) {
-      return `
-        <div class="hint-container ${className}">
-          <p class="hint-container-title">${title}</p>
-          <p>${content}</p>
-        </div>
-      `;
-    },
+    
     formatDate(timestamp) {
       const date = new Date(timestamp * 1000);
       return date.toLocaleString('zh-CN', { 
