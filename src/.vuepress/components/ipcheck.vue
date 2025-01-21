@@ -121,6 +121,7 @@
 
 <script>
 export default {
+  name: 'IpCheck',
   data() {
     return {
       loading: true,
