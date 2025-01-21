@@ -121,6 +121,7 @@
 
 <script>
 export default {
+  name: 'IpCheck',
   data() {
     return {
       loading: true,
@@ -134,8 +135,7 @@ export default {
   computed: {
     isFamilyIP() {
       return (
-        this.ipData &&
-        this.ipData.data &&
+        this.ipData?.data &&
         !this.isVPN &&
         !this.isProxy &&
         !this.isTor &&
@@ -156,8 +156,7 @@ export default {
     },
     isFamilyIP2() {
       return (
-        this.ipData2 &&
-        this.ipData2.data &&
+        this.ipData2?.data &&
         !this.isVPN2 &&
         !this.isProxy2 &&
         !this.isTor2 &&
