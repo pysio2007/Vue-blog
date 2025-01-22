@@ -8,7 +8,9 @@
          class="custom-container"
          :class="{ 'has-custom-bg': hasCustomBg }"
          :style="customStyle">
-      <div class="hint-container" :class="containerClass">
+      <div class="hint-container" 
+           :class="containerClass"
+           :data-is-jetbrains="isJetbrains">
         <p class="hint-container-title">{{ title }}</p>
         <p>{{ content }}</p>
       </div>
@@ -35,7 +37,64 @@ export default {
       customStyle: {},
       containerClass: '',
       title: '',
-      content: ''
+      content: '',
+      isJetbrains: false,
+      jetbrainsConfig: {
+        'IntelliJ IDEA': {
+          name: 'IntelliJ IDEA',
+          introduce: '熊猫正在吃 Java',
+          gradient: 'linear-gradient(135deg, rgba(87,147,236,0.25), rgba(255,106,106,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(87,147,236) 30%, rgb(255,106,106) 70%)'
+        },
+        'PyCharm': {
+          name: 'PyCharm',
+          introduce: '熊猫正在吃 Python',
+          gradient: 'linear-gradient(135deg, rgba(33,215,137,0.25), rgba(23,67,172,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(33,215,137) 30%, rgb(23,67,172) 70%)'
+        },
+        'WebStorm': {
+          name: 'WebStorm',
+          introduce: '熊猫正在吃 TypeScript',
+          gradient: 'linear-gradient(135deg, rgba(0,209,255,0.25), rgba(66,132,244,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(0,209,255) 30%, rgb(66,132,244) 70%)'
+        },
+        'CLion': {
+          name: 'CLion',
+          introduce: '熊猫正在吃 C/C++',
+          gradient: 'linear-gradient(135deg, rgba(248,167,26,0.25), rgba(236,86,72,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(248,167,26) 30%, rgb(236,86,72) 70%)'
+        },
+        'GoLand': {
+          name: 'GoLand',
+          introduce: '熊猫正在吃 Go',
+          gradient: 'linear-gradient(135deg, rgba(78,167,234,0.25), rgba(125,95,255,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(78,167,234) 30%, rgb(125,95,255) 70%)'
+        },
+        'Rider': {
+          name: 'Rider',
+          introduce: '熊猫正在吃 .NET',
+          gradient: 'linear-gradient(135deg, rgba(252,109,38,0.25), rgba(169,56,165,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(252,109,38) 30%, rgb(169,56,165) 70%)'
+        },
+        'DataGrip': {
+          name: 'DataGrip',
+          introduce: '熊猫正在吃 SQL',
+          gradient: 'linear-gradient(135deg, rgba(148,66,159,0.25), rgba(74,178,212,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(148,66,159) 30%, rgb(74,178,212) 70%)'
+        },
+        'PhpStorm': {
+          name: 'PhpStorm',
+          introduce: '熊猫正在吃 PHP',
+          gradient: 'linear-gradient(135deg, rgba(183,69,207,0.25), rgba(111,66,193,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(183,69,207) 30%, rgb(111,66,193) 70%)'
+        },
+        'RubyMine': {
+          name: 'RubyMine',
+          introduce: '熊猫正在吃 Ruby',
+          gradient: 'linear-gradient(135deg, rgba(251,53,80,0.25), rgba(215,0,95,0.25))',
+          textGradient: 'linear-gradient(45deg, rgb(251,53,80) 30%, rgb(215,0,95) 70%)'
+        }
+      }
     }
   },
   
@@ -84,7 +143,29 @@ export default {
       if (this.data.alive) {
         if (this.data.applicationOnline) {
           this.containerClass = 'tip';
-          this.title = this.data.application;
+          
+          // 根据API返回的application内容判断IDE
+          const ideName = Object.keys(this.jetbrainsConfig).find(key => 
+            this.data.application.includes(key)
+          );
+
+          if (ideName) {
+            const config = this.jetbrainsConfig[ideName];
+            this.title = `熊猫正在使用 ${config.name}`;
+            this.content = config.introduce;
+            
+            this.hasCustomBg = true;
+            this.isJetbrains = true;
+            this.customStyle = {
+              '--custom-bg': config.gradient,
+              '--custom-text-gradient': config.textGradient
+            };
+            return;
+          }
+
+          // 非JetBrains应用的原有逻辑
+          this.isJetbrains = false;
+          this.title = this.data.introduce;
           this.content = this.data.introduce;
           
           this.hasCustomBg = true;
@@ -107,6 +188,7 @@ export default {
           '这只熊猫睡死了QWQ,没有留下最后的时间';
       }
 
+      this.isJetbrains = false;
       this.hasCustomBg = false;
       this.customStyle = {};
     },
@@ -160,15 +242,36 @@ export default {
 }
 
 .custom-container.has-custom-bg :deep(.hint-container) {
-  background-color: var(--custom-bg) !important;
+  background: var(--custom-bg) !important;
 }
 
 .custom-container.has-custom-bg :deep(.hint-container-title) {
   color: var(--custom-title-color) !important;
-  transition: color 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.custom-container.has-custom-bg :deep([data-is-jetbrains="true"] .hint-container-title) {
+  background: var(--custom-text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: bold;
+}
+
+.custom-container.has-custom-bg :deep(.hint-container.tip > .hint-container-title::before) {
+  opacity: 0.8;
+  filter: brightness(0.7);
+}
+
+/* 调整JetBrains模式下的提示图标样式 */
+.custom-container.has-custom-bg :deep([data-is-jetbrains="true"].hint-container.tip > .hint-container-title::before) {
+  background-color:rgb(18, 91, 228) !important; /* 使用固定的深色 */
+  opacity: 1;
+  filter: brightness(0.9);
 }
 
 :deep(.hint-container) {
   transition: all 0.5s ease;
 }
+
 </style>
