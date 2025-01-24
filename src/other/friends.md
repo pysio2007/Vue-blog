@@ -7,15 +7,6 @@ article: false
 ## 我的朋友们
 
 <VPCard
-  title="一只英短猫猫"
-  desc="笨猫猫"
-  logo="https://files.pysio.online/files/Pysio-Imges/英短.jpg"
-  link="https://www.nerv.games"
-  background="rgba(255,229,255)"
-  class="cat-logo"
-/>
-
-<VPCard
   title="233355607的乱写站"
   desc="啥都写的引诱吃（"
   logo="https://files.pysio.online/files/Avatar/233355607.jpg"

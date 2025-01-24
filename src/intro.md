@@ -30,15 +30,6 @@ article: false
 />
 
 <VPCard
-  title="一只英短猫猫"
-  desc="老婆wwww"
-  logo="https://files.pysio.online/files/Pysio-Imges/英短.jpg"
-  link="https://github.com/stuffed-cat"
-  background="rgba(255,229,255)"
-  class="cat-logo"
-/>
-
-<VPCard
   title="叶琴韵"
   desc="笨狐一个"
   logo="https://files.pysio.online/files/Avatar/yxixun1.jpg"
