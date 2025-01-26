@@ -163,11 +163,10 @@ export default {
             return;
           }
 
-          // 非JetBrains应用的原有逻辑
+          // 非JetBrains应用时，使用 application 字段做标题，并显示 introduce 或默认文案
           this.isJetbrains = false;
-          this.title = this.data.introduce;
-          this.content = this.data.introduce;
-          
+          this.title = `${this.data.application}`;
+          this.content = this.data.introduce || '熊猫正在写代码 - Vue-blog-Dev';
           this.hasCustomBg = true;
           const colors = this.processRGBA(this.data.rgba);
           this.customStyle = {
