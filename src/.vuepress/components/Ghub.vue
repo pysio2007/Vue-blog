@@ -71,10 +71,10 @@ export default {
       return '─'.repeat(4)
     },
     getAsciiRepresentation() {
-      let result = []
-      let arrows = []
-      let keys = []
-      let delays = []
+      const result = []
+      const arrows = []
+      const keys = []
+      const delays = []
       
       this.macroActions.forEach((action, index) => {
         const key = action.type === 'mouse' ? 
@@ -103,7 +103,7 @@ export default {
       result.push(keys.join(''))
       if (delays.length) result.push(delays.join(''))
 
-      let asciiOutput = []
+      const asciiOutput = []
       asciiOutput.push(...result)
       return asciiOutput.join('\n')
     }
