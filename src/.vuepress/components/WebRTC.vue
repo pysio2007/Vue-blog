@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: 'WebRTC',
   data() {
     return {
       servers: [
