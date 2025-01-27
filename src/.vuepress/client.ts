@@ -27,6 +27,7 @@ import Pastebin from "./components/Pastebin.vue";
 import PictureList from "./components/PictureList.vue";
 import game2048 from "./components/game2048.vue";
 import GithubUserStats from "./components/GithubUserStats.vue";
+import Ghub from "./components/Ghub.vue";
 
 export default defineClientConfig({
   enhance: ({ app, router, siteData }) => {
@@ -56,6 +57,7 @@ export default defineClientConfig({
     app.component('PictureList',PictureList);
     app.component('game2048',game2048);
     app.component('GithubUserStats',GithubUserStats);
+    app.component("Ghub",Ghub)
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [
