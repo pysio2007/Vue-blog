@@ -13,8 +13,8 @@
       </div>
   
       <!-- 状态卡片 -->
-      <div v-if="services" class="status-grid">
-        <div v-for="service in services" 
+      <div v-if="filteredServices" class="status-grid">
+        <div v-for="service in filteredServices" 
              :key="service.name" 
              class="status-card"
              @click="showCharts(service)">
@@ -94,6 +94,7 @@
   import Chart from 'chart.js/auto'
 
   export default {
+    name: "StatusCheck",
     data() {
       return {
         loading: true,
@@ -103,11 +104,22 @@
         selectedService: null,
         chartLoading: false,
         chartInstance: null,
-        commitData: []
+        commitData: [],
+        filterParam: null
       }
     },
     mounted() {
       this.fetchStatusData()
+      const searchParams = new URLSearchParams(window.location.search)
+      this.filterParam = [...searchParams.keys()][0] || null
+    },
+    computed: {
+      filteredServices() {
+        if (!this.services) return null
+        if (!this.filterParam) return this.services
+        const prefix = `${this.filterParam}-`
+        return this.services?.filter(s => s.name?.startsWith(prefix)) ?? null
+      }
     },
     methods: {
       async fetchStatusData() {
