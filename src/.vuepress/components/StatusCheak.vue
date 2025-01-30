@@ -94,6 +94,7 @@
   import Chart from 'chart.js/auto'
 
   export default {
+    name: "StatusCheck",
     data() {
       return {
         loading: true,
@@ -116,8 +117,8 @@
       filteredServices() {
         if (!this.services) return null
         if (!this.filterParam) return this.services
-        const prefix = this.filterParam + '-'
-        return this.services.filter(s => s.name && s.name.startsWith(prefix))
+        const prefix = `${this.filterParam}-`
+        return this.services?.filter(s => s.name && s.name.startsWith(prefix)) ?? null
       }
     },
     methods: {
