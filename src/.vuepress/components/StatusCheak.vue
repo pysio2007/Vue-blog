@@ -118,7 +118,7 @@
         if (!this.services) return null
         if (!this.filterParam) return this.services
         const prefix = `${this.filterParam}-`
-        return this.services?.filter(s => s.name && s.name.startsWith(prefix)) ?? null
+        return this.services?.filter(s => s.name?.startsWith(prefix)) ?? null
       }
     },
     methods: {
