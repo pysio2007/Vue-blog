@@ -27,6 +27,7 @@ https://blogapi.pysio.online
 > - 所有请求都需要使用HTTPS协议
 > - API可能会有速率限制
 > - 请妥善保管您的认证令牌
+> - 图片存储使用 Minio 对象存储，通过 CDN 加速访问
 
 ### 通用响应格式
 所有JSON响应都遵循以下格式：
@@ -93,11 +94,20 @@ Authorization: Bearer {TOKEN}
   ```
   Authorization: Bearer {TOKEN}
   ```
+- **请求参数**:
+  - `application`: 应用名称
+  - `introduce`: 应用描述
+  - `rgba`: 颜色值
+  - `applicationOnline`: 应用状态
 - **响应格式**: application/json
 - **响应示例**:
   ```json
   {
-    "message": "Heartbeat received"
+    "message": "Heartbeat received",
+    "application": "MyApp",
+    "introduce": "My Application Description",
+    "rgba": "233,30,99,0.17",
+    "applicationOnline": true
   }
   ```
 - **调试示例**:
@@ -113,7 +123,11 @@ Authorization: Bearer {TOKEN}
   ```json
   {
     "alive": true,
-    "last_heartbeat": 1234567890
+    "last_heartbeat": 1234567890,
+    "application": "MyApp",
+    "introduce": "My Application Description",
+    "rgba": "233,30,99,0.17",
+    "applicationOnline": true
   }
   ```
 - **调试示例**:
@@ -123,20 +137,15 @@ Authorization: Bearer {TOKEN}
 
 ## 图片管理接口
 
-> [!CAUTION]
-> 图片上传接口仅供管理员使用。
-> 上传的图片会自动优化为WebP格式。
+> [!IMPORTANT]
+> 所有图片都存储在 Minio 对象存储中，通过 CDN 加速访问。
+> 上传的图片会自动转换为 WebP 格式以优化存储和传输。
 
 ### 1. 获取随机图片
 - **请求路径**: `/random_image`
 - **请求方法**: GET
-- **响应格式**: image/webp
-- **响应示例**: 直接返回图片数据
-- **响应头**:
-  ```
-  Content-Type: image/webp
-  Content-Disposition: inline; filename="{hash}.webp"
-  ```
+- **响应**: 302 重定向到 Minio 存储的图片
+- **重定向格式**: `https://minioapi.pysio.online/randomimg/{hash}.webp`
 - **错误响应**:
   ```json
   {
@@ -145,7 +154,8 @@ Authorization: Bearer {TOKEN}
   ```
 - **调试示例**:
   ```bash
-  curl https://blogapi.pysio.online/random_image -o random.webp
+  # 使用 -L 参数跟随重定向
+  curl -L https://blogapi.pysio.online/random_image -o random.webp
   ```
 
 ### 2. 获取特定图片
@@ -153,21 +163,13 @@ Authorization: Bearer {TOKEN}
 - **请求方法**: GET
 - **参数说明**:
   - `hash`: 图片的哈希值
-- **响应格式**: image/webp
-- **响应头**:
-  ```
-  Content-Type: image/webp
-  Content-Disposition: inline; filename="{hash}.webp"
-  ```
+- **响应**: 302 重定向到 Minio 存储的图片
+- **重定向格式**: `https://minioapi.pysio.online/randomimg/{hash}.webp`
 - **错误响应**:
   ```json
   {
     "error": "Image not found"
   }
-  ```
-- **调试示例**:
-  ```bash
-  curl https://blogapi.pysio.online/images/your_image_hash -o image.webp
   ```
 
 ### 3. 获取图片（优化版）
@@ -175,25 +177,13 @@ Authorization: Bearer {TOKEN}
 - **请求方法**: GET
 - **参数说明**:
   - `hash`: 图片的哈希值
-- **响应格式**: image/webp
-- **响应头**:
-  ```
-  Content-Type: image/webp
-  Content-Disposition: inline; filename="{hash}.webp"
-  Cache-Control: public, max-age=31536000
-  ETag: "{hash}"
-  ```
-- **特殊响应**:
-  - 304 Not Modified (当浏览器缓存有效时)
+- **响应**: 302 重定向到 Minio 存储的图片
+- **重定向格式**: `https://minioapi.pysio.online/randomimg/{hash}.webp`
 - **错误响应**:
   ```json
   {
     "error": "Image not found"
   }
-  ```
-- **调试示例**:
-  ```bash
-  curl -H "If-None-Match: \"your_image_hash\"" https://blogapi.pysio.online/i/your_image_hash -o image.webp
   ```
 
 ### 4. 上传图片
@@ -211,7 +201,6 @@ Authorization: Bearer {TOKEN}
   ```json
   {
     "hash": "图片的hash值",
-    "contentType": "image/webp",
     "size": 图片大小(字节)
   }
   ```
@@ -225,7 +214,7 @@ Authorization: Bearer {TOKEN}
   ```json
   {
     "error": "Image already exists",
-    "existingHash": "已存在图片的hash"
+    "hash": "已存在图片的hash"
   }
   ```
 - **调试示例**:
@@ -293,8 +282,7 @@ Authorization: Bearer {TOKEN}
 - **成功响应**:
   ```json
   {
-    "message": "Image deleted successfully",
-    "hash": "被删除图片的hash"
+    "message": "Image deleted successfully"
   }
   ```
 - **错误响应**:
@@ -309,6 +297,31 @@ Authorization: Bearer {TOKEN}
     -H "Authorization: Bearer your_admin_token" \
     https://blogapi.pysio.online/images/your_image_hash
   ```
+
+### 8. 批量上传工具
+提供了两种批量上传工具：
+
+1. Go 命令行工具：
+```bash
+# 编译工具
+go build -o uploader cmd/upload/main.go
+
+# 使用工具
+./uploader -folder /path/to/images \
+  -api https://blogapi.pysio.online \
+  -token your_admin_token \
+  -concurrent 5
+```
+
+2. PowerShell 脚本：
+```powershell
+# 运行脚本
+.\upload.ps1 -folder "C:\Images" `
+  -token "your_token" `
+  -retries 5 `
+  -timeout 60 `
+  -api "https://blogapi.pysio.online"
+```
 
 ## Steam 状态接口
 
@@ -457,14 +470,17 @@ Authorization: Bearer {TOKEN}
 > 3. 监控API调用频率
 > 4. 实现错误处理
 > 5. 定期检查API更新
+> 6. 使用批量上传工具进行大量图片上传
+> 7. 遵循重定向机制获取图片
 
 ## 性能优化
 
 > [!NOTE]
-> - 图片接口支持HTTP缓存
-> - 使用CDN加速静态资源
-> - 支持图片压缩和格式转换
-> - 批量请求时注意并发限制
+> - 图片通过 Minio 对象存储和 CDN 加速
+> - 所有图片自动转换为 WebP 格式
+> - 支持并发上传和断点续传
+> - 图片访问采用重定向机制减少服务器负载
+> - 支持全球加速访问
 
 ## 问题反馈
 
