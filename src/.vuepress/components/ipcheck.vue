@@ -116,6 +116,37 @@
         <p>网络类型：{{ ipData2.data.asn.type }}</p>
       </div>
     </div>
+
+    <!-- 展示 IPv6 信息 -->
+    <div v-if="ipv6Data" class="hint-container tip">
+      <p class="hint-container-title">IPv6 地址</p>
+      <p>IP：{{ ipv6Data.ip }}</p>
+      <p>国家：{{ ipv6Data.country || ipv6Data.data?.country }}</p>
+      <p>省：{{ ipv6Data.region || ipv6Data.data?.region }}</p>
+      <p>城市：{{ ipv6Data.city || ipv6Data.data?.city }}</p>
+      <p>运营商：{{ ipv6Data.org || ipv6Data.data?.org }}</p>
+
+      <div v-if="ipv6Data.data && !isApiLimited">
+        <div v-if="ipv6Data.data.company" class="hint-container tip">
+          <p class="hint-container-title">服务提供商</p>
+          <p>提供商：{{ ipv6Data.data.company.name }}</p>
+          <p>服务商域名：{{ ipv6Data.data.company.domain }}</p>
+          <p>服务商类型：{{ ipv6Data.data.company.type }}</p>
+        </div>
+        <div v-if="ipv6Data.data.asn" class="hint-container tip">
+          <p class="hint-container-title">ASN 信息</p>
+          <p>ASN 编号：{{ ipv6Data.data.asn.asn }}</p>
+          <p>运营商名称：{{ ipv6Data.data.asn.name }}</p>
+          <p>运营商域名：{{ ipv6Data.data.asn.domain }}</p>
+          <p>IP 路由：{{ ipv6Data.data.asn.route }}</p>
+          <p>网络类型：{{ ipv6Data.data.asn.type }}</p>
+        </div>
+      </div>
+    </div>
+    <div v-else class="hint-container note">
+      <p class="hint-container-title">IPv6 检测</p>
+      <p>未检测到 IPv6 地址，这是正常的</p>
+    </div>
   </div>
 </template>
 
@@ -130,6 +161,7 @@ export default {
       ipData2: null,
       isApiLimited: false,
       ipMismatch: false,
+      ipv6Data: null,
     };
   },
   computed: {
@@ -182,6 +214,36 @@ export default {
   methods: {
     async fetchIPData() {
       try {
+        // 获取 IPv6 地址
+        try {
+          const ipv6Response = await fetch('https://api64.ipify.org?format=json');
+          if (ipv6Response.ok) {
+            const ipv6Json = await ipv6Response.json();
+            // 获取 IPv6 详细信息
+            const ipv6DataResponse = await fetch(
+              `https://blogapi.pysio.online/ipcheck?ip=${ipv6Json.ip}`
+            );
+            if (ipv6DataResponse.ok) {
+              const ipv6DetailData = await ipv6DataResponse.json();
+              if (ipv6DetailData['429'] === 'true') {
+                // API 超速时尝试备用 API
+                const ipv6DemoResponse = await fetch(`https://ipinfo.io/widget/demo/${ipv6Json.ip}`);
+                if (ipv6DemoResponse.ok) {
+                  this.ipv6Data = await ipv6DemoResponse.json();
+                } else {
+                  this.ipv6Data = { ...ipv6Json, ...ipv6DetailData };
+                }
+              } else {
+                this.ipv6Data = { ...ipv6Json, ...ipv6DetailData };
+              }
+            } else {
+              this.ipv6Data = ipv6Json;
+            }
+          }
+        } catch (err) {
+          console.log('IPv6 not available');
+        }
+
         let userIP, userIP2;
         try {
           const ipResponse = await fetch('https://api.ipify.org?format=json');
