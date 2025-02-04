@@ -23,7 +23,7 @@ export default {
             // 否则拼接默认CDN路径
             return icon.startsWith('http') || icon.startsWith('/') ?
                 icon :
-                `https://files.pysio.online/files/Pysio-Imges/${icon}.png`;
+                `https://minioapi.pysio.online/pysioimages/${icon}.png`;
         }
     }
 }
