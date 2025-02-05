@@ -172,7 +172,6 @@ export default hopeTheme({
     icon:{
       assets: [
         "fontawesome",          // Icon 配置文件
-        "https://kit.fontawesome.com/b19836ac94.js",
         "https://files.pysio.online/files/Pysio-FontAwesome/js/custom-icons.js",
         "https://files.pysio.online/files/Pysio-FontAwesome/js/brands.js",
         "https://files.pysio.online/files/Pysio-FontAwesome/js/light.min.js",

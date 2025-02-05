@@ -9,7 +9,7 @@ article: false
 <VPCard
   title="233355607的乱写站"
   desc="啥都写的引诱吃（"
-  logo="https://files.pysio.online/files/Avatar/233355607.jpg"
+  logo="https://files.pysio.online/Avatar/233355607.jpg"
   link="https://www.233355607.xyz/"
   background="rgba(236, 244, 250)"
 />
@@ -17,7 +17,7 @@ article: false
 <VPCard
   title="狐狸窝"
   desc="笨比狐狐"
-  logo="https://files.pysio.online/files/Avatar/yxixun1.jpg"
+  logo="https://files.pysio.online/Avatar/yxixun1.jpg"
   link="https://www.yxixun1.icu/"
   background="rgba(250,236,244,1)"
 />
@@ -25,7 +25,7 @@ article: false
 <VPCard
   title="米露小窝"
   desc="放弃个性,就和死了没什么区别"
-  logo="https://files.pysio.online/files/Avatar/milu.jpg"
+  logo="https://files.pysio.online/Avatar/milu.jpg"
   link="https://www.milu.ink/"
   background="rgba(233,30,99,0.17)"
 />
@@ -41,7 +41,7 @@ article: false
 <VPCard
   title="零狼 の 小窝"
   desc="温暖的小窝"
-  logo="https://files.pysio.online/files/Avatar/ZeroWolf.jpg"
+  logo="https://files.pysio.online/Avatar/ZeroWolf.jpg"
   link="https://zerowolf.cm/"
   background="rgba(236, 244, 250)"
 />
@@ -49,7 +49,7 @@ article: false
 <VPCard
   title="盐木の备忘录"
   desc="Luctor et emergo."
-  logo="https://files.pysio.online/files/Avatar/SaltWood_233.jpg"
+  logo="https://files.pysio.online/Avatar/SaltWood_233.jpg"
   link="https://saltwood.top:2333/"
   background="rgba(236, 244, 250)"
 />

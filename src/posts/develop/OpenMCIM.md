@@ -200,35 +200,35 @@ CLUSTER_PORT=你的本地开放端口
 <VPCard
   title="bangbang93"
   desc="OpenBmclapi 作者"
-  logo="https://files.pysio.online/files/Avatar/bangbang93.jpg"
+  logo="https://files.pysio.online/Avatar/bangbang93.jpg"
   link="https://github.com/bangbang93"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="z0z0r4"
   desc="Mcmod Info Mirror作者"
-  logo="https://files.pysio.online/files/Avatar/z0z0r4.jpg"
+  logo="https://files.pysio.online/Avatar/z0z0r4.jpg"
   link="https://github.com/z0z0r4"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="𝞐𝞙𝞘𝞚𝞛𝞝"
   desc="Go-OpenMcim 修改版作者"
-  logo="https://files.pysio.online/files/Avatar/WetemCloud.jpg"
+  logo="https://files.pysio.online/Avatar/WetemCloud.jpg"
   link="https://github.com/WetemCloud"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="ZeroWolf"
   desc="Node-OpenMcim 作者"
-  logo="https://files.pysio.online/files/Avatar/ZeroWolf.jpg"
+  logo="https://files.pysio.online/Avatar/ZeroWolf.jpg"
   link="https://github.com/ZeroWolf233"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="SaltWood_233"
   desc="Open93AtHome 作者"
-  logo="https://files.pysio.online/files/Avatar/SaltWood_233.jpg"
+  logo="https://files.pysio.online/Avatar/SaltWood_233.jpg"
   link="https://github.com/SALTWOOD"
   background="rgba(236, 244, 250)"
 />
