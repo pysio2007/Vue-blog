@@ -13,4 +13,4 @@ tag:
 
 <!-- more -->
 
-![](https://minioapi.pysio.online/pysioimages/899f87e032161b04c94b0feeb972bdf3_720.png)
+![](https://files.pysio.online/Images/899f87e032161b04c94b0feeb972bdf3_720.png)
