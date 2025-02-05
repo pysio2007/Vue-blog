@@ -31,7 +31,7 @@
 <script>
 const WORD_LENGTH = 5;
 const MAX_TRIES = 6;
-const API_URL = 'https://random-word-api.vercel.app/api?words=1&length=5';
+const API_URL = 'https://cdn.akaere.online/https://random-word-api.vercel.app/api?words=1&length=5';
 
 export default {
   data() {
