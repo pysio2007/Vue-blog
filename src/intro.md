@@ -16,7 +16,7 @@ article: false
 <VPCard
   title="Pysio"
   desc="一只懒懒的熊猫"
-  logo="https://files.pysio.online/files/Avatar/Pysio.jpg"
+  logo="https://files.pysio.online/Avatar/Pysio.jpg"
   link="https://github.com/pysio2007"
   background="rgba(236, 244, 250)"
 />
@@ -24,7 +24,7 @@ article: false
 <VPCard
   title="NekoXii Strel1zia"
   desc="一只小曦"
-  logo="https://files.pysio.online/files/Avatar/Strel1zia.jpg"
+  logo="https://files.pysio.online/Avatar/Strel1zia.jpg"
   link="https://github.com/NekoXii"
   background="rgba(255, 235, 246)"
 />
@@ -32,7 +32,7 @@ article: false
 <VPCard
   title="叶琴韵"
   desc="笨狐一个"
-  logo="https://files.pysio.online/files/Avatar/yxixun1.jpg"
+  logo="https://files.pysio.online/Avatar/yxixun1.jpg"
   link="https://github.com/yxixun1"
   background="rgba(250,236,244,1)"
 />

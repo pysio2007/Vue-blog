@@ -13,7 +13,7 @@ tag:
 你可以直接引用以下JS文件来使用本博客自定义的FontAwesome
 
 ```javascript
-<script src="https://files.pysio.online/files/Pysio-FontAwesome/js/custom-icons.js" crossorigin="anonymous"></script>
+<script src="https://files.pysio.online/Pysio-FontAwesome/js/custom-icons.js" crossorigin="anonymous"></script>
 ```
 
 ## 包含的图标
