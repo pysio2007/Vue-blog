@@ -40,9 +40,9 @@ article: false
 
 <VPCard
   title="零狼 の 小窝"
-  desc="温暖的小窝"
+  desc="为了前行而努力，即使前方不一定有光"
   logo="https://files.pysio.online/Avatar/ZeroWolf.jpg"
-  link="https://zerowolf.cm/"
+  link="https://zerowolf.cn/"
   background="rgba(236, 244, 250)"
 />
 

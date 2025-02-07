@@ -124,7 +124,7 @@
     methods: {
       async fetchStatusData() {
         try {
-          const response = await fetch('https://cdn.akaere.online/https://raw.githubusercontent.com/pysio2007/upptime/master/history/summary.json')
+          const response = await fetch('https://files.pysio.online/status/summary.json')
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
           }
