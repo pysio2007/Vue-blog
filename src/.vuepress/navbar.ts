@@ -56,7 +56,7 @@ export default navbar([
   {
     text: "DN42",
     icon: "fa-solid fa-signal-stream",
-    link: "/dn42",
+    link: "https://asn.pysio.online/dn42/",
   },
   {
     text: "关于",

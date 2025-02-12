@@ -3,6 +3,8 @@ import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
 import natural from 'natural';
+import fs from 'fs';
+import path from 'path';
 
 //分词
 import pkg from 'nodejieba';
@@ -26,6 +28,22 @@ const calculateRunTime = () => {
 
   return `${days}天${hours}小时`;
 };
+
+const envFilePath = path.resolve(__dirname, '../../.env');
+let anycastValue = 'CloudFlare';
+
+if (fs.existsSync(envFilePath)) {
+  const envFileContent = fs.readFileSync(envFilePath, 'utf-8');
+  const envVars: { [key: string]: string } = envFileContent.split('\n').reduce((acc, line) => {
+    const [key, value] = line.split('=');
+    if (key && value) {
+      acc[key.trim()] = value.trim();
+    }
+    return acc;
+  }, {} as { [key: string]: string });
+
+  anycastValue = envVars.VUE_APP_ANYCAST || 'CloudFlare';
+}
 
 export default hopeTheme({
   hostname: "https://www.pysio.online",
@@ -180,6 +198,23 @@ export default hopeTheme({
       ],
     },
 
+    notice: [
+      {
+        path: "/",
+        title: "Anycast",
+        showOnce: true,
+        content: `你正在从${anycastValue}访问本站`,
+        actions: [
+          {
+            text: "前往了解",
+            link: "https://asn.pysio.online/anycast",
+            type: "primary",
+          },
+          { text: '关闭窗口' },
+        ],
+      },
+    ],
+    
     //搜索
     slimsearch: {
       indexContent: true,
