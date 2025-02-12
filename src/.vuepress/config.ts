@@ -1,8 +1,6 @@
 import { defineUserConfig } from "vuepress";
-import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
-import { removeHtmlExtensionPlugin } from 'vuepress-plugin-remove-html-extension'
 import theme from "./theme.js";
 import { cachePlugin } from '@vuepress/plugin-cache'
 
@@ -16,19 +14,11 @@ export default defineUserConfig({
     cachePlugin({       // 开启缓存
       type: 'filesystem',
     }),
-
-    // umamiAnalyticsPlugin({   //网站追踪
-    //   id: 'e86a18d7-a5f6-4f55-85af-e99be291ed9b',
-    //   link: 'https://umami.pysio.online/script.js',
-    //   cache: true,
-    // }),
-
+    
     googleAnalyticsPlugin({   //Google Analytics
       id: 'G-G9Q1H2C9MN',
     }), 
     
-    // 更干净的URL
-    // removeHtmlExtensionPlugin()
     
   ],
   head: [

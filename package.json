@@ -40,7 +40,6 @@
     "@vuepress/plugin-pwa": "2.0.0-rc.74",
     "@vuepress/plugin-revealjs": "2.0.0-rc.74",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.74",
-    "@vuepress/plugin-umami-analytics": "2.0.0-rc.74",
     "@vueup/vue-quill": "^1.2.0",
     "ansi-to-html": "^0.7.2",
     "asciinema-player": "^3.8.1",
@@ -79,7 +78,6 @@
     "flowchart.ts": "^3.0.1",
     "katex": "^0.16.11",
     "mathjax-full": "^3.2.2",
-    "mermaid": "^11.3.0",
-    "vuepress-plugin-remove-html-extension": "1.16.0"
+    "mermaid": "^11.3.0"
   }
 }
