@@ -16,8 +16,10 @@ WORKDIR /usr/share/nginx/html/
 COPY --from=builder ./src/.vuepress/dist ./
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir -p /etc/nginx/ssl
-VOLUME ["/etc/nginx/ssl"]
-EXPOSE 80 443
+# 创建证书目录并复制证书
+COPY ssl/cert.pem /etc/nginx/ssl/cert.pem
+COPY ssl/key.pem /etc/nginx/ssl/key.pem
+RUN chmod 600 /etc/nginx/ssl/key.pem
 
+EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]
