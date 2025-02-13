@@ -14,8 +14,10 @@ RUN ls
 FROM nginx
 WORKDIR /usr/share/nginx/html/
 COPY --from=builder ./src/.vuepress/dist ./
-RUN ls
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+RUN mkdir -p /etc/nginx/ssl
+VOLUME ["/etc/nginx/ssl"]
+EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]

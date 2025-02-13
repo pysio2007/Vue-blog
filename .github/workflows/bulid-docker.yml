@@ -78,6 +78,12 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+      - name: Save SSL files
+        run: |
+          mkdir -p ssl
+          echo "${{ secrets.SSL_CERT }}" > ssl/cert.pem
+          echo "${{ secrets.SSL_KEY }}" > ssl/key.pem
+
       - name: Inspect image
         run: |
           docker buildx imagetools inspect \
@@ -102,7 +108,13 @@ jobs:
       - name: Build and push for NewJersey
         run: |
           echo "VUE_APP_ANYCAST=NewJersey" > .env
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:NewJersey --push .
+          mkdir -p ssl
+          echo "${{ secrets.SSL_CERT }}" > ssl/cert.pem
+          echo "${{ secrets.SSL_KEY }}" > ssl/key.pem
+          docker buildx build \
+            --mount type=bind,source="$(pwd)"/ssl,target=/etc/nginx/ssl \
+            --platform linux/amd64,linux/arm64 \
+            -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:NewJersey --push .
 
   build-and-push-tokyo:
     runs-on: ubuntu-latest
@@ -123,7 +135,13 @@ jobs:
       - name: Build and push for Tokyo
         run: |
           echo "VUE_APP_ANYCAST=Tokyo" > .env
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:Tokyo --push .
+          mkdir -p ssl
+          echo "${{ secrets.SSL_CERT }}" > ssl/cert.pem
+          echo "${{ secrets.SSL_KEY }}" > ssl/key.pem
+          docker buildx build \
+            --mount type=bind,source="$(pwd)"/ssl,target=/etc/nginx/ssl \
+            --platform linux/amd64,linux/arm64 \
+            -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:Tokyo --push .
 
   build-and-push-mumbai:
     runs-on: ubuntu-latest
@@ -144,7 +162,13 @@ jobs:
       - name: Build and push for Mumbai
         run: |
           echo "VUE_APP_ANYCAST=Mumbai" > .env
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:Mumbai --push .
+          mkdir -p ssl
+          echo "${{ secrets.SSL_CERT }}" > ssl/cert.pem
+          echo "${{ secrets.SSL_KEY }}" > ssl/key.pem
+          docker buildx build \
+            --mount type=bind,source="$(pwd)"/ssl,target=/etc/nginx/ssl \
+            --platform linux/amd64,linux/arm64 \
+            -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:Mumbai --push .
 
   build-and-push-hongkong:
     runs-on: ubuntu-latest
@@ -165,7 +189,13 @@ jobs:
       - name: Build and push for HongKong
         run: |
           echo "VUE_APP_ANYCAST=HongKong" > .env
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:HongKong --push .
+          mkdir -p ssl
+          echo "${{ secrets.SSL_CERT }}" > ssl/cert.pem
+          echo "${{ secrets.SSL_KEY }}" > ssl/key.pem
+          docker buildx build \
+            --mount type=bind,source="$(pwd)"/ssl,target=/etc/nginx/ssl \
+            --platform linux/amd64,linux/arm64 \
+            -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:HongKong --push .
 
   build-and-push-amsterdam:
     runs-on: ubuntu-latest
@@ -186,4 +216,10 @@ jobs:
       - name: Build and push for Amsterdam
         run: |
           echo "VUE_APP_ANYCAST=Amsterdam" > .env
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:Amsterdam --push .
+          mkdir -p ssl
+          echo "${{ secrets.SSL_CERT }}" > ssl/cert.pem
+          echo "${{ secrets.SSL_KEY }}" > ssl/key.pem
+          docker buildx build \
+            --mount type=bind,source="$(pwd)"/ssl,target=/etc/nginx/ssl \
+            --platform linux/amd64,linux/arm64 \
+            -t ${{ env.REGISTRY }}/${{ env.IMAGE }}:Amsterdam --push .
