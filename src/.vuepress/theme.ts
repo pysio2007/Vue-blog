@@ -199,7 +199,7 @@ export default hopeTheme({
         path: "/",
         title: "Anycast",
         showOnce: true,
-        content: `你正在从${anycastValue}访问本站`,
+        content: `你正在通过${anycastValue}节点访问本站`,
         actions: [
           {
             text: "前往了解",
