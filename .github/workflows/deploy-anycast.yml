@@ -53,7 +53,7 @@ jobs:
         run: echo "VUE_APP_ANYCAST=Amsterdam" > .env
           
       - name: Deploy to Amsterdam
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-amsterdam.pysio.online
           username: root
@@ -88,7 +88,7 @@ jobs:
           strip_components: 1
 
       - name: Setup nginx
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-amsterdam.pysio.online
           username: root
@@ -112,7 +112,7 @@ jobs:
         run: echo "VUE_APP_ANYCAST=HongKong" > .env
         
       - name: Deploy to HongKong
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-hongkong.pysio.online
           username: root
@@ -147,7 +147,7 @@ jobs:
           strip_components: 1
 
       - name: Setup nginx
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-hongkong.pysio.online
           username: root
@@ -171,7 +171,7 @@ jobs:
         run: echo "VUE_APP_ANYCAST=Mumbai" > .env
           
       - name: Deploy to Mumbai
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-mumbai.pysio.online
           username: root
@@ -206,7 +206,7 @@ jobs:
           strip_components: 1
 
       - name: Setup nginx
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-mumbai.pysio.online
           username: root
@@ -230,7 +230,7 @@ jobs:
         run: echo "VUE_APP_ANYCAST=NewJersey" > .env
           
       - name: Deploy to NewJersey
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-newjersey.pysio.online
           username: root
@@ -265,7 +265,7 @@ jobs:
           strip_components: 1
 
       - name: Setup nginx
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-newjersey.pysio.online
           username: root
@@ -289,7 +289,7 @@ jobs:
         run: echo "VUE_APP_ANYCAST=Tokyo" > .env
           
       - name: Deploy to Tokyo
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-tokyo.pysio.online
           username: root
@@ -324,7 +324,7 @@ jobs:
           strip_components: 1
 
       - name: Setup nginx
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: anycast-tokyo.pysio.online
           username: root
