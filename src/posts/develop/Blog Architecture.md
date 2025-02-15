@@ -13,7 +13,7 @@ tag:
 
 ## 图片/头像/字体 分发
 
-所有文件使用 [Open93AtHome](https://github.com/SaltWood-Studio/Open93AtHome-V3) 分发
+所有文件使用 [Pysio-Files-API](https://github.com/pysio2007/Files-API/) 分发
 
 字体使用 [Font Awesome](https://fontawesome.com/) 添加 [自定义图标](https://www.pysio.online/posts/develop/icon.html) 
 
@@ -29,4 +29,6 @@ tag:
 
 ## 网页托管和分发
 
-目前 网站部署在2个地方 分别是 阿里云 和 [Cloudflare Pages](https://pages.cloudflare.com/) 所有流量均由 Cloudflare 分发
+目前 网站部署在2个地方 分别是 自建集群 和 [Cloudflare Pages](https://pages.cloudflare.com/) ~~所有流量均由 Cloudflare 分发~~
+
+EDIT: 因自建Anycast网络，目前网站由Anycast集群分发

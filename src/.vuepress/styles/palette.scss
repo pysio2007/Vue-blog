@@ -33,3 +33,13 @@ code, pre, kbd, samp {
     transform: rotate(360deg);
   }
 }
+
+//移除反应
+
+.wl-reaction-list {
+  display: none !important;
+}
+
+.wl-reaction-title {
+  display: none !important;
+}

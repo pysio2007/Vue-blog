@@ -1,7 +1,7 @@
 {
   "name": "pysio-vue-blog",
   "description": "一个VuePress博客",
-  "version": "1.5.4",
+  "version": "1.6.0",
   "license": "AGPL",
   "type": "module",
   "scripts": {
@@ -41,6 +41,7 @@
     "@vuepress/plugin-revealjs": "2.0.0-rc.76",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.74",
     "@vueup/vue-quill": "^1.2.0",
+    "@waline/client": "^3.5.1",
     "ansi-to-html": "^0.7.2",
     "asciinema-player": "^3.8.1",
     "axios": "^1.7.8",

@@ -82,6 +82,7 @@ export default hopeTheme({
       Steam: "https://steamcommunity.com/profiles/76561198412338808/",
       AFDian: "https://mbd.pub/o/author-bGubmmpoZg==",
     },
+    articleInfo: ["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"],
   },
 
   // 加密配置
@@ -243,13 +244,8 @@ export default hopeTheme({
     // 启用之前需安装 @waline/client
     // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
     comment: {
-      provider: "Giscus",
-      comment: true,
-      repo: 'pysio2007/Vue-blog',
-      repoId: 'R_kgDOM6WQXQ',
-      category: 'Polls',
-      categoryId: 'DIC_kwDOM6WQXc4CjFVc',
-      mapping: "title"
+      provider: "Waline",
+      serverURL: "https://waline.pysio.online/.netlify/functions/comment",
     },
 
     components: {
