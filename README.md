@@ -24,8 +24,11 @@ docker pull pysio/pysioblog
 运行Docker镜像
 
 ```bash
-docker run --name PysioHome -p 8080:80 -d pysio/pysioblog:main
+docker run --name PysioHome -p 80:80 -p 443:443 -d pysio/pysioblog:main
 ```
+
+443端口会默认提供pysio.online的自签证书 请注意挂载ssl目录替换证书 
+
 ### 存储库活动
 
 ![Alt](https://repobeats.axiom.co/api/embed/c9774154ac3dd3bf83f24df2cc5a5b688353e549.svg "Repobeats analytics image")
