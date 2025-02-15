@@ -31,6 +31,10 @@ jobs:
                 corepack enable
                 npm ci
                 
+            - name: 设置环境变量
+              run: |
+                echo "VUE_APP_ANYCAST=洋葱网络" > .env
+                
             - name: 构建文档
               env:
                 NODE_OPTIONS: --max_old_space_size=8192
