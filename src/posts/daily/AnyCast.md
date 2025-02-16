@@ -3,6 +3,7 @@ title: 记一次AnyCast+博客搭建
 date: 2025-02-15
 icon: fa-solid fa-router
 category: daily
+article: false
 tag:
   - BGP
   - 日常
