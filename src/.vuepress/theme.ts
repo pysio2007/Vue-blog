@@ -113,6 +113,7 @@ export default hopeTheme({
     hint: true,
     math: true,
     codeTabs: true,
+    footnote: true,
     stylize: [
       {
         matcher: "Recommended",
@@ -247,7 +248,14 @@ export default hopeTheme({
       provider: "Waline",
       serverURL: "https://waline.pysio.online/.netlify/functions/comment",
       login: "force",
-      turnstileKey: "0x4AAAAAAA82nQE3KUhWBA2K"
+      turnstileKey: "0x4AAAAAAA82nQE3KUhWBA2K",
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.2.0/tieba',
+        '//unpkg.com/@waline/emojis@1.2.0/qq',
+        '//unpkg.com/@waline/emojis@1.2.0/tw-emoji',
+        '//unpkg.com/@waline/emojis@1.2.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.2.0/tw-flag'
+      ],
     },
 
     components: {
