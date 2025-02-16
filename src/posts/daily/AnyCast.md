@@ -45,7 +45,7 @@ tag:
 
 在申请通过之后，打开VPS的详情，点击 `BGP` 选项卡 就可以得到如下信息:
 
-[Vultr BGP](https://files.pysio.online/Images/20250216154622.png)
+![Vultr BGP](https://files.pysio.online/Images/20250216154622.png)
 
 至此 你就得到了和Vultr进行BGP Session的信息。
 
