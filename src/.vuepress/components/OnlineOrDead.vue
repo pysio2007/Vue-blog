@@ -78,7 +78,7 @@ export default {
         },
         'DataGrip': {
           name: 'DataGrip',
-          introduce: '熊猫正在吃 SQL',
+          introduce: '熊猫正在吃芒果(Mongo)',
           gradient: 'linear-gradient(135deg, rgba(148,66,159,0.25), rgba(74,178,212,0.25))',
           textGradient: 'linear-gradient(45deg, rgb(148,66,159) 30%, rgb(74,178,212) 70%)'
         },

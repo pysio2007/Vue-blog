@@ -61,7 +61,7 @@ article: false
 ```text
 链接：https://www.pysio.online/
 头像: https://cdn.akaere.online/https://avatars.githubusercontent.com/u/71202163
-站点名称: 熊猫的小窝
+站点名称: 熊猫の小窝
 昵称: Pysio
 配色: #ecf4fa
 描述：一个温暖的家/一只懒懒的熊猫
@@ -71,7 +71,7 @@ article: false
 > [!tip]
 > 你需要确保你的网站在中国大陆可以正常访问，不违法中华人民共和国法律法规，不包含色情、赌博、毒品（药物过量）、暴力等内容。
 
-你需要在Github上提交一个[Issue](https://github.com/pysio2007/Vue-blog)，内容如下(当然你也可以直接发PR修改本页)：
+你需要在Github上提交一个[Issue](https://github.com/pysio2007/Vue-blog) 或者直接发表评论，内容如下：
 
 ```text
 标题： 友链交换
