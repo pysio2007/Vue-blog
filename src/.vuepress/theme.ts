@@ -247,7 +247,7 @@ export default hopeTheme({
     comment: {
       provider: "Waline",
       serverURL: "https://waline.pysio.online/.netlify/functions/comment",
-      login: "force",
+      // login: "force",
       turnstileKey: "0x4AAAAAAA82nQE3KUhWBA2K",
       emoji: [
         '//unpkg.com/@waline/emojis@1.2.0/tieba',
