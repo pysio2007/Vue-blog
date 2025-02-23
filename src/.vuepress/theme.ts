@@ -205,7 +205,7 @@ export default hopeTheme({
         actions: [
           {
             text: "前往了解",
-            link: "https://asn.pysio.online/anycast",
+            link: "https://anycast.ink/anycast/",
             type: "primary",
           },
           { text: '关闭窗口' },

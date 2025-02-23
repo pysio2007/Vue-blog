@@ -54,6 +54,22 @@ article: false
   background="rgba(236, 244, 250)"
 />
 
+<VPCard
+  title="XiaoPang 的个人博客"
+  desc="追随梦想需竭尽全力"
+  logo="https://img.xpdbk.com/file/imglol/img/avatar.jpg"
+  link="https://blog.xpdbk.com"
+  background="rgba(236, 244, 250)"
+/>
+
+<VPCard
+  title="cooollawf的传奇blog (OnlyIpv6)"
+  desc="我只是希望我能用我的一切弥补我以前的一切错误"
+  logo="http://cdn.akaere.online/https://blog.cooollawf.top:4000/links/cooollawf.jpg"
+  link="https://blog.cooollawf.top:4000"
+  background="rgba(236, 244, 250)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
