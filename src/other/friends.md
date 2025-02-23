@@ -63,7 +63,7 @@ article: false
 />
 
 <VPCard
-  title="cooollawf的传奇blog"
+  title="cooollawf的传奇blog (OnlyIpv6)"
   desc="我只是希望我能用我的一切弥补我以前的一切错误"
   logo="http://cdn.akaere.online/https://blog.cooollawf.top:4000/links/cooollawf.jpg"
   link="https://blog.cooollawf.top:4000"
