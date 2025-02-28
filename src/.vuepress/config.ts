@@ -35,6 +35,11 @@ export default defineUserConfig({
         rel: "stylesheet",
       },
     ],
+    ["script", { 
+      defer: true, 
+      src: "https://umami.pysio.online/script.js",
+      "data-website-id": "aeefefc0-5d7b-46a8-96d2-24bc3bb31fbf"
+    }],
     ["script", { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6547593871065949", crossorigin: "anonymous" }],  //Google Ads
   ],
 
