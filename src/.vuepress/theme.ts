@@ -250,11 +250,10 @@ export default hopeTheme({
       // login: "force",
       turnstileKey: "0x4AAAAAAA82nQE3KUhWBA2K",
       emoji: [
-        '//unpkg.com/@waline/emojis@1.2.0/tieba',
-        '//unpkg.com/@waline/emojis@1.2.0/qq',
-        '//unpkg.com/@waline/emojis@1.2.0/tw-emoji',
-        '//unpkg.com/@waline/emojis@1.2.0/bilibili',
-        '//unpkg.com/@waline/emojis@1.2.0/tw-flag'
+        '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/qq',
+        '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/tw-emoji',
+        '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/bilibili',
+        '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/tw-flag'
       ],
     },
 
