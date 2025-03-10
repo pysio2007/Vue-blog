@@ -250,6 +250,7 @@ export default hopeTheme({
       // login: "force",
       turnstileKey: "0x4AAAAAAA82nQE3KUhWBA2K",
       emoji: [
+        'https://emoji.pysio.online/Chibi',
         '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/qq',
         '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/tw-emoji',
         '//cdn.jsdelivr.net/npm/@waline/emojis@1.2.0/bilibili',
