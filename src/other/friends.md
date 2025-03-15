@@ -47,10 +47,10 @@ article: false
 />
 
 <VPCard
-  title="盐木の备忘录"
-  desc="Luctor et emergo."
+  title="盐木的小破窝"
+  desc="卷土重来未可知。——杜牧《题乌江亭》"
   logo="https://files.pysio.online/Avatar/SaltWood_233.jpg"
-  link="https://saltwood.top:2333/"
+  link="https://ski.ink/"
   background="rgba(236, 244, 250)"
 />
 
