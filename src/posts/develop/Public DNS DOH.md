@@ -13,7 +13,13 @@ tag:
 
 ```
 
-DNS Server ：101.43.154.197 (53端口暂不可用)
+DNS Server：101.43.154.197 (53端口暂不可用)
+
+DNS Server：93.177.67.6 (53可用)
+
+DNS Server：dns.pysio.online 支持任何DNS协议 
+
+DOH 全球可用: https://dns-doh.pysio.online/
 
 DoH（中国大陆）: https://doh.pysio.online/dns-query
 
