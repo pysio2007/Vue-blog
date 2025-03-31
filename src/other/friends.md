@@ -73,8 +73,8 @@ article: false
 <VPCard
   title="咕咚同学"
   desc="一个独立开发者的日常"
-  logo="https://gudong.site"
-  link="https://gudong.site/assets/profile/gudong_2023.png"
+  logo="https://gudong.site/assets/profile/gudong_2023.png"
+  link="https://gudong.site/"
   background="rgba(236, 244, 250)"
 />
 
