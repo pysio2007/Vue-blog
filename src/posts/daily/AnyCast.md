@@ -44,7 +44,7 @@ tag:
 
 在申请通过之后, 打开VPS的详情, 点击 `BGP` 选项卡 就可以得到如下信息:
 
-![Vultr BGP](https://files.pysio.online/Images/20250216154622.png)
+![Vultr BGP](https://s3.pysio.online/pysioimages/20250216154622.png)
 
 至此 你就得到了和Vultr进行BGP Session的信息。
 
@@ -52,7 +52,7 @@ tag:
 
 登录[BuyVM管理后台](https://manage.buyvm.net/) 选择你的机器 点击 `Networking` -> `BGP` 在提交工单之后, 等待审核通过。就可以得到如下信息:
 
-![BuyVM BGP](https://files.pysio.online/Images/20250217081432.png)
+![BuyVM BGP](https://s3.pysio.online/pysioimages/20250217081432.png)
 
 至此 你就得到了和BuyVM进行BGP Session的信息。
 
@@ -174,7 +174,7 @@ vultr    BGP        ---        up     2025-02-10    Established
 
 等待半小时到一小时后, 可用打开 [BGP Tools](https://bgp.tools/) 输入你的IP段查看全球范围内的转播情况。
 
-![我的Anycast传播情况](https://files.pysio.online/Images/20250217083854.png)
+![我的Anycast传播情况](https://s3.pysio.online/pysioimages/20250217083854.png)
 
 ## 3. 配置网卡
 
