@@ -61,6 +61,11 @@ export default hopeTheme({
 
   docsDir: "src",
 
+  //Docs Repo
+  contributors: false,
+  changelog: false,
+  editLink: false,
+
   // 导航栏
   navbar,
 
