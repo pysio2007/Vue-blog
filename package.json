@@ -36,7 +36,7 @@
     "@vuepress/plugin-feed": "2.0.0-rc.92",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.80",
     "@vuepress/plugin-notice": "2.0.0-rc.92",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.92",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.94",
     "@vuepress/plugin-pwa": "2.0.0-rc.92",
     "@vuepress/plugin-revealjs": "2.0.0-rc.92",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.92",
