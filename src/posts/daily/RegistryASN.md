@@ -117,6 +117,20 @@ organisation 对象是对公司、非营利团体或个人的抽象，所有其�
 
 ![](https://s3.pysio.online/pysioimages/Creat%20organisation%20Done.png)
 
+#### 4.1 如果刚刚有地方出错了 如何修改？
+
+当你发现上面有内容写错的时候 前往[RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query) 搜索你需要修正的对象的主键，点击右上角的 Update object 按钮跳转至修改页面。
+
+![](https://s3.pysio.online/pysioimages/RIPEUPDATE1.png)
+
+进入修改页面后，修正你需要修改的内容，点击 SUBMIT 按钮提交。
+
+![](https://s3.pysio.online/pysioimages/RIPEUPDATE2.png)
+
+完成之后 RIPE 数据库会显示你修改了内容至此修改结束
+
+![](https://s3.pysio.online/pysioimages/RIPEUPDATE3.png)
+
 #### 5.提交资料
 
 你需要把以下资料提供给LIR 
