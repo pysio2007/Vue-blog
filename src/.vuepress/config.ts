@@ -42,43 +42,6 @@ export default defineUserConfig({
     }],
     ["script", { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6547593871065949", crossorigin: "anonymous" }],  //Google Ads
   ],
-
-  // bundler: viteBundler({
-  //   viteOptions: {
-  //     build: {
-  //       minify: 'terser', 
-  //       cssMinify: true, // 开启CSS压缩
-  //       assetsInlineLimit: 4096, // 小于4kb的资源内联为base64
-  //       terserOptions: {
-  //         compress: {
-  //           drop_console: true,    // 移除console
-  //           drop_debugger: true,   // 移除debugger
-  //           pure_funcs: ['console.log'], // 移除指定函数
-  //           collapse_vars: true,   // 内联变量
-  //           reduce_vars: true,     // 优化变量
-  //           dead_code: true,       // 移除死代码
-  //           toplevel: true,        // 顶级作用域变量压缩
-  //           passes: 2              // 压缩次数
-  //         },
-  //         mangle: {
-  //           toplevel: true,      // 混淆顶级作用域名称
-  //           safari10: true       // 兼容safari10
-  //         },
-  //         format: {
-  //           comments: true,     // 移除注释
-  //           ascii_only: true,    // 转义Unicode字符
-  //           beautify: false      // 不美化输出
-  //         }
-  //       },
-  //       rollupOptions: {
-  //         output: {
-  //           compact: true      // 压缩输出
-  //         }
-  //       },
-  //       chunkSizeWarningLimit: 2000 // 分块大小警告限制
-  //     }
-  //   }
-  // }),
-
+  
   theme,
 });
