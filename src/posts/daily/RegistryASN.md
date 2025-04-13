@@ -67,7 +67,7 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 在通过以上链接创建 role 和 maintainer 对象时，您需要填写：
 
 - ` mntner `: maintainer 对象的标识符，可包含大小写字母、数字和 _-，例如: YOURNOC-MNT
-- ` role `: role 对象的名称，可包含大小写字母、数字和 ][)(._"*@,&:!'`+/-例如: YOURCOMPANY NOC
+- ` role `: role 对象的名称，可包含大小写字母、数字和` ][)(._"*@,&:!'+/- `例如: YOURCOMPANY NOC
 - ` address `: 此 role 的办公地址
 - ` e-mail `: 此 role 的电子邮件联系地址
 
