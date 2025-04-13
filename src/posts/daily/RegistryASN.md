@@ -104,7 +104,7 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 
 organisation 对象是对公司、非营利团体或个人的抽象，所有其他资源都与该对象相关。是管理 RIPE 数据库中数据的起点。
 
-通过[RIPE DB Create Organisation](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/)创建 organisation 对象时，您需要填写：
+通过[RIPE DB Create Organisation](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/organisation)创建 organisation 对象时，您需要填写：
 
 - ` mnt-by` : 由谁管理，默认自动填充此前新建的 mntner 的标识符
 - ` organisation` : organisation 对象的标识符，默认填充 AUTO-1 将由系统自动生成标识符
@@ -146,7 +146,7 @@ organisation 对象是对公司、非营利团体或个人的抽象，所有其�
 - admin-c（第 2 节，role 对象主键）
 - tech-c（第 2 节，role 对象主键）
 - abuse-c（第 2 节，role 对象主键）
-- mnt-by（第 2 节，mntner 对象标识符
+- mnt-by（第 2 节，mntner 对象标识符）
 
 ## 3. Peering DB 创建/维护
 
