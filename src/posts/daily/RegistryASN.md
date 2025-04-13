@@ -11,6 +11,9 @@ tag:
 > [!warning]
 > 本文介绍的是互联网实体 ASN 的注册流程。如需了解 DN42 实验网络中的 ASN 申请流程，请参考[DN42 ASN 申请](https://lantian.pub/article/modify-website/dn42-experimental-network-2020.lantian/)。
 
+> [!warning]
+> 如果您作为一个新手 我更建议你前往DN42 申请一个实验网络的ASN进行学习 这篇文章的内容是为了帮助你在真实的互联网中申请一个ASN并广播IP地址
+
 ## 1. 基础概念
 > RIR: Regional Internet Registry（区域互联网注册管理机构）
 
@@ -67,7 +70,7 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 在通过以上链接创建 role 和 maintainer 对象时，您需要填写：
 
 - ` mntner `: maintainer 对象的标识符，可包含大小写字母、数字和 _-，例如: YOURNOC-MNT
-- ` role `: role 对象的名称，可包含大小写字母、数字和 ][)(._"*@,&:!'`+/-例如: YOURCOMPANY NOC
+- ` role `: role 对象的名称，可包含大小写字母、数字和` ][)(._"*@,&:!'+/- `例如: YOURCOMPANY NOC
 - ` address `: 此 role 的办公地址
 - ` e-mail `: 此 role 的电子邮件联系地址
 
@@ -101,7 +104,7 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 
 organisation 对象是对公司、非营利团体或个人的抽象，所有其他资源都与该对象相关。是管理 RIPE 数据库中数据的起点。
 
-通过[RIPE DB Create Organisation](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/)创建 organisation 对象时，您需要填写：
+通过[RIPE DB Create Organisation](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/organisation)创建 organisation 对象时，您需要填写：
 
 - ` mnt-by` : 由谁管理，默认自动填充此前新建的 mntner 的标识符
 - ` organisation` : organisation 对象的标识符，默认填充 AUTO-1 将由系统自动生成标识符
@@ -117,6 +120,20 @@ organisation 对象是对公司、非营利团体或个人的抽象，所有其�
 
 ![](https://s3.pysio.online/pysioimages/Creat%20organisation%20Done.png)
 
+#### 4.1 如果刚刚有地方出错了 如何修改？
+
+当你发现上面有内容写错的时候 前往[RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query) 搜索你需要修正的对象的主键，点击右上角的 Update object 按钮跳转至修改页面。
+
+![](https://s3.pysio.online/pysioimages/RIPEUPDATE1.png)
+
+进入修改页面后，修正你需要修改的内容，点击 SUBMIT 按钮提交。
+
+![](https://s3.pysio.online/pysioimages/RIPEUPDATE2.png)
+
+完成之后 RIPE 数据库会显示你修改了内容至此修改结束
+
+![](https://s3.pysio.online/pysioimages/RIPEUPDATE3.png)
+
 #### 5.提交资料
 
 你需要把以下资料提供给LIR 
@@ -129,6 +146,27 @@ organisation 对象是对公司、非营利团体或个人的抽象，所有其�
 - admin-c（第 2 节，role 对象主键）
 - tech-c（第 2 节，role 对象主键）
 - abuse-c（第 2 节，role 对象主键）
-- mnt-by（第 2 节，mntner 对象标识符
-  
+- mnt-by（第 2 节，mntner 对象标识符）
+
+## 3. Peering DB 创建/维护
+
+### 1. 什么是PeeringDB?
+
+PeeringDB 就像是互联网世界的"社交名片夹"！想象一下，如果每个网络运营商都是派对上的来宾，PeeringDB 就是那个帮大家互相认识的花名册。在这里，你可以：
+
+- 告诉别人"我是谁"（你的网络信息）
+- 说说"我住哪儿"（你的网络设施位置）
+- 留下"联系方式"（技术联系信息）
+- 展示"交朋友的意愿"（对等互联政策）
+
+简单来说，PeeringDB 是一个全球性的数据库平台，帮助网络运营商、数据中心和互联网交换点（IXP）互相发现并建立连接。它就像是网络世界的 LinkedIn，让大家能够更容易地找到合适的网络伙伴！
+
+**总结：** PeeringDB 是网络运营商用于分享网络信息和建立对等互联关系的重要平台，是 ASN 持有者几乎必备的注册信息库。
+
+### 2. 创建 PeeringDB 账号
+
+前往 [PeeringDB Register](https://www.peeringdb.com/register) 注册账号。
+
+**注意:** 在注册PeeringDB时 最好使用你在RIPE DB中创建的role对象的邮箱
+
 > Todo: 剩下的部分下号了继续写

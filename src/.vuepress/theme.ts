@@ -194,6 +194,12 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
 
+    pwa: {
+      cacheHTML : true,
+      cacheImage : true,
+      update :  "hint",
+    },
+
     icon:{
       assets: [
         "fontawesome",          // Icon 配置文件
@@ -247,12 +253,9 @@ export default hopeTheme({
       rss: true,
       channel: { ttl: 60, }
     },
-    // 启用之前需安装 @waline/client
-    // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
     comment: {
       provider: "Waline",
       serverURL: "https://waline.pysio.online/.netlify/functions/comment",
-      // login: "force",
       turnstileKey: "0x4AAAAAAA82nQE3KUhWBA2K",
       emoji: [
         'https://emoji.pysio.online/Chibi',

@@ -15,7 +15,6 @@ export default navbar([
         children: [
           { text: "日常", icon: "fa-regular fa-book", link: "daily/" },
           { text: "开发", icon: "fa-regular fa-code", link: "develop/" },
-          { text: "小曦", icon: "fa-solid fa-heart", link: "nekoxii/" },
           { text: "资源分享", icon: "fa-regular fa-folder-open", link: "resource/" },
         ],
       },      
