@@ -11,6 +11,9 @@ tag:
 > [!warning]
 > 本文介绍的是互联网实体 ASN 的注册流程。如需了解 DN42 实验网络中的 ASN 申请流程，请参考[DN42 ASN 申请](https://lantian.pub/article/modify-website/dn42-experimental-network-2020.lantian/)。
 
+> [!warning]
+> 如果您作为一个新手 我更建议你前往DN42 申请一个实验网络的ASN进行学习 这篇文章的内容是为了帮助你在真实的互联网中申请一个ASN并广播IP地址
+
 ## 1. 基础概念
 > RIR: Regional Internet Registry（区域互联网注册管理机构）
 
@@ -159,5 +162,11 @@ PeeringDB 就像是互联网世界的"社交名片夹"！想象一下，如果�
 简单来说，PeeringDB 是一个全球性的数据库平台，帮助网络运营商、数据中心和互联网交换点（IXP）互相发现并建立连接。它就像是网络世界的 LinkedIn，让大家能够更容易地找到合适的网络伙伴！
 
 **总结：** PeeringDB 是网络运营商用于分享网络信息和建立对等互联关系的重要平台，是 ASN 持有者几乎必备的注册信息库。
+
+### 2. 创建 PeeringDB 账号
+
+前往 [PeeringDB Register](https://www.peeringdb.com/register) 注册账号。
+
+**注意:** 在注册PeeringDB时 最好使用你在RIPE DB中创建的role对象的邮箱
 
 > Todo: 剩下的部分下号了继续写
