@@ -32,7 +32,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.20",
     "@vuepress/plugin-blog": "2.0.0-rc.92",
     "@vuepress/plugin-cache": "2.0.0-rc.83",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.92",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.95",
     "@vuepress/plugin-feed": "2.0.0-rc.92",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.80",
     "@vuepress/plugin-notice": "2.0.0-rc.92",
