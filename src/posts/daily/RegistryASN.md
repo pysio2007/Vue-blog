@@ -84,6 +84,9 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 
 #### 3. 设置滥用通知邮箱
 
+> [!caution]
+> RIPE NCC 会检查此邮箱的有效性，务必真实可用
+
 在[RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query)顶部的搜索框中填写上节中 role 对象的主键，点击右侧查找按钮。接下来点击搜索结果右上角的 Update object 按钮跳转至修改页面。
 
 ![](https://s3.pysio.online/pysioimages/Edit%20Abuse.png)
@@ -97,8 +100,6 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 在出现的 abuse-mailbox 栏中填写滥用通知邮箱后点击 SUBMIT 按钮保存。
 
 ![](https://s3.pysio.online/pysioimages/Edit%20Abuse%204.png)
-
-> RIPE NCC 会检查此邮箱的有效性，务必真实可用
 
 #### 4. 创建 organisation 对象
 
