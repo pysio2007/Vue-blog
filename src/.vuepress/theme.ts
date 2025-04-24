@@ -2,14 +2,8 @@ import { hopeTheme } from "vuepress-theme-hope";
 import gitDescribe from 'git-describe';
 import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
-import natural from 'natural';
 import fs from 'fs';
 import path from 'path';
-
-//分词
-import pkg from 'nodejieba';
-const { cut } = pkg;
-const tokenizer = new natural.WordTokenizer();
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
@@ -166,10 +160,6 @@ export default hopeTheme({
     // 在启用之前安装 @vue/repl
     vuePlayground: true,
 
-
-    // install sandpack-vue3 before enabling it
-    // sandpack: true,
-
     // 图片相关配置
     figure: true,
     imgLazyload: true,
@@ -225,27 +215,13 @@ export default hopeTheme({
     ],
     
     //搜索
-    slimsearch: {
-      indexContent: true,
-      indexLocaleOptions: {
-        "/": {
-          tokenize: (text, fieldName) => {
-            if (fieldName === "id") return [text];
-            
-            // 英文分词
-            const englishTokens = tokenizer.tokenize(text) || [];
-            
-            // 中文分词
-            const chineseTokens = cut(text, true);
-            
-            // 合并结果、去重、过滤空值
-            return [...new Set([...englishTokens, ...chineseTokens])]
-              .filter(token => token && token.length > 1);
-          }
-        },
-      },
+    meilisearch: {
+      host: 'https://meilisearch.pysio.online',
+      apiKey: 'd4248dbd5b1e428fd1355570086a990b937946d7261a6fddde34ec854a777a78',
+      indexUid: 'pysioblog',
     },
 
+    //博客
     blog: true,
 
     //RSS

@@ -1,0 +1,29 @@
+name: MeiliSearch 文档抓取
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '触发原因'
+        required: false
+        default: '手动更新搜索索引'
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    name: 重新抓取 MeiliSearch 文档
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 运行抓取器
+        env:
+          HOST_URL: https://meilisearch.pysio.online
+          API_KEY: ${{ secrets.MEILISEARCH_MASTER_KEY }}
+          CONFIG_FILE_PATH: ${{ github.workspace }}/.github/MeiliSearch.json
+        run: |
+          docker run -t --rm \
+            -e MEILISEARCH_HOST_URL=$HOST_URL \
+            -e MEILISEARCH_API_KEY=$API_KEY \
+            -v $CONFIG_FILE_PATH:/docs-scraper/config.json \
+            getmeili/docs-scraper:latest pipenv run ./docs_scraper config.json 
