@@ -4,7 +4,6 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar/index.js";
 import fs from 'fs';
 import path from 'path';
-import { meilisearchPlugin } from '@vuepress/plugin-meilisearch'
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
