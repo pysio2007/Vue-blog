@@ -9,6 +9,9 @@ tag:
 ---
 
 > [!warning]
+> 本文不适用本站CC协议, 作者保留所有权
+
+> [!warning]
 > 本文介绍的是互联网实体 ASN 的注册流程。如需了解 DN42 实验网络中的 ASN 申请流程，请参考[DN42 ASN 申请](https://lantian.pub/article/modify-website/dn42-experimental-network-2020.lantian/)。
 
 > [!warning]
