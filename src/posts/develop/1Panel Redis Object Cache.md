@@ -9,13 +9,13 @@ tag:
 ---
 
 ## 第一步 获取Redis的密码
-![](https://s3.pysio.online/pysioimages/20241005215409.png)
+![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect/https://s3.pysio.online/pysioimages/20241005215409.png)
 [应用商店] -> [已安装] -> [Redis 参数] 就可以看见密码了 把密码记下来
 
 ## 第二步 修改object-cache.php文件
 在网站根目录 ```wp-content/plugins/redis-cache/includes``` 下 可以找到 ```object-cache.php``` 文件 
 打开并编辑  
-![](https://s3.pysio.online/pysioimages/20241005215426.png)  
+![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect/https://s3.pysio.online/pysioimages/20241005215426.png)  
 添加或修改以下部分 其中PassWord是你刚刚获取的Redis密码
 ```php
 $parameters = [
