@@ -1,7 +1,7 @@
 {
   "name": "pysio-vue-blog",
-  "description": "一个VuePress博客",
-  "version": "1.6.0",
+  "description": "Pysio Home 一个温暖的家",
+  "version": "1.6.1",
   "license": "AGPL",
   "type": "module",
   "scripts": {
