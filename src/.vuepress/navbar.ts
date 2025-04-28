@@ -35,6 +35,7 @@ export default navbar([
     icon: "fa-solid fa-ellipsis fa-xl",
     link: "/other/",
     children: [
+      { text: "赞助", icon: "fa-solid fa-heart", link: "/sponsors" },
       { text: "友链", icon: "fa-solid fa-link", link: "/other/friends" },
       { text: "服务状态", icon: "fa-regular fa-signal-bars", link: "/other/status" },
       { text: "问题追踪", icon: "fa-kit fa-issues", link: "/other/issues" },
