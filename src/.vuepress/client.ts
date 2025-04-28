@@ -58,6 +58,15 @@ export default defineClientConfig({
     app.component('game2048',game2048);
     app.component('GithubUserStats',GithubUserStats);
     app.component("Ghub",Ghub)
+    
+    router.beforeEach((to, from, next) => {
+      if (to.path === '/sponsor') {
+        window.location.href = 'https://donate.stripe.com/bIY7tG8Xsb7c75K7ss';
+        return;
+      }
+      next();
+    });
+    
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
       integrations: [
