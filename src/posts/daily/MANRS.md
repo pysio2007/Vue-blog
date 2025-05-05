@@ -1,7 +1,7 @@
 ---
-title: 成为MANRS会员
-date: 2025-05-05
-icon: fa-solid fa-ethernet
+title: 成为MANRS会员｜一个IPv6 4个人拨
+date: 2025-05-06
+icon: fa-kit fa-manrs
 category: daily
 tag:
   - BGP
@@ -31,4 +31,12 @@ tag:
 能成为MANRS会员，说明我们的努力被认可了，也算是对团队技术和责任心的肯定。未来我们会继续把网络安全做好，也欢迎大家和我们多交流，一起进步！
 
 如果你对MANRS感兴趣，或者有啥想法，欢迎留言或者私信我们！
+
+## 拼好IP行为艺术
+
+说点有趣的！我们最近还搞了个"拼好IP"行为艺术项目，4个人一起拨号，拼出了一个完整的IP地址，象征着团队协作和网络世界的奇妙联结。
+
+下面这张图就是我们BGP的路由MAP，欢迎围观：
+
+![](https://s3.pysio.online/pysioimages/rt-2a0f_9400_6110___48.svg)
 

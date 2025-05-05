@@ -77,3 +77,9 @@ tag:
 ```javascript
 <i class="fa-kit fa-creeper"></i>
 ```
+
+### MANRS <i class="fa-kit fa-manrs"></i>
+
+```javascript
+<i class="fa-kit fa-manrs"></i>
+```
