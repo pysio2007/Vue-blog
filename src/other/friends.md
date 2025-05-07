@@ -75,7 +75,7 @@ article: false
   desc="永远相信美好的事情即将发生"
   logo="https://kndxhz.cn/favicon.ico"
   link="https://kndxhz.cn"
-  background="rgba(190, 242, 34, 0.22)"
+  background="rgba(20, 255, 134, 0.23)"
 />
 
 ## 交换友链
