@@ -62,20 +62,20 @@ article: false
   background="rgba(236, 244, 250)"
 />
 
-<!-- <VPCard
-  title="cooollawf的传奇blog (OnlyIpv6)"
-  desc="我只是希望我能用我的一切弥补我以前的一切错误"
-  logo="http://cdn.akaere.online/https://blog.cooollawf.top:4000/links/cooollawf.jpg"
-  link="https://blog.cooollawf.top:4000"
-  background="rgba(236, 244, 250)"
-/> -->
-
 <VPCard
   title="咕咚同学"
   desc="一个独立开发者的日常"
   logo="https://gudong.site/assets/profile/gudong_2023.png"
   link="https://gudong.site/"
   background="rgba(236, 244, 250)"
+/>
+
+<VPCard
+  title="小伙纸の网站"
+  desc="永远相信美好的事情即将发生"
+  logo="https://kndxhz.cn/favicon.ico"
+  link="https://kndxhz.cn"
+  background="rgba(190, 242, 34, 0.22)"
 />
 
 ## 交换友链
