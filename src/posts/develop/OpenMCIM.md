@@ -200,35 +200,35 @@ CLUSTER_PORT=你的本地开放端口
 <VPCard
   title="bangbang93"
   desc="OpenBmclapi 作者"
-  logo="https://files.pysio.online/Avatar/bangbang93.jpg"
+  logo="https://camo.pysio.online/a6c1bbe8b05d3c9c2eea396c0480d2de314c44fa/68747470733a2f2f617661746172732e67697468756275736572636f6e74656e742e636f6d2f752f33343330373834"
   link="https://github.com/bangbang93"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="z0z0r4"
   desc="Mcmod Info Mirror作者"
-  logo="https://files.pysio.online/Avatar/z0z0r4.jpg"
+  logo="https://camo.pysio.online/316be8a520bd3cb45b8bea9aea51c434767b0239/68747470733a2f2f617661746172732e67697468756275736572636f6e74656e742e636f6d2f752f3738373434313231"
   link="https://github.com/z0z0r4"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="𝞐𝞙𝞘𝞚𝞛𝞝"
   desc="Go-OpenMcim 修改版作者"
-  logo="https://files.pysio.online/Avatar/WetemCloud.jpg"
+  logo="https://camo.pysio.online/6705b2d21acf0006ec33872426ba73c9b323de13/68747470733a2f2f617661746172732e67697468756275736572636f6e74656e742e636f6d2f752f313632373636373931"
   link="https://github.com/WetemCloud"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="ZeroWolf"
   desc="Node-OpenMcim 作者"
-  logo="https://files.pysio.online/Avatar/ZeroWolf.jpg"
+  logo="https://camo.pysio.online/1e7b03ce0d003432924dfe7d298e8d9f09aa2074/68747470733a2f2f617661746172732e67697468756275736572636f6e74656e742e636f6d2f752f313432363533303335"
   link="https://github.com/ZeroWolf233"
   background="rgba(236, 244, 250)"
 />
 <VPCard
   title="SaltWood_233"
   desc="Open93AtHome 作者"
-  logo="https://files.pysio.online/Avatar/SaltWood_233.jpg"
+  logo="https://camo.pysio.online/eb7a76fa20e787ccbce422fe00eb848338e4badf/68747470733a2f2f617661746172732e67697468756275736572636f6e74656e742e636f6d2f752f313035393830313631"
   link="https://github.com/SALTWOOD"
   background="rgba(236, 244, 250)"
 />
