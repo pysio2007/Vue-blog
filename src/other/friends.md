@@ -78,6 +78,14 @@ article: false
   background="rgba(20, 255, 134, 0.23)"
 />
 
+<VPCard
+  title="fishcpy的小破站"
+  desc="非淡泊无以明志，非宁静无以致远"
+  logo="https://camo.pysio.online/d284a21a9ff53dc764df4d6aed98c688420ab102/68747470733a2f2f626c6f672e666973686370792e636e2f75706c6f61642f666973686370792d2545352538452538422545372542432541392e706e67"
+  link="https://blog.fishcpy.cn/"
+  background="rgba(255, 5, 172, 0.23)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
@@ -94,6 +102,7 @@ article: false
 
 > [!tip]
 > 你需要确保你的网站在中国大陆可以正常访问，不违法中华人民共和国法律法规，不包含色情、赌博、毒品（药物过量）、暴力等内容。
+> 请确保你的网站不是商业为主的网站
 
 你需要在Github上提交一个[Issue](https://github.com/pysio2007/Vue-blog) 或者直接发表评论，内容如下：
 
@@ -103,7 +112,7 @@ article: false
 头像链接：
 站点名称：
 昵称：
-卡片配色的ARGB值：
+卡片配色的RGBA值：
 描述：
 ```
 
