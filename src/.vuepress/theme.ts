@@ -193,9 +193,8 @@ export default hopeTheme({
     },
 
     icon:{
-      assets: [
-        "fontawesome",          // Icon 配置文件
-        "https://kit.fontawesome.com/b19836ac94.js",
+      assets: [         
+        "/assets/fontawesome/css/all.css",
       ],
     },
 
