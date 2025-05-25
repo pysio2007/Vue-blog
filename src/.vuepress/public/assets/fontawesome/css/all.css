@@ -6970,6 +6970,7 @@ readers do not read off random characters that represent icons */
 .fak.fa-pwa, .fa-kit.fa-pwa { --fa: "\e008"; --fa--fa: "\e008\e008"; }
 .fak.fa-pycharm, .fa-kit.fa-pycharm { --fa: "\e005"; --fa--fa: "\e005\e005"; }
 .fak.fa-vscode, .fa-kit.fa-vscode { --fa: "\e003"; --fa--fa: "\e003\e003"; }
+.fak.fa-wireshark, .fa-kit.fa-wireshark { --fa: "\e00b"; --fa--fa: "\e00b\e00b"; }
 
 .fak, .fa-kit {
   -webkit-font-smoothing: antialiased;
