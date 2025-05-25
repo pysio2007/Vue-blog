@@ -83,3 +83,9 @@ tag:
 ```javascript
 <i class="fa-kit fa-manrs"></i>
 ```
+
+### Wireshark <i class="fa-kit fa-wireshark"></i>
+
+```javascript
+<i class="fa-kit fa-wireshark"></i>
+```
