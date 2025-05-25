@@ -86,6 +86,14 @@ article: false
   background="rgba(255, 5, 172, 0.23)"
 />
 
+<VPCard
+  title="Hill233 的小窝"
+  desc="只是一个普普通通的 blog"
+  logo="https://camo.pysio.online/db21b0f6244025ac6227b58dd76c2efe3c8383ba/68747470733a2f2f712e716c6f676f2e636e2f673f623d7171266e6b3d3138353134363630353526733d363430"
+  link="https://hill233.top/"
+  background="rgba(236, 244, 250)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
