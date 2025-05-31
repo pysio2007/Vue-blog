@@ -2,8 +2,6 @@
 ![Vue-blog](https://socialify.git.ci/pysio2007/Vue-blog/image?description=1&descriptionEditable=Pysio%27s%20Home%20%E4%B8%80%E4%B8%AA%E6%B8%A9%E6%9A%96%E7%9A%84%E5%AE%B6&forks=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 [![note build](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-server.yml/badge.svg)](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-server.yml)
 [![Build Docker Image](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-docker.yml/badge.svg)](https://github.com/pysio2007/Vue-blog/actions/workflows/bulid-docker.yml)
-[![可靠性评级](https://sonarqube.pysio.online/api/project_badges/measure?project=pysio2007_Vue-blog_4ce9d341-7a3c-4327-8552-71bbe67bb1ca&metric=reliability_rating&token=sqb_136ab7accc7d12a217881f398f214de786ad6b55)](https://sonarqube.pysio.online/dashboard?id=pysio2007_Vue-blog_4ce9d341-7a3c-4327-8552-71bbe67bb1ca)
-<!-- [![Coverage Status](https://coveralls.io/repos/github/pysio2007/Vue-blog/badge.svg?branch=main)](https://coveralls.io/github/pysio2007/Vue-blog?branch=main) -->
 [![wakatime](https://wakatime.com/badge/user/a8344004-6b9a-4a56-8b71-e626b395781c/project/d910a3a5-e3e2-425e-be0f-175d36fa6d19.svg)](https://wakatime.com/badge/user/a8344004-6b9a-4a56-8b71-e626b395781c/project/d910a3a5-e3e2-425e-be0f-175d36fa6d19)     
 ## 关于本仓库
 
@@ -13,6 +11,10 @@
 ### 洋葱网络
 
 本站提供Tor网络的链接[点此访问](http://zwlvi475lpbann6njjdatf2zh7gkao3sdsqrejto6ldoxdvc4okwyqyd.onion/)
+
+### DN42
+
+本站提供DN42的链接[点此访问](https://pysio.dn42/)
 
 ### Docker 部署说明
 
