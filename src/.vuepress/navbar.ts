@@ -1,6 +1,7 @@
 import { navbar } from "vuepress-theme-hope";
 
-export default navbar([
+// 中文导航栏配置
+export const zhNavbar = navbar([
   "/",
   {
     text: "博文",
@@ -15,7 +16,6 @@ export default navbar([
         children: [
           { text: "日常", icon: "fa-regular fa-book", link: "daily/" },
           { text: "开发", icon: "fa-regular fa-code", link: "develop/" },
-          { text: "资源分享", icon: "fa-regular fa-folder-open", link: "resource/" },
         ],
       },      
     ],
@@ -69,3 +69,76 @@ export default navbar([
     link: "https://www.travellings.cn/go.html",
   },
 ]);
+
+// 英文导航栏配置
+export const enNavbar = navbar([
+  "/en/",
+  {
+    text: "Posts",
+    icon: "fa-solid fa-pen-to-square",
+    prefix: "/en/posts/",
+    children: [
+      {
+        text: "Posts",
+        icon: "note",
+        prefix: "/en/category/",
+        link: "/en/posts/",
+        children: [
+          { text: "Daily", icon: "fa-regular fa-book", link: "daily/" },
+          { text: "Development", icon: "fa-regular fa-code", link: "develop/" },
+        ],
+      },      
+    ],
+  },
+  {
+    text: "Tools",
+    icon: "fa-solid fa-tools",
+    link: "/en/tools/",
+    children:[
+      { text: "IP Check", icon: "fa-solid fa-globe", link: "/en/tools/ipcheck" },
+      { text: "Pastebin (Beta)", icon: "fa-solid fa-paste", link: "/en/tools/Pastebin" },
+      { text: "McMod Search (Beta)", icon: "fa-kit fa-modrinth", link: "/en/tools/mcmod" },
+    ],
+  },
+  {
+    text: "Misc",
+    icon: "fa-solid fa-ellipsis fa-xl",
+    link: "/en/other/",
+    children: [
+      { text: "Sponsors", icon: "fa-solid fa-heart", link: "/en/sponsors" },
+      { text: "Friends", icon: "fa-solid fa-link", link: "/en/other/friends" },
+      { text: "Service Status", icon: "fa-regular fa-signal-bars", link: "/en/other/status" },
+      { text: "Issue Tracker", icon: "fa-kit fa-issues", link: "/en/other/issues" },
+      { text: "License", icon: "fa-brands fa-creative-commons", link: "/en/other/cc.html" },
+    ],
+  },
+  {
+    text: "Games",
+    icon: "fa-regular fa-gamepad-modern",
+    link: "/en/Game/",
+    children: [
+      { text: "Wordle", icon: "fa-regular fa-gamepad-modern", link: "/en/Game/wordle" },
+      { text: "Conway's Game of Life", icon: "fa-regular fa-block", link: "/en/Game/GameofLife" },
+      { text: "Langton's Ant", icon: "fa-solid fa-ant", link: "/en/Game/Langtonsant" },  
+      { text: "2048", icon: "fa-regular fa-block", link: "/en/Game/2048" },
+    ],
+  },
+  {
+    text: "DN42",
+    icon: "fa-solid fa-signal-stream",
+    link: "https://ixpm.akae.re/en/dn42/",
+  },
+  {
+    text: "About",
+    icon: "fa-regular fa-circle-info",
+    link: "/en/intro.html",
+  },
+  {
+    text: "Travellings",
+    icon: "fa-solid fa-train-subway",
+    link: "https://www.travellings.cn/go.html",
+  },
+]);
+
+// 默认导出中文导航栏（保持向后兼容）
+export default zhNavbar;

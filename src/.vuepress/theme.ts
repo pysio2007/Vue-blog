@@ -1,7 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import gitDescribe from 'git-describe';
-import navbar from "./navbar.js";
-import sidebar from "./sidebar/index.js";
+import { zhNavbar, enNavbar } from "./navbar.js";
+import { zhSidebar, enSidebar } from "./sidebar/index.js";
 import fs from 'fs';
 import path from 'path';
 
@@ -60,42 +60,70 @@ export default hopeTheme({
   changelog: false,
   editLink: false,
 
-  // 导航栏
-  navbar,
-
-  // 侧边栏
-  sidebar,
-
   sidebarSorter: ["readme", "date-desc" , "order", "title", "filename"],
 
-  // 页脚
-  footer: `Pysio's Home / <a href="https://beian.miit.gov.cn/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">蜀ICP备2023021309号-1</a> / <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">川公网安备51010802032524号</a> / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">${process.env.VUE_APP_GIT_HASH}</a> / 本站已稳定运行${calculateRunTime()} `,
-  displayFooter: true,
-
-  // 博客相关
-  blog: {
-    description: "一只懒懒的熊猫",
-    intro: "/intro.html",
-    medias: {
-      BiliBili: "https://space.bilibili.com/87983450",
-      Email: "mailto:team@pysio.online",
-      GitHub: "https://github.com/pysio2007/",
-      Steam: "https://steamcommunity.com/profiles/76561198412338808/",
-      AFDian: "https://mbd.pub/o/author-bGubmmpoZg==",
+  // 多语言配置
+  locales: {
+    "/": {
+      // 导航栏
+      navbar: zhNavbar,
+      // 侧边栏
+      sidebar: zhSidebar,
+      // 页脚
+      footer: `Pysio's Home / <a href="https://beian.miit.gov.cn/" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">蜀ICP备2023021309号-1</a> / <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">川公网安备51010802032524号</a> / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">${process.env.VUE_APP_GIT_HASH}</a> / 本站已稳定运行${calculateRunTime()} `,
+      displayFooter: true,
+      // 博客相关
+      blog: {
+        description: "一只懒懒的熊猫",
+        intro: "/intro.html",
+        medias: {
+          BiliBili: "https://space.bilibili.com/87983450",
+          Email: "mailto:team@pysio.online",
+          GitHub: "https://github.com/pysio2007/",
+          Steam: "https://steamcommunity.com/profiles/76561198412338808/",
+          AFDian: "https://mbd.pub/o/author-bGubmmpoZg==",
+        },
+        articleInfo: ["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"],
+      },
+      // 多语言配置
+      metaLocales: {
+        editLink: "在 GitHub 上编辑此页",
+      },
     },
-    articleInfo: ["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"],
+    "/en/": {
+      // 导航栏
+      navbar: enNavbar,
+      // 侧边栏
+      sidebar: enSidebar,
+      // 页脚
+      footer: `Pysio's Home / <a href="https://github.com/pysio2007/Vue-blog/commit/${process.env.VUE_APP_GIT_HASH}" target="_blank" style="color: inherit; text-decoration: none; font-weight: normal;">${process.env.VUE_APP_GIT_HASH}</a> / Site has been running stably for ${calculateRunTime()} `,
+      displayFooter: true,
+      // 博客相关
+      blog: {
+        description: "A Lazy Panda",
+        intro: "/en/intro.html",
+        medias: {
+          BiliBili: "https://space.bilibili.com/87983450",
+          Email: "mailto:team@pysio.online",
+          GitHub: "https://github.com/pysio2007/",
+          Steam: "https://steamcommunity.com/profiles/76561198412338808/",
+          AFDian: "https://mbd.pub/o/author-bGubmmpoZg==",
+        },
+        articleInfo: ["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"],
+      },
+      // 多语言配置
+      metaLocales: {
+        editLink: "Edit this page on GitHub",
+      },
+    },
   },
 
   // 加密配置
   encrypt: {
     config: {
       "/tools/mcmod.html": ["mcmod"],
+      "/en/tools/mcmod.html": ["mcmod"],
     },
-  },
-
-  // 多语言配置
-  metaLocales: {
-    editLink: "在 GitHub 上编辑此页",
   },
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
