@@ -24,7 +24,6 @@ const calculateRunTime = () => {
 };
 
 const envFilePath = path.resolve(__dirname, '../../.env');
-let anycastValue = 'CloudFlare';
 
 if (fs.existsSync(envFilePath)) {
   const envFileContent = fs.readFileSync(envFilePath, 'utf-8');
@@ -36,7 +35,7 @@ if (fs.existsSync(envFilePath)) {
     return acc;
   }, {} as { [key: string]: string });
 
-  anycastValue = envVars.VUE_APP_ANYCAST || 'CloudFlare';
+
 }
 
 export default hopeTheme({
