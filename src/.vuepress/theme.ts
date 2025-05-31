@@ -197,23 +197,6 @@ export default hopeTheme({
         "/assets/fontawesome/css/all.css",
       ],
     },
-
-    notice: [
-      {
-        path: "/",
-        title: "Anycast",
-        showOnce: true,
-        content: `你正在通过${anycastValue}节点访问本站`,
-        actions: [
-          {
-            text: "前往了解",
-            link: "https://anycast.ink/anycast/",
-            type: "primary",
-          },
-          { text: '关闭窗口' },
-        ],
-      },
-    ],
     
     //搜索
     meilisearch: {

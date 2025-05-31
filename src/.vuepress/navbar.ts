@@ -56,7 +56,7 @@ export default navbar([
   {
     text: "DN42",
     icon: "fa-solid fa-signal-stream",
-    link: "https://anycast.ink/dn42/",
+    link: "https://ixpm.akae.re/en/dn42/",
   },
   {
     text: "关于",
