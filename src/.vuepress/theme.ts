@@ -23,21 +23,6 @@ const calculateRunTime = () => {
   return `${days}天${hours}小时`;
 };
 
-const envFilePath = path.resolve(__dirname, '../../.env');
-
-if (fs.existsSync(envFilePath)) {
-  const envFileContent = fs.readFileSync(envFilePath, 'utf-8');
-  const envVars: { [key: string]: string } = envFileContent.split('\n').reduce((acc, line) => {
-    const [key, value] = line.split('=');
-    if (key && value) {
-      acc[key.trim()] = value.trim();
-    }
-    return acc;
-  }, {} as { [key: string]: string });
-
-
-}
-
 export default hopeTheme({
   hostname: "https://www.pysio.online",
 
