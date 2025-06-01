@@ -2,8 +2,6 @@ import { hopeTheme } from "vuepress-theme-hope";
 import gitDescribe from 'git-describe';
 import { zhNavbar, enNavbar } from "./navbar.js";
 import { zhSidebar, enSidebar } from "./sidebar/index.js";
-import fs from 'fs';
-import path from 'path';
 
 //Git Hash
 const gitInfo = gitDescribe.gitDescribeSync();
