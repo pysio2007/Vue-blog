@@ -7,9 +7,19 @@ import { cachePlugin } from '@vuepress/plugin-cache'
 export default defineUserConfig({
   base: "/",
 
-  lang: "zh-CN",
-  title: "Pysio's Home",
-  description: "一个温暖的家",
+  locales: {
+    "/": {
+      lang: "zh-CN",
+      title: "Pysio's Home",
+      description: "一个温暖的家",
+    },
+    "/en/": {
+      lang: "en-US",
+      title: "Pysio's Home",
+      description: "A Warm Home",
+    },
+  },
+
   plugins: [
     cachePlugin({       // 开启缓存
       type: 'filesystem',
