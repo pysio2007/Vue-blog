@@ -105,7 +105,7 @@ Just send any packet and it starts working again. Very magical.
 
 ## 5. Dude, Where is your Route6?
 
-Is our old friend AS208754, After discovering that her /48 prefix was unpingable, she came to the group for help.
+Once again, it's AS208754, After discovering that her /48 prefix was unpingable, she came to the group for help.
 
 ```text
 
