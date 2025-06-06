@@ -1,0 +1,525 @@
+[33mcommit 227ef25a453e3ce486d8aa82691e8f6c808267ee[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: bakabaka9 <qilunuobakabaka9@gmail.com>
+Date:   Fri Jun 6 15:00:38 2025 +0800
+
+    添加route6事件并修改错别字(with i18n)
+
+[33mcommit ed7526b2992e2afc8bb28952626c3412abc4b783[m
+Author: bakabaka9 <qilunuobakabaka9@gmail.com>
+Date:   Fri Jun 6 14:53:20 2025 +0800
+
+    添加route6事件并修改错别字(with i18n)
+
+[33mcommit 3603b7e22fad66afb2d558b03fe8d9ebdb0e3f3b[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Fri Jun 6 09:17:54 2025 +0800
+
+    chore(deps): update vuepress monorepo (#386)
+    
+    Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+[33mcommit 5cbbbe121bc4051e7cfa4c0560a67c1835359e71[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sun Jun 1 08:04:33 2025 +0800
+
+    docs(i18n): English ! (#485)
+
+[33mcommit 30ace11d91ca44f3d8bec739b3d1dfe63a5ed3cd[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon May 26 04:49:02 2025 +0800
+
+    docs(AKIX): 合订本V1.0 (#480)
+
+[33mcommit f25f05bc99c684d7cb72506ecc1289ab0cce80aa[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Thu May 22 22:06:30 2025 +0800
+
+    chore(deps): update dependency natural to v8.1.0 (#478)
+    
+    Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+[33mcommit 6be4c2b3555bd17b0ce1be01bc6ad13b240cbadb[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Thu May 22 22:04:04 2025 +0800
+
+    chore(deps): update dependency (#477)
+
+[33mcommit 9c155367eec75fb241eb20c050b2d0f1bd31114e[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Tue May 20 13:00:17 2025 +0800
+
+    fix(icon): 图片加载速度过慢的问题 (#476)
+
+[33mcommit 25917ad2d840a6a79df42a346e3384c026987c14[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon May 19 06:04:25 2025 +0800
+
+    feat(images): 使用CAMO解决头像缓存 / friend: add fishcpy (#475)
+
+[33mcommit e71074e2a2a7e272f0eabd00ffaad33de1535831[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Tue May 13 01:05:59 2025 +0800
+
+    chore(deps): update dependency @vuepress/bundler-vite to v2.0.0-rc.23 (#470)
+    
+    Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+[33mcommit a1fbe934ec4bfe1ef03fd6d37a0ad95fb860f032[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Tue May 13 00:50:56 2025 +0800
+
+    Merge pull request #472 from pysio2007/pysio2007-patch-1
+
+[33mcommit 51afdf6ed0412d7358e6437a2e29dc037e1e1679[m
+Merge: 7392945 6a85679
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Tue May 13 00:39:56 2025 +0800
+
+    docs(DDOS): 哪里来的攻击 (#471)
+
+[33mcommit 6a85679e413add31d2e4a10284a86ee6930bd87d[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Tue May 13 00:36:38 2025 +0800
+
+    docs(DDOS): 哪里来的攻击
+
+[33mcommit 7392945b572a18cc3c5924a668b59602567cc756[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Sun May 11 13:32:13 2025 +0800
+
+    chore(deps): update dependency @types/node to v22.15.17 (#457)
+    
+    Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+[33mcommit 5c84614679e9412639726aafb90cbc17f4d4d089[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Wed May 7 20:16:58 2025 +0800
+
+    friend: kndxhz (#469)
+    
+    * friend: kndxhz
+    
+    * friend: 修改一下色号
+
+[33mcommit 3d644755120ed5a23415a6becd2931b48f6dcfbf[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Tue May 6 11:43:44 2025 +0800
+
+    chore(deps): update dependency @vuepress/bundler-vite to v2.0.0-rc.22 (#453)
+    
+    Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+[33mcommit 431acc87370cb77c60488bb3562bca04c6e274fb[m
+Author: liuzhen932 🇦🇶 <wwalerts@outlook.jp>
+Date:   Mon May 5 22:45:26 2025 +0800
+
+    Merge pull request #466 from liuzhen9320/main
+    
+    docs: 优化文章格式
+
+[33mcommit a9723377472f09c8115475a0e95caaa04d80a791[m
+Merge: 9891d04 5ff3b08
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon May 5 20:31:21 2025 +0800
+
+    docs: 水2文章 (#465)
+    
+    * fix: 按时间排序
+    
+    * docs: 水2文章
+    
+    * docs: 更新MANRS
+
+[33mcommit 5ff3b08723f71a12d580d7ba361ebc0fc3c39e1b[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon May 5 20:19:12 2025 +0800
+
+    docs: 更新MANRS
+
+[33mcommit a40845433d1d56b9e7ab1c57a423194992f62f93[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon May 5 20:11:54 2025 +0800
+
+    docs: 水2文章
+
+[33mcommit 2d2148d99de52ea8ad0c4c644ba435ebe5c80dfc[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon May 5 18:54:35 2025 +0800
+
+    fix: 按时间排序
+
+[33mcommit 9891d0407877763a83a5b1bb953db0bbac1e7e62[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon Apr 28 11:58:19 2025 +0800
+
+    feat: 赞助！ (#462)
+    
+    * feat: 赞助！
+    
+    * fix: 忘记加导航栏了
+
+[33mcommit ee5eed28d5e0a151530ff7f0f61ca661333a7abe[m
+Merge: 554e54b f42c55f
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Apr 26 10:54:00 2025 +0800
+
+    Merge pull request #461 from PysioHub/main
+    
+    feat: 图片优化
+
+[33mcommit f42c55f37f05ea43cd34dae08a9352567bb6f9ad[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 26 08:39:08 2025 +0800
+
+    fix: 为较慢链接提供50%质量图片 update: Version1.6.1
+
+[33mcommit 1a1dd6abc4108b50063fbe497f8a2be4d87e13ec[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 26 08:06:33 2025 +0800
+
+    feat: 向站内交付AVIF图片
+
+[33mcommit 554e54b41a860c46762aa77fa956e13c21d6d47e[m
+Merge: 4432ae4 26d0913
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Apr 26 07:35:13 2025 +0800
+
+    Merge pull request #460 from pysio2007/pysio2007-patch-1
+    
+    fix: 防止傻逼
+
+[33mcommit 26d0913ea005a1ee921293c8644148a4e2b1fbe6[m
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Apr 26 07:35:02 2025 +0800
+
+    fix: 防止傻逼
+
+[33mcommit 4432ae4c49a37660933e4dde430e209a276572cc[m
+Merge: b6f7d11 02e7f7a
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Thu Apr 24 21:14:40 2025 +0800
+
+    Merge pull request #456 from PysioHub/main
+    
+    feat: 更换搜索引擎 移除老旧的本地搜索
+
+[33mcommit 02e7f7a41610c0abcc8ef4a1fb0a9d24a909c1a9[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Thu Apr 24 21:09:40 2025 +0800
+
+    fix: 移除未使用的引用
+
+[33mcommit 42a5fe71b78a954e0043d7fb5dd6f84d1e6ce083[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Thu Apr 24 21:03:04 2025 +0800
+
+    feat: 更换搜索引擎 移除老旧的本地搜索
+
+[33mcommit b6f7d119f60518502b02b60bc78b3dd40cd9ae61[m
+Merge: b843fd5 8589d9a
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon Apr 14 10:17:56 2025 +0800
+
+    Merge pull request #455 from PysioHub/main
+    
+    docs: 初稿最终版本
+
+[33mcommit 8589d9a31519866e7b810b1a8e0b793da6438eef[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Apr 14 10:15:51 2025 +0800
+
+    docs: 初稿最终版本
+
+[33mcommit a9497d281d7e95fae60f252b7684bd4e6040969d[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Apr 14 09:10:51 2025 +0800
+
+    docs: 加大防呆！
+
+[33mcommit b843fd5654e9658ce6b69f6051ba40944310613b[m
+Merge: e0d4f82 6a50428
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon Apr 14 02:55:18 2025 +0800
+
+    Merge pull request #454 from PysioHub/main
+    
+    docs: 继续补充ASN文章
+
+[33mcommit 6a50428f9e4726c7d3bf5f4b4ec2ea432c8353c8[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Apr 14 02:06:31 2025 +0800
+
+    fix: 少个)
+
+[33mcommit 1dfdb35ad4eca2da863a80a728b947185a372602[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Apr 14 01:26:07 2025 +0800
+
+    remove: 移除XiaoXii
+
+[33mcommit 18704dfdc7b2b5eca72f3018141bcf957b70b6ef[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sun Apr 13 16:53:33 2025 +0800
+
+    docs: fix bug
+
+[33mcommit 1294070489db0efd2ea317ee63f5dc9955f8383e[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sun Apr 13 16:07:30 2025 +0800
+
+    feat: PWA?
+
+[33mcommit b5bb6ee5585bd47110addef27a09ecaca0e1e22b[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 20:32:07 2025 +0800
+
+    docs: RIPE 如果刚刚有地方出错了 如何修改？
+
+[33mcommit e0d4f823cb0de9bf03c25c83e06298e8dcaf7790[m
+Merge: ef04c29 add42cd
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Apr 12 13:32:36 2025 +0800
+
+    docs: Registry ASN (#452)
+    
+    * update: 升级依赖
+    
+    * feat: 图片迁移至S3
+    
+    * docs: Registry ASN
+    
+    * remove: 移除页脚的节点显示
+    
+    * feat: 虽然提供了组件 但是我不开w
+    
+    * docs: 写完RIPE创建主键
+
+[33mcommit add42cdb57d7d86d65d9fc5ad1d29593ce2a2055[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 13:29:20 2025 +0800
+
+    docs: 写完RIPE创建主键
+
+[33mcommit 1b5dde9085ce4132a04f3dc5cc08659bcf385ed2[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 08:58:46 2025 +0800
+
+    feat: 虽然提供了组件 但是我不开w
+
+[33mcommit a802463dc38165f5e5e2ac28ca907f3ec31dad42[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 08:46:00 2025 +0800
+
+    remove: 移除页脚的节点显示
+
+[33mcommit d8731c7f535332d01fdc8d0e5164a794c0c32b59[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 08:38:00 2025 +0800
+
+    docs: Registry ASN
+
+[33mcommit 3aa8ed85c8aa9bd7172e09baee522db01f83ded5[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 08:07:08 2025 +0800
+
+    feat: 图片迁移至S3
+
+[33mcommit 3355410a85b2a1037ecd23ddf3510f54710eb1bd[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Apr 12 07:49:28 2025 +0800
+
+    update: 升级依赖
+
+[33mcommit ef04c29ab86b6f3a3715d22ec9aa431174044203[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Tue Apr 1 20:24:43 2025 +0800
+
+    Merge pull request #438 from pysio2007/renovate/node-22.x-lockfile
+    
+    chore(deps): update dependency @types/node to v22.13.16
+
+[33mcommit 7e7d156517d5f6f6d86d46c9c63662a50d491acc[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Tue Apr 1 10:20:35 2025 +0000
+
+    chore(deps): bump vite in the npm_and_yarn group across 1 directory (#449)
+
+[33mcommit 89bf339e56c5cb5589aea74f4352f2bb70d26b2d[m
+Merge: 4c903ad 0973587
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon Mar 31 16:34:41 2025 +0800
+
+    friends: add gudong (#448)
+    
+    * friends: add gudong
+    
+    * fix: logo和link写反了
+
+[33mcommit 09735870a7b3034e43feb02fd0e3c605614e4f30[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Mar 31 16:31:32 2025 +0800
+
+    fix: logo和link写反了
+
+[33mcommit bd678e6383789daf5b4688451b47c90b7d90d80d[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Mar 31 16:22:57 2025 +0800
+
+    friends: add gudong
+
+[33mcommit 4c903adf8534364ea79e013e07f363bd01748ded[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Mar 27 13:42:01 2025 +0800
+
+    chore(deps): bump vite in the npm_and_yarn group across 1 directory (#447)
+    
+    Bumps the npm_and_yarn group with 1 update in the / directory: [vite](https://github.com/vitejs/vite/tree/HEAD/packages/vite).
+    
+    
+    Updates `vite` from 6.1.1 to 6.1.2
+    - [Release notes](https://github.com/vitejs/vite/releases)
+    - [Changelog](https://github.com/vitejs/vite/blob/v6.1.2/packages/vite/CHANGELOG.md)
+    - [Commits](https://github.com/vitejs/vite/commits/v6.1.2/packages/vite)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: vite
+      dependency-type: indirect
+      dependency-group: npm_and_yarn
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+[33mcommit 2caa662f82afb724d8f2eb87ce621afe3b11b9d2[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Tue Mar 25 15:23:21 2025 +0800
+
+    chore(deps): update babel monorepo to v7.26.10 (#437)
+    
+    Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+[33mcommit d53ad1ec2e797006f0f8fc75bca53183c612141f[m
+Author: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Date:   Tue Mar 25 07:25:35 2025 +0800
+
+    Merge pull request #432 from pysio2007/renovate/waline-client-3.x-lockfile
+    
+    chore(deps): update dependency @waline/client to v3.5.6
+
+[33mcommit ebfa5bf96922dc1d9ac61b621401be1258c8725b[m
+Merge: 4c09900 a72acfb
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Wed Mar 19 18:41:05 2025 +0800
+
+    Merge pull request #436 from PysioHub/main
+    
+    docs: Free CDN!
+
+[33mcommit a72acfbb3eb251624dc2ff887058e48cf545d819[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Wed Mar 19 18:35:21 2025 +0800
+
+    docs: Free CDN!
+
+[33mcommit 4c09900b5bb52ff55325ca429b517e4957f76b69[m
+Merge: 311bbb4 76c6da5
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sun Mar 16 17:26:03 2025 +0800
+
+    Merge pull request #435 from PysioHub/main
+    
+    docs: Update Dns Server
+
+[33mcommit 76c6da501b2fe361167bb6387bb2a7918958385e[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sun Mar 16 17:12:29 2025 +0800
+
+    docs: Update Dns Server
+
+[33mcommit 311bbb40fb48958f1242346b42ce5c294b503695[m
+Merge: 1350a7c 7831f18
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Mar 15 19:36:39 2025 +0800
+
+    friend: 修改盐木得描述 close #433 (#434)
+
+[33mcommit 1350a7ccbbc61b59867389008c0aec32cd4dd1be[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sat Mar 15 19:17:01 2025 +0800
+
+    Merge pull request #430 from pysio2007/dependabot/npm_and_yarn/npm_and_yarn-46be7da7dc
+    
+    chore(deps): bump prismjs from 1.29.0 to 1.30.0 in the npm_and_yarn group across 1 directory
+
+[33mcommit 7831f18e6af03c6c27d823dcce05f597e74a3ed6[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Mar 15 19:07:25 2025 +0800
+
+    friend: 修改盐木得描述 close #433
+
+[33mcommit eb7e83dac4deaeccc95b994aee56cb8cf265e6af[m
+Merge: aab7e3f 24d1971
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Tue Mar 11 02:34:00 2025 +0800
+
+    Merge pull request #429 from PysioHub/main
+    
+    chore(deps): Update All
+
+[33mcommit 24d1971560853509b221de8018d2572da145fcbf[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Tue Mar 11 02:30:58 2025 +0800
+
+    feat: 评论系统添加自己的表情！
+
+[33mcommit 8f4f47ccc9d224a9c03b4bf782a8648f123e8420[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Mar 10 14:52:36 2025 +0800
+
+    fix: 表情修改使用jsdelivr 修复文章删除线
+
+[33mcommit 68f934215f9564788bcbe50914ba509c3f0aa24b[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Mon Mar 10 14:21:49 2025 +0800
+
+    chore(deps): Update All
+
+[33mcommit aab7e3fa8324a470f9e5c3df4c25fd6ad908f830[m
+Merge: 19a27d0 2108cc0
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Mar 1 02:17:47 2025 +0800
+
+    Merge pull request #428 from PysioHub/main
+    
+    feat: 给umami加回来
+
+[33mcommit 2108cc0aef5c9ace9e3a0b55a5a2de61de82e548[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Sat Mar 1 02:11:45 2025 +0800
+
+    feat: 给umami加回来
+
+[33mcommit 77bfb9f81061a43a59820be96f6aa02e31da11b2[m
+Merge: 4225371 19a27d0
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Sat Mar 1 02:07:19 2025 +0800
+
+    Merge branch 'pysio2007:main' into main
+
+[33mcommit 4225371e16f6d3b3c2e6247c595b12fd05b9763f[m
+Author: Pysio <qq593277393@outlook.com>
+Date:   Tue Feb 25 18:00:38 2025 +0800
+
+    fix: Remove Stuffed Cat
+
+[33mcommit 19a27d0ebcd2ca3b592c988ac19fb79e02c82095[m
+Merge: 990be19 89c5d5d
+Author: Pysio <71202163+pysio2007@users.noreply.github.com>
+Date:   Mon Feb 24 22:26:06 2025 +0800
+
+    update: 升级依赖 (#425)
+    
+    * update: 升级依赖
+    
+    * feat: disable coveralls

@@ -1,6 +1,6 @@
 ---
 title: AKIX Incident Compilation
-date: 2025-05-26
+date: 2025-06-05
 icon: fa-kit fa-wireshark
 category: daily
 tag:
@@ -102,3 +102,27 @@ Yes, after we spent half an hour studying why the WireGuard tunnel wasn't workin
 This teaches us not to judge whether there's a handshake by looking at WireGuard's last handshake, because it might very well be slacking off.
 
 Just send any packet and it starts working again. Very magical.
+
+## 5. Dude, Where is your Route6?
+
+Is our old friend AS208754, After discovering that her /48 prefix was unpingable, she came to the group for help.
+
+```text
+
+AS208754: Why can't anyone ping my /48 from China? Is it blocked by the GFW?
+
+Group friend: What heinous thing did you do to get your /48 blocked by the GFW!?
+
+AS208754: WTF
+
+(After a long debugging)
+
+Upstream: Import 0
+
+Upstream: Where's your route6?
+
+```
+
+After explanations from group friends, it turned out that they had only configured rDNS for the /48 prefix that day, but forgot to set up route6. The filter it.
+
+This incident teaches us: Always double-check before configuring anything. Make sure everything is verified before deploying, and never blindly push changes into the production environment.
