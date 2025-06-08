@@ -94,6 +94,14 @@ article: false
   background="rgba(236, 244, 250)"
 />
 
+<VPCard
+  title="yyyyt的文档站"
+  desc="Bad or Worse."
+  logo="https://camo.pysio.online/e41bc5fa331baccf14d1639d0125894c2ca93389/68747470733a2f2f63662d696d672e79797979742e746f702f6176617461722f617661746172"
+  link="https://docs.yyyyt.top/"
+  background="rgba(236, 244, 250)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
