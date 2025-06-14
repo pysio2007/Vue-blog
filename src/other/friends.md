@@ -102,6 +102,14 @@ article: false
   background="rgba(236, 244, 250)"
 />
 
+<VPCard
+  title="Bingxin Home"
+  desc="相聚于此乐土。"
+  logo="https://camo.pysio.online/5a8cf64e7d18a0a2ab312e759969462d73b163c4/68747470733a2f2f626c6f672e627974656c6f69642e6f6e652f696d672f6d617263683774682e77656270"
+  link="https://blog.byteloid.one"
+  background="rgba(236, 244, 250)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
