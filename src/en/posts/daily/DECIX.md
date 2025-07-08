@@ -1,5 +1,5 @@
 ---
-title: DE-CIX: Mistook MANRS Announcement as Ticket, Spammed the Entire Mailing List
+title: DE-CIX Mistook MANRS Announcement as Ticket, Spammed the Entire Mailing List
 date: 2025-07-09
 icon: fa-solid fa-envelopes
 category: daily
