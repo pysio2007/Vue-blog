@@ -1,5 +1,5 @@
 ---
-title: DE-CIX：错把MANRS公告当工单，群发回复闹乌龙
+title: DE-CIX 错把MANRS公告当工单，群发回复闹乌龙
 date: 2025-07-09
 icon: fa-solid fa-envelopes
 category: daily
