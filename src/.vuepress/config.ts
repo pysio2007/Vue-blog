@@ -3,6 +3,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 import theme from "./theme.js";
 import { cachePlugin } from '@vuepress/plugin-cache'
+import { telegramInstantViewPlugin } from "./plugins/telegram-instant-view.js";
 
 export default defineUserConfig({
   base: "/",
@@ -27,8 +28,9 @@ export default defineUserConfig({
     
     googleAnalyticsPlugin({   //Google Analytics
       id: 'G-G9Q1H2C9MN',
-    }), 
+    }),
     
+    telegramInstantViewPlugin(),  // Telegram Instant View 支持
     
   ],
   head: [
@@ -45,6 +47,24 @@ export default defineUserConfig({
         rel: "stylesheet",
       },
     ],
+    
+    // Telegram Instant View optimization meta tags
+    ["meta", { name: "telegram:instant_view", content: "supported" }],
+    ["meta", { property: "article:author", content: "Pysio" }],
+    ["meta", { property: "article:published_time", content: "" }], // Will be set per page
+    ["meta", { name: "author", content: "Pysio" }],
+    
+    // Enhanced Open Graph for better Telegram sharing
+    ["meta", { property: "og:site_name", content: "Pysio's Home" }],
+    ["meta", { property: "og:type", content: "article" }],
+    ["meta", { property: "og:locale", content: "zh_CN" }],
+    ["meta", { property: "og:locale:alternate", content: "en_US" }],
+    
+    // Twitter Card for better social sharing
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:site", content: "@pysio2007" }],
+    ["meta", { name: "twitter:creator", content: "@pysio2007" }],
+    
     ["script", { 
       defer: true, 
       "data-domain": "pysio.online",
