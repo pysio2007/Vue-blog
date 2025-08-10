@@ -1,17 +1,27 @@
-import type { Plugin } from "@vuepress/core";
-import type { Page } from "@vuepress/core";
+import type { Plugin, Page } from "@vuepress/core";
 
+interface BlogFrontmatter {
+  title?: string;
+  date?: string | Date;
+  tag?: string[];
+  category?: string;
+  description?: string;
+  head?: Array<[string, Record<string, string>, string?]>;
+  [key: string]: unknown;
+}
+
+/**
+ * Telegram Instant View plugin for VuePress
+ * Adds meta tags and structured data to optimize blog posts for Telegram Instant View
+ * @returns VuePress plugin configuration
+ */
 export const telegramInstantViewPlugin = (): Plugin => ({
   name: "telegram-instant-view",
-  
-  onInitialized(app) {
-    // Add global meta tags that are set in config.ts
-  },
   
   extendsPage(page: Page) {
     // Only process blog posts and articles
     if (page.path.includes('/posts/') || page.path.includes('/en/posts/')) {
-      const frontmatter = page.frontmatter as Record<string, any>;
+      const frontmatter = page.frontmatter as BlogFrontmatter;
       
       // Set article-specific meta tags
       if (!page.frontmatter.head) {
@@ -35,10 +45,10 @@ export const telegramInstantViewPlugin = (): Plugin => ({
       
       // Add article tags
       if (frontmatter.tag && Array.isArray(frontmatter.tag)) {
-        frontmatter.tag.forEach((tag: any) => {
+        frontmatter.tag.forEach((tag: string) => {
           headArray.push([
             "meta", 
-            { property: "article:tag", content: String(tag) }
+            { property: "article:tag", content: tag }
           ]);
         });
       }
