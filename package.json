@@ -8,8 +8,7 @@
     "docs:build": "vuepress-vite build src",
     "docs:clean-dev": "vuepress-vite dev src --clean-cache",
     "docs:dev": "vuepress-vite dev src",
-    "docs:update-package": "npx vp-update",
-    "prepare": "husky install"
+    "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
     "@jridgewell/sourcemap-codec": "^1.5.0",
@@ -41,7 +40,6 @@
     "coveralls": "^3.1.1",
     "git-describe": "^4.1.1",
     "glob": "^11.0.0",
-    "husky": "^9.1.7",
     "lodash": "^4.17.21",
     "lru-cache": "^11.0.2",
     "marked": "^16.0.0",
@@ -67,6 +65,7 @@
     "flowchart.ts": "^3.0.1",
     "katex": "^0.16.11",
     "mathjax-full": "^3.2.2",
-    "mermaid": "^11.3.0"
+    "mermaid": "^11.3.0",
+    "puppeteer": "^24.16.2"
   }
 }

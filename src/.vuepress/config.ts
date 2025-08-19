@@ -4,6 +4,7 @@ import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 import theme from "./theme.js";
 import { cachePlugin } from '@vuepress/plugin-cache'
 import { telegramInstantViewPlugin } from "./plugins/telegram-instant-view.js";
+import { ogImagePlugin } from "./plugins/og-image-plugin.js";
 
 export default defineUserConfig({
   base: "/",
@@ -31,6 +32,8 @@ export default defineUserConfig({
     }),
     
     telegramInstantViewPlugin(),  // Telegram Instant View 支持
+    
+    ogImagePlugin(),  // OG Image 生成器
     
   ],
   head: [
