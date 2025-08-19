@@ -2,8 +2,12 @@ import { Plugin } from 'vuepress';
 import { generateOGImage } from '../utils/og-image-generator.js';
 import { glob } from 'glob';
 import { readFileSync } from 'fs';
-import { join, dirname } from 'path';
+import { join } from 'path';
 
+/**
+ * VuePress plugin for automatically generating OG images for blog posts
+ * Supports both Chinese and English articles with appropriate localization
+ */
 export const ogImagePlugin = (): Plugin => {
   return {
     name: 'og-image-plugin',

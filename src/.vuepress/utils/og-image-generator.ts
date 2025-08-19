@@ -2,6 +2,9 @@ import puppeteer from 'puppeteer';
 import { mkdirSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
+/**
+ * Options for generating OG images
+ */
 export interface OGImageOptions {
   title: string;
   siteName?: string;
@@ -16,6 +19,11 @@ export interface OGImageOptions {
   outputDir?: string;
 }
 
+/**
+ * Generates an OG image for a blog post using Puppeteer
+ * @param options - Configuration options for the OG image
+ * @returns Promise resolving to the relative path of the generated image
+ */
 export async function generateOGImage(options: OGImageOptions): Promise<string> {
   const {
     title,
@@ -32,11 +40,11 @@ export async function generateOGImage(options: OGImageOptions): Promise<string> 
   } = options;
 
   // Generate filename from title
-  const filename = title
+  const filename = `${title
     .replace(/[^\w\s-]/g, '')
     .replace(/\s+/g, '-')
     .toLowerCase()
-    .substring(0, 50) + '.png';
+    .substring(0, 50)}.png`;
 
   // Ensure output directory exists
   if (!existsSync(outputDir)) {
