@@ -51,7 +51,7 @@
     "rimraf": "^6.0.1",
     "sanitize-html": "^2.13.1",
     "sass-embedded": "^1.79.4",
-    "tough-cookie": "^5.0.0",
+    "tough-cookie": "^6.0.0",
     "typescript": "^5.6.3",
     "uuid": "^11.0.4",
     "vue": "^3.5.18",
