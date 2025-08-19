@@ -6,6 +6,8 @@ RUN apk add --no-cache \
     make \
     git \
     g++ \
+    font-noto-cjk \
+    font-noto-cjk-extra \
     gcc
 RUN npm install
 RUN npm run docs:build
