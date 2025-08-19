@@ -26,9 +26,9 @@ jobs:
 
       - name: 安装依赖
         run: |
-          apt update
-          apt install -y fonts-noto-cjk
-          apt install -y fonts-noto-cjk-extra
+          sudo apt update
+          sudo apt install -y fonts-noto-cjk
+          sudo apt install -y fonts-noto-cjk-extra
           corepack enable
           npm ci
 
