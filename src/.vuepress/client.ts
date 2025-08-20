@@ -28,6 +28,8 @@ import PictureList from "./components/PictureList.vue";
 import game2048 from "./components/game2048.vue";
 import GithubUserStats from "./components/GithubUserStats.vue";
 import Ghub from "./components/Ghub.vue";
+import NFCCard from "./components/NFCCard.vue";
+import NFCHandler from "./components/NFCHandler.vue";
 
 export default defineClientConfig({
   enhance: ({ app, router, siteData }) => {
@@ -57,7 +59,9 @@ export default defineClientConfig({
     app.component('PictureList',PictureList);
     app.component('game2048',game2048);
     app.component('GithubUserStats',GithubUserStats);
-    app.component("Ghub",Ghub)
+    app.component("Ghub",Ghub);
+    app.component("NFCCard",NFCCard);
+    app.component("NFCHandler",NFCHandler)
     
     router.beforeEach((to, from, next) => {
       if (to.path === '/sponsor') {
@@ -66,6 +70,32 @@ export default defineClientConfig({
       }
       next();
     });
+
+    // NFC 卡片全局检测
+    if (typeof window !== 'undefined') {
+      /**
+       * Checks for NFC triggers and shows card if conditions are met
+       */
+      const checkAndShowNFCCard = () => {
+        const userAgent = navigator.userAgent;
+        const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+        const hasNFCTrigger = 
+          window.location.search.includes('nfc=1') ||
+          window.location.search.includes('source=nfc') ||
+          sessionStorage.getItem('nfc-triggered') ||
+          document.referrer.includes('shortcuts://');
+        
+        if (isIOS && hasNFCTrigger && !sessionStorage.getItem('nfc-card-shown')) {
+          // 触发自定义事件显示 NFC 卡片
+          window.dispatchEvent(new CustomEvent('show-nfc-card'));
+          sessionStorage.setItem('nfc-card-shown', 'true');
+        }
+      };
+
+      router.afterEach(() => {
+        setTimeout(checkAndShowNFCCard, 300);
+      });
+    }
     
     Sentry.init({
       dsn: "https://188c5d205854b35b009d4ad76674d3bc@o4508158776705024.ingest.us.sentry.io/4508158792826880", // 替换为你的 Sentry DSN
