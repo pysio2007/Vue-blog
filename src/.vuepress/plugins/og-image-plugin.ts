@@ -76,7 +76,7 @@ export const ogImagePlugin = (): Plugin => {
         const title = page.title || page.frontmatter.title;
         if (title) {
           const imagePath = `/og-images/${title
-            .replace(/[<>:"/\\|?*!@#$%^&()+=[]{}';,.~`！？。，、；：""''（）【】《》〈〉]/gu, '') // Remove special symbols and Chinese punctuation
+            .replace(/[<>:"/\\|?*!@#$%^&()+=\[\]\{\}';,.~`！？。，、；：""''（）【】《》〈〉]/gu, '') // Remove special symbols and Chinese punctuation
             .replace(/\s+/g, '')           // Merge spaces directly without dashes
             .substring(0, 100)            // Increase length limit for Chinese characters
             .toLowerCase()}.png`;
