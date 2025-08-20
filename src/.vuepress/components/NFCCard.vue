@@ -40,15 +40,47 @@ const props = withDefaults(defineProps<Props>(), {
 
 const showNFCCard = ref(false)
 
+/**
+ * Closes the NFC card popup and clears trigger state
+ */
+const closeCard = () => {
+  showNFCCard.value = false
+  sessionStorage.removeItem('nfc-triggered')
+}
+
+/**
+ * Opens URL in browser and closes the card
+ */
+const openInBrowser = () => {
+  const url = props.url || window.location.href
+  window.open(url, '_blank')
+  closeCard()
+}
+
+/**
+ * Attempts to open in a custom app, falls back to browser
+ */
+const openInApp = () => {
+  // 尝试打开自定义 URL Scheme，如果有的话
+  const customScheme = `pysiohome://open?url=${encodeURIComponent(window.location.href)}`
+  window.location.href = customScheme
+
+  // 如果没有自定义应用，回退到浏览器
+  setTimeout(() => {
+    if (document.hidden) return
+    openInBrowser()
+  }, 1000)
+}
+
 onMounted(() => {
   // 检测是否是通过 NFC 标签或 Apple Shortcuts 访问
   const userAgent = navigator.userAgent
   const isIOS = /iPad|iPhone|iPod/.test(userAgent)
-  const hasNFCRef = document.referrer.includes('shortcuts://') || 
-                    window.location.search.includes('nfc=1') ||
-                    window.location.search.includes('source=nfc') ||
-                    sessionStorage.getItem('nfc-triggered')
-  
+  const hasNFCRef = document.referrer.includes('shortcuts://') ||
+    window.location.search.includes('nfc=1') ||
+    window.location.search.includes('source=nfc') ||
+    sessionStorage.getItem('nfc-triggered')
+
   if (isIOS && hasNFCRef && !sessionStorage.getItem('nfc-card-shown')) {
     showNFCCard.value = true
     sessionStorage.setItem('nfc-card-shown', 'true')
@@ -64,29 +96,6 @@ onMounted(() => {
     })
   }
 })
-
-const closeCard = () => {
-  showNFCCard.value = false
-  sessionStorage.removeItem('nfc-triggered')
-}
-
-const openInApp = () => {
-  // 尝试打开自定义 URL Scheme，如果有的话
-  const customScheme = `pysiohome://open?url=${encodeURIComponent(window.location.href)}`
-  window.location.href = customScheme
-  
-  // 如果没有自定义应用，回退到浏览器
-  setTimeout(() => {
-    if (document.hidden) return
-    openInBrowser()
-  }, 1000)
-}
-
-const openInBrowser = () => {
-  const url = props.url || window.location.href
-  window.open(url, '_blank')
-  closeCard()
-}
 </script>
 
 <style scoped>

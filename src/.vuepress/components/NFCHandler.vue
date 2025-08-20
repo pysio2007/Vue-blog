@@ -24,6 +24,15 @@ const pageDescription = ref('')
 const siteIcon = ref('/logo.svg')
 const currentUrl = ref('')
 
+/**
+ * Updates page information from VuePress data
+ */
+const updatePageInfo = () => {
+  pageTitle.value = pageData.value.title || siteData.value.title
+  pageDescription.value = pageData.value.frontmatter?.description || siteData.value.description
+  currentUrl.value = window.location.href
+}
+
 onMounted(() => {
   updatePageInfo()
   
@@ -39,12 +48,9 @@ watch(() => pageData.value.path, () => {
   updatePageInfo()
 })
 
-const updatePageInfo = () => {
-  pageTitle.value = pageData.value.title || siteData.value.title
-  pageDescription.value = pageData.value.frontmatter?.description || siteData.value.description
-  currentUrl.value = window.location.href
-}
-
+/**
+ * Checks for various NFC trigger conditions and shows card if needed
+ */
 const checkNFCTrigger = () => {
   if (typeof window === 'undefined') return
 

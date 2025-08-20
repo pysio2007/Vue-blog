@@ -73,6 +73,9 @@ export default defineClientConfig({
 
     // NFC 卡片全局检测
     if (typeof window !== 'undefined') {
+      /**
+       * Checks for NFC triggers and shows card if conditions are met
+       */
       const checkAndShowNFCCard = () => {
         const userAgent = navigator.userAgent;
         const isIOS = /iPad|iPhone|iPod/.test(userAgent);
