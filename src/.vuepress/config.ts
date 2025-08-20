@@ -68,6 +68,17 @@ export default defineUserConfig({
     ["meta", { name: "twitter:site", content: "@pysio2007" }],
     ["meta", { name: "twitter:creator", content: "@pysio2007" }],
     
+    // Apple NFC Web Card support
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    ["meta", { name: "apple-mobile-web-app-status-bar-style", content: "default" }],
+    ["meta", { name: "apple-mobile-web-app-title", content: "Pysio's Home" }],
+    ["meta", { name: "format-detection", content: "telephone=no" }],
+    ["link", { rel: "apple-touch-icon", href: "/assets/icon/apple-icon-152.png", sizes: "152x152" }],
+    ["link", { rel: "mask-icon", href: "/logo.svg", color: "#3eaf7c" }],
+    ["meta", { name: "theme-color", content: "#3eaf7c" }],
+    ["meta", { name: "msapplication-TileColor", content: "#3eaf7c" }],
+    ["meta", { name: "msapplication-TileImage", content: "/assets/icon/ms-icon-144.png" }],
+    
     ["script", { 
       defer: true, 
       "data-domain": "pysio.online",
