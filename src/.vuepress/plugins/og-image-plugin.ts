@@ -46,7 +46,7 @@ export const ogImagePlugin = (): Plugin => {
             
             const title = titleMatch[1].trim().replace(/^["']|["']$/g, '');
             const date = dateMatch ? dateMatch[1].trim().replace(/^["']|["']$/g, '') : new Date().toLocaleDateString('zh-CN');
-            const isEnglish = postFile.includes('/en/posts/');
+            const isEnglish = postFile.replace(/\\/g, '/').includes('/en/posts/');
             console.log(`Processing: ${title} (${isEnglish ? 'EN' : 'CN'})`);
             
             // Generate OG image
@@ -76,10 +76,10 @@ export const ogImagePlugin = (): Plugin => {
         const title = page.title || page.frontmatter.title;
         if (title) {
           const imagePath = `/og-images/${title
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .toLowerCase()
-            .substring(0, 50)}.png`;
+            .replace(/[<>:"/\\|?*!@#$%^&()+=\[\]{}';,.~`！？。，、；：""''（）【】《》〈〉]/g, '') // Remove special symbols and Chinese punctuation
+            .replace(/\s+/g, '')           // Merge spaces directly without dashes
+            .substring(0, 100)            // Increase length limit for Chinese characters
+            .toLowerCase()}.png`;
           
           // Add OG meta tags
           page.frontmatter.head = page.frontmatter.head || [];
