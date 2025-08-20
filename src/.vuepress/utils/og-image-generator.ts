@@ -42,7 +42,7 @@ export async function generateOGImage(options: OGImageOptions): Promise<string> 
   // Generate filename from title
   // Support Chinese characters, remove special symbols, merge spaces directly
   const filename = `${title
-    .replace(/[<>:"/\\|?*!@#$%^&()+=\[\]{}';,.~`！？。，、；：""''（）【】《》〈〉]/g, '') // Remove special symbols and Chinese punctuation
+    .replace(/[<>:"/\\|?*!@#$%^&()+=\[\]\{\}';,.~`！？。，、；：""''（）【】《》〈〉]/gu, '') // Remove special symbols and Chinese punctuation
     .replace(/\s+/g, '')           // Merge spaces directly without dashes
     .substring(0, 100)            // Increase length limit for Chinese characters
     .toLowerCase()}.png`;
