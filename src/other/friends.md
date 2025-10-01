@@ -79,14 +79,6 @@ article: false
 />
 
 <VPCard
-  title="fishcpy的小破站"
-  desc="非淡泊无以明志，非宁静无以致远"
-  logo="https://camo.pysio.online/d284a21a9ff53dc764df4d6aed98c688420ab102/68747470733a2f2f626c6f672e666973686370792e636e2f75706c6f61642f666973686370792d2545352538452538422545372542432541392e706e67"
-  link="https://blog.fishcpy.cn/"
-  background="rgba(255, 5, 172, 0.23)"
-/>
-
-<VPCard
   title="Hill233 的小窝"
   desc="只是一个普普通通的 blog"
   logo="https://camo.pysio.online/db21b0f6244025ac6227b58dd76c2efe3c8383ba/68747470733a2f2f712e716c6f676f2e636e2f673f623d7171266e6b3d3138353134363630353526733d363430"
@@ -109,6 +101,31 @@ article: false
   link="https://blog.byteloid.one"
   background="rgba(236, 244, 250)"
 />
+
+<VPCard
+  title="火神80的小窝"
+  desc="一位热爱Coding、MC、原神、galgame的b站up主......"
+  logo="https://cdn.huoshen80.top/favicon.ico"
+  link="https://cdn.huoshen80.top"
+  background="rgba(236, 244, 250)"
+/>
+
+<VPCard
+  title="洛雨の小站"
+  desc="历史终将证明一切"
+  logo="https://luotianyi.eu/wp-content/uploads/2024/05/1715104252-v2-be101b87e6774cf029ce05ecff8f2b33_r-scaled-e1715104292489.jpg"
+  link="https://luotianyi.eu/"
+  background="rgba(236, 244, 250)"
+/>
+
+<VPCard
+  title="流年如鸽"
+  desc="Live a life you will remember."
+  logo="https://img.z4a.net/images/2025/03/22/pigeon-avatar.png"
+  link="https://itspigeon.xin/"
+  background="rgba(236, 244, 250)"
+/>
+
 
 ## 交换友链
 
