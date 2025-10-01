@@ -106,7 +106,7 @@ article: false
   title="火神80的小窝"
   desc="一位热爱Coding、MC、原神、galgame的b站up主......"
   logo="https://cdn.huoshen80.top/favicon.ico"
-  link="https://cdn.huoshen80.top"
+  link="https://huoshen80.top"
   background="rgba(236, 244, 250)"
 />
 
