@@ -13,4 +13,4 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/labeler@v5
+    - uses: actions/labeler@v6
