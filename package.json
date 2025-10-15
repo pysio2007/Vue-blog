@@ -44,7 +44,7 @@
     "lru-cache": "^11.0.2",
     "marked": "^16.0.0",
     "moment": "^2.30.1",
-    "monaco-editor": "^0.53.0",
+    "monaco-editor": "^0.54.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "natural": "^8.0.1",
     "pysio-vuepress-components": "^1.0.3",
