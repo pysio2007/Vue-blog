@@ -22,7 +22,7 @@
     "@types/node": "^22.7.7",
     "@types/webpack": "^5.28.5",
     "@vue/language-server": "^3.0.0",
-    "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "@vuepress/bundler-vite": "2.0.0-rc.24",
     "@vuepress/plugin-blog": "2.0.0-rc.112",
     "@vuepress/plugin-cache": "2.0.0-rc.112",
     "@vuepress/plugin-feed": "2.0.0-rc.112",
@@ -55,8 +55,9 @@
     "typescript": "^5.6.3",
     "uuid": "^13.0.0",
     "vue": "^3.5.22",
-    "vuepress": "2.0.0-rc.26",
-    "vuepress-theme-hope": "2.0.0-rc.94"
+    "vuepress": "2.0.0-rc.24",
+    "vuepress-theme-hope": "2.0.0-rc.94",
+    "vue-router": "4.5.1"
   },
   "dependencies": {
     "@vue/repl": "^4.4.2",
