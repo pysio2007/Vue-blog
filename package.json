@@ -22,7 +22,7 @@
     "@types/node": "^22.7.7",
     "@types/webpack": "^5.28.5",
     "@vue/language-server": "^3.0.0",
-    "@vuepress/bundler-vite": "2.0.0-rc.24",
+    "@vuepress/bundler-vite": "2.0.0-rc.26",
     "@vuepress/plugin-blog": "2.0.0-rc.112",
     "@vuepress/plugin-cache": "2.0.0-rc.112",
     "@vuepress/plugin-feed": "2.0.0-rc.112",
