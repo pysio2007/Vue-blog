@@ -39,6 +39,21 @@ export async function generateOGImage(options: OGImageOptions): Promise<string> 
     outputDir = 'src/.vuepress/public/og-images'
   } = options;
 
+  // Extract year from date and calculate copyright year range
+  const currentYear = new Date().getFullYear();
+  let articleYear = currentYear;
+
+  // Try to extract year from date string (supports various formats)
+  const dateYearMatch = date.match(/(\d{4})/);
+  if (dateYearMatch) {
+    articleYear = parseInt(dateYearMatch[1]);
+  }
+
+  // Format copyright as articleYear-currentYear (or just currentYear if same)
+  const copyrightYear = articleYear === currentYear
+    ? `${currentYear}`
+    : `${articleYear}-${currentYear}`;
+
   // Generate filename from title
   // Support Chinese characters, remove special symbols, merge spaces directly
   const filename = `${title
@@ -137,7 +152,7 @@ export async function generateOGImage(options: OGImageOptions): Promise<string> 
       <div class="bottom-info">
         ${isEnglish ? 'Author' : '作者'}: ${author}<br>
         ${isEnglish ? 'Date' : '日期'}: ${date}<br>
-        Copyright © 2025 Pysio
+        Copyright © ${copyrightYear} Pysio
       </div>
     </body>
     </html>
