@@ -1,4 +1,4 @@
-FROM node:22-alpine AS builder
+FROM oven/bun:1-alpine AS builder
 WORKDIR ./
 COPY . .
 RUN apk add --no-cache \
@@ -9,8 +9,8 @@ RUN apk add --no-cache \
     font-noto-cjk \
     font-noto-cjk-extra \
     gcc
-RUN npm install
-RUN npm run docs:build
+RUN bun install
+RUN bun run docs:build
 RUN ls
 
 FROM nginx
