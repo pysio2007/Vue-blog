@@ -87,7 +87,7 @@ The theme supports extensive markdown enhancements configured in `theme.ts`:
 - **Media playback** - Asciinema player
 - **Error tracking** - Sentry with browser integration and session replay
 - **Comments** - Waline client
-- **Charts** - Vue Repl for interactive playgrounds
+- **Interactive demos** - Vue Repl for interactive playgrounds
 
 ## Development Notes
 
