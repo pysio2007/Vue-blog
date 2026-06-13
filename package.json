@@ -19,7 +19,7 @@
     "@sentry/types": "^10.36.0",
     "@sentry/vue": "^10.36.0",
     "@types/lodash": "^4.17.23",
-    "@types/node": "^22.19.7",
+    "@types/node": "^25.0.0",
     "@types/webpack": "^5.28.5",
     "@vue/language-server": "^3.2.4",
     "@vuepress/bundler-vite": "2.0.0-rc.26",
