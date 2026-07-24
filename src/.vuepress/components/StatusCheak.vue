@@ -228,18 +228,18 @@ export default {
         in_progress: '进行中',
         scheduled: '已计划',
       }
-      const v = this.impactValue(item)
-      return map[v] || (v ? v : '事件')
+      const impact = this.impactValue(item)
+      return map[impact] || (impact ? impact : '事件')
     },
     impactClass(item) {
-      const v = this.impactValue(item)
-      if (v === 'full_outage' || v === 'partial_outage') return 'impact-critical'
-      if (v === 'degraded_performance') return 'impact-warning'
+      const impact = this.impactValue(item)
+      if (impact === 'full_outage' || impact === 'partial_outage') return 'impact-critical'
+      if (impact === 'degraded_performance') return 'impact-warning'
       if (
-        v === 'maintenance_scheduled' ||
-        v === 'maintenance_in_progress' ||
-        v === 'in_progress' ||
-        v === 'scheduled'
+        impact === 'maintenance_scheduled' ||
+        impact === 'maintenance_in_progress' ||
+        impact === 'in_progress' ||
+        impact === 'scheduled'
       ) {
         return 'impact-maintenance'
       }
@@ -249,7 +249,7 @@ export default {
       // 从严重到轻
       const order = ['full_outage', 'partial_outage', 'degraded_performance']
       for (const lvl of order) {
-        if (incidents.some((i) => this.impactValue(i) === lvl)) {
+        if (incidents.some((incident) => this.impactValue(incident) === lvl)) {
           return this.impactLabel({ current_worst_impact: lvl })
         }
       }
