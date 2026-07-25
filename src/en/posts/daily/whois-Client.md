@@ -45,7 +45,7 @@ Dedicated support for DN42 network queries:
 whois 8.8.8.8
 ```
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/whoisgoogle.png)
+![](https://suse.cc/ipfs/QmYCdKbLLRM8kdmJ7idBdBNRbXyZKWKM1TPji5aAYBmMws)
 
 ### Query AS Number
 
@@ -53,7 +53,7 @@ whois 8.8.8.8
 whois AS213605
 ```
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/whoispysio.png)
+![](https://suse.cc/ipfs/QmevqoH3cQYnShKhMSyekw1teCDJrD48qUBYXPv7NSv5Xg)
 
 ### Query DN42 AS Number
 
@@ -62,15 +62,15 @@ whois 213605  # Default behavior: if an ASN exists in both DN42 and public netwo
 ```
 Note: DN42 hyperlinks have some issues and will be fixed in the next version
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/whoisdn42.png)
+![](https://suse.cc/ipfs/QmSLvQTqWejN55wsT1Uy2jwA2rU16yagUAHfaEuwRpLUUP)
 
 ### Terminal Hyperlink Demonstration
 
 Due to limitations, you'll need to try it yourself to see the full effect (x
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/hyperlinkgoogle.png)
+![](https://suse.cc/ipfs/QmfRDxLSdzGEdiyt3U9sXW4sQj5pr8SxHdoErz6k5B4rZ8)
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/hyperlinkasn.png)
+![](https://suse.cc/ipfs/QmTRcL4cxitUCiwNj1wGDQvAGae51vcwFaKmoNZfxNXAmV)
 
 Finally, here's the GitHub link. Welcome to star~ 
 

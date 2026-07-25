@@ -74,13 +74,13 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 - ` address `: 此 role 的办公地址
 - ` e-mail `: 此 role 的电子邮件联系地址
 
-![用Akaere NetWork举例填写的信息](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Create%20role%20and%20maintainer%20pair.png)
+![用Akaere NetWork举例填写的信息](https://suse.cc/ipfs/QmVJ6dPAUPMyr2ZAwY9fQ6yVhBYLHV5iWHgagPsFmZQaC6)
 
 填写完成后点击 SUBMIT 按钮，将同时创建一个 role 和一个 mntner 对象。
 
 图中红框部分则为 role 对象的主键。您需要将其作为您 AS 的 admin-c / tech-c / abuse-c 提交给您的 LIR
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Create%20role%20and%20maintainer%20pair%20done.png)
+![](https://suse.cc/ipfs/QmbuiC5LUwAExw6DhfNW3tX6jLxFMPFTCmmXr4nkg8mMSs)
 
 #### 3. 设置滥用通知邮箱
 
@@ -89,17 +89,17 @@ maintainer 对象是对维护者的抽象，记录了维护者的认证信息。
 
 在[RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query)顶部的搜索框中填写上节中 role 对象的主键，点击右侧查找按钮。接下来点击搜索结果右上角的 Update object 按钮跳转至修改页面。
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse.png)
+![](https://suse.cc/ipfs/QmctpNEELfoxNB2oaU8cYz3APG8ZYf35xwgBi1gva3r2cb)
 
 点击 e-mail 栏右侧 + 号按钮为此 role 对象添加 abuse-mailbox 属性。
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse%202.png)
+![](https://suse.cc/ipfs/QmWKLG2vy89kehfBWRmpyvocyZwW1cf4ALJygcnqpTHTon)
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse%203.png)
+![](https://suse.cc/ipfs/QmawkAuuJTZ2xsktNwgVN5m7jmvKwQibGncD5RPdJ89Y7Q)
 
 在出现的 abuse-mailbox 栏中填写滥用通知邮箱后点击 SUBMIT 按钮保存。
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse%204.png)
+![](https://suse.cc/ipfs/QmdCaNy583L3MKZYDxhJbsqSuFbH7nbiJPrvwZs4P7VjE4)
 
 #### 4. 创建 organisation 对象
 
@@ -115,25 +115,25 @@ organisation 对象是对公司、非营利团体或个人的抽象，所有其�
 - ` abuse-c `: 此 organisation 的滥用通知联系方式，必须指向具有 abuse-mailbox 属性的 role 对象
 - ` mnt-ref `: 谁可引用此 organisation，被指向的 mntner 可以添加指向此 organisation 的对象，即由谁为此组织分配资源，询问您的 LIR 以获得具体值
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Creat%20organisation.png)
+![](https://suse.cc/ipfs/QmS5rvhyJHXqnXA3tUBAxZEReCzmsbESzH4TnmDtN5N6Vx)
 
 填写完成后点击 SUBMIT 按钮，页面中上位置以 organisation "ORG-EXAMPLE-RIPE" 字样展示了 organisation 对象的标识符(图中红色方框部分)，您需要将其作为您 AS 的 org 提交给您的 LIR。
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Creat%20organisation%20Done.png)
+![](https://suse.cc/ipfs/QmQgVvcoZfLoxeWRrt97Gr8MuCdkHBj2ogkW3N3wZ83ddH)
 
 #### 4.1 如果刚刚有地方出错了 如何修改？
 
 当你发现上面有内容写错的时候 前往[RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query) 搜索你需要修正的对象的主键，点击右上角的 Update object 按钮跳转至修改页面。
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/RIPEUPDATE1.png)
+![](https://suse.cc/ipfs/QmXwAqhisjP4fhWNMGE96oVDPjHUphwfmvFFN2NGAa6t7f)
 
 进入修改页面后，修正你需要修改的内容，点击 SUBMIT 按钮提交。
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/RIPEUPDATE2.png)
+![](https://suse.cc/ipfs/QmUSAmZxwHfYvgf9NAiPzhn3ym7ENy7i2AxFXP5gQJPeMA)
 
 完成之后 RIPE 数据库会显示你修改了内容至此修改结束
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/RIPEUPDATE3.png)
+![](https://suse.cc/ipfs/QmPCvYS1AA9BWxnXAyozF15HGCSgX6sE6dfppKPC2tEsEL)
 
 #### 5.提交资料
 
@@ -174,11 +174,11 @@ PeeringDB 就像是互联网世界的"社交名片夹"！想象一下，如果�
 
 前往 [PeeringDB Profile](https://www.peeringdb.com/profile) 中的 关联组织 板块 输入你的ASN和组织名称进行关联
 
-![已我自己的ASN举例](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/preeingdb%20link.png)
+![已我自己的ASN举例](https://suse.cc/ipfs/QmTs3DUzUE7t3LKGgoTjAurAWPbSdSLxQnP1v45x9bLtVW)
 
 关联成功之后 你就可以在右上角下拉菜单中找到你的组织了
 
-![接上图](http://s3.pysio.online/pysioimages/peeringdblinkdone.png)
+![接上图](https://suse.cc/ipfs/QmY3F3ZVePnpAWMB86Q3Fhm2hEnyTrXmDSyn4t6enhpJfo)
 
 ### 4. 修正信息
 
@@ -202,7 +202,7 @@ Suite (可选): 组织的房间号
 
 国家和地区代码: 组织所在的国家和地区代码
 
-![放一张13335的例子](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/peeringdborg.png)
+![放一张13335的例子](https://suse.cc/ipfs/QmcpP3LxNieTAU26odyZxYZk8TQjfNYngyRFgXWKDPTtuq)
 
 ### 5. 添加网络
 
@@ -230,7 +230,7 @@ Network Types(可选): 网络类型
 
 Health Check: 网络的状态检查
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/peeringdb%20add%20networks.png)
+![](https://suse.cc/ipfs/QmdHMURJ3kUHAYxfhTe4G9xK32WVbEMU47nkCRhEeBWmA3)
 
 最后 点击提交网络就完成了
 
@@ -256,7 +256,7 @@ Health Check: 网络的状态检查
 
 在申请通过之后, 打开VPS的详情, 点击 `BGP` 选项卡 就可以得到如下信息:
 
-![Vultr BGP](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20250216154622.png)
+![Vultr BGP](https://suse.cc/ipfs/QmXWFi5K2khQNJtZZPBM2DnuSGwAqYWnYhXyYgx9yad616)
 
 至此 你就得到了和Vultr进行BGP Session的信息。
 
@@ -378,7 +378,7 @@ vultr    BGP        ---        up     2025-02-10    Established
 
 等待半小时到一小时后, 可用打开 [BGP Tools](https://bgp.tools/) 输入你的IP段查看全球范围内的转播情况。
 
-![传播完成!](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/bgptools.png)
+![传播完成!](https://suse.cc/ipfs/QmS1ebfLFh1aHFFPhDXdUCwgCVB31uDG6BoKHaPN6ZBcUc)
 
 #### 3. 配置网卡
 
@@ -411,11 +411,11 @@ ip6.arpa 是 IPV6 的反向解析域名, 你可以添加 PTR 记录, 让你的IP
 
 输入你需要创建rDNS的IP段, 例如 `2a14:67c1:b103::/48`
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/ripenons.png)
+![](https://suse.cc/ipfs/QmW4HTnqouYEbFBEayC8VB4Fp8aDreFpBqtbYfZZLFkAQ3)
 
 你可以看到 现在RIPE现在要求你填写2个NS Server 这里我们先写两个假的上去
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/ipv6fack.png)
+![](https://suse.cc/ipfs/QmZevwaFQAKkAEQq4ktDETwPyrF61eGm6qT19nvVNUibke)
 
 现在 你可与看见RIPE给出了 ` Reverse zones ` 它的值为 `4.0.1.b.1.c.7.6.4.1.a.2.ip6.arpa.`
 
@@ -425,7 +425,7 @@ ip6.arpa 是 IPV6 的反向解析域名, 你可以添加 PTR 记录, 让你的IP
 
 最后如下图 就可以点击提交了
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/domaindone.png)
+![](https://suse.cc/ipfs/QmRhK8aCH8zpkq1nucCW9SbkaRPWC1oEZeHkFVKq55awE9)
 
 提交之后稍等片刻,CloudFlare中的域就会激活了
 

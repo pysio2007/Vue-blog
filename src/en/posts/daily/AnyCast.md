@@ -44,7 +44,7 @@ Open this address: [Vultr BGP](https://my.vultr.com/bgp/) Fill in your ASN and I
 
 After approval, open VPS details, click the `BGP` tab to get the following information:
 
-![Vultr BGP](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20250216154622.png)
+![Vultr BGP](https://suse.cc/ipfs/QmXWFi5K2khQNJtZZPBM2DnuSGwAqYWnYhXyYgx9yad616)
 
 Now you have the information to establish BGP Session with Vultr.
 
@@ -52,7 +52,7 @@ Now you have the information to establish BGP Session with Vultr.
 
 Login to [BuyVM management panel](https://manage.buyvm.net/) Select your machine, click `Networking` -> `BGP`. After submitting a ticket, wait for approval to get the following information:
 
-![BuyVM BGP](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20250217081432.png)
+![BuyVM BGP](https://suse.cc/ipfs/QmYTQLprv9SNbo8YASDL6jj1kgKn4eHa2vxvFpoBjYKTvk)
 
 Now you have the information to establish BGP Session with BuyVM.
 
@@ -174,7 +174,7 @@ Announced IP segments need some time for global propagation and convergence. You
 
 After waiting 30 minutes to an hour, you can open [BGP Tools](https://bgp.tools/) and enter your IP segment to check global propagation status.
 
-![My Anycast Propagation Status](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20250217083854.png)
+![My Anycast Propagation Status](https://suse.cc/ipfs/QmTR9aP4tJC7qdfCZq8HEG1JtuEhymvUSusgvfus6D5yaB)
 
 ## 3. Network Interface Configuration
 

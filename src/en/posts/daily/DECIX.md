@@ -12,6 +12,6 @@ MANRS sent out a notification email titled "Charter review: MANRS Last Call." Ho
 
 As a result, DE-CIX's automated system not only replied to the email but also sent the reply directly to the MANRS mailing list. Consequently, all MANRS members subscribed to the mailing list received DE-CIX's support ticket response...
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/decix1.png)
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/decix2.png)
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/decix3.png)
+![](https://suse.cc/ipfs/QmZ3ajBWyamsajeccvo7woNaQB4adaKHFJqqYE2vhY9Tg4)
+![](https://suse.cc/ipfs/QmZZxh3FwoEsZuu8e6h72tjVteU9LeQRABtJp8VoDH8uDE)
+![](https://suse.cc/ipfs/Qmcct59eRzqZVubZZKENAsyWpCXzDaWpcjBA6A6dhav9BE)

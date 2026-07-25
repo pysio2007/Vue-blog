@@ -45,7 +45,7 @@ winget install Akaere.whois
 whois 8.8.8.8
 ```
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/whoisgoogle.png)
+![](https://suse.cc/ipfs/QmYCdKbLLRM8kdmJ7idBdBNRbXyZKWKM1TPji5aAYBmMws)
 
 ### 查询AS号
 
@@ -53,7 +53,7 @@ whois 8.8.8.8
 whois AS213605
 ```
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/whoispysio.png)
+![](https://suse.cc/ipfs/QmevqoH3cQYnShKhMSyekw1teCDJrD48qUBYXPv7NSv5Xg)
 
 ### 查询DN42 AS号
 
@@ -62,15 +62,15 @@ whois 213605  # 默认行为下 如果一个ASN DN42和公网都存在 则DN42�
 ```
 注: DN42的 Hyperlink还有点问题 会在下个版本修复
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/whoisdn42.png)
+![](https://suse.cc/ipfs/QmSLvQTqWejN55wsT1Uy2jwA2rU16yagUAHfaEuwRpLUUP)
 
 ### 终端超链接展示
 
 因为局限性 还是得大伙试了才知道（x
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/hyperlinkgoogle.png)
+![](https://suse.cc/ipfs/QmfRDxLSdzGEdiyt3U9sXW4sQj5pr8SxHdoErz6k5B4rZ8)
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/hyperlinkasn.png)
+![](https://suse.cc/ipfs/QmTRcL4cxitUCiwNj1wGDQvAGae51vcwFaKmoNZfxNXAmV)
 
 最后 放一个Github地址 欢迎Star~ 
 

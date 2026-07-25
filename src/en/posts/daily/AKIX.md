@@ -154,7 +154,7 @@ This IXP tinkering experience brought not just technical knowledge, but the joy 
 
 If you also want to play with BGP and experience network interconnection, feel free to reach out (team@akae.re), let's tinker together!
 
-![AKIX Logo](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/akaere/Akaere%20IXP.png)
+![AKIX Logo](https://suse.cc/ipfs/QmeULK2uZaL5w7a9XKRpHGdm9z1CTPmXFmgqRFZ14MU6Xj)
 
 ---
 
