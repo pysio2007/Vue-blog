@@ -126,6 +126,14 @@ article: false
   background="rgba(236, 244, 250)"
 />
 
+<VPCard
+  title="晓雨杂记"
+  desc="也许我们会分别，但我们将永远不会忘记彼此"
+  logo="https://objects.notbigcake.net/bigcake-blog-images/brand/avatar-128x.webp"
+  link="https://www.notbigcake.net/"
+  background="rgba(242,188,87,1)"
+/>
+
 ## 交换友链
 
 #### 在交换友链之前，你需要先添加我的链接:
