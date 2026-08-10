@@ -123,11 +123,11 @@ PeeringDB 就像是互联网世界的"社交名片夹"！想象一下，如果�
 
 前往 [PeeringDB Profile](https://www.peeringdb.com/profile) 中的 关联组织 板块 输入你的ASN和组织名称进行关联
 
-![已我自己的ASN举例](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/preeingdb%20link.png)
+![已我自己的ASN举例](https://suse.cc/ipfs/QmTs3DUzUE7t3LKGgoTjAurAWPbSdSLxQnP1v45x9bLtVW)
 
 关联成功之后 你就可以在右上角下拉菜单中找到你的组织了
 
-![接上图](http://s3.pysio.online/pysioimages/peeringdblinkdone.png)
+![接上图](https://suse.cc/ipfs/QmY3F3ZVePnpAWMB86Q3Fhm2hEnyTrXmDSyn4t6enhpJfo)
 
 ### 4. 修正信息
 
@@ -151,7 +151,7 @@ Suite (可选): 组织的房间号
 
 国家和地区代码: 组织所在的国家和地区代码
 
-![放一张13335的例子](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/peeringdborg.png)
+![放一张13335的例子](https://suse.cc/ipfs/QmcpP3LxNieTAU26odyZxYZk8TQjfNYngyRFgXWKDPTtuq)
 
 ### 5. 添加网络
 
@@ -179,7 +179,7 @@ Network Types(可选): 网络类型
 
 Health Check: 网络的状态检查
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/peeringdb%20add%20networks.png)
+![](https://suse.cc/ipfs/QmdHMURJ3kUHAYxfhTe4G9xK32WVbEMU47nkCRhEeBWmA3)
 
 最后 点击提交网络就完成了
 
@@ -205,7 +205,7 @@ Health Check: 网络的状态检查
 
 在申请通过之后, 打开VPS的详情, 点击 `BGP` 选项卡 就可以得到如下信息:
 
-![Vultr BGP](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20250216154622.png)
+![Vultr BGP](https://suse.cc/ipfs/QmXWFi5K2khQNJtZZPBM2DnuSGwAqYWnYhXyYgx9yad616)
 
 至此 你就得到了和Vultr进行BGP Session的信息。
 
@@ -327,7 +327,7 @@ vultr    BGP        ---        up     2025-02-10    Established
 
 等待半小时到一小时后, 可用打开 [BGP Tools](https://bgp.tools/) 输入你的IP段查看全球范围内的转播情况。
 
-![传播完成!](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/bgptools.png)
+![传播完成!](https://suse.cc/ipfs/QmS1ebfLFh1aHFFPhDXdUCwgCVB31uDG6BoKHaPN6ZBcUc)
 
 #### 3. 配置网卡
 

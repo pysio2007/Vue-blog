@@ -38,4 +38,4 @@ Let's talk about something interesting! We recently did a "Perfect IP" performan
 
 The image below is our BGP routing topology diagram, welcome to take a look:
 
-![](https://s3.pysio.online/pysioimages/rt-2a0f_9400_6110___48.svg) 
+![](https://suse.cc/ipfs/QmU8KqPZe29H5E29KNmZjzWaXEvYXh1Sgsf3oMGwLidMvn) 
