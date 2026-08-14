@@ -17,7 +17,7 @@
     "@types/lodash": "^4.17.24",
     "@types/node": "^26.1.1",
     "@vue/language-server": "^3.3.8",
-    "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "@vuepress/bundler-vite": "2.0.0-rc.31",
     "@vuepress/plugin-blog": "2.0.0-rc.121",
     "@vuepress/plugin-cache": "2.0.0-rc.121",
     "@vuepress/plugin-feed": "2.0.0-rc.121",
