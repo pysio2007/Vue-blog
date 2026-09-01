@@ -23,4 +23,4 @@ jobs:
         if: env.SSH_PRIVATE_KEY
         with:
           source-repo: "git@github.com:${{ github.repository }}.git"
-          destination-repo: "git@git.pysio.online:pysio/Vue-blog.git"
+          destination-repo: "git@git.akae.re:pysio/Vue-blog.git"
