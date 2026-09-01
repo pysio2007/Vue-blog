@@ -84,7 +84,7 @@ export default defineUserConfig({
       src: "https://umami.pysio.online/script.js",
       "data-website-id": "e7714c23-dd48-4e43-8faf-dc2ea6fb9e34"
     }],
-    ["script", { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6547593871065949", crossorigin: "anonymous" }],  //Google Ads
+    ["script", { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7670265886898488", crossorigin: "anonymous" }],  //Google Ads
   ],
   
   theme,
