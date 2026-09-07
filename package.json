@@ -25,7 +25,7 @@
     "@vuepress/plugin-meilisearch": "2.0.0-rc.121",
     "@vuepress/plugin-prismjs": "2.0.0-rc.121",
     "@vuepress/plugin-pwa": "2.0.0-rc.121",
-    "@vuepress/plugin-revealjs": "2.0.0-rc.121",
+    "@vuepress/plugin-revealjs": "2.0.0-rc.134",
     "@waline/client": "^3.15.2",
     "ansi-to-html": "^0.7.2",
     "asciinema-player": "^3.17.0",
