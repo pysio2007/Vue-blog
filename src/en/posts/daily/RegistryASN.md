@@ -75,13 +75,13 @@ When creating role and maintainer objects through the above link, you need to fi
 - ` address `: office address for this role
 - ` e-mail `: email contact address for this role
 
-![Example filled information using Akaere NetWork](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Create%20role%20and%20maintainer%20pair.png)
+![Example filled information using Akaere NetWork](https://suse.cc/ipfs/QmVJ6dPAUPMyr2ZAwY9fQ6yVhBYLHV5iWHgagPsFmZQaC6)
 
 After filling in, click the SUBMIT button to simultaneously create a role and mntner object.
 
 The red box part in the image is the primary key of the role object. You need to submit this as your AS's admin-c / tech-c / abuse-c to your LIR.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Create%20role%20and%20maintainer%20pair%20done.png)
+![](https://suse.cc/ipfs/QmbuiC5LUwAExw6DhfNW3tX6jLxFMPFTCmmXr4nkg8mMSs)
 
 #### 3. Set Abuse Notification Email
 
@@ -90,17 +90,17 @@ The red box part in the image is the primary key of the role object. You need to
 
 In the search box at the top of [RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query), enter the primary key of the role object from the previous section and click the search button. Then click the Update object button in the upper right corner of the search results to jump to the modification page.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse.png)
+![](https://suse.cc/ipfs/QmctpNEELfoxNB2oaU8cYz3APG8ZYf35xwgBi1gva3r2cb)
 
 Click the + button to the right of the e-mail field to add an abuse-mailbox attribute to this role object.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse%202.png)
+![](https://suse.cc/ipfs/QmWKLG2vy89kehfBWRmpyvocyZwW1cf4ALJygcnqpTHTon)
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse%203.png)
+![](https://suse.cc/ipfs/QmawkAuuJTZ2xsktNwgVN5m7jmvKwQibGncD5RPdJ89Y7Q)
 
 Fill in the abuse notification email in the appearing abuse-mailbox field and click SUBMIT to save.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Edit%20Abuse%204.png)
+![](https://suse.cc/ipfs/QmdCaNy583L3MKZYDxhJbsqSuFbH7nbiJPrvwZs4P7VjE4)
 
 #### 4. Create organisation Object
 
@@ -116,25 +116,25 @@ When creating an organisation object through [RIPE DB Create Organisation](https
 - ` abuse-c `: organisation abuse notification contact, must point to a role object with abuse-mailbox attribute
 - ` mnt-ref `: who can reference this organisation, the pointed mntner can add objects pointing to this organisation, i.e., who allocates resources for this organization, ask your LIR for the specific value
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Creat%20organisation.png)
+![](https://suse.cc/ipfs/QmS5rvhyJHXqnXA3tUBAxZEReCzmsbESzH4TnmDtN5N6Vx)
 
 After filling in, click SUBMIT. The page will show the organisation object identifier with "ORG-EXAMPLE-RIPE" (red box part in the image). You need to submit this as your AS's org to your LIR.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/Creat%20organisation%20Done.png)
+![](https://suse.cc/ipfs/QmQgVvcoZfLoxeWRrt97Gr8MuCdkHBj2ogkW3N3wZ83ddH)
 
 #### 4.1 How to Modify if Something Went Wrong?
 
 When you discover errors in the above content, go to [RIPE DB Query](https://apps.db.ripe.net/db-web-ui/query), search for the primary key of the object you need to correct, and click the Update object button in the upper right corner to jump to the modification page.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/RIPEUPDATE1.png)
+![](https://suse.cc/ipfs/QmXwAqhisjP4fhWNMGE96oVDPjHUphwfmvFFN2NGAa6t7f)
 
 After entering the modification page, correct the content you need to modify and click SUBMIT to submit.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/RIPEUPDATE2.png)
+![](https://suse.cc/ipfs/QmUSAmZxwHfYvgf9NAiPzhn3ym7ENy7i2AxFXP5gQJPeMA)
 
 After completion, the RIPE database will show that you've modified the content. This ends the modification process.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/RIPEUPDATE3.png)
+![](https://suse.cc/ipfs/QmPCvYS1AA9BWxnXAyozF15HGCSgX6sE6dfppKPC2tEsEL)
 
 #### 5. Submit Materials
 
@@ -175,11 +175,11 @@ Go to [PeeringDB Register](https://www.peeringdb.com/register) to register an ac
 
 Go to the Associated Organizations section in [PeeringDB Profile](https://www.peeringdb.com/profile), enter your ASN and organization name to associate.
 
-![Using my own ASN as example](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/preeingdb%20link.png)
+![Using my own ASN as example](https://suse.cc/ipfs/QmTs3DUzUE7t3LKGgoTjAurAWPbSdSLxQnP1v45x9bLtVW)
 
 After successful association, you can find your organization in the dropdown menu in the upper right corner.
 
-![Following the above image](http://s3.pysio.online/pysioimages/peeringdblinkdone.png)
+![Following the above image](https://suse.cc/ipfs/QmY3F3ZVePnpAWMB86Q3Fhm2hEnyTrXmDSyn4t6enhpJfo)
 
 ### 4. Correct Information
 
@@ -203,7 +203,7 @@ Location (optional): Specific location
 
 Country and region code: Country and region code where the organization is located
 
-![Example of 13335](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/peeringdborg.png)
+![Example of 13335](https://suse.cc/ipfs/QmcpP3LxNieTAU26odyZxYZk8TQjfNYngyRFgXWKDPTtuq)
 
 ### 5. Add Network
 
@@ -231,7 +231,7 @@ Contract requirement: Whether peering requires contracts
 
 Health Check: Network status check
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/peeringdb%20add%20networks.png)
+![](https://suse.cc/ipfs/QmdHMURJ3kUHAYxfhTe4G9xK32WVbEMU47nkCRhEeBWmA3)
 
 Finally, click submit network to complete.
 
@@ -257,7 +257,7 @@ Open this address: [Vultr BGP](https://my.vultr.com/bgp/) Fill in your ASN and I
 
 After approval, open VPS details, click the `BGP` tab to get the following information:
 
-![Vultr BGP](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20250216154622.png)
+![Vultr BGP](https://suse.cc/ipfs/QmXWFi5K2khQNJtZZPBM2DnuSGwAqYWnYhXyYgx9yad616)
 
 Now you have the information to establish BGP Session with Vultr.
 
@@ -379,7 +379,7 @@ Announced IP segments need time for global propagation and convergence. You can 
 
 After waiting 30 minutes to an hour, you can open [BGP Tools](https://bgp.tools/) and enter your IP segment to check global propagation status.
 
-![Propagation Complete!](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/bgptools.png)
+![Propagation Complete!](https://suse.cc/ipfs/QmS1ebfLFh1aHFFPhDXdUCwgCVB31uDG6BoKHaPN6ZBcUc)
 
 #### 3. Configure Network Interface
 
@@ -412,11 +412,11 @@ Open [RIPE Create Domain interface](https://apps.db.ripe.net/db-web-ui/webupdate
 
 Enter the IP segment you need to create rDNS for, e.g., `2a14:67c1:b103::/48`
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/ripenons.png)
+![](https://suse.cc/ipfs/QmW4HTnqouYEbFBEayC8VB4Fp8aDreFpBqtbYfZZLFkAQ3)
 
 You can see that RIPE now requires you to fill in 2 NS Servers. Let's write two fake ones first.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/ipv6fack.png)
+![](https://suse.cc/ipfs/QmZevwaFQAKkAEQq4ktDETwPyrF61eGm6qT19nvVNUibke)
 
 Now you can see RIPE has given the ` Reverse zones ` value as `4.0.1.b.1.c.7.6.4.1.a.2.ip6.arpa.`
 
@@ -426,7 +426,7 @@ Also, fill admin-c / tech-c / zone-c with the primary key of the role object you
 
 Finally, as shown below, you can click submit.
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/domaindone.png)
+![](https://suse.cc/ipfs/QmRhK8aCH8zpkq1nucCW9SbkaRPWC1oEZeHkFVKq55awE9)
 
 After submission, wait a moment and the domain in CloudFlare will be activated.
 

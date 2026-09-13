@@ -1,4 +1,6 @@
 <script>
+import { ipfsImageUrl } from '../ipfs-images'
+
 export default {
     // 组件名称
     name: 'CraftingTable',
@@ -20,10 +22,10 @@ export default {
         getIconUrl(icon) {
             if (!icon) return '';
             // 如果是完整URL或以/开头的路径则直接返回
-            // 否则拼接默认CDN路径
+            // 否则按图标名查 IPFS 映射表
             return icon.startsWith('http') || icon.startsWith('/') ?
                 icon :
-                `https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/${icon}.png`;
+                ipfsImageUrl(`${icon}.png`);
         }
     }
 }

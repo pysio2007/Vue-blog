@@ -154,7 +154,7 @@ Akaere IX 还在慢慢完善，未来想：
 
 如果你也想玩 BGP、想体验网络互联，欢迎来找我（team@akae.re），一起折腾！
 
-![AKIX Logo](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/akaere/Akaere%20IXP.png)
+![AKIX Logo](https://suse.cc/ipfs/QmeULK2uZaL5w7a9XKRpHGdm9z1CTPmXFmgqRFZ14MU6Xj)
 
 ---
 

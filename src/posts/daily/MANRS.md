@@ -38,4 +38,4 @@ tag:
 
 下面这张图就是我们 BGP 路由拓扑图，欢迎围观：
 
-![](https://s3.pysio.online/pysioimages/rt-2a0f_9400_6110___48.svg)
+![](https://suse.cc/ipfs/QmU8KqPZe29H5E29KNmZjzWaXEvYXh1Sgsf3oMGwLidMvn)

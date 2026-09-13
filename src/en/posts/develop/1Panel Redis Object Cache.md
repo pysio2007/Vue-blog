@@ -9,13 +9,13 @@ tag:
 ---
 
 ## Step 1: Get Redis Password
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241005215409.png)
+![](https://suse.cc/ipfs/QmcFEpkCdBbd52Xh19tkEiY7WtpbWsAQqTdabps8tvSMDb)
 Go to [App Store] -> [Installed] -> [Redis Parameters] to see the password and write it down
 
 ## Step 2: Modify object-cache.php File
 In the website root directory ```wp-content/plugins/redis-cache/includes```, you can find the ```object-cache.php``` file  
 Open and edit it  
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241005215426.png)  
+![](https://suse.cc/ipfs/QmQd6io16LWLSZhptXScHU2MUUAMFxP9ES3eZofrUnXvw6)  
 Add or modify the following section, where PassWord is the Redis password you just obtained
 ```php
 $parameters = [

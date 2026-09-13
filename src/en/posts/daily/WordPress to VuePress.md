@@ -87,13 +87,13 @@ heroFullScreen: false
 
 Effect: 
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/blogdemo.webp)
+![](https://suse.cc/ipfs/QmRdefogxwYT5UH2ePiqq8scj9bor1HGYA17PpYwXQTTJ9)
 
 ### Homepage Project Settings
 
 The initialization will generate the following content by default. How do you modify it to your own projects?
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/defpoj.webp)
+![](https://suse.cc/ipfs/Qma4Q4fkGHN141MjAqcSnHnwABuYUShHoGb3xhrd7mggtf)
 
 Open ```README.md```, find ```projects```, and edit it to your desired content.
 
@@ -132,4 +132,4 @@ projects:
 
 If you don't want to display it, just delete all the ```projects``` content. Effect as shown:
 
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/blognopoj.webp) 
+![](https://suse.cc/ipfs/QmdRZ7yPW5X3ocmwtgH1XmZvvoAPxjDQGe6iJAoSsVg2Uo) 

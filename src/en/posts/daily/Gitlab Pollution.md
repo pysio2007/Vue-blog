@@ -7,10 +7,10 @@ tag:
   - Daily
 ---
 I was bored today and did a ping  
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006004058.png)
+![](https://suse.cc/ipfs/QmfLm1JWemkjJap4UD55iD45xUzbJRG12nHsdieXaN6Xx7)
 
 I was wondering why it would resolve to this [IP](https://106.74.25.198/), until I visited it.  
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006004137.png)
+![](https://suse.cc/ipfs/QmYjPAF6u6EH61yRWLFuFaAXHbmoEqaKkVRaBeL4EiBitm)
 
 Uh, this is somewhat outrageous. I don't know what law I violated to be thrown in there...
 

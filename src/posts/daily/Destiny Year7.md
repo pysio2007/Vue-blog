@@ -15,8 +15,8 @@ tag:
 
 不多说了 放点截图
 <!-- more -->
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006003452.png)
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006003529.png)
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006003549.png)
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006003612.png)
-![](https://s3.pysio.online/cdn-cgi/image/f=avif,onerror=redirect,slow-connection-quality=50/https://s3.pysio.online/pysioimages/20241006003632.png)
+![](https://suse.cc/ipfs/QmYXg99JMQZPJKtUH4Nw1TfnFuMva829YGFcBEBBQd17my)
+![](https://suse.cc/ipfs/Qman3hgBMEXAXQzPSGCRjbkD1XQAJQbfSUi5bPPYdkEYMV)
+![](https://suse.cc/ipfs/QmYr5qc26M9fGC3sYGWHLR8Vuvt5sWZ4gE7AuL9YGzGFcd)
+![](https://suse.cc/ipfs/QmVLbHUMZ7zi1yUA1fNkmYVTLdhcrke2CfUzHJHDA9YgiP)
+![](https://suse.cc/ipfs/QmSp3RjQr8dmgd3T81yi62nheM719zF2SJBT1gtVugsXMN)
